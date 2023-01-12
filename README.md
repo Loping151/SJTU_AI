@@ -45,6 +45,7 @@ This repo will include some notes, homework assignment and lab work, comment and
 - (2021-2022-1)-MARX1205-72 形势与政策 郑文栋
 - (2021-2022-1)-PSY1201-8 大学生心理健康 卜军敏
 - (2021-2022-1)-PE001C10-13 乒乓球 吴爱平
+- (2021-2022-1)-MIL1201-22 军事理论 宋玲
 - (2021-2022-1)-CS2501H-2 离散数学（荣誉） 殷翔
 
 

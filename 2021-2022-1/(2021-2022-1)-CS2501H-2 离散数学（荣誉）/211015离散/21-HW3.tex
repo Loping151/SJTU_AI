@@ -1,0 +1,209 @@
+\documentclass[10pt]{article}
+\usepackage[linespread=1.18]{ctex}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.9}
+
+\newcommand{\cukai}{\CJKfamily{cukai}}
+\newtheorem{myprob}{Problem}
+\newtheorem{mythm}{Theorem}
+
+\usepackage{multicol}
+
+\title{\Huge\textbf{Discrete Math (Honor) 2021-Fall Homework-3}}
+
+\author{\cukai\zihao{3}\textbf{王凯灵521030910356}
+}
+
+
+\date{}
+\begin{document}
+	\maketitle
+
+\noindent\textbf{Solution 1.}
+\begin{enumerate}
+	\item
+	First suppose R is false. Let's turn it into a CNF:
+
+	\centerline {$ (P\vee Q)\wedge (\neg P \vee R)\wedge (\neg Q \vee R)\wedge \neg R$}
+
+	Build resolve set S:
+
+	\centerline {$ S =  \{P\vee Q,\neg P \vee R,\neg Q \vee R, \neg R\} $}
+
+	Resolution:
+
+	\normalsize{\textcircled{\footnotesize{1}}}~$P \vee Q$
+
+	\normalsize{\textcircled{\footnotesize{2}}}~$\neg P \vee Q$
+
+	\normalsize{\textcircled{\footnotesize{3}}}~$\neg Q \vee R$
+
+	\normalsize{\textcircled{\footnotesize{4}}}~$\neg R$
+
+	\normalsize{\textcircled{\footnotesize{5}}}~$Q \vee R$
+
+	\normalsize{\textcircled{\footnotesize{6}}}~$R$
+
+	\normalsize{\textcircled{\footnotesize{7}}}~Contradiction.
+
+	\vspace{-5pt}
+	\item
+	CNF:
+
+	\centerline{$ (\neg S \vee \neg Q)\wedge (\neg P \vee Q)\wedge (R\vee S)\wedge (\neg R \vee \neg Q)\wedge P$}
+
+	\centerline{$S=\{\neg S \vee \neg Q,\neg P \vee Q,R\vee S,\neg R \vee \neg Q, P,\neg S\vee \neg P,S \vee \neg Q\}$}
+	Resolution:
+
+	\normalsize{\textcircled{\footnotesize{1}}}~$P$
+
+	\normalsize{\textcircled{\footnotesize{2}}}~$\neg S \vee \neg P$
+
+	\normalsize{\textcircled{\footnotesize{3}}}~$\neg S$
+
+	\normalsize{\textcircled{\footnotesize{4}}}~$S \vee \neg Q$
+
+	\normalsize{\textcircled{\footnotesize{5}}}~$\neg Q$
+
+	\normalsize{\textcircled{\footnotesize{6}}}~$\neg P \vee Q$
+
+	\normalsize{\textcircled{\footnotesize{7}}}~$\neg P$
+
+	\normalsize{\textcircled{\footnotesize{8}}}~Contradiction.
+
+	\vspace{-5pt}
+	\item
+	CNF:
+
+	\centerline{$(\neg P\vee Q)\wedge (\neg Q\vee R)\wedge \neg R \wedge P$}
+
+	\centerline{$S=\{\neg P\vee Q,\neg Q\vee R, \neg R, P\}$}
+
+	Resolution:
+
+	\normalsize{\textcircled{\footnotesize{1}}}~$P$
+
+	\normalsize{\textcircled{\footnotesize{2}}}~$\neg P \vee Q$
+
+	\normalsize{\textcircled{\footnotesize{3}}}~$Q$
+
+	\normalsize{\textcircled{\footnotesize{4}}}~$\neg Q\vee R$
+
+	\normalsize{\textcircled{\footnotesize{5}}}~$R$
+
+	\normalsize{\textcircled{\footnotesize{6}}}~$\neg R$
+
+	\normalsize{\textcircled{\footnotesize{7}}}~Contradiction.
+\end{enumerate}
+
+\noindent\textbf{Solution 2.}
+
+$D:all~people.Eq(x,y):x=y.Fri(x,y):x, y~are~firends.Lov(x,y):x~loves~y.Hat(x,y):x~hates~y.$
+
+\begin{enumerate}
+	\item
+	$(\forall x)(\forall y)(\neg Eq(x,y)\rightarrow Lov(x,y))$
+	\item
+	$(\forall x)(Student(x)\wedge \neg Eq(x,Alice)\rightarrow Fri(x,Bob))$
+	\item
+	$(\forall x)(student(x)\wedge Talkable(x)\rightarrow Walkable(x))$
+	\item
+	$(\forall x)(Boy(x)\wedge Lov(x,Alice)\wedge (\forall y) Lov(Alice,y)\rightarrow Hat(x,y))$
+	\item
+	$(\forall x)(Boy(x)\wedge Lov(x,Alice)\wedge (\forall y) Lov(Cauchy,y)\wedge Eq(x,y) \rightarrow Hat(x,y))$
+	\item
+	$(\exists x)(Love(x,Alice)\wedge Hate(x,Bob)))$
+	\item
+	$(\exists x)(Love(x,Alice)\wedge (\forall y)(Love(y,Bob)\wedge Hate(x,y)))$
+
+\end{enumerate}
+	\begin{myprob}  (10 Points)\\ \upshape
+		For each of the following formulae, determine   free variables and   bound variables in it and determine the scope of each quantifier. \vspace{-5pt}
+		\begin{enumerate}
+			\item
+			$(\forall x)(P(x)\to Q(x,y))$\vspace{-5pt}
+			\item
+			$(\forall x)P(x,y)\to (\exists y)Q(x,y)$ \vspace{-5pt}
+			\item
+			$(\forall x)(\exists y)( P(x,y)\wedge Q(y,z)\vee (\exists x)R(x,y,z) )$\vspace{-5pt}
+			\item
+			$(\exists x)( P(x)\to Q(x) ) \to (\exists y)R(y) \to S(z)$\vspace{-5pt}
+			\item
+			$(\forall x)( P(x)\wedge (\exists y)Q(y))\vee((\forall x)P(x)\to Q(z))   $
+		\end{enumerate}
+	\end{myprob}
+
+\noindent\textbf{Solution 3.}
+
+\begin{enumerate}
+	\item
+	free variable:$y$
+
+	bound variable:$x$
+
+	the scope of $\forall x$ is $P(x)\to Q(x,y)$
+
+	\item
+	free variable: the first $y$ and the second $x$
+
+	bound variable: the first $x$ and the second $y$
+
+	the scope of $\forall x$ is $P(x,y)$,the scope of $\exists y$ is $Q(x,y)$
+
+	\item
+	free variable: $z$
+
+	bound variable: $x$ and $y$
+
+	the scope of $\forall x$ is $\exists y)( P(x,y)\wedge Q(y,z)\vee (\exists x)R(x,y,z)$
+
+	the scope of $\exists y$ is $( P(x,y)\wedge Q(y,z)\vee (\exists x)R(x,y,z)$
+
+	the scope of $\exists x$ is $R(x,y,z)$
+
+	\item
+	free variable: $z$
+
+	bound variable: $x$ and $y$
+
+	the scope of $\exists x$ is $P(x)\to Q(x)$
+
+	the scope of $\exists y$ is $R(y)$
+
+	\item
+	free variable: $z$
+
+	bound variable: $x$ and $y$
+
+	the scope of the first $\forall x$ is $ P(x)\wedge (\exists y)Q(y)$
+
+	the scope of $\exists y$ is $Q(y)$
+
+	the scope of the second $\forall x$ is $P(x)$
+
+\end{enumerate}
+
+
+
+\end{document}

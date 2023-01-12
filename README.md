@@ -30,6 +30,8 @@ This repo will include some notes, homework assignment and lab work, comment and
 
 [aisjtu/aisjtu.github.io: 上海交通大学AI专业（本科）课程信息｜A Website For Courses of AI Pilot Class, SJTU](https://github.com/aisjtu/aisjtu.github.io)
 
+[传承·交大 (sjtu.cn)](https://share.dyweb.sjtu.cn/)
+
 ## 我的课程
 
 请注意本这里只包含了**部分**课程的笔记和作业。有些课程的笔记可能丢失了，有些课程我没有记笔记，或者使用蜂考的笔记进行复习。蜂考的笔记具有版权申明，细节可以邮件联系。各类课程的电子课本我也基本都有，同理。经过思考，我还是将我的大部分代码和latex源文件开源了。请谨慎使用。PPT我大多是有的，但没必要放在这里吧。有需要联系我。

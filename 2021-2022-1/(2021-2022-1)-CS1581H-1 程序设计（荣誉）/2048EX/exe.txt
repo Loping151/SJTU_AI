@@ -1,0 +1,3 @@
+得到exe后，在qt命令行中输入
+windeployqt 路径\2048EX.exe
+得到成品

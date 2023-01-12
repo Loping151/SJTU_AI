@@ -1,0 +1,3 @@
+"C:\Users\Kailing Wang\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.5457.51\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\mynew2048.dir/objects.a
+C:\PROGRA~2\mingw64\bin\ar.exe cr CMakeFiles\mynew2048.dir/objects.a @CMakeFiles\mynew2048.dir\objects1.rsp
+C:\PROGRA~2\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\mynew2048.dir/objects.a -Wl,--no-whole-archive -o mynew2048.exe -Wl,--out-implib,libmynew2048.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\mynew2048.dir\linklibs.rsp

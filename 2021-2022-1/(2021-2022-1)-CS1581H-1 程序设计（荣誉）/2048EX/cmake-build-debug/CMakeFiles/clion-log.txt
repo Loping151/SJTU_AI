@@ -1,0 +1,1 @@
+在 C:\Personal\projects\Qt\mynew2048 中找不到 CMakeLists.txt 选择 CMakeLists.txt

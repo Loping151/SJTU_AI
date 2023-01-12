@@ -1,0 +1,3 @@
+C:/Personal/projects/Qt/mynew2048/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Personal/projects/Qt/mynew2048/cmake-build-debug/CMakeFiles/mynew2048.dir
+C:/Personal/projects/Qt/mynew2048/cmake-build-debug/CMakeFiles/edit_cache.dir

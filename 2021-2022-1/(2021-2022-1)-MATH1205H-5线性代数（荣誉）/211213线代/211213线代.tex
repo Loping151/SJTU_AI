@@ -1,0 +1,1890 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathdots}
+\usepackage{hyperref}
+\usepackage{extarrows}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\geometry{a4paper,left=2.54cm,right=2.54cm,top=3.1cm,bottom=3.1cm}
+\setCJKmainfont[BoldFont={FZCKJW.TTF}]{STKAITI.TTF}
+
+\title{\textbf{
+		\zihao{1}线性代数\\
+		\zihao{2}期末整理}}
+\author{\textbf{王凯灵}}
+\date{\textbf{2021-Fall}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{矩阵与行列式}
+		\subsection{矩阵}
+			\subsubsection{矩阵的定义}
+				首先, 这是一个矩阵;
+				$$
+				\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}=
+				\left(\begin{array}{cccc}
+					a_{11} & a_{12} & \cdots & a_{1 n} \\
+					a_{21} & a_{22} & \cdots & a_{2 n} \\
+					\vdots & \vdots & & \vdots \\
+					a_{m 1} & a_{m 2} & \cdots & a_{m n}
+				\end{array}\right)
+				$$
+				这些也是矩阵:
+				$$
+				\begin{aligned}
+					\left(\begin{array}{cccc}
+						a_{11} & & & \\
+						& a_{22} & & \\
+						& & \ddots & \\
+						& & & a_{n n}
+					\end{array}\right)
+					\left(\begin{array}{cccc}
+						k & & & \\
+						& k & & \\
+						& & \ddots & \\
+						& & & k
+					\end{array}\right)
+					\left(\begin{array}{cccc}
+						a_{11} & a_{12} & \cdots & a_{1 n} \\
+						& a_{22} & \cdots & a_{2 n} \\
+						& & \ddots & \vdots \\
+						& & & a_{n n}
+					\end{array}\right)
+					\left(\begin{array}{c}
+						b_{1} \\
+						b_{2} \\
+						\vdots \\
+						b_{m}
+					\end{array}\right)\text{(列向量)}
+				\end{aligned}
+				$$
+			\subsubsection{矩阵的运算}
+				\begin{itemize}
+					\item $\boldsymbol{C}=\boldsymbol{A}+\boldsymbol{B}$
+					$$
+					\boldsymbol{C}=\left(\begin{array}{cccc}
+						a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1 n}+b_{1 n} \\
+						a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2 n}+b_{2 n} \\
+						\vdots & \vdots & & \vdots \\
+						a_{m 1}+b_{m 1} & a_{m 2}+b_{m 2} & \cdots & a_{m n}+b_{m n}
+					\end{array}\right)
+					$$
+					\item $\boldsymbol{C}=k\boldsymbol{A}$
+					$$
+					\boldsymbol{C}=\left(\begin{array}{cccc}
+						k a_{11} & k a_{12} & \cdots & k a_{1 n} \\
+						k a_{21} & k a_{22} & \cdots & k a_{2 n} \\
+						\vdots & \vdots & & \vdots \\
+						k a_{m 1} & k a_{m 2} & \cdots & k a_{m n}
+					\end{array}\right)
+					$$
+					\item $\boldsymbol{C}=\boldsymbol{AB}$
+					$\boldsymbol{A}=\left(a_{i j}\right)_{m \times n},\boldsymbol{B}=\left(b_{i j}\right)_{n \times s},\boldsymbol{C}=\left(c_{i j}\right)_{m \times s},$
+					$$
+					c_{i j}=\sum_{k=1}^{n} a_{i k} b_{k j}, \quad 1 \leqslant i \leqslant m, \quad 1 \leqslant j \leqslant s
+					$$
+				\end{itemize}
+				\subsubsection*{矩阵乘法的理解}
+					\begin{itemize}
+						\item $A$是对$B$行向量组的\textbf{线性变换}, $B$是对$A$列向量组的\textbf{线性变换}
+						\item $C$的行向量是由$A$中相应行对$B$中行向量的\textbf{线性组合}\\$C$的列向量是由$B$中相应列对$A$中列向量的\textbf{线性组合}
+						\item $C$中元素是$A$中行向量与$B$中列向量的\textbf{内积}
+						\item 考虑\textbf{坐标变换}, 矩阵乘法是一个\textbf{线性变换}的基向量在另一线性变换作用下的结果
+					\end{itemize}
+				\subsubsection*{方阵的幂}
+					$\boldsymbol{A^{n}}=\underbrace{\boldsymbol{A}\boldsymbol{A} \cdots \boldsymbol{A}}_{n\text{个}}$
+					\begin{itemize}
+						\item 三角矩阵, 可以分离主对角线, 二项式展开
+						\item 是否有$\boldsymbol{A^{n}}=\boldsymbol{E}$或$\boldsymbol{O}$
+						\item 矩阵是否能拆成一些特殊矩阵的积, 如正交矩阵等
+						\item \textbf{数学归纳法}
+					\end{itemize}
+			\subsubsection{矩阵的转置}
+				$$
+				\boldsymbol{A}^T=
+				\left(\begin{array}{cccc}
+					a_{11} & a_{21} & \cdots & a_{n 1} \\
+					a_{12} & a_{22} & \cdots & a_{n 2} \\
+					\vdots & \vdots & & \vdots \\
+					a_{1 m} & a_{2 m} & \cdots & a_{n m}
+				\end{array}\right)
+				$$
+				\begin{itemize}
+					\item $(\boldsymbol A+\boldsymbol B)^T=\boldsymbol A^T+\boldsymbol B^T$
+					\item $(k\boldsymbol A)^T=k\boldsymbol A^T$
+					\item $(\boldsymbol A_{1}\boldsymbol A_{2}\cdots \boldsymbol A_{n})^T=\boldsymbol A_{n}^{T}\boldsymbol A_{n-1}^{T}\cdots \boldsymbol A_{1}^{T}$
+					\item $\boldsymbol A=\frac{\boldsymbol A+\boldsymbol A^T}{2}+\frac{\boldsymbol A-\boldsymbol A^T}{2}$
+				\end{itemize}
+			\subsubsection{方阵的迹}
+				$$
+				\operatorname{tr}(\boldsymbol{A})=\sum_{i=1}^{n} a_{i i}
+				$$
+				\begin{itemize}
+					\item $\operatorname{tr}\left(\boldsymbol{A}^{T}\right)=\operatorname{tr}(\boldsymbol{A})$
+					\item $\operatorname{tr}(\boldsymbol{A}+\boldsymbol{B})=\operatorname{tr}(\boldsymbol{A})+\operatorname{tr}(\boldsymbol{B})$
+					\item $\operatorname{tr}(k \boldsymbol{A})=k \operatorname{tr}(\boldsymbol{A})$
+					\item $\operatorname{tr}(\boldsymbol{A B})=\operatorname{tr}(\boldsymbol{B} \boldsymbol{A})$
+				\end{itemize}
+			\subsubsection{方阵的逆矩阵}
+				$$
+				\boldsymbol{E}=\boldsymbol{E}_{n}=\left(\begin{array}{cccc}
+					1 & & & \\
+					& 1 & & \\
+					& & \ddots & \\
+					& & & 1
+				\end{array}\right)
+				$$
+				$$
+				\boldsymbol{A}\boldsymbol{A}^{-1}=\boldsymbol{A}^{-1}\boldsymbol{A}=\boldsymbol{E}
+				$$
+				\begin{itemize}
+					\item $\left(\boldsymbol{A}^{-1}\right)^{-1}=\boldsymbol{A}$
+					\item $\left(k\boldsymbol{A}\right)^{-1}=\frac{1}{k}\boldsymbol{A}^{-1}$
+					\item $\left(\boldsymbol{A^T}\right)^{-1}=(\boldsymbol{A}^{-1})^T$
+					\item $\left(\boldsymbol{AB}\right)^{-1}=\boldsymbol{B}^{-1}\boldsymbol A^{-1}$
+					\item $\left|\boldsymbol{A}^{-1}\right|=\frac{1}{\left|\boldsymbol{A}\right|}$
+				\end{itemize}
+				方阵\textbf{可逆}的充要条件:
+				\begin{itemize}
+					\item 方阵的行列式$\left|\boldsymbol{A}\right| \neq 0$
+					\item $\boldsymbol{A}$可写成若干个初等矩阵乘积, 即与单位阵\textbf{相抵}
+					\item $r(\boldsymbol{A})=n$（$\boldsymbol{A}$\textbf{满秩}）
+					\item $\boldsymbol{A}$的行（列）向量组\textbf{线性无关}
+					\item 齐次线性方程组$\boldsymbol{A}\boldsymbol x=\mathbf0$仅有零解
+					\item 非齐次线性方程组$\boldsymbol{Ax}=\boldsymbol \beta$有唯一解
+					\item $\boldsymbol{A}$没有$0$\textbf{特征值}
+				\end{itemize}
+			\subsubsection{伴随矩阵}
+				$$
+				\boldsymbol{A}^{*}=
+				\left(\begin{array}{cccc}
+					\boldsymbol A_{11} & \boldsymbol A_{21} & \cdots & \boldsymbol A_{n 1} \\
+					\boldsymbol A_{12} & \boldsymbol A_{22} & \cdots & \boldsymbol A_{n 2} \\
+					\vdots & \vdots & & \vdots \\
+					\boldsymbol A_{1 n} & \boldsymbol A_{2 n} & \cdots & \boldsymbol A_{n n}
+				\end{array}\right)
+				$$
+				其中, $\boldsymbol A_{ij}$为$a_{ij}$的\textbf{代数余子式}.
+				\begin{itemize}
+					\item$\boldsymbol{A}\boldsymbol{A}^{*}=\boldsymbol{A}^{*}\boldsymbol{A}=\left|\boldsymbol{A}\right|\boldsymbol{E}$
+					\item$\left|\boldsymbol{A}^*\right|=\left|\boldsymbol{A}\right|^{n-1}$
+					\item$(\boldsymbol{A}^*)^{-1}=(\boldsymbol{A}^{-1})^*=\frac{\boldsymbol{A}}{\left|\boldsymbol{A}\right|}$
+					\item$(\boldsymbol{A}^*)^*=\left|\boldsymbol{A}\right|^{n-2}\boldsymbol{A}$
+				\end{itemize}
+			\subsubsection{矩阵分块}
+				$$
+				\boldsymbol{A} =
+				\left(\begin{array}{ccc}
+					\boldsymbol{A}_{11} & \boldsymbol{A}_{12} & \boldsymbol{A}_{13} \\
+					\boldsymbol{A}_{21} & \boldsymbol{A}_{22} & \boldsymbol{A}_{23} \\
+					\boldsymbol{A}_{31} & \boldsymbol{A}_{32} & \boldsymbol{A}_{33} \\
+				\end{array}\right)
+				$$
+				仍然遵循矩阵的运算性质,且
+				$$
+				\left(\begin{array}{cccc}
+					\boldsymbol{A}_{1} & & & \\
+					& \boldsymbol{A}_{2} & & \\
+					& & \ddots & \\
+					& & & \boldsymbol{A}_{s}
+				\end{array}\right)^{-1} \\
+				=
+				\left(\begin{array}{cccc}
+					\boldsymbol{A}_{1}^{-1} & & & \\
+					& \boldsymbol{A}_{2}^{-1} & & \\
+					& & \ddots & \\
+					& & & \boldsymbol{A}_{s}^{-1}
+				\end{array}\right)
+				$$
+				$$
+				\left(\begin{array}{cccc}
+					& & & \boldsymbol{A}_{1} \\
+					& & \boldsymbol{A}_{2} & \\
+					& \iddots & & \\
+					\boldsymbol{A}_{s}& & &
+				\end{array}\right)^{-1} \\
+				=
+				\left(\begin{array}{cccc}
+					& & &\boldsymbol{A}_{s}^{-1} \\
+					& & \boldsymbol{A}_{s-1}^{-1} & \\
+					& \iddots & & \\
+					\boldsymbol{A}_{1}^{-1} & & &
+				\end{array}\right)
+				$$
+				利用分块:
+				$$
+				\begin{gathered}
+					\left(\begin{array}{cc}
+						\boldsymbol E_{m} & \boldsymbol O \\
+						-\boldsymbol B & \boldsymbol E_{n}
+					\end{array}\right)\left(\begin{array}{cc}
+						\boldsymbol E_{m} & \boldsymbol A \\
+						\boldsymbol B & \boldsymbol E_{n}
+					\end{array}\right)=\left(\begin{array}{cc}
+						\boldsymbol E_{m} & \boldsymbol A \\
+						\boldsymbol O & \boldsymbol E_{n}-\boldsymbol B \boldsymbol A
+					\end{array}\right)\\
+					\left(\begin{array}{cc}
+						\boldsymbol E_{m} & \boldsymbol A \\
+						\boldsymbol B & \boldsymbol E_{n}
+					\end{array}\right)\left(\begin{array}{cc}
+						\boldsymbol E_{m} & \boldsymbol O \\
+						-\boldsymbol B & \boldsymbol E_{n}
+					\end{array}\right)=\left(\begin{array}{cc}
+						\boldsymbol E_{m}-\boldsymbol A \boldsymbol B & \boldsymbol A \\
+						\boldsymbol O & \boldsymbol E_{n}
+					\end{array}\right) \\
+					\left|\begin{array}{cc}
+						\boldsymbol E_{m} & \boldsymbol A \\
+						\boldsymbol O & \boldsymbol E_{n}-\boldsymbol B \boldsymbol A
+					\end{array}\right|=\left|\begin{array}{cc}
+						\boldsymbol E_{m}-\boldsymbol A \boldsymbol B & \boldsymbol A \\
+						\boldsymbol O & \boldsymbol E_{n}
+					\end{array}\right|\\
+					|\boldsymbol E_{n}-\boldsymbol B \boldsymbol A|=|\boldsymbol 	E_{m}-\boldsymbol A \boldsymbol B|
+				\end{gathered}
+				$$
+				另外,利用矩阵相似,可得$|x \boldsymbol E-\boldsymbol B \boldsymbol A|=x^{n-m}|x \boldsymbol E-\boldsymbol A \boldsymbol B|$:
+				$$
+				\begin{gathered}
+					\left(\begin{array}{cc}
+						\boldsymbol E_{n} & \boldsymbol B \\
+						\boldsymbol O & \boldsymbol E_{m}
+					\end{array}\right)\left(\begin{array}{cc}
+						\boldsymbol O & \boldsymbol O \\
+						\boldsymbol A & \boldsymbol A \boldsymbol B
+					\end{array}\right)\left(\begin{array}{cc}
+						\boldsymbol E_{n} & -\boldsymbol B \\
+						\boldsymbol O & \boldsymbol E_{m}
+					\end{array}\right)=\left(\begin{array}{cc}
+						\boldsymbol B \boldsymbol A & \boldsymbol O \\
+						\boldsymbol A & \boldsymbol O
+					\end{array}\right) \\
+					\left(\begin{array}{cc}
+						\boldsymbol O & \boldsymbol O \\
+						\boldsymbol A & \boldsymbol A \boldsymbol B
+					\end{array}\right) \text { 与 }\left(\begin{array}{cc}
+						\boldsymbol B \boldsymbol A & \boldsymbol O \\
+						\boldsymbol A & \boldsymbol O
+					\end{array}\right) \text { 相似 } \\
+					\left|x \boldsymbol E-\left(\begin{array}{cc}
+						\boldsymbol O & \boldsymbol O \\
+						\boldsymbol A & \boldsymbol A \boldsymbol B
+					\end{array}\right)\right|=\left|x \boldsymbol E-\left(\begin{array}{cc}
+						\boldsymbol B \boldsymbol A &\boldsymbol  O \\
+						\boldsymbol A & \boldsymbol O
+					\end{array}\right)\right|
+				\end{gathered}
+				$$
+				\begin{itemize}
+					\item $\boldsymbol A \boldsymbol B$ 和 $\boldsymbol B \boldsymbol A$ 的特征多项式只相差 $x^{n-m}$, 非 0 特征值相同, 特征值0的代数重数相差 $n-m$
+					\item 求行列式 $\left|x \boldsymbol E-\boldsymbol \alpha \boldsymbol \beta^{T}\right|$, 其中 $\boldsymbol \alpha$ 和 $ \boldsymbol \beta$ 为 $n$ 维 列向量 , 那么 $\left|x \boldsymbol E-\boldsymbol \alpha \boldsymbol \beta^{T}\right|=x^{n-1}\left|x \boldsymbol E- \boldsymbol \beta^{T} \boldsymbol \alpha\right|=x^{n-1}\left(x- \boldsymbol \beta^{T} \boldsymbol \alpha\right)=$ $x^{n-1}(x-\operatorname{tr}(\boldsymbol A))$
+					\item $\boldsymbol A$ 和 $\boldsymbol B$ 均为方阵时 , $\boldsymbol A \boldsymbol B$ 和 $\boldsymbol B \boldsymbol A$ 的特征多项式相同, 特征值完全相同, 行列式和迹都相等. 事实上,当 $\boldsymbol A$ 和 $\boldsymbol B$ 不是方阵时,$\boldsymbol A \boldsymbol B$ 和 $\boldsymbol B \boldsymbol A$ 有相同的非零特征值. 因为若 $\boldsymbol A \boldsymbol B \boldsymbol x = \lambda \boldsymbol x \neq \boldsymbol 0$,则 $\boldsymbol B \boldsymbol A \boldsymbol B \boldsymbol x = \lambda \boldsymbol B \boldsymbol x \neq \boldsymbol 0$
+				\end{itemize}
+		\subsection{行列式}
+			\subsubsection{逆序}
+				在$n$级排列$i_1i_2\dots i_n$中, 若$j<k$且$i_j>i_k$, 则$(i_j,i_k)$构成\textbf{逆序}.
+
+				排列中逆序的总数称为\textbf{逆序数}.
+			\subsubsection{行列式的定义}
+				$\boldsymbol{A}$是方阵:
+				$$
+				\boldsymbol{D}=det\left(\boldsymbol{A}\right)=|\boldsymbol{A}|=
+				\left|\begin{array}{cccc}
+					a_{11} & a_{12} & \cdots & a_{1 n} \\
+					a_{21} & a_{22} & \cdots & a_{2 n} \\
+					\vdots & \vdots & & \vdots \\
+					a_{n 1} & a_{n 2} & \cdots & a_{n n}
+				\end{array}\right|=
+				\sum_{j_{1} j_{2} \cdots j_{n}}(-1)^{\tau\left(j_{1} j_{2} \cdots j_{n}\right)} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}
+				$$
+				其中, $\tau\left(j_{1} j_{2} \cdots j_{n}\right)$ 是排列的\textbf{逆序数}.
+
+				转置不改变行列式:
+				$$
+				\left| \boldsymbol{A}\right| = \left| \boldsymbol{A}^{T}\right|
+				$$
+			\subsubsection*{行列式的行线性性}
+				$$
+				k\cdot\left|\begin{array}{cccc}
+					a_{11} & a_{12} & \cdots & a_{1 n} \\
+					\vdots & \vdots & & \vdots \\
+					b_{1} & b_{2} & \cdots & b_{n} \\
+					\vdots & \vdots & & \vdots \\
+					a_{n 1} & a_{n 2} & \cdots & a_{n n}
+				\end{array}\right|+
+				l\cdot\left|\begin{array}{cccc}
+					a_{11} & a_{12} & \cdots & a_{1 n} \\
+					\vdots & \vdots & & \vdots \\
+					c_{1} & c_{2} & \cdots & c_{n} \\
+					\vdots & \vdots & & \vdots \\
+					a_{n 1} & a_{n 2} & \cdots & a_{n n}
+				\end{array}\right|
+				=\left|\begin{array}{cccc}
+					a_{11} & a_{12} & \cdots & a_{1 n} \\
+					\vdots & \vdots & & \vdots \\
+					kb_{1}+lc_{1} & kb_{2}+lc_{2} & \cdots & kb_{n}+lc_{n} \\
+					\vdots & \vdots & & \vdots \\
+					a_{n 1} & a_{n 2} & \cdots & a_{n n}
+				\end{array}\right|
+				$$
+				列上同理.
+			\subsubsection{行列式的计算}
+				\begin{itemize}
+					\item 行列式某行乘以常数$k$, 行列式也变为$k$倍
+					\item 行列式某两行交换, 行列式取反
+					\item 行列式某一行的非零倍加到另一行, 行列式不变
+					\item 在方阵中选取$k$行$k$列, 交点元素构成其一个\textbf{子式}$\boldsymbol M$. 去除这些行列, 剩下的的元素构成一个\textbf{余子式}$\boldsymbol M^{\prime}$, 进行\textbf{拉普拉斯展开}:
+					$$
+					\text{代数余子式}\boldsymbol A=(-1)^{\left(i_{1}+i_{2}+\cdots+i_{k}\right)+\left(j_{1}+j_{2}+\cdots+j_{k}\right)} \boldsymbol M^{\prime}
+					$$
+					$$
+					\boldsymbol D=\sum_{i=1}^{t}\boldsymbol M_{i} \boldsymbol A_{i}=\boldsymbol M_{1} \boldsymbol A_{1}+\boldsymbol M_{2} \boldsymbol A_{2}+\cdots+\boldsymbol M_{t} \boldsymbol A_{t}
+					$$
+					$$
+					\left(\begin{array}{cccc}
+						a & 0 & b & 0 \\
+						0 & c & 0 & d \\
+						y & 0 & x & 0 \\
+						0 & w & 0 & z \\
+					\end{array}\right)
+					=(-1)^{(1+3)+(1+3)}\left(\begin{array}{cc}
+						a & b \\
+						y & x \\
+					\end{array}\right)
+					\left(\begin{array}{cc}
+						c & d \\
+						w & z \\
+					\end{array}\right)
+					=(ax-by)(cz-dw)
+					$$
+					\item \textbf{范德蒙德行列式}
+					$$
+					\boldsymbol D_{n}=\left|\begin{array}{cccc}
+						1 & 1 & \cdots & 1 \\
+						x_{1} & x_{2} & \cdots & x_{n} \\
+						x_{1}^{2} & x_{2}^{2} & \cdots & x_{n}^{2} \\
+						\vdots & \vdots & & \vdots \\
+						x_{1}^{n-1} & x_{2}^{n-1} & \cdots & x_{n}^{n-1}
+					\end{array}\right|=\prod_{1 \leqslant i<j \leqslant n}\left(x_{j}-x_{i}\right)
+					$$
+					\item 三角化
+					$$
+					\left(\begin{array}{cccc}
+						1+a & 1 & 1 & 1 \\
+						1 & 1-a & 1 & 1 \\
+						1 & 1 & 1+b & 1 \\
+						1 & 1 & 1 & 1-b \\
+					\end{array}\right)
+					=a^2b^2\left(\begin{array}{cccc}
+						1 & -\frac{1}{a} & \frac{1}{b} & -\frac{1}{b} \\
+						0 & 1 & 0 & 0 \\
+						0 & 0 & 1 & 0 \\
+						0 & 0 & 0 & 1 \\
+					\end{array}\right)
+					=a^2b^2
+					$$
+					\item 爪型行列式
+					$$
+					\left(\begin{array}{ccccc}
+						a_1 & a_2 & a_3 & \dots & a_n \\
+						c_2 & b_2 & & & \\
+						c_3 & & b_3 & & \\
+						\vdots & & & \ddots & \\
+						c_n & & & & b_n \\
+					\end{array}\right)
+					=(a_1-\sum \limits _{j=2}^n\frac{a_jc_j}{b_j})b_2b_3\dots b_n
+					$$
+					\item 镶边法
+					$$
+					\left(\begin{array}{ccc}
+						a+x & a+y & a+z \\
+						b+x & b+y & b+z \\
+						c+x & c+y & c+z \\
+					\end{array}\right)
+					=\left(\begin{array}{cccc}
+						1 & -x & -y & -z \\
+						0 & a+x & a+y & a+z \\
+						0 & b+x & b+y & b+z \\
+						0 & c+x & c+y & c+z \\
+					\end{array}\right)
+					=\left(\begin{array}{cccc}
+						1 & -x & x-y & x-z \\
+						1 & a & 0 & 0 \\
+						1 & b & 0 & 0 \\
+						1 & c & 0 & 0 \\
+					\end{array}\right)
+					=0
+					$$
+					\item 构造递推关系或数学归纳
+					$$
+					\boldsymbol D_n=\left|\begin{array}{cccc}
+						1 & 1 & \cdots & 1 \\
+						x_1 & x_2 & \cdots & x_n \\
+						x_1^2 & x_2^2 & \cdots & x_n^2 \\
+						\vdots & \vdots & \ddots & \vdots \\
+						x_1^n & x_2^n & \cdots & x_n^n \\
+					\end{array}\right|
+					=(x_n-x_1)(x_n-x_2)\dots (x_n-x_{n-1})\boldsymbol D_{n-1}
+					=\prod \limits _{1\leqslant i<j\leqslant n}(x_j-x_i)
+					$$
+				\end{itemize}
+			\subsubsection{Cramer法则}
+				$$
+				\left\{\begin{array}{c}
+					a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1} \\
+					a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2} \\
+					\cdots \cdots \cdots \\
+					a_{n 1} x_{1}+a_{n 2} x_{2}+\cdots+a_{n n} x_{n}=b_{n}
+				\end{array}\right.
+				$$
+				$$
+				x_{j}=\frac{\boldsymbol D_{j}}{\boldsymbol D}, \quad 1 \leqslant j \leqslant n .
+				$$
+				其中 $\boldsymbol D=|\boldsymbol{A}|\neq 0, \boldsymbol D_{j}$ 是将 $\boldsymbol{A}$ 的第 $j$ 列用常数列
+				$$
+				\boldsymbol{\beta}=\left(\begin{array}{c}
+					b_{1} \\
+					b_{2} \\
+					\vdots \\
+					b_{n}
+				\end{array}\right)
+				$$
+				代替所得到的 $n$ 阶行列式.
+	\section{秩与向量}
+		\subsection{矩阵初等变换}
+			$$
+			\boldsymbol{E}(i, j)=\left(
+			\begin{array}{cccccccccc}
+				1 & & & & & & & & \\
+				& \ddots & & & & & & & & \\
+				& & 1 & & & & & & & \\
+				& & & 0 & \cdots & 1 & & & & \\
+				& & & \vdots & \ddots & \vdots & & & & \\
+				& & & 1 & \cdots & 0 & & & \\
+				& & & & & & 1 & & \\
+				& & & & & & & \ddots & \\
+				& & & & & & & & 1
+			\end{array}\right)
+			$$
+			$$
+			\boldsymbol{E}(i(k))=\left(
+			\begin{array}{ccccc}
+				1 & & & & \\
+				& \ddots & & & \\
+				& & k & & \\
+				& & & \ddots & \\
+				& & & & 1
+			\end{array}\right)
+			\boldsymbol{E}(i, j(k))=\left(\begin{array}{cccccccc}
+				1 & & & & & \\
+				& \ddots & & & & & \\
+				& & 1 & \cdots & k & & \\
+				& & & \ddots & \vdots & & \\
+				& & & & 1 & & \\
+				& & & & & \ddots & \\
+				& & & & & & 1
+			\end{array}\right)
+			$$
+			\noindent \textbf{左乘}这些矩阵对应初等\textbf{行}变换, \textbf{右乘}对应\textbf{列}变换.
+		\subsection{相抵关系}
+			两个矩阵能通过初等变换互相转化, 那么这两个矩阵\textbf{相抵}, 写作
+			$$
+			\boldsymbol{P}\boldsymbol{A}\boldsymbol{Q} = \boldsymbol{B}
+			$$
+			将A化为\textbf{相抵标准形}:
+			$$
+			\boldsymbol{P}\boldsymbol{A}\boldsymbol{Q}=
+			\left(\begin{array}{cc}
+				\boldsymbol{E_{r}} &\boldsymbol{O} \\
+				\boldsymbol{O} &\boldsymbol{O}
+			\end{array}\right)
+			$$
+			将矩阵$\left(\begin{array}{c}\boldsymbol{A}\quad\boldsymbol{E}\end{array}\right)$进行行初等变换, 可得$\left(\begin{array}{c}\boldsymbol{E}\quad\boldsymbol{A^{-1}}\end{array}\right)$
+
+			同样, 将$\left(\begin{array}{c}\boldsymbol{A} \\ \boldsymbol{E}\end{array}\right)$进行列初等变换, 可得$\left(\begin{array}{c}\boldsymbol{E} \\ \boldsymbol{A^{-1}}\end{array}\right)$
+			\begin{itemize}
+				\item 相抵矩阵具有相同的\textbf{秩}, 秩相同的矩阵相抵
+			\end{itemize}
+		\subsection{矩阵的秩}
+			最大的\textbf{非零}子式阶数, 记作
+			$$
+			\operatorname{rank}(\boldsymbol{A})=r(\boldsymbol{A})=r\quad
+			\text{记}r(\boldsymbol{O})=0
+			$$
+			\subsubsection{等价描述}
+			\begin{itemize}
+				\item 矩阵行(列)向量组极大线性无关组所含向量个数, 即\textbf{行(列)秩}
+				\item 非零\textbf{特征值}个数
+				\item 相抵标准形对角线$1$的数量
+			\end{itemize}
+				\subsubsection{有关秩的常见结论}
+				\begin{itemize}
+					\item $r(\boldsymbol{A})=r(\boldsymbol{A}^T)$
+					\item $r(\boldsymbol{A})=r(\boldsymbol{AA}^T)=r(\boldsymbol{A}^T\boldsymbol A)$
+					\item $r(\boldsymbol{A}+\boldsymbol{B})\leqslant r(\boldsymbol{A})+r(\boldsymbol{B})$
+					\item $\boldsymbol{A}:n\times s,r(\boldsymbol{A})+r(\boldsymbol{B})-s\leqslant r(\boldsymbol{AB})\leqslant min\{r(\boldsymbol{A}),r(\boldsymbol{B})\}\leqslant r(\boldsymbol{A})+r(\boldsymbol{B})$
+					\item $max\{r(\boldsymbol{A}),r(\boldsymbol{B})\}\leqslant r(\boldsymbol{A}\quad\boldsymbol{B})\leqslant r(\boldsymbol{A})+r(\boldsymbol{B})$
+					\item 若$\boldsymbol{AB}=\boldsymbol{O}$, 则$r(\boldsymbol{A})+r(\boldsymbol{B})\leqslant n$
+					\item $r(\boldsymbol{A}^*)=
+					\left \{
+					\begin{array}{cl}
+						n, & r(\boldsymbol{A})=n \\
+						1, & r(\boldsymbol{A})=n-1 \\
+						0, & r(\boldsymbol{A})<n-1 \\
+					\end{array}
+					\right.$
+					\item $r(\boldsymbol{A})=1\Leftrightarrow$存在非零列向量$\boldsymbol\alpha$和非零行向量$\boldsymbol{\beta ^T}$使$\boldsymbol{A=\alpha\beta^T}$
+				\end{itemize}
+			\subsubsection{降秩定理}
+				\begin{itemize}
+					\item \textbf{第一降秩定理}
+
+						$\boldsymbol{A}$ 与 $\boldsymbol{D}$ 分别为 $m$ 阶和 $n$ 阶方阵:
+						$$
+						r\left(\left(\begin{array}{ll}
+							\boldsymbol{A} & \boldsymbol{B} \\
+							\boldsymbol{C} & \boldsymbol{D}
+						\end{array}\right)\right)=\left\{\begin{array}{l}
+							r(\boldsymbol{A})+r\left(\boldsymbol{D}-\boldsymbol{C A}^{-1} \boldsymbol{B}\right), \text { 若 } \boldsymbol{A} \text { 可逆 } \\
+							r(\boldsymbol{D})+r\left(\boldsymbol{A}-\boldsymbol{B} \boldsymbol{D}^{-1} \boldsymbol{C}\right), \text { 若 } \boldsymbol{D} \text { 可逆 }
+						\end{array}\right.
+						$$
+					\item \textbf{第二降秩定理}
+
+						$\boldsymbol{A}$ 为 $m$ 阶可逆矩阵, $\boldsymbol{D}$ 为 $n$ 阶可逆矩阵:
+						$$
+						r(\boldsymbol{A})+r\left(\boldsymbol{D}-\boldsymbol{C A}^{-1} \boldsymbol{B}\right)=r(\boldsymbol{D})+r\left(\boldsymbol{A}-\boldsymbol{B} 	\boldsymbol{D}^{-1} \boldsymbol{C}\right)
+						$$
+				\end{itemize}
+		\subsection{秩为1的矩阵}
+			\subsubsection{等价描述}
+				设 $\boldsymbol A$ 为 $m \times n$ 阶非零方阵:
+				\begin{itemize}
+					\item $r(\boldsymbol A)=1$
+					\item \textbf{满秩分解}: 存在$m$ 维列向量 $\boldsymbol \alpha\neq\mathbf0$ 和 $n$ 维列向量 $\boldsymbol \beta\neq\mathbf0$, 使得 $\boldsymbol A=\boldsymbol \alpha \boldsymbol \beta^{T}$
+					\item 方阵 $A$ 的行与行(列与列)之间只相差一个比列关系
+				\end{itemize}
+			\subsubsection{秩为1矩阵的性质}
+				\begin{itemize}
+						\item $\operatorname{tr}(\boldsymbol A)= \boldsymbol \beta^{T} \boldsymbol \alpha$
+						\item $\boldsymbol \alpha$ 是方程组 $ \boldsymbol \beta^{T} \boldsymbol x=\mathbf0$ 的解 $\Leftrightarrow \boldsymbol \alpha$ 和 $ \boldsymbol \beta$ 正交 $\Leftrightarrow \operatorname{tr}(\boldsymbol A)=0$
+						\item $\boldsymbol A^{m}=\operatorname{tr}(\boldsymbol A)^{m-1} \boldsymbol A$, 特别地 , $\boldsymbol A^{2}=\operatorname{tr}(\boldsymbol A) \boldsymbol A$
+						\item $\boldsymbol A$ 的最小多项式为 $m_{\boldsymbol A}(x)=x^{2}-\operatorname{tr}(\boldsymbol A) x$
+						\item $\boldsymbol A \boldsymbol \alpha=\operatorname{tr}(\boldsymbol A) \boldsymbol \alpha$
+						\item 设 $\boldsymbol \xi$ 是方程组 $ \boldsymbol \beta^{T}\boldsymbol x=\mathbf0$ 的非零解 , 那么 $\boldsymbol A \boldsymbol \xi=\mathbf0$
+						\item 方程组 $ \boldsymbol \beta^{T} \boldsymbol x=\mathbf0$ 与 $\boldsymbol A \boldsymbol x=\mathbf0$ 同解
+						\item 若 $\operatorname{tr}(\boldsymbol A) \neq 0$, 那么 $\boldsymbol \alpha$ 是 $\boldsymbol A$ 的对应到\textbf{特征值} $\operatorname{tr}(\boldsymbol A)$ 的\textbf{特征向量} , 方程组 $ \boldsymbol \beta^{T} \boldsymbol x=\mathbf0$ 的非零解是对应到特征值 0 的特征向量 . $\boldsymbol A$ 特征值 为 $\operatorname{tr}(\boldsymbol A), \underbrace{0, \cdots, 0}_{n-1 \text { 个 }}, \boldsymbol A$ 可以通过相似变换化为对角矩阵
+						$$
+						\left(\begin{array}{cccc}
+							\operatorname{tr}(\boldsymbol A) & 0 & \cdots & 0 \\
+							0 & 0 & \cdots & 0 \\
+							\cdots & \cdots & \cdots & \cdots \\
+							0 & 0 & \cdots & 0
+						\end{array}\right)
+						$$
+						此时 , $\boldsymbol A$ 的最小多项式为 $m_{\boldsymbol A}(x)=x^{2}-\operatorname{tr}(\boldsymbol A) x$ 没有重根
+						\item 若 $\operatorname{tr}(\boldsymbol A)=0$, 那么 $\boldsymbol A$ 特征值为 $\underbrace{0, \cdots, 0}_{n \text { 个 }}$, 特征值 0 的代数重数为 $n$, 几何重数为 $n-1, \boldsymbol A$ 不可以通过相似变换化为对角矩阵 , 但是 $\boldsymbol A$ 可 以通过相似变换化为如下矩阵
+						$$
+						\left(\begin{array}{cccc}
+							0 & 1 & \cdots & 0 \\
+							0 & 0 & \cdots & 0 \\
+							\cdots & \cdots & \cdots & \cdots \\
+							0 & 0 & \cdots & 0
+						\end{array}\right)
+						$$
+						此时 $\boldsymbol A$ 的最小多项式为 $m_{\boldsymbol A}(x)=x^{2}$ 有重根
+					\end{itemize}
+		\subsection{线性方程组与矩阵}
+			线性方程组对应矩阵:
+			$$
+			\left\{\begin{array}{c}
+				a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1} \\
+				a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2} \\
+				\cdots \cdots \cdots \\
+				a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m}
+			\end{array}\right.
+			\rightarrow
+			\boldsymbol{A}=\left(\begin{array}{cccc}
+				a_{11} & a_{12} & \cdots & a_{1 n} \\
+				a_{21} & a_{22} & \cdots & a_{2 n} \\
+				\vdots & \vdots & & \vdots \\
+				a_{m 1} & a_{m 2} & \cdots & a_{m n}
+			\end{array}\right)
+			$$
+			$$
+			\tilde{\boldsymbol{A}}=
+			\left(\begin{array}{ccccc}
+				a_{11} & a_{12} & \cdots & a_{1 n} & b_{1} \\
+				a_{21} & a_{22} & \cdots & a_{2 n} & b_{2} \\
+				\vdots & \vdots & & \vdots & \vdots \\
+				a_{m 1} & a_{m 2} & \cdots & a_{m n} & b_{m}
+			\end{array}\right),
+			\boldsymbol{x}=
+			\left(\begin{array}{c}
+				x_{1} \\
+				x_{2} \\
+				\vdots \\
+				x_{n} \\
+			\end{array}\right),
+			\boldsymbol{\beta}=
+			\left(\begin{array}{c}
+			b_{1} \\
+			b_{2} \\
+			\vdots \\
+			b_{m} \\
+			\end{array}\right)
+			$$
+			对增广矩阵做行变换化为\textbf{简化行阶梯形矩阵}, 就是消元法解方程组过程.
+
+			方程组的简化行阶梯形矩阵对应线性方程组的\textbf{标准阶梯形}:
+			$$
+			\left \{\begin{array}{rcl}
+				a_{1j_1}x_{j_1}+\qquad \cdots \qquad +a_{1j_r}x_{j_r}+\dots +a_{1n}x_n & = & b_1 \\
+				a_{2j_2}x_{j_2}+\dots +a_{2j_r}x_{j_r}+\dots +a_{2n}x_n & = & b_2 \\
+				\cdots \cdots \cdots \cdots \\
+				a_{rj_r}x_{j_r}+\dots +a_{rn}x_n & = & b_r \\
+				0 & = & b_{r+1} \\
+				\cdots \cdots \cdots \cdots \\
+				0 & = & b_m
+			\end{array}
+			\right.$$
+			\subsubsection{线性方程组的有解性}
+				$\boldsymbol{A}\boldsymbol{x}=\boldsymbol{\beta}$, 其中 $\boldsymbol{A}$ 为 $m \times n$ 矩阵:
+				\begin{itemize}
+					\item $\boldsymbol{\beta} = \mathbf{0}$, 则
+						\subitem $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 只有零解$\Leftrightarrow$ $r(\boldsymbol{A})=n$, 即$\left| \boldsymbol{A} \right| \neq 0$
+						\subitem $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 有非零解(无穷多解)$\Leftrightarrow$ $r(\boldsymbol{A})<n$, 即$\left| \boldsymbol{A} \right| = 0$
+					\item $\boldsymbol{\beta} \neq \mathbf{0}$, 则
+						\subitem $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 有解$\Leftrightarrow$ $r(\boldsymbol{A})=r(\boldsymbol{\tilde A})$
+							\subsubitem 有唯一解:$r(\boldsymbol{A})=r(\boldsymbol{\tilde A})=n$
+							\subsubitem 有无数解:$r(\boldsymbol{A})=r(\boldsymbol{\tilde A})<n$
+						\subitem $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 无解$\Leftrightarrow$ $r(\boldsymbol{A})<r(\boldsymbol{\tilde A})$
+					\item $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 有解$\Leftrightarrow$ $\boldsymbol{\beta}$ 可以由 $\boldsymbol{A}$的列向量组线性表示
+				\end{itemize}
+		\subsection{向量空间}
+			设 $\mathbf{K}$ 为数域, 由 $\mathbf{K}$ 中元素组成的 $n$ 元有序数组称为 $\mathbf{K}$ 上的一个 $n$ 维向量. $\mathbf{K}$ 上全体 $n$ 维向量的集合记作 $\mathbf{K}^{n}$. 通常用小写希腊字母 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 等表示向量.
+
+			$\mathbf{K}$ 上的 $n$ 维向量可表成 $\mathbf{K}$ 上的 $1 \times n$ 矩阵
+			$$
+			\boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)
+			$$
+			也可将 $n$ 维向量表成 $n \times 1$ 矩阵
+			$$
+			\boldsymbol{\alpha}=\left(\begin{array}{c}
+				a_{1} \\
+				a_{2} \\
+				\vdots \\
+				a_{n}
+			\end{array}\right)
+			$$
+			\subsubsection{基本性质}
+				关于向量的加法和纯量乘法这两种运算具有以下基本性质
+				\begin{itemize}
+					\item 加法交换律: $\forall\boldsymbol{\alpha}, \boldsymbol{\beta} \in \mathbf{K}^{n}$, $\boldsymbol{\alpha}+\boldsymbol{\beta}=\boldsymbol{\beta}+\boldsymbol{\alpha}$
+					\item 加法结合律: $\forall\boldsymbol{\alpha}, \boldsymbol{\beta} \in \mathbf{K}^{n}$, $(\boldsymbol{\alpha}+\boldsymbol{\beta})+\boldsymbol{\gamma}=\boldsymbol{\alpha}+(\boldsymbol{\beta}+\boldsymbol{\gamma})$
+					\item 零元存在: 以 $\mathbf{0}$ 表 $n$ 维零向量, $\forall\boldsymbol{\alpha} \in \mathbf{K}^{n}$, $\mathbf{0}+\boldsymbol{\alpha}=\boldsymbol{\alpha}+\mathbf{0}=\boldsymbol{\alpha}$
+					\item 负向量存在: $\forall\boldsymbol{\alpha} \in \mathbf{K}^{n}$,$\exists\boldsymbol{\beta} \in \mathbf{K}^{n}$ 使$\boldsymbol{\alpha}+\boldsymbol{\beta}=\boldsymbol{\beta}+\boldsymbol{\alpha}=\mathbf{0}$\\$\boldsymbol{\beta}$ 为 $\boldsymbol{\alpha}$ 的负向量, 记作 $-\boldsymbol{\alpha}$
+					\item $\forall\boldsymbol\alpha \in \mathbf{K}^{n}$, $1 \cdot \boldsymbol\alpha=\boldsymbol\alpha$
+					\item $\forall k, l \in \mathbf{K}$ , $\forall\boldsymbol\alpha \in \mathbf{K}^{n}$, $(k \cdot l) \boldsymbol{\alpha}=k(l \boldsymbol{\alpha})$
+					\item $\forall k \in \mathbf{K}$ , $\forall\boldsymbol{\alpha}, \boldsymbol{\beta} \in \mathbf{K}^{n}$, $k(\boldsymbol{\alpha}+\boldsymbol{\beta})=k \boldsymbol{\alpha}+k \boldsymbol{\beta}$
+					\item $\forall k, l \in \mathbf{K}$ , $\forall\boldsymbol\alpha \in \mathbf{K}^{n}$, $(k+l) \cdot \boldsymbol\alpha=k \boldsymbol\alpha+l \boldsymbol\alpha$
+				\end{itemize}
+			\subsubsection{线性子空间}
+				$\boldsymbol W \subseteq \mathbf{K}$:
+				\begin{itemize}
+					\item $\forall\boldsymbol{\alpha}, \boldsymbol{\beta} \in \boldsymbol W$, $\boldsymbol{\alpha}+\boldsymbol{\beta} \in \boldsymbol W$
+					\item $\forall\boldsymbol{\alpha} \in \boldsymbol W$ 和 $k \in \mathbf{K}$, $k \boldsymbol{\alpha} \in \boldsymbol W$
+				\end{itemize}
+				则称 $\boldsymbol W$ 是 $\mathbf{K}^{n}$ 的一个\textbf{子空间}.
+
+				$\mathbf{K}^{n}$ 中单独一个零向量构成 $\mathbf{K}^{n}$ 的一个子空间, 叫做\textbf{零子空间}, 记作 $\{\mathbf{0}\}$. $\mathbf{K}^{n}$ 也是 $\mathbf{K}^{n}$ 的子空间.
+
+				$\mathbf{K}^{n}$ 和零子空间叫做 $\mathbf{K}^{n}$ 的\textbf{平凡子空间}, 其余子空间都叫做\textbf{非平凡子空间}.
+			\subsubsection*{线性子空间的例子}
+				$$
+				\boldsymbol W=\left\{\left(\begin{array}{l}
+					x_{1} \\
+					x_{2} \\
+					x_{3}
+				\end{array}\right) \in \mathbf{K}^{3} \mid x_{1}-x_{2}+x_{3}=0\right\}
+				=\left\{\left(\begin{array}{c}
+				x_{1} \\
+				x_{1}+x_{3} \\
+				x_{3}
+				\end{array}\right) \mid x_{1}, x_{3} \in \mathbf{K}\right\}
+				\text{是} \mathbf{K}_{3} \text{的一个子空间}.
+				$$
+				一般地,
+				$$
+				\boldsymbol W=\left\{\boldsymbol{\alpha} \in \mathbf{K}^{n} \mid \boldsymbol{A\alpha}=\mathbf{0}\right\} \text{是齐次方程组全部解向量构成的\textbf{解空间}}.
+				$$
+			\subsubsection{构造子空间的一个常用方法}
+				$\boldsymbol{\Sigma}$ 为由 $\mathbf{K}^{n}$ 中向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 组成的向量组.
+				$$
+				\boldsymbol L\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right)=\left\{\sum_{i=1}^{s} k_{i} \boldsymbol{\alpha}_{i} \mid k_{i} \in \mathbf{K}, 1 \leqslant i \leqslant s\right\}\text{是} \mathbf{K}^{n} \text{的一个子空间}.
+				$$
+		\subsection{向量组的秩}
+			\subsubsection{线性组合}
+				$\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\boldsymbol{s}}, \boldsymbol{\beta} \in \mathbf{K}^{n}$, 若存在 $k_{1}, k_{2}, \cdots, k_{\boldsymbol{s}} \in \mathbf{K}$:
+				$$
+				\boldsymbol{\beta}=\sum_{i=1}^{s} k_{i} \boldsymbol{\alpha}_{i}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} 	\boldsymbol{\alpha}_{s}=(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\cdots,\boldsymbol{\alpha}_n)\left(\begin{array}{l}
+					k_{1} \\
+					k_{2} \\
+					\vdots \\
+					k_{n}
+				\end{array}\right)
+				$$
+				则向量 $\boldsymbol{\beta}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\boldsymbol{s}}$ 的一个线性组合. $k_{1}, k_{2}, \cdots, k_{s}$ 为线性组合的\textbf{系数}.
+				若$\boldsymbol{\Sigma_1}$, $\boldsymbol{\Sigma_2}$中的向量能相互线性表示, 则这两个向量组等价, $\boldsymbol{\Sigma_1}\sim\boldsymbol{\Sigma_2}$.
+			\subsubsection{线性相关与线性无关}
+				$\boldsymbol{\Sigma}$ 是由 $\mathbf{K}^{n}$ 中向量向量组. 若存在数域 $\mathbf{K}$ 中一组不全为零的数 $k_{1}, k_{2}, \cdots, k_{s}$:
+				$$
+				k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0}
+				$$
+				则 $\boldsymbol{\Sigma}$ 线性相关, 否则线性无关. 包含\textbf{零向量}的向量组必线性相关.
+				\subsubsection*{线性无关的充要条件}
+					\begin{itemize}
+						\item 对于$n$个$n$维向量:
+							\subitem 组成矩阵行列式不为0
+							\subitem 组成矩阵行满秩/列满秩/满秩
+						\item 任何一个向量不是其余向量的线性组合
+						\item \textbf{必要条件:}向量个数不大于维数
+					\end{itemize}
+		\subsection{极大线性无关组}
+			$\boldsymbol{\Sigma}$ 是 $\mathbf{\mathbf{K}}^{n}$ 中的一个向量组, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r} \in \boldsymbol{\Sigma}$:
+			\begin{itemize}
+				\item $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关
+				\item $\forall\boldsymbol{\beta} \in \boldsymbol{\Sigma}$, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}, \boldsymbol{\beta}$ 线性相关
+			\end{itemize}
+			则$\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 为 $\boldsymbol{\Sigma}$ 的一个\textbf{极大线性无关组}. $r(\boldsymbol{\Sigma})=r$
+
+			$\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 构成 $\mathbf{\mathbf{K}}^{n}$ 的子空间 $\boldsymbol{\Sigma}$ 的一组\textbf{基}.
+		\subsection{线性方程组的解}
+			$\boldsymbol W=\left\{\boldsymbol{\alpha} \in \mathbf{\mathbf{K}}^{n} \mid \boldsymbol{A\alpha}=\mathbf{0}\right\}$的一组基是对应方程组的\textbf{基础解系}. 若$\boldsymbol A$的阶数为$n$, 秩为$r$, 则基础解系中向量个数为$n-r$,记为$\boldsymbol\eta _1,\boldsymbol\eta _2,\dots ,\boldsymbol\eta _{n-r}$, 方程组的\textbf{通解}$\boldsymbol\eta$可表示为它们的线性组合$\boldsymbol\eta =\sum \limits _{j=1}^{n-r} k_j\boldsymbol\eta _j$.
+
+			非齐次线性方程组$\boldsymbol{A\alpha}=\boldsymbol{\beta}\neq 0$的\textbf{导出方程组}为齐次线性方程组$\boldsymbol{A\alpha}=\mathbf{0}$, $\boldsymbol{A\alpha}=\mathbf{0}$的解空间到$\boldsymbol{A\alpha}=\boldsymbol{\beta}\neq 0$的解空间存在$\boldsymbol\eta\rightarrow\boldsymbol\gamma_0+\boldsymbol\eta$的\textbf{双射}, 故非齐次线性方程组$\boldsymbol A\boldsymbol x=\boldsymbol\beta$的解空间
+			$$
+			\boldsymbol W=\left \{ \boldsymbol\gamma _0+\sum \limits _{j=1}^{n-r} k_j\boldsymbol\eta _j\, |\, k_j\in \mathbf{K},1\leqslant j\leqslant n-r \right \}
+			$$
+			\subsubsection{线性方程组的同解}
+				\begin{itemize}
+					\item 设 $\boldsymbol A$ 为 $m \times n$ 阶实方阵 , $\boldsymbol B$ 为 $n \times p$ 阶实方阵
+					$\boldsymbol A \boldsymbol B \boldsymbol x=$ 0 与 $\boldsymbol B \boldsymbol x=0$ 同解$\Leftrightarrow$ $r(\boldsymbol A \boldsymbol B)=r(\boldsymbol B)$
+					\item 设 $\boldsymbol A$ 为 $n \times n$ 阶实方阵:
+					\subitem 若存在整数 $m$, 使得 $\boldsymbol A^{m} \boldsymbol \alpha=0$, $\boldsymbol A^{m-1} \boldsymbol \alpha \neq 0$, 则向量组 $\boldsymbol \alpha, \boldsymbol A \boldsymbol \alpha, \cdots, \boldsymbol A^{m-1} \boldsymbol \alpha$ 线性无关
+					\subitem $\boldsymbol A^{n+1} \boldsymbol x=0$ 与 $\boldsymbol A^{n} \boldsymbol x=0$ 同解
+					\subitem $r\left(\boldsymbol A^{n}\right)=r\left(\boldsymbol A^{n+1}\right)$
+					\item 对于 $n$ 阶方阵 $\boldsymbol A$, 存在整数 $1 \leq i \leq n$, 使得 $r\left(\boldsymbol A^{i}\right)=$ $r\left(\boldsymbol A^{i+1}\right)$ , 且:
+					\subitem 若 $\boldsymbol A^{k} x=0$ 与 $\boldsymbol A^{k+1} x=0$ 同解 , 那么 $\boldsymbol A^{k+1} x=0$ 与 $\boldsymbol A^{k+2} x=0$ 同解
+					\subitem $r\left(\boldsymbol A^{i}\right)=r\left(\boldsymbol A^{i+1}\right)=\cdots=$ $r\left(\boldsymbol A^{n}\right)=r\left(\boldsymbol A^{n+1}\right)=\cdots$
+					\subitem 设 $k=\min \left\{i \mid r\left(\boldsymbol A^{i}\right)=r\left(\boldsymbol A^{i+1}\right), i \geq 1\right\}$. 那么 $k$ 恰等于:
+					\subsubitem 0 作为 $\boldsymbol A$ 的最小多项式 $m_{\boldsymbol A}(x)$ 根的\textbf{重数}
+					\subsubitem $\boldsymbol A$ 的 \textbf{Jordan 标准形中} , 对角线为 0 的 Jordan 块的最大阶数
+				\end{itemize}
+	\section{可逆矩阵}
+		\subsection{特征值与特征向量}
+			$\boldsymbol\alpha\neq\mathbf 0, \boldsymbol{A\alpha} =\lambda \boldsymbol\alpha$, 则$\lambda$为方阵$\boldsymbol A$的\textbf{特征值}, $\boldsymbol\alpha$为$\boldsymbol A$的属于特征值$\lambda$的\textbf{特征向量}, $f(\lambda )=|\lambda \boldsymbol E-\boldsymbol A|$为$\boldsymbol A$的\textbf{特征多项式}:
+			$$
+			\begin{array}{cl}
+			f(\lambda )=|\lambda \boldsymbol E-\boldsymbol A| & = \lambda^{n}-\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}+\cdots+(-1)^{n}|A| \\
+			& = \left(\lambda-\lambda_{1}\right)\left(\lambda-\lambda_{2}\right) \cdots\left(\lambda-\lambda_{n}\right)
+			\end{array}
+			$$
+			\subsubsection{特征值和特征向量求法}
+				\begin{itemize}
+					\item 求$f(\lambda )=|\lambda \boldsymbol{E}-\boldsymbol{A}|$, 解方程$(\lambda \boldsymbol{E}-\boldsymbol{A})\boldsymbol{\alpha}=\mathbf{0}$
+				\end{itemize}
+			\subsubsection{特征值与特征向量的性质}
+				\begin{itemize}
+					\item $n$阶方阵$\boldsymbol A$的特征值为$\lambda _1,\lambda _2,\dots ,\lambda _n$, 则$tr(\boldsymbol A)=\sum \limits _{i=1}^n a _{ii}=\sum \limits _{i=1}^n \lambda _i$, $|\boldsymbol A|=\prod \limits _{i=1}^n \lambda _i$
+					\item 属于不同特征值的特征向量线性无关
+					\item $|\lambda \boldsymbol E-\boldsymbol A^T|=|\lambda \boldsymbol E-\boldsymbol A|$, 但$\boldsymbol A$与$\boldsymbol A^T$不一定具有相同的特征向量
+					\item 若$\lambda$为方阵$\boldsymbol A$的特征值, $\boldsymbol\alpha$为属于$\lambda$的特征向量, 则
+						\subitem $k\lambda$为$k\boldsymbol A$的特征值, $\boldsymbol\alpha$为属于$k\lambda$的特征向量
+						\subitem $\lambda ^m$为$\boldsymbol A^m$的特征值, $\boldsymbol\alpha$为属于$\lambda ^m$的特征向量
+						\subitem 若$\boldsymbol A$可逆:
+						\subitem $\varphi (\lambda)$为$\varphi (\boldsymbol A)$的特征值, $\boldsymbol\alpha$为属于$\varphi (\boldsymbol A)$的特征向量, 其中$\varphi (x)$为多项式
+							\subsubitem $\frac{1}{\lambda}$为$\boldsymbol A^{-1}$的特征值, $\boldsymbol\alpha$为属于$\frac{1}{\lambda}$的特征向量
+							\subsubitem $\frac{|\boldsymbol A|}{\lambda}$为$\boldsymbol A^*$的特征值,$\boldsymbol\alpha$为属于$\frac{|\boldsymbol A|}{\lambda}$的特征向量
+					\item 若$\boldsymbol A^2=\boldsymbol E, \boldsymbol A$的特征值为$\pm1$
+					\item 若$\boldsymbol A^2=\boldsymbol A, \boldsymbol A$的特征值为$0$或$1$
+					\item 若$\exists k, \boldsymbol A^k=\boldsymbol O, \boldsymbol A$的特征值为$0$
+					\item 若$\boldsymbol A$是正交矩阵, $\boldsymbol A$的特征值\textbf{模长}为$\pm1$\\且若$\boldsymbol\alpha$是$\boldsymbol A$属于$\lambda$的特征向量, $\boldsymbol{\overline{\alpha}}$是$\boldsymbol A$属于$\overline{\lambda}$的特征向量
+				\end{itemize}
+			\subsubsection{几何重数和代数重数}
+				几何重数$\leqslant$代数重数, 特征值向量空间的秩$\leqslant$维数
+		\subsection{相似变换}
+			$n$阶方阵$\boldsymbol A,\boldsymbol B$, $n$阶可逆矩阵$\boldsymbol T$, $\boldsymbol B=\boldsymbol T^{-1}\boldsymbol A\boldsymbol T$, 则称方阵$\boldsymbol A,\boldsymbol B$\textbf{相似}, 记作$\boldsymbol A\sim \boldsymbol B$
+			\subsubsection{相似矩阵的性质}
+				\begin{itemize}
+					\item 相似矩阵有相同的特征值:
+					 \subitem 迹, 秩, 行列式, 特征多项式都相同
+					 \subitem 可逆性相同, 如可逆, 则逆矩阵相似
+					\item 设$\boldsymbol A,\boldsymbol B$为$n$阶方阵, 若$\boldsymbol A\sim \boldsymbol B$,则$k\boldsymbol A\sim k\boldsymbol B$, $\boldsymbol A^m\sim \boldsymbol B^m$, $\boldsymbol A^T\sim \boldsymbol B^T$
+					\item 设$\boldsymbol A,\boldsymbol B$为$n$阶方阵,且$\boldsymbol A$可逆,则$\boldsymbol A\boldsymbol B\sim \boldsymbol B\boldsymbol A$
+					\item 设$\varphi (x)$为多项式, $\boldsymbol A,\boldsymbol B$为$n$阶方阵, 若$\boldsymbol A\sim \boldsymbol B$, 则$\varphi (\boldsymbol A)\sim \varphi (\boldsymbol B)$
+					\item 若$\boldsymbol P^{-1}\boldsymbol A_1\boldsymbol P=\boldsymbol B_1$且$\boldsymbol P^{-1}\boldsymbol A_2\boldsymbol P=\boldsymbol B_2$, 则$\boldsymbol A_1+\boldsymbol A_2\sim \boldsymbol B_1+\boldsymbol B_2$,$\boldsymbol A_1\boldsymbol A_2\sim \boldsymbol B_1\boldsymbol B_2$
+				\end{itemize}
+			\subsubsection{对角化}
+				设 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$, 它们分别 属于特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$, 即
+				$$
+				\boldsymbol{A} \boldsymbol{\alpha}_{j}=\lambda_{j} \boldsymbol{\alpha}_{j}, \quad 1 \leqslant j \leqslant n
+				$$
+				令
+				$$
+				\boldsymbol{P}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)
+				$$
+				则得
+				$$
+				\begin{gathered}
+					\boldsymbol{A P}=\boldsymbol{A}\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)=\left(\boldsymbol{A} \boldsymbol{\alpha}_{1}, \boldsymbol{A} \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{A} \boldsymbol{\alpha}_{n}\right)=\left(\lambda_{1} \boldsymbol{\alpha}_{1}, \lambda_{2} \boldsymbol{\alpha}_{2}, \cdots, \lambda_{n} \boldsymbol{\alpha}_{n}\right) \\
+					=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)\left(\begin{array}{cccc}
+						\lambda_{1} & & & \\
+						& \lambda_{2} & & \\
+						& & \ddots & \\
+						& & & \lambda_{n}
+					\end{array}\right)=\boldsymbol{P}\left(\begin{array}{lllll}
+						\lambda_{1} & & & \\
+						& \lambda_{2} & & \\
+						& & \ddots & \\
+						& & & \lambda_{n}
+					\end{array}\right)
+				\end{gathered}
+				$$
+				由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性无关知 $\boldsymbol{P}$ \textbf{可逆}, 因此得
+				$$
+				\boldsymbol{P}^{-1} \boldsymbol{A P}=\left(\begin{array}{ccccc}
+					\lambda_{1} & & & \\
+					& \lambda_{2} & & \\
+					& & \ddots & \\
+					& & & \lambda_{n}
+				\end{array}\right)
+				$$
+				\subsubsection*{相似对角化的条件:}
+				\begin{itemize}
+					\item 充要条件
+						\subitem $\boldsymbol A$有$n$个线性无关的特征向量
+						\subitem $\boldsymbol A$的任一特征值的代数重数等于几何重数
+						\subitem $\boldsymbol A$的Jordan标准形是对角阵, 有$n$个Jordan块, 所有Jordan块均为一阶
+						\subitem $\boldsymbol A$的最小多项式$m_{\boldsymbol{A}(x)}$无重根
+					\item 充分条件
+						\subitem $\boldsymbol A$有$n$个不同的特征值
+						\subitem $\boldsymbol A$为$n$阶幂等矩阵
+				\end{itemize}
+		\subsection{Jordan标准形}
+			$1 \leqslant i \leqslant s$, $\lambda_{i}$ 为复数:
+			$$
+			\boldsymbol{J_{i}}=\left(\begin{array}{ccccc}
+				\lambda_{i} & & & & \\
+				1 & \lambda_{i} & & & \\
+				& 1 & \lambda_{i} & & \\
+				& & \ddots & \ddots & \\
+				& & & 1 & \lambda_{i}
+			\end{array}\right)_{n_{i} \times n_{i}}
+			$$
+			的 $n_{i}$ 阶方阵叫做 $n_{i}$ 阶\textbf{Jordan块}, 由Jordan块组成的分块对角矩阵
+			$$
+			\boldsymbol J=\left(\begin{array}{lllll}
+				\boldsymbol J_1 & & & \\
+				& \boldsymbol J_2 & & \\
+				& & \ddots & \\
+				& & & \boldsymbol{J_s}
+			\end{array}\right)
+			$$
+			叫做Jordan标准形.
+			\subsubsection{Jordan标准形的性质}
+				\begin{itemize}
+					\item $m$ 阶 Jordan 块
+					$$
+					\boldsymbol{J_0}=\left(\begin{array}{cccc}
+						\lambda_{0} & & & \\
+						1 & \lambda_{0} & & \\
+						& \ddots & \ddots & \\
+						& & 1 & \lambda_{0}
+					\end{array}\right)_{m \times m}
+					$$
+					的特征多项式为 $\left(\lambda-\lambda_{0}\right)^{m}$, 并且 $\boldsymbol{J}_{0}$ 不是 $m-1$ 次多项式 $\left(\lambda-\lambda_{0}\right)^{m-1}$ 的根, 即
+					$$
+					\left(\boldsymbol{J}_{0}-\lambda_{0} \boldsymbol{E}\right)^{m-1} \neq \boldsymbol{O}
+					$$
+					\item $m$ 阶 Jordan 块
+					$$
+					\boldsymbol{J}_{0}=\left(\begin{array}{cccc}
+						\lambda_{0} & & & \\
+						1 & \lambda_{0} & & \\
+						& \ddots & \ddots & \\
+						& & 1 & \lambda_{0}
+					\end{array}\right)_{m \times m}, \quad \boldsymbol{J}_{1}=\left(\begin{array}{cccc}
+						\lambda_{1} & & & \\
+						1 & \lambda_{1} & & \\
+						& \ddots & \ddots & \\
+						& & 1 & \lambda_{1}
+					\end{array}\right)_{m \times m}
+					$$
+					为两个同阶的Jordan块, 若 $\lambda_{0} \neq \lambda_{1}$, 则 $\boldsymbol J_{0}$ 与 $\boldsymbol J_{1}$ 不相似.
+				\end{itemize}
+			\subsubsection{Jordan标准形的意义}
+				\begin{itemize}
+					\item 复数域$\mathbf{C}$上每一个方阵$\boldsymbol{A}$都相似于唯一的Jordan标准形, 不计Jordan块的顺序
+					\item 每个$m$阶Jordan块对角线上的元素$\lambda_{i}$都是方阵$\boldsymbol{A}$的特征值(代数重数为$m$)
+					\item 对角线上为$\lambda_{i}$的Jordan块数量等于特征值$\lambda_{i}$的几何重数
+				\end{itemize}
+		\subsection{化零多项式与最小多项式}
+			\subsubsection{化零多项式}
+				设 $\boldsymbol{A}$ 为数域 $\mathbf K$ 上的 $n$ 阶方阵, $f(x)$ 为 $\mathbf K$ 上非零多项式. 若 $f(\boldsymbol{A})=\boldsymbol{O}$, 则称 $f(x)$ 为 $\boldsymbol{A}$ 的化零多项式.
+
+				$\boldsymbol{A}$ 的特征多项式
+				$$
+				f(\lambda)=|\lambda \boldsymbol{E}-\boldsymbol{A}|=\lambda^{n}+a_{n-1} \lambda^{n-1}+\cdots+a_{1} \lambda+a_{0}
+				$$
+				$$
+				f(\boldsymbol{A})=\boldsymbol{O}
+				$$
+				$f(\lambda)$ 是 $\boldsymbol{A}$ 的化零多项式, 可知任何$n$阶方阵存在一个不超过$n$次的化零多项式.
+			\subsubsection{最小多项式}
+				方阵 $\boldsymbol{A}$ 的次数最低的首项系数为1的化零多项式$m_{A}(\lambda)$为其最小多项式.
+
+				\subsubsection*{基本性质}
+				\begin{itemize}
+					\item 方阵$A$的特征值必为最小多项式$m_A(x)$的根
+					\item 方阵 $\boldsymbol{A}$ 的任意化零多项式都能被 $m_{\boldsymbol A}(\lambda)$ 整除:
+
+					$f(\boldsymbol{A})=\boldsymbol{O}$. 由带余除法可知, 存在多项式 $q(x)$ 和 $r(x)$ 使
+					$$
+					f(\lambda)=q(\lambda) \cdot m_{\boldsymbol A}(\lambda)+r(\lambda)
+					$$
+					其中 $r(\lambda)=0$ 或 $r(\lambda)$ 的次数小于 $m_{\boldsymbol{A}}(\lambda)$ 的次数. 由 $f(\boldsymbol{A})=\boldsymbol{O}, m_{\boldsymbol{A}}(\boldsymbol{A})=\boldsymbol{O}$ 及 (3.4.1) 式得
+					$$
+					r(\boldsymbol{A})=\boldsymbol{O}
+					$$
+					若 $r(\lambda) \neq 0$, 则 $r(\lambda)$ 也是 $\boldsymbol{A}$ 的化零多项式, 并且次数比 $m_{\boldsymbol{A}}(\lambda)$ 的次数低. 这是 不可能的, 从而得
+					$$
+					f(\lambda)=q(\lambda) \cdot m_{\boldsymbol{A}}(\lambda)
+					$$
+					\item 方阵 $\boldsymbol{A}$ 的最小多项式必定存在且唯一:
+
+					方阵 $\boldsymbol{A}$ 有化零多项式存在, 从而 $\boldsymbol{A}$ 有次数最低且首项 系数为 1 的化零多项式即最小多项式存在. 设 $\boldsymbol{A}$ 有两个最小多项式 $m_{1}(\lambda)$ 与 $m_{2}(\lambda)$, 则 $m_{1}(\lambda)$ 与 $m_{2}(\lambda)$ 互相整除且首项系数相等, 因此必有
+					$$
+					m_{1}(\lambda)=m_{2}(\lambda)
+					$$
+					\item 分块对角矩阵
+					$$
+					\boldsymbol{A}=\left(\begin{array}{lllll}
+						\boldsymbol{A}_{1} & & & \\
+						& \boldsymbol{A}_{2} & & \\
+						& & \ddots & \\
+						& & & \boldsymbol{A}_{s}
+					\end{array}\right)
+					$$
+					则$\boldsymbol{A}$的最小多项式为各块最小多项式的最小公倍式,即$m_{\boldsymbol A(x)}=[m_{\boldsymbol A_1}(x),m_{\boldsymbol A_2}(x),\dots ,m_{\boldsymbol A_s}(x)]$
+					\item Jordan标准形
+					$$
+					\begin{gathered}
+						\boldsymbol{J}=\left(\begin{array}{llll}
+							\boldsymbol{J}_{1} & & & \\
+							& \boldsymbol{J}_{2} & & \\
+							& & \ddots & \\
+							& & & \boldsymbol{J}_{s}
+						\end{array}\right)
+						$$
+						\qquad\text{其中, }
+						$$
+						\boldsymbol{J_{i}}=\left(\begin{array}{ccccc}
+							\lambda_{i} & & & & \\
+							1 & \lambda_{i} & & & \\
+							& 1 & \lambda_{i} & & \\
+							& & \ddots & \ddots & \\
+							& & & 1 & \lambda_{i}
+						\end{array}\right)_{n_{i} \times n_{i}}
+					\end{gathered}
+					$$
+					$\boldsymbol{J}$的最小多项式为
+					$$
+					m_{\boldsymbol J}(\lambda)=\left[\left(\lambda-\lambda_{1}\right)^{n_{1}},\left(\lambda-\lambda_{2}\right)^{n_{2}}, \cdots,\left(\lambda-\lambda_{s}\right)^{n_{s}}\right]
+					$$
+				\end{itemize}
+		\subsection{特殊矩阵与相似标准形的应用}
+			\subsubsection{幂等矩阵}
+				设 $\boldsymbol A$ 为 $n$ 阶方阵 . 若 $\boldsymbol A^{2}=\boldsymbol A$, 那么称 $\boldsymbol A$ 为幂等矩阵(投影矩阵):
+				\begin{itemize}
+					\item $\boldsymbol{A}$ 的秩为 $r$, 则存在 $n$ 阶可逆矩阵 $\boldsymbol{P}$:
+					$$
+					\boldsymbol{P}^{-1} \boldsymbol{A P}=\left(\begin{array}{l}
+						\boldsymbol{E}_{r} \\
+						\boldsymbol{O}_{n-r}
+					\end{array}\right)
+					$$
+					\item $r(\boldsymbol A)+r(\boldsymbol A-\boldsymbol E)=n$
+					\item 矩阵 $\boldsymbol A$ 可以相似对角化 , 对角化以后 , 对角线上 1 的数目等于 $r(\boldsymbol A)$
+				\end{itemize}
+			\subsubsection{方阵求幂}
+				$\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\Lambda}$, 其中
+				$$
+				\boldsymbol{\Lambda}=
+				\left(\begin{array}{ccccc}
+					\lambda_{1} & & & \\
+					& \lambda_{2} & & \\
+					& & \ddots & \\
+					& & & \lambda_{m}
+				\end{array}\right)
+				$$
+				$$
+				\begin{gathered}
+					\boldsymbol{A}^{n}=\left(\boldsymbol{P} \boldsymbol{\Lambda} \boldsymbol{P}^{-1}\right)^{n}=
+					\underbrace{(\boldsymbol{P}\boldsymbol{\Lambda}\boldsymbol{P^{-1}}) (\boldsymbol{P}\boldsymbol{\Lambda}\boldsymbol{P^{-1}}) \cdots 	(\boldsymbol{P}\boldsymbol{\Lambda}\boldsymbol{P^{-1}}) }_{n\text{组}}
+					=\boldsymbol{P}\boldsymbol{\Lambda}(\boldsymbol{P^{-1}} \boldsymbol{P})\boldsymbol{\Lambda}(\boldsymbol{P^{-1}}\boldsymbol{P}) \cdots 	(\boldsymbol{P^{-1}})\boldsymbol{P})\boldsymbol{\Lambda}\boldsymbol{P^{-1}}\\
+					=\boldsymbol{P} \boldsymbol{\Lambda}^{n} \boldsymbol{P}^{-1}=\boldsymbol{P} \left(\begin{array}{ccccc}
+						\lambda_{1}^{n} & & & \\
+						& \lambda_{2}^{n} & & \\
+						& & \ddots & \\
+						& & & \lambda_{m}^{n}
+					\end{array}\right) \boldsymbol{P}^{-1}
+				\end{gathered}
+				$$
+				\subsubsection{幂零矩阵}
+					设 $\boldsymbol A$ 为 $n$ 阶方阵 . 若存在正整数 $m$, 使得 $\boldsymbol A^{m}=\boldsymbol O$, 那么称 $\boldsymbol A$ 为幂零矩阵, 使得 $\boldsymbol A^{m}=\boldsymbol O$ 的最小正整数$m$为 $\boldsymbol A$ 的幂零指数 .
+
+					设幂零矩阵$\boldsymbol A \neq \boldsymbol O$:
+					\begin{itemize}
+					\item 存在列向量 $\boldsymbol \alpha$, 使得 $\boldsymbol A^{m-1} \boldsymbol \alpha \neq \mathbf 0$
+					\item 方程组 $x_{1} \boldsymbol \alpha+x_{2} \boldsymbol A \boldsymbol \alpha+x_{3} \boldsymbol A^{2} \boldsymbol \alpha+\cdots+x_{m} \boldsymbol A^{m-1} \boldsymbol \alpha=\mathbf 0$ 只有零解
+					\item 向量组 $\boldsymbol \alpha, \boldsymbol A \boldsymbol \alpha, \boldsymbol A^{2} \boldsymbol \alpha, \cdots, \boldsymbol A^{m-1} \boldsymbol \alpha$ 线性无关
+					\end{itemize}
+
+					若$\boldsymbol A$ 的幂零指数为 $n$, 列向量 $\boldsymbol \alpha$ 满足 $\boldsymbol A^{n-1} \boldsymbol \alpha \neq \mathbf 0$:
+					$$
+					\boldsymbol A \boldsymbol P=\boldsymbol P\left(\begin{array}{ccccc}
+						0 & 1 & 0 & \ldots & 0 \\
+						0 & 0 & 1 & \ldots & 0 \\
+						\ldots & \ldots & \ldots & \ldots & \ldots \\
+						0 & 0 & 0 & \ldots & 1 \\
+						0 & 0 & 0 & \ldots & 0
+					\end{array}\right)
+					$$
+					其中 $\boldsymbol P=\left(\boldsymbol A^{n-1} \boldsymbol \alpha, \boldsymbol A^{n-2} \boldsymbol \alpha, \cdots, \boldsymbol \alpha\right)$ 是可逆矩阵 .
+
+					若 $\boldsymbol A$ 为秩为 1 , 迹为 0 的方阵 , 那么 $\boldsymbol A$ 是幂零指数为 2 的矩阵 .
+				\subsubsection{对合矩阵}
+					设 $\boldsymbol A$ 为 $n$ 阶方阵 . 若 $\boldsymbol A^{2}=E$, 那么称 $\boldsymbol A$ 为对合矩阵:
+					\begin{itemize}
+						\item 若 $\boldsymbol A \boldsymbol x=\boldsymbol x \neq 0$, 那么 $\boldsymbol x$ 是对应到特征值 1 的特征向量
+						\item 若 $\boldsymbol A \boldsymbol x=-\boldsymbol x \neq 0$, 那么 $\boldsymbol x$ 是对应到特征值 $-1$ 的特征向量
+						\item $r(\boldsymbol A+\boldsymbol E)+r(\boldsymbol A-\boldsymbol E)=n$
+						\item 矩阵 $\boldsymbol A$ 可以相似对角化
+					\end{itemize}
+				\subsubsection{循环矩阵}
+				$$
+				\boldsymbol A=\left(\begin{array}{ccccc}
+					a_{1} & a_{2} & a_{3} & \cdots & a_{n} \\
+					a_{n} & a_{1} & a_{2} & \cdots & a_{n-1} \\
+					\ldots & \cdots & \cdots & \cdots & \cdots \\
+					a_{3} & a_{4} & a_{5} & \cdots & a_{2} \\
+					a_{2} & a_{3} & a_{4} & \cdots & a_{1}
+				\end{array}\right), a_{i} \in \mathbf{R}
+				$$
+				则 $\boldsymbol A$ 为 $n$ 阶循环矩阵 .
+	\section{二次型与实对称矩阵}
+		\subsection{二次型}
+			\subsubsection{表示方法}
+				平面上二次曲线的方程可表为二次齐次式:
+
+				数域 $\mathbf K$ 上含 $n$ 个变量 $x_{1}, x_{2}, \cdots, x_{n}$ 的二次齐次多项式
+				$$
+				\begin{array}{rcccccc}
+					f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=a_{11} x_{1}^{2}&+&2 a_{12} x_{1} x_{2}&+&\cdots&+&2 a_{1 n} x_{1} x_{n} \\
+					&+&a_{22} x_{2}^{2}&+&\cdots&+&2 a_{2 n} x_{2} x_{n} \\
+					& & &+&\cdots & & \\
+					& & & & &+&a_{n n} x_{n}^{2}
+				\end{array}
+				$$
+				为 $\mathbf K$ 上的一个 $n$ 元\textbf{二次型}. 当 $\mathbf K$ 为实数域时, 称为\textbf{实二次型}.
+
+				只含平方项的二次型称为\textbf{标准二次型}:
+				$$
+				f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=a_{11} x_{1}^{2}+a_{22} x_{2}^{2}+\cdots+a_{n n} x_{n}^{2}
+				$$
+
+				如果标准二次型各项的系数为 $1,-1$ 或0, 则称其为\textbf{规范二次型}:
+				$$
+				f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=x_{1}^{2}+x_{2}^{2}+\cdots+x_{p}^{2}-x_{p+1}^{2}-\cdots-x_{r}^{2}, \quad r \leqslant n
+				$$
+				\subsubsection*{二次型的矩阵表示}
+					$$
+					\text {设} a_{i j}=a_{j i}(i, j=1,2, \cdots, n), \text { 则二次型可表为}
+					$$
+					$$
+					\begin{aligned}
+						f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=& a_{11} x_{1}^{2}+a_{12} x_{1} x_{2}+\cdots+a_{1 n} x_{1} x_{n} \\
+						&+a_{21} x_{2} x_{1}+a_{22} x_{2}^{2}+\cdots+a_{2 n} x_{2} x_{n} \\
+						&+\cdots \\
+						&+a_{n 1} x_{n} x_{1}+a_{n 2} x_{n} x_{2}+\cdots+a_{n n} x_{n}^{2} \\
+						=& \sum_{i=1}^{n} \sum_{j-1}^{n} a_{i j} x_{i} x_{j}
+					\end{aligned}
+					$$
+					$$
+					\boldsymbol{A}=\left(\begin{array}{cccc}
+						a_{11} & a_{12} & \cdots & a_{1 n} \\
+						a_{21} & a_{22} & \cdots & a_{2 n} \\
+						\vdots & \vdots & & \vdots \\
+						a_{n 1} & a_{n 2} & \cdots & a_{n n}
+					\end{array}\right), \quad \boldsymbol{x}=\left(\begin{array}{c}
+						x_{1} \\
+						x_{2} \\
+						\vdots \\
+						x_{n}
+					\end{array}\right)
+					$$
+					$\boldsymbol{A}$ 为实对称矩阵, 且
+					$$
+					f=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}=\boldsymbol{x}^{T} \boldsymbol{A} \boldsymbol{x}
+					$$
+					为二次型 $f$ 的\textbf{矩阵表示式}, 称实对称矩阵 $\boldsymbol{A}$ 为二次型 $f$ 的矩阵.
+
+					又称 $\boldsymbol{A}$ 的秩 $r(\boldsymbol{A})$ 为 $f$ 的\textbf{秩}, 记作 $r(f)$, 即
+					$$
+					r(f)=r(\boldsymbol{A})
+					$$
+					若 $f$ 为标准二次型, 则 $f$ 的矩阵 $\boldsymbol{A}$ 为对角矩阵
+					$$
+					\boldsymbol{A}=\left(\begin{array}{llll}
+						a_{11} & & & \\
+						& a_{22} & & \\
+						& & \ddots & \\
+						& & & a_{n n}
+					\end{array}\right)
+					$$
+					若 $f$ 为规范二次型, 则 $f$ 的矩阵 $\boldsymbol{A}$ 为
+					$$
+					\boldsymbol{A}=\left(\begin{array}{lll}
+						\boldsymbol{E}_{p} & & \\
+						& -\boldsymbol{E}_{r-p} & \\
+						& & \boldsymbol{O}
+					\end{array}\right)
+					$$
+					其中 $r=r(\boldsymbol{A})=r(f)$
+			\subsubsection{线性替换与二次型}
+				对$n$ 元二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\boldsymbol{x}^{T} \boldsymbol{A} \boldsymbol{x}$存在\textbf{非奇异线性替换} $\boldsymbol{x}=\boldsymbol{C} \boldsymbol{y}$ 将 $\boldsymbol{f}$ 化为标准二次型:
+				$$
+				f=\boldsymbol{y}^{T} \boldsymbol{B} \boldsymbol{y}=b_{11} y_{1}^{2}+b_{22} y_{2}^{2}+\cdots+b_{\operatorname{nn}} y_{n}^{2}
+				$$
+		\subsection{合同变换}
+			设$\boldsymbol A,\boldsymbol B$为$n$阶方阵,若存在$n$阶\textbf{可逆矩阵}$\boldsymbol C$使$\boldsymbol B=\boldsymbol C^T\boldsymbol A\boldsymbol C$,则称方阵$\boldsymbol A,\boldsymbol B$\textbf{合同}
+			\subsubsection{合同关系的性质}
+				\begin{itemize}
+					\item 合同关系是\textbf{等价关系}:
+						\subitem 自反性: $\boldsymbol A$合同于$\boldsymbol A$
+						\subitem 对称性: 若$\boldsymbol A$合同于$\boldsymbol B$,则$\boldsymbol B$也合同于$\boldsymbol A$
+						\subitem 传递性: 若$\boldsymbol A$合同于$\boldsymbol B$,$\boldsymbol B$合同于$\boldsymbol C$,则$\boldsymbol A$也合同于$\boldsymbol C$
+					\item 若$\boldsymbol A$合同于$\boldsymbol B$, 则$r(\boldsymbol A)=r(\boldsymbol B)$
+					\item 若$\boldsymbol A$合同于$\boldsymbol B$, 且$\boldsymbol A$为对称矩阵, 则$\boldsymbol B$也为对称矩阵
+					\item 对称矩阵可经合同变换化为对角阵
+					\item 对称矩阵$\boldsymbol A$与$\boldsymbol B$\textbf{合同}的\textbf{充要条件}
+						\subitem 存在可逆矩阵$\boldsymbol C$使$\boldsymbol B=\boldsymbol C^T\boldsymbol A\boldsymbol C$
+						\subitem $\boldsymbol A$与$\boldsymbol B$对应二次型可经非奇异线性替换互化
+						\subitem $\boldsymbol A$与$\boldsymbol B$的标准形有相同的\textbf{正惯性指数}和\textbf{负惯性指数}
+			\end{itemize}
+		\subsection{正定二次型与正定矩阵}
+			\subsubsection{惯性指数与惯性定理}
+				\textbf{惯性定理}
+
+				二次型经非奇异线性替换化为标准形, 在给定二次型的所有标准形中正项的项数都相同.
+
+				\textbf{正惯性指数和负惯性指数}
+
+				设 $f=\boldsymbol{x}^{T} \boldsymbol{A} \boldsymbol{x}$ 为实二次型, $r(f)=r$, 经非奇异线性替换化 $f$ 为标准形. 若 $f$ 的标准形中有 $p$ 个正项, 则称 $p$ 为实二次型 $f$ 与实对称矩阵 $\boldsymbol{A}$的\textbf{正惯性指数}, 并分别称 $q=r-p$ 和 $s=p-q$ 为 二次型 $f$ 与实对称矩阵 $\boldsymbol{A}$ 的\textbf{负惯性指数}和\textbf{符号差}.
+				\subsubsection*{相关结论}
+				\begin{itemize}
+					\item 二次型的正惯性指数、负惯性指数和符号差与所作的非奇异线性替换无关
+					\item 设 $f=\boldsymbol{x}^{T} \boldsymbol{A} \boldsymbol{x}$ 为 $n$ 元实二次型, $r(f)=r$, 则存在非奇异线性替换 $\boldsymbol{x=Cy}$ 将 $f$ 化为规范形, 即
+					$$
+					f \xlongequal{\boldsymbol{x=Cy}}y_{1}^{2}+y_{2}^{2}+\cdots+y_{p}^{2}-y_{p+1}^{2}-\cdots-y_{r}^{2},
+					$$
+					其中 $p$ 为 $f$ 的正惯性指数
+					\item 两个 $n$ 元实二次型 $f=\boldsymbol{x^{T} A x}$ 与 $g=\boldsymbol{y^{T} B y}$ 有相同的秩及相同的正惯 性指数的充分必要条件为存在非奇异线性替换 $\boldsymbol{x=Cy}$, 使
+					$$
+					f=\boldsymbol{x}^{T} \boldsymbol{A} \boldsymbol{x} \xlongequal{\boldsymbol{x}=C \boldsymbol{y}}\boldsymbol{y}^{T} \boldsymbol{B} 	\boldsymbol{y}=g
+					$$
+					\item 任一 $n$ 阶实对称矩阵都合同于合同标准形
+					$$
+					\left(\begin{array}{lll}
+						\boldsymbol{E}_{p} & & \\
+						& -\boldsymbol{E}_{q} & \\
+						& & \boldsymbol{O}
+					\end{array}\right)
+					$$
+					其中 $p$ 和 $q$ 分别为 $\boldsymbol{A}$ 的正惯性指数和负惯性指数, $p+q=r$
+				\end{itemize}
+			\subsubsection{正定矩阵}
+				$n$ 元实二次型
+				$$
+				f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\boldsymbol{x}^{T} \boldsymbol{A} \boldsymbol{x}
+				$$
+				若对任意非零向量 $\boldsymbol{\alpha}=\left(c_{1}, c_{2}, \cdots, c_{n}\right)^{T}$, 都有
+				$$
+				f\left(c_{1}, c_{2}, \cdots, c_{n}\right)=\boldsymbol{\alpha}^{T} \boldsymbol{A} \boldsymbol{\alpha}>0
+				$$
+				则称二次型 $f$ 为正定二次型, 其矩阵 $\boldsymbol{A}$ 为正定矩阵. 若$\boldsymbol{\alpha}^{T} \boldsymbol{A} \boldsymbol{\alpha}\geqslant0$, 则称 $f$ 为半正定二次型. 类似还有负定二次型, 不定二次型.
+				\subsubsection*{正定矩阵的充要条件}
+				\begin{itemize}
+					\item $f$的正惯性指数$p=n$
+					\item $f$的规范形为$z_1^2+z_2^2+\dots +z_n^2$
+					\item $\boldsymbol A$合同于单位阵$\boldsymbol E$: 存在可逆矩阵$\boldsymbol M$使$\boldsymbol M^T\boldsymbol A\boldsymbol M=\boldsymbol E$
+
+					存在可逆矩阵$\boldsymbol C=\boldsymbol M^{-1}$: $\boldsymbol C^T\boldsymbol C=\boldsymbol A$
+					\item $\boldsymbol A$的各阶\textbf{顺序主子式}均大于零
+				\end{itemize}
+				\subsubsection*{半正定矩阵的充要条件}
+					\begin{itemize}
+						\item $n$元实二次型$f=\boldsymbol x^T\boldsymbol A\boldsymbol x$半正定$\Leftrightarrow$ $f$的正惯性指数$p=r(f)\leqslant n$
+						\item $n$元实二次型$f=\boldsymbol x^T\boldsymbol A\boldsymbol x$不定$\Leftrightarrow$ $f$的正惯性指数$p$满足$0<p<r(f)$
+						\item 实二次型$f$负定$\Leftrightarrow$ $-f$正定
+						\item 实二次型$f$半负定$\Leftrightarrow$ $-f$半正定
+					\end{itemize}
+				\subsubsection*{正定矩阵的性质}
+					\begin{itemize}
+						\item 若$\boldsymbol{A}, \boldsymbol{B}$是正定矩阵, $\lambda\boldsymbol{A}+\mu\boldsymbol{B}$也是正定矩阵
+						\item 若$\boldsymbol A$为正定矩阵,则$\boldsymbol A^2,\boldsymbol A^3,\dots ,\boldsymbol A^m$均为正定矩阵
+						\item 若正定矩阵$\boldsymbol A$可逆,则$\boldsymbol A^{-1},\boldsymbol A^*$均为正定矩阵
+						\item 若$\boldsymbol A$为$m\times n$实矩阵,则$r(\boldsymbol A)=n$的充要条件是$\boldsymbol A^T\boldsymbol A$为正定矩阵
+						\item 若$\boldsymbol A$为实对称矩阵,则$\boldsymbol A$正定的充要条件是$\boldsymbol A$的特征值均大于零
+					\end{itemize}
+		\subsection{正交向量组与正交矩阵}
+			\subsubsection{内积的定义}
+				在 $n$ 维实向量空间 $\mathbf{R}^{n}$ 中, 设向量
+				$$
+				\boldsymbol \alpha=\left(\begin{array}{c}
+					a_{1} \\
+					a_{2} \\
+					\vdots \\
+					a_{n}
+				\end{array}\right), \quad \boldsymbol \beta=\left(\begin{array}{c}
+					b_{1} \\
+					b_{2} \\
+					\vdots \\
+					b_{n}
+				\end{array}\right)
+				$$
+				称实数
+				$$
+				(\boldsymbol{\alpha}, \boldsymbol{\beta})=\sum_{i=1}^{n} a_{i} b_{i}=a_{1} b_{1}+a_{2} b_{2}+\cdots+a_{n} b_{n}=(\boldsymbol{\alpha}, \boldsymbol{\beta})=\boldsymbol{\alpha}^{T} \boldsymbol{\beta}
+				$$
+				为向量 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的\textbf{内积}.
+			\subsubsection{向量内积的性质}
+				\begin{itemize}
+					\item 三大基本性质:
+						\subitem 对称性 $(\boldsymbol{\alpha}, \boldsymbol{\beta})=(\boldsymbol{\beta}, \boldsymbol{\alpha})$
+						\subitem 线性性 $\left(k\boldsymbol{\alpha}_{1}+l\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}\right)=k\left(\boldsymbol{\alpha}_{1}, 	\boldsymbol{\beta}\right)+l\left(\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}\right)$
+						\subitem 正定性 $(\boldsymbol{\alpha}, \boldsymbol{\alpha}) \geqslant 0$, $(\boldsymbol{\alpha}, \boldsymbol{\alpha})=0$ 当且仅当 $\boldsymbol{\alpha}=\mathbf{0}$
+					\item $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 为 $\mathbf{R}^{n}$ 中的向量, $k_{1}, k_{2}, \cdots, k_{s}$ 与 $l_{1}, l_{2}, \cdots, l_{t}$ 为实数, 则
+					$$
+					\begin{gathered}
+						\left(\sum_{i=1}^{s} k_{i} \boldsymbol\alpha_{i}, \boldsymbol{\beta}_{1}\right)=\sum_{i=1}^{s} k_{i}\left(\boldsymbol{\alpha}_{i}, \boldsymbol{\beta}_{1}\right) \\
+						\left(\sum_{i=1}^{s} k_{i} \boldsymbol{\alpha}_{i}, \sum_{j=1}^{t} l_{j} \boldsymbol{\beta}_{j}\right)=\sum_{i=1}^{s} \sum_{j=1}^{t} k_{i} l_{j}\left(\boldsymbol{\alpha}_{i}, \boldsymbol{\beta}_{j}\right)
+					\end{gathered}
+					$$
+				\end{itemize}
+				\subsubsection*{模,距离和单位向量}
+				\begin{itemize}
+					\item 设 $\boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)^{T}$ 为 $\mathbf{R}^{n}$ 中的向量,
+					$$
+					|\boldsymbol{\alpha}|=\sqrt{(\boldsymbol{\alpha}, \boldsymbol{\alpha})}=\sqrt{a_{1}^{2}+a_{2}^{2}+\cdots+a_{n}^{2}} .
+					$$
+					为向量 $\boldsymbol{\alpha}$ 的\textbf{模}
+					\item 设 $\boldsymbol\alpha$ 和 $\boldsymbol\beta$ 为 $\mathbf{R}^{n}$ 中的向量, 则向量 $\boldsymbol\alpha-\boldsymbol\beta$ 的\textbf{距离}
+					$$
+					|\boldsymbol{\alpha}-\boldsymbol{\beta}|=\sqrt{(\boldsymbol{\alpha}-\boldsymbol{\beta}, \boldsymbol{\alpha}-\boldsymbol{\beta})}
+					$$
+					\item 如果向量 $\boldsymbol{\alpha}$ 的模为 1, 则称 $\boldsymbol{\alpha}$ 为\textbf{单位向量}. 若 $\boldsymbol{\beta}$ 是 $\mathbf{R}^{n}$ 中的任一非零向量, 则
+					$$
+					\boldsymbol{\beta}_{0}=\frac{1}{|\boldsymbol{\beta}|} \boldsymbol{\beta}\text{是单位向量}
+					$$
+				\end{itemize}
+				\subsubsection*{向量模的性质}
+				\begin{itemize}
+					\item 正定性: $|\boldsymbol{\alpha}| \geqslant 0$, 且 $|\boldsymbol{\alpha}|=0$ 当且仅当 $\boldsymbol{\alpha}=\mathbf{0}$
+					\item $|k \boldsymbol{\alpha}|=|k||\boldsymbol{\alpha}|$
+					\item 三角不等式: $|\boldsymbol{\alpha}+\boldsymbol{\beta}| \leqslant|\boldsymbol{\alpha}|+|\boldsymbol{\beta}|$
+					\item \textbf{Cauchy-Schwarz不等式}: $|(\boldsymbol{\alpha}, \boldsymbol{\beta})| \leqslant|\boldsymbol{\alpha}||\boldsymbol{\beta}|$, 等号仅当 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 线性相关时成立
+
+					若 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性相关, $\boldsymbol{\beta}=l \boldsymbol{\alpha}$, 则 $|\boldsymbol{\beta}|=|l||\boldsymbol{\alpha}|$, 因此
+					$$
+					|(\boldsymbol{\alpha}, \boldsymbol{\beta})|=|(\boldsymbol{\alpha}, l \boldsymbol{\alpha})|=|l(\boldsymbol{\alpha}, 	\boldsymbol{\alpha})|=|l||\boldsymbol{\alpha}|^{2}=|\boldsymbol{\alpha}||l \boldsymbol{\alpha}|=|\boldsymbol{\alpha}||\boldsymbol{\beta}|,\text{等号成立}
+					$$
+					若 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性无关, 则对任意实数 $t$, 向量 $t \boldsymbol{\alpha}-\boldsymbol{\beta} \neq \mathbf{0}$, 因而
+					$$
+					(\boldsymbol{\alpha}, \boldsymbol{\alpha}) t^{2}-2(\boldsymbol{\alpha}, \boldsymbol{\beta}) t+(\boldsymbol{\beta}, \boldsymbol{\beta})=(\operatorname{t} 	\boldsymbol{\alpha}-\boldsymbol{\beta}, t \boldsymbol{\alpha}-\boldsymbol{\beta})=|t \boldsymbol{\alpha}-\boldsymbol{\beta}|^{2}>0
+					$$
+					$$
+					\Delta=[-2(\boldsymbol{\alpha}, \boldsymbol{\beta})]^{2}-4(\boldsymbol{\alpha}, \boldsymbol{\alpha})(\boldsymbol{\beta}, \boldsymbol{\beta})<0
+					$$
+					于是 $|(\boldsymbol{\alpha}, \boldsymbol{\beta})|<|\boldsymbol{\alpha}||\boldsymbol{\beta}|$
+					\item 设 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 是 $\mathbf{R}^{n}$ 中的非零向量, 则向量 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的\textbf{夹角}
+					$$
+					\boldsymbol\theta=\arccos \frac{(\boldsymbol{\alpha}, \boldsymbol{\beta})}{|\boldsymbol{\alpha} \| \boldsymbol{\beta}|}, \quad 0 \leqslant \boldsymbol\theta \leqslant \pi
+					$$
+					当 $(\boldsymbol{\alpha}, \boldsymbol{\beta})=0$ 时 $\boldsymbol\theta=\arccos 0=\frac{\pi}{2}$, 此时称 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ \textbf{正交}
+				\end{itemize}
+			\subsubsection{正交向量组}
+				正交向量组中向量两两正交. 若这些向量都是单位向量, 则向量组是\textbf{标准正交向量组}. 如果这些向量还是向量空间$\mathbf{R}^n$的一组基, 则该向量组为\textbf{标准正交基}.
+
+				向量空间$\mathbf{R}^n$中, 正交向量组比线性无关.
+
+				\subsubsection*{向量组正交化方法:斯密特正交化}
+
+					设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}(s \geqslant 2)$ 是线性无关的向量组:
+					\begin{enumerate}
+						\item \textbf{正交化}
+						$$
+						\begin{aligned}
+							&\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}, \\
+							&\boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}-\frac{\left(\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}_{1}\right)}{\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)} \boldsymbol{\beta}_{1}, \\
+							&\boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}-\frac{\left(\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{1}\right)}{\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)} \boldsymbol{\beta}_{1}-\frac{\left(\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{2}\right)}{\left(\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{2}\right)} \boldsymbol{\beta}_{2}, \\
+							&\quad \qquad \qquad \qquad \cdots \cdots \cdots \cdots \\
+							&\boldsymbol{\beta}_{s}=\boldsymbol{\alpha}_{s}-\frac{\left(\boldsymbol{\alpha}_{s}, \boldsymbol{\beta}_{1}\right)}{\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)} \boldsymbol{\beta}_{1}-\cdots-\frac{\left(\boldsymbol{\alpha}_{s}, \boldsymbol{\beta}_{s-1}\right)}{\left(\boldsymbol{\beta}_{s-1}, \boldsymbol{\beta}_{s-1}\right)} \boldsymbol{\beta}_{s-1}
+						\end{aligned}
+						$$
+						$\boldsymbol{\beta}_{1}$ 与 $\boldsymbol{\beta}_{2}$ 正交, 再利用归纳法可得 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 是正交向量组
+						\item \textbf{单位化}
+						$$
+						\boldsymbol{\eta}_{i}=\frac{1}{\left|\boldsymbol{\beta}_{i}\right|} \boldsymbol{\beta}_{i}(i=1,2, \cdots, s)
+						$$
+						则 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{s}$ 为标准正交向量组并且与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 等价
+					\end{enumerate}
+					$\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 与 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 可以相互线性表示, 因此 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 与 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 等价, 从而 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{s}$ 与 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 等价
+			\subsubsection{正交矩阵}
+				$\boldsymbol{A}$ 为 $n$ 阶实矩阵, 若 $\boldsymbol{A}$ 的列向量组是标准正交向量组, 即
+				$$
+				\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)
+				$$
+				$\boldsymbol{A}$ 的列向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 满足
+				$$
+				\left(\boldsymbol{\alpha}_{i}, \boldsymbol{\alpha}_{j}\right)=\left\{\begin{array}{ll}
+					0, & i \neq j, \\
+					1, & i=j
+				\end{array} \quad(i, j=1,2, \cdots, n)\right.
+				$$
+				则 $\boldsymbol{A}$ 为正交矩阵.
+				\subsubsection*{正交矩阵结论}
+				\begin{itemize}
+					\item $n$ 阶实矩阵 $\boldsymbol{A}$ 为正交矩阵的\textbf{充要条件}为 $\boldsymbol{A}^{T} \boldsymbol{A}=\boldsymbol{E}$
+
+					设 $\boldsymbol{A}$ 的列向量组为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$, 即
+					$$
+					\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)
+					$$
+					则
+					$$
+					\begin{aligned}
+						\boldsymbol{A}^{T} \boldsymbol{A} &=\left(\begin{array}{c}
+							\boldsymbol{\alpha}_{1}^{T} \\
+							\boldsymbol{\alpha}_{2}^{T} \\
+							\vdots \\
+							\boldsymbol{\alpha}_{n}^{T}
+						\end{array}\right)\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, 	\boldsymbol{\alpha}_{n}\right)=\left(\begin{array}{cccc}
+							\boldsymbol{\alpha}_{1}^{T} \boldsymbol{\alpha}_{1} & 	\boldsymbol{\alpha}_{1}^{T} \boldsymbol{\alpha}_{2} & \cdots & \boldsymbol{\alpha}_{1}^{T} \boldsymbol{\alpha}_{n} \\
+							\boldsymbol{\alpha}_{2}^{T} \boldsymbol{\alpha}_{1} & 	\boldsymbol{\alpha}_{2}^{T} \boldsymbol{\alpha}_{2} & \cdots & \boldsymbol{\alpha}_{2}^{T} \boldsymbol{\alpha}_{n} \\
+							\vdots & \vdots & & \vdots \\
+							\boldsymbol{\alpha}_{n}^{T} \boldsymbol{\alpha}_{1} & 	\boldsymbol{\alpha}_{n}^{T} \boldsymbol{\alpha}_{2} & \cdots & \boldsymbol{\alpha}_{n}^{T} \boldsymbol{\alpha}_{n}
+						\end{array}\right) \\
+						&=\left(\begin{array}{cccc}
+							\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{1}\right) & \left(\boldsymbol{\alpha}_{1}, 	\boldsymbol{\alpha}_{2}\right) & \cdots & \left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{n}\right) \\
+							\left(\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{1}\right) & \left(\boldsymbol{\alpha}_{2}, 	\boldsymbol{\alpha}_{2}\right) & \cdots & \left(\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{n}\right) \\
+							\vdots & \vdots & & \vdots \\
+							\left(\boldsymbol{\alpha}_{n}, \boldsymbol{\alpha}_{1}\right) & \left(\boldsymbol{\alpha}_{n}, 	\boldsymbol{\alpha}_{2}\right) & \cdots & \left(\boldsymbol{\alpha}_{n}, \boldsymbol{\alpha}_{n}\right)
+						\end{array}\right)
+					\end{aligned}
+					$$
+					若$n$维欧氏空间$\boldsymbol V$的一组基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots$, $\boldsymbol \varepsilon_{n}$
+					$$
+					\boldsymbol A=\left(\begin{array}{cccc}
+						\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{1}\right) & \left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}\right) & \cdots & \left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{n}\right) \\
+						\left(\boldsymbol \varepsilon_{2}, \boldsymbol \varepsilon_{1}\right) & \left(\boldsymbol \varepsilon_{2}, \boldsymbol \varepsilon_{2}\right) & \cdots & \left(\boldsymbol \varepsilon_{2}, \boldsymbol \varepsilon_{n}\right) \\
+						\vdots & \vdots & & \vdots \\
+						\left(\boldsymbol \varepsilon_{n}, \boldsymbol \varepsilon_{1}\right) & \left(\boldsymbol \varepsilon_{n}, \boldsymbol \varepsilon_{2}\right) & \cdots & \left(\boldsymbol \varepsilon_{n}, \boldsymbol \varepsilon_{n}\right)
+					\end{array}\right)
+					$$
+					为基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots$, $\boldsymbol \varepsilon_{n}$ 的\textbf{度量矩阵}.度量矩阵为正定矩阵
+					\item $\boldsymbol A$为正交矩阵的\textbf{充要条件}是$\boldsymbol A^{-1}=\boldsymbol A^T$
+					\item 若$\boldsymbol A$为正交矩阵,则$|\boldsymbol A|=\pm 1$
+					\item 若$\boldsymbol A$为正交矩阵,则$\boldsymbol A^{-1},\boldsymbol A^*$均为正交矩阵
+					\item 若$\boldsymbol A$是正交矩阵, $\boldsymbol A$的特征值模长为$\pm1$\\且若$\boldsymbol\alpha$是$\boldsymbol A$属于$\lambda$的特征向量, $\boldsymbol{\overline{\alpha}}$是$\boldsymbol A$属于$\overline{\lambda}$的特征向量
+					\item 若$n$阶方阵$\boldsymbol A,\boldsymbol B$为正交矩阵,则$\boldsymbol A\boldsymbol B$也为正交矩阵
+				\end{itemize}
+			\subsubsection{共轭矩阵}
+				设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}$ 为复矩阵, $\overline{\boldsymbol{A}}=\left(\overline{a}_{i j}\right)_{m \times n}$ 为 $\boldsymbol{A}$ 的共轭矩阵, 其中 $\overline{a}_{i j}$ 是 $a_{i j}$ 的共轭复数:
+				$$
+				\overline{k \boldsymbol{A}}=\overline{k}\overline{\boldsymbol{A}}, \quad \overline{\boldsymbol{A}+\boldsymbol{B}}=\overline{\boldsymbol{A}}+\overline{\boldsymbol{B}}, \quad \overline{\boldsymbol{A B}}=\overline{\boldsymbol{A}}\overline{\boldsymbol{B}}
+				$$
+				其中, $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 为 $m \times n$ 复矩阵, $k$ 为复数.
+				\subsubsection{实对称矩阵的性质}
+				\begin{itemize}
+					\item 实对称矩阵的特征值都是实数
+
+					设 $\boldsymbol{A}$ 为实对称矩阵, $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 属于特征值 $\lambda$ 的特征向量, 即 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}$.
+					因为 $\overline{\boldsymbol{A}}=\boldsymbol{A}, \boldsymbol{A}^{T}=\boldsymbol{A}$, 且 $\overline{\boldsymbol{A} \boldsymbol{\alpha}}=\overline{\lambda \boldsymbol{\alpha}}=\overline{\lambda} \overline{\boldsymbol{\alpha}}$. 所以
+					$$
+					\begin{aligned}
+						&\overline{\boldsymbol{\alpha}}^{T} \boldsymbol{A} 	\boldsymbol{\alpha}=\overline{\boldsymbol{\alpha}}^{T}(\boldsymbol{A} \boldsymbol{\alpha})=\lambda \overline{\boldsymbol{\alpha}}^{T} \boldsymbol{\alpha} \\
+						&\overline{\boldsymbol{\alpha}}^{T} \boldsymbol{A} 	\boldsymbol{\alpha}=(\overline{\boldsymbol{A} \boldsymbol{\alpha}})^{T} \boldsymbol{\alpha}=(\overline{\lambda}\overline{\boldsymbol{\alpha}})^{T} \boldsymbol{\alpha}=\overline{\lambda}\overline{\boldsymbol{\alpha}}^{T} \boldsymbol{\alpha}
+					\end{aligned}
+					$$
+					故有
+					$$
+					(\lambda-\overline{\lambda}) \overline{\alpha}^{T} \boldsymbol{\alpha}=0
+					$$
+					设 $\boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)^{T}$, 由 $\boldsymbol{\alpha} \neq \mathbf{0}$, 知
+					$$
+					\overline{\boldsymbol{\alpha}}^{T} \boldsymbol{\alpha}=\sum_{i=1}^{n} \overline{a_{i}} 	a_{i}=\sum_{i=1}^{n}\left|a_{i}\right|^{2}>0
+					$$
+					其中 $\left|a_{i}\right|$ 是复数 $a_{i}$ 的模 $(i=1,2, \cdots, n)$. 因此 $\lambda=\overline{\lambda}$, 即 $\lambda$ 为实数
+					\item 实对称矩阵的属于不同特征值的特征向量相互\textbf{正交}
+
+					设 $\boldsymbol{A}$ 为实对称矩阵. $\boldsymbol{A} \boldsymbol{\alpha}_{1}=\lambda_{1} \boldsymbol{\alpha}_{1}, \boldsymbol{A} \boldsymbol{\alpha}_{2}=\lambda_{2} \boldsymbol{\alpha}_{2}$, 其中 $\lambda_{1}$ 和 $\lambda_{2}$ 是 $\boldsymbol{A}$ 的两个不同的特征值. $\alpha_{1}$ 与 $\alpha_{2}$ 分别为属于 $\lambda_{1}$ 与 $\lambda_{2}$ 的特征向量, 由
+					$$
+					\begin{aligned}
+						&\boldsymbol{\alpha}_{1}^{T} \boldsymbol{A} 	\boldsymbol{\alpha}_{2}=\boldsymbol{\alpha}_{1}^{T}\left(\boldsymbol{A} \boldsymbol{\alpha}_{2}\right)=\lambda_{2} \boldsymbol{\alpha}_{1}^{T} \boldsymbol{\alpha}_{2} \\
+						&\boldsymbol{\alpha}_{1}^{T} \boldsymbol{A} \boldsymbol{\alpha}_{2}=\left(\boldsymbol{A} 	\boldsymbol{\alpha}_{1}\right)^{T} \boldsymbol{\alpha}_{2}=\lambda_{1} \boldsymbol{\alpha}_{1}^{T} \boldsymbol{\alpha}_{2}
+					\end{aligned}
+					$$
+					知
+					$$
+					\left(\lambda_{1}-\lambda_{2}\right) \boldsymbol \alpha_{1}^{T} \boldsymbol \alpha_{2}=0
+					$$
+					由于 $\lambda_{1} \neq \lambda_{2}$, 所以一定有
+					$$
+					\boldsymbol{\alpha}_{1}^{T} \boldsymbol{\alpha}_{2}=\left(\boldsymbol{\alpha}_{1}, 	\boldsymbol{\alpha}_{2}\right)=0
+					$$
+					因此, 特征向量 $\boldsymbol \alpha_{1}$ 与 $\boldsymbol \alpha_{2}$ 正交
+					\item 实对称矩阵正交相似于对角矩阵
+					\item $n$阶实对称矩阵有$n$个线性无关的实特征向量
+					\item $n$阶实对称矩阵有$n$个互相正交的单位实特征向量
+				\end{itemize}
+			\subsubsection{正交相似标准形}
+				设 $\boldsymbol{A}$ 为 $n$ 阶实对称矩阵, 则存在 $n$ 阶正交矩阵 $\boldsymbol{Q}$, 使得
+				$$
+				\begin{gathered}
+					\boldsymbol Q^{-1}\boldsymbol A \boldsymbol Q=\boldsymbol Q^{T} \boldsymbol A \boldsymbol Q=\boldsymbol \Lambda,\qquad
+					\boldsymbol{\Lambda}=\left(\begin{array}{llll}
+						\lambda_{1} & & & \\
+						& \lambda_{2} & & \\
+						& & \ddots & \\
+						& & & \lambda_{n}
+					\end{array}\right)
+				\end{gathered}
+				$$
+				其中 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 为 $\boldsymbol{A}$ 的特征值, 即
+				$$
+				f=\boldsymbol{x}^{T} \boldsymbol{A} \boldsymbol{x} \xlongequal{\boldsymbol{x}=\boldsymbol{Q} \boldsymbol y} \lambda_{1} y_{1}^{2}+\lambda_{2} y_{2}^{2}+\cdots+\lambda_{n} y^{2}
+				$$
+			\subsubsection{对称矩阵 $\boldsymbol A \boldsymbol A^{T}$ 和 $\boldsymbol A^{T} \boldsymbol A$}
+				设 $\boldsymbol A$ 为 $m \times n$ 阶实数矩阵
+				\begin{itemize}
+					\item $\boldsymbol A \boldsymbol A^{T}$ 和 $\boldsymbol A^{T} \boldsymbol A$ 都是对称矩阵
+					\item 方程组 $\boldsymbol A^{T} \boldsymbol A x=0$ 和方程组 $\boldsymbol A x=0$ 是同解方程组
+					\item $r(\boldsymbol A)=r\left(\boldsymbol A^{T}\right)=r\left(\boldsymbol A \boldsymbol A^{T}\right)=r\left(\boldsymbol A^{T} \boldsymbol A\right)$
+					\item 矩阵 $\boldsymbol A \boldsymbol A^{T}$ 和 $\boldsymbol A^{T} \boldsymbol A$ 是半正定的
+					\item 若 $\boldsymbol A$ 为列满秩矩阵 , 那么 $\boldsymbol A^{T} \boldsymbol A$ 是正定矩阵
+					\item 若 $\boldsymbol A$ 为行满秩矩阵 , 那么 $\boldsymbol A \boldsymbol A^{T}$ 是正定矩阵
+				\end{itemize}
+	\section{线性空间与线性变换}
+		\subsection{线性空间}
+			\subsubsection{定义}
+				设 $\boldsymbol V$ 是一个非空集合, $\mathbf K$ 是数域. 在 $\boldsymbol V$ 的元素之间定义加法运算+, 对任意两个元素 $\boldsymbol{\alpha}, \boldsymbol{\beta} \in \boldsymbol V$, 有唯一的 $\boldsymbol{\delta} \in \boldsymbol V$ 与之对应, 则称 $\boldsymbol \delta$ 为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的和, 记作 $\boldsymbol \delta=\boldsymbol \alpha+\boldsymbol \beta$. 并且加法运算 + 满足:
+				\begin{itemize}
+					\item 交换律: $\boldsymbol \alpha+\boldsymbol \beta=\boldsymbol \beta+\boldsymbol \alpha$
+					\item 结合律: $(\boldsymbol{\alpha}+\boldsymbol{\beta})+\boldsymbol{\gamma}=\boldsymbol{\alpha}+(\boldsymbol{\beta}+\boldsymbol{\gamma})$
+					\item \textbf{零元}的存在性: $V$ 中存在一个零元 $\mathbf{0}$, $\forall \boldsymbol{\alpha} \in \boldsymbol V$, $\boldsymbol{\alpha}+\mathbf{0}=\boldsymbol{\alpha}$
+					\item \textbf{负元}的存在性: $\forall\boldsymbol{\alpha} \in \boldsymbol V$, $\exists\boldsymbol{\beta} \in \boldsymbol V$, $\boldsymbol{\alpha}+\boldsymbol{\beta}=\mathbf{0}, \boldsymbol{\beta}$ 叫做 $\boldsymbol{\alpha}$ 的负元
+				\end{itemize}
+				\qquad 在数域 $\mathbf K$ 和集合 $\boldsymbol V$ 之间还定义纯量乘法, 即 $\forall \boldsymbol \alpha \in\boldsymbol V$ 和 $k \in K$, 有唯一的 $\boldsymbol \eta \in \boldsymbol V$ 与之对应, 称 $\boldsymbol \eta$ 为 $k$ 与 $\boldsymbol{\alpha}$ 的乘积, 记为 $\boldsymbol{\eta}=k \boldsymbol{\alpha}$, $\forall k, l \in \mathbf K, \boldsymbol{\alpha}, \boldsymbol{\beta} \in \boldsymbol V$, 满足:
+				\begin{itemize}
+					\item $1 \boldsymbol \alpha=\boldsymbol \alpha$
+					\item $k(l \boldsymbol{\alpha})=l(k \boldsymbol{\alpha})=(k l) \boldsymbol{\alpha}$
+					\item $(k+l) \boldsymbol{\alpha}=k \boldsymbol{\alpha}+l \boldsymbol{\alpha}$
+					\item $k(\boldsymbol{\alpha}+\boldsymbol{\beta})=k \boldsymbol{\alpha}+k \boldsymbol{\beta}$
+				\end{itemize}
+				则称集合 $\boldsymbol V$ 关于向量加法与纯量乘法组成数域 $\mathbf K$ 上的一个线性空间, 或称 $\boldsymbol V$ 为 $\mathbf K$ 上的一个线性空间. 当 $\mathbf K$ 为实数域时, 称 $\boldsymbol V$ 为实线性空间.
+			\subsubsection{线性空间的简单性质}
+				设 $\boldsymbol V$ 是数域 $\mathbf K$ 上的线性空间:
+				\begin{itemize}
+					\item 零元唯一, 记作 $\mathbf{0}$
+					\item $\boldsymbol V$ 中元素 $\boldsymbol \alpha$ 的负元唯一, 记为 $-\boldsymbol \alpha$
+					\item $\forall \boldsymbol \alpha \in $, 有 $0 \boldsymbol \alpha=0,(-1) \boldsymbol \alpha=-\boldsymbol \alpha$
+					\item $\forall k \in \mathbf K$, 有 $k \cdot \mathbf{0}=\mathbf{0}$
+					\item 若 $k \cdot \boldsymbol{\alpha}=\mathbf{0}$, 则有 $k=0$ 或 $\boldsymbol{\alpha}=\mathbf{0}$
+				\end{itemize}
+			\subsubsection{线性空间的例子}
+				\begin{itemize}
+					\item 数域 $\mathbf K$ 上的全体 $n$ 维向量的集合依照向量的加法和向量与数的纯量乘法构成数域 $\mathbf K$ 上的线性空间, 记作 $\mathbf K^{n}$
+					\item 数域 $\mathbf K$ 上的全体 $m \times n$ 矩阵的集合关于矩阵的加法和矩阵的 纯量乘法构成数域 $\mathbf K$ 上的线性空间, 记为 $\mathbf K^{m \times n}$
+					\item 区间 $[a, b]$ 上的全体实连续函数关于函数的加法和函数与数的 乘法构成实线性空间, 记为 $\mathbf C[a, b]$
+					\item 复数域 $\mathbf{C}$ 关于复数的加法和实数与复数的乘法构成实数域 $\mathbf{R}$ 上的线性空间
+					\item 数域 $K$ 上全体一元多项式关于多项式的加法和数与多项式的 乘法构成数域 $K$ 上的线性空间, 记为 $\mathbf K[x]$. 特别地, 所有的实系数一元多项式 依照多项式的加法和多项式与数的乘法构成实线性空间, 记为 $\mathbf{R}[x]$
+					\item 区间 $[a, b]$ 上的全体 $n$ 次可微函数关于函数的加法和数与函数 的乘法构成实线性空间, 记为 $\mathbf D^{(n)}[a, b]$
+				\end{itemize}
+			\subsection{线性子空间}
+				设 $\boldsymbol V$ 是数域 $\mathbf K$ 上的线性空间, 如果 $\boldsymbol V$ 的非空子集合 $\boldsymbol W$ 对于 $\boldsymbol V$ 的加法和纯量乘法运算封闭, 则 $\boldsymbol W$ 是 $\boldsymbol V$ 的一个子空间.
+				\subsubsection{证明步骤}
+					\begin{enumerate}
+						\item $\boldsymbol W\subseteq \boldsymbol V$
+						\item $\boldsymbol W$对于$\boldsymbol V$中的加法和数乘封闭
+						\item $\boldsymbol W$中零元和负元存在
+					\end{enumerate}
+				\subsubsection{子空间的例子}
+					\begin{itemize}
+						\item 线性空间 $\boldsymbol V$ 的仅含零元素的子集合是 $\boldsymbol V$ 的一个子空间, 常称零子空间. $V$ 本身也是 $V$ 的一个子空间, 这两种子空间都称为 $V$ 的平凡子空间
+						\item 设不过原点的一个平面 $\boldsymbol W_{1}=\{(x, y, z) \mid x, y \in \mathbf{R}, z \neq 0\}$, 则 $\boldsymbol W_{1}$ 不是 $\mathbf{R}^{3}$ 的子空间. 这是因为它对于 $\mathbf{R}^{3}$ 中的加法与数乘都不封闭. 例如
+						$$
+						(x, y, z)-(x, y, z) \notin \boldsymbol W_{1} \qquad \mathbf{0}=0 \cdot(x, y, z) \notin \boldsymbol W_{1}
+						$$
+						但是, 起点为点 $O^{\prime}(0,0, z)$ 的 $\boldsymbol W_{1}$ 上的平面向量的集合 $\boldsymbol W_{1}^{\prime}$ 关于平面向量的加 法与纯量乘法构成一个线性空间.
+
+						上例说明, $\boldsymbol V$ 的子空间 $\boldsymbol W$ 的两种运算必须与 $\boldsymbol V$ 的两种运算相一致. 一般地, 把 $\boldsymbol W$ 看成一个子空间比把 $\boldsymbol W$ 自身看成一个线性空间更有用. 因为验证 $\boldsymbol W$ 是某个线性空间的一个\textbf{子空间}, 比验证 $\boldsymbol W$ 是一个线性空间简单得多
+						\item 连续函数集合
+						$$
+						\boldsymbol M=\{f(x) \in C[a, b] \mid f(a)=0\}
+						$$
+						是线性空间 $\boldsymbol C[a, b]$ 的子空间
+						\item 连续函数集合 $\boldsymbol M=\{f(x) \in \boldsymbol C[a, b] \mid f(a)=k\}(k \neq 0)$ 不是线性空间 $\boldsymbol C[a, b]$ 的子空间
+						\item $n$ 阶上三角形实矩阵集合`下三角形实矩阵集合和实对角矩阵集合都是由所有 $n$ 阶方阵构成的线性空间 $\mathbf{R}^{n \times n}$ 的子空间
+						\item 数域 $\boldsymbol K$ 上的次数小于 $n$ 的一元多项式全体和零多项式组成的集合 $\boldsymbol K[x]_{n}$ 构成线性空间 $\boldsymbol K[x]$ 的子空间
+						\item 数域 $\boldsymbol K$ 上的 $n$ 次一元多项式全体构成的集合不能构成线性空间 $\boldsymbol K[x]$ 的子空间
+						\item \textbf{构造线性子空间的重要方法}
+
+						设 $\boldsymbol V$ 是数域 $\boldsymbol K$ 上的线性空间, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m} \in \boldsymbol V$, 集合
+						$$
+						\boldsymbol L=\left\{\boldsymbol{\beta} \mid \boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} 		\boldsymbol{\alpha}_{2}+\cdots+k_{m} \boldsymbol{\alpha}_{m}, k_{1}, k_{2}, \cdots, k_{m} \in \boldsymbol K\right\}
+						$$
+						构成线性空间 $\boldsymbol V$ 的子空间, 称该子空间为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 生成的子空间, 记为
+						$$
+						\boldsymbol L\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}\right)
+						$$
+					\end{itemize}
+		\subsection{同构}
+			\subsubsection{基, 维数与坐标}
+				设 $\boldsymbol V$ 是数域 $\boldsymbol K$ 上的线性空间, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m} \in \boldsymbol V$, 若存在 $\boldsymbol K$ 中不全为零的数 $k_{1}, k_{2}, \cdots, k_{m}$ 使得 $k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{m} \boldsymbol{\alpha}_{m}=\mathbf{0}$, 则称向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ \textbf{线性相关}, 否则称 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ \textbf{线性无关}.
+
+				设 $\boldsymbol V$ 是数域 $\boldsymbol K$ 上的线性空间, 设 $n \geqslant 1$, 若 $\boldsymbol V$ 中存在一组向 量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 满足:
+				\begin{enumerate}
+					\item $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性无关
+					\item $\boldsymbol V$ 中任一向量 $\boldsymbol{\alpha}$ 均可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示
+				\end{enumerate}
+				则称 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是线性空间 $V$ 的一组\textbf{基底}或\textbf{基}. 称基底 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 所含向量的个数 $n$ 为线性空间 $V$ 的\textbf{维数}$\operatorname{dim} V=n$, 此时也称 $V$ 是 $K$ 上的 $n$ 维线性空间$\boldsymbol V_{n}(\boldsymbol K)$ 或 $\boldsymbol V_{n}$.
+				\begin{itemize}
+					\item $\operatorname{dim}\{\mathbf{0}\}=0$
+					\item 对整数 $n \geqslant 0, n$ 维线性空间称为\textbf{有限维线性空间}
+					\item $\boldsymbol V$ 中含有无限多个线性无关的向量, 则称 $\boldsymbol V$ 为\textbf{无限维线性空间}
+				\end{itemize}
+				设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是 $\boldsymbol K$ 上 $n$ 维线性空间 $V$ 的一组基, 且对任意 $\boldsymbol \gamma \in \boldsymbol V$, 有
+				$$
+				\boldsymbol \gamma=x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}
+				$$
+				令 $\sigma$ 为 $\boldsymbol V$ 到 $\boldsymbol K^{n}$ 上的如下\textbf{映射}:
+				$$
+				\sigma(\boldsymbol{\gamma})=\boldsymbol{x}=\left(\begin{array}{c}
+					x_{1} \\
+					x_{2} \\
+					\vdots \\
+					x_{n}
+				\end{array}\right) \in \mathbf K^{n}
+				$$
+				则称 $\sigma(\boldsymbol{\gamma})$ 为 $\boldsymbol{\gamma}$ 在基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 下的\textbf{坐标}, $\sigma(\boldsymbol \gamma)$ 是唯一的.
+			\subsubsection{坐标变换}
+				设 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}$ 和 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{n}$ 是 $n$ 维线性空间 $\boldsymbol V$ 中的两组基, 且
+				$$
+				\left\{\begin{array}{r}
+					\boldsymbol \eta_{1}=c_{11} \boldsymbol \varepsilon_{1}+c_{21} \boldsymbol \varepsilon_{2}+\cdots+c_{n 1} \boldsymbol \varepsilon_{n} \\
+					\boldsymbol \eta_{2}=c_{12} \boldsymbol \varepsilon_{1}+c_{22} \boldsymbol \varepsilon_{2}+\cdots+c_{n 2} \boldsymbol \varepsilon_{n} \\
+					\cdots \cdots \cdots \\
+					\boldsymbol \eta_{n}=c_{1 n} \boldsymbol \varepsilon_{1}+c_{2 n} \boldsymbol \varepsilon_{2}+\cdots+c_{n n} \boldsymbol \varepsilon_{n}
+				\end{array}\right.
+				$$
+				令
+				$$
+				\boldsymbol{C}=\left(\begin{array}{rrrr}
+					c_{11} & c_{12} & \cdots & c_{1 n} \\
+					c_{21} & c_{22} & \cdots & c_{2 n} \\
+					\vdots & \vdots & & \vdots \\
+					c_{n 1} & c_{n 2} & \cdots & c_{n n}
+				\end{array}\right)
+				$$
+				则
+				$$
+				\left(\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{n}\right)=\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right) \boldsymbol{C}
+				$$
+				称为\textbf{基变换公式}, 矩阵 $\boldsymbol{C}=\left(c_{i j}\right)_{n \times n}$ 为由基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}$ 到基 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{n}$ 的\textbf{过渡矩阵}.
+
+				$\boldsymbol{C}$ 可逆, 并且 $\boldsymbol{C}=\left(c_{i j}\right)_{n \times n}$ 的第 $j$ 列恰为 $\boldsymbol{\eta}_{j}$ 在基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}$ 下的坐标.
+				若
+				向量 $\boldsymbol{\xi}$ 在这两组基下的坐标分别为
+				$$
+				\boldsymbol{x}=\left(\begin{array}{c}
+					x_{1} \\
+					x_{2} \\
+					\vdots \\
+					x_{n}
+				\end{array}\right)
+				$$
+				和
+				$$
+				\boldsymbol{x}^{\prime}=\left(\begin{array}{c}
+					x_{1}^{\prime} \\
+					x_{2}^{\prime} \\
+					\vdots \\
+					x_{n}^{\prime}
+				\end{array}\right)
+				$$
+				则有\textbf{坐标变换公式}
+				$$
+				\boldsymbol x = \boldsymbol C {\boldsymbol x}^{\prime}\qquad{\boldsymbol x}^{\prime} = \boldsymbol C^{-1} \boldsymbol x
+				$$
+			\subsubsection{线性空间的同构}
+				设 $\boldsymbol V$ 和 $\boldsymbol V^{\prime}$ 是数域 $ \mathbf K$ 上两个线性空间, 如果存在 $\boldsymbol V$ 到 $\boldsymbol V^{\prime}$ 上 的一个双射 $\sigma$:
+				\begin{itemize}
+					\item $\sigma(\boldsymbol{\alpha}+\boldsymbol{\beta})=\sigma(\boldsymbol{\alpha})+\sigma(\boldsymbol{\beta}), \forall \boldsymbol{\alpha}, \boldsymbol{\beta} \in \boldsymbol V$
+					\item $\sigma(k \boldsymbol{\alpha})=k \sigma(\boldsymbol{\alpha}), \forall \boldsymbol{\alpha} \in V, \forall k \in \mathbf K$
+				\end{itemize}
+				则称 $\sigma$ 为 $\boldsymbol V$ 到 $\boldsymbol V^{\prime}$ 的一个\textbf{同构}.
+			\subsubsection{同构映射的性质}
+				\begin{itemize}
+					\item 设 $\mathbf{0}, \mathbf{0}^{\prime}$ 分别为 $\boldsymbol V, \boldsymbol V^{\prime}$ 的零向量, $\boldsymbol{\alpha}$ 为 $\boldsymbol V$ 中任意向量, 则
+					$$
+					\sigma(\mathbf{0})=\mathbf{0}^{\prime}, \quad 	\sigma(-\boldsymbol{\alpha})=-\sigma(\boldsymbol{\alpha})
+					$$
+					\item 对任意 $\boldsymbol{\alpha}_{i} \in \boldsymbol V, k_{i} \in \mathbf K, 1 \leqslant i \leqslant r$, 都有
+					$$
+					\sigma\left(k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} 	\boldsymbol{\alpha}_{r}\right)=k_{1} \sigma\left(\boldsymbol{\alpha}_{1}\right)+k_{2} \sigma\left(\boldsymbol{\alpha}_{2}\right)+\cdots+k_{r} \sigma\left(\boldsymbol{\alpha}_{r}\right)
+					$$
+					\item $\boldsymbol V$ 中元素 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关$\Leftrightarrow$象 $\sigma\left(\boldsymbol{\alpha}_{1}\right)$, $\sigma\left(\boldsymbol{\alpha}_{2}\right), \cdots, \sigma\left(\boldsymbol{\alpha}_{r}\right)$ 在 $\boldsymbol V^{\prime}$ 中线性相关
+					\item $\boldsymbol V$ 中元素 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关$\Leftrightarrow$象 $\sigma\left(\boldsymbol{\alpha}_{1}\right)$, $\sigma\left(\boldsymbol{\alpha}_{2}\right), \cdots, \sigma\left(\boldsymbol{\alpha}_{r}\right)$ 在 $\boldsymbol V^{\prime}$ 中线性无关
+					\item $\boldsymbol V$ 中向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是 $V$ 的一组基$\Leftrightarrow$象 $\sigma\left(\boldsymbol{\alpha}_{1}\right), \sigma\left(\boldsymbol{\alpha}_{2}\right), \cdots, \sigma\left(\boldsymbol{\alpha}_{r}\right)$ 是 $\boldsymbol V^{\prime}$ 的一组基
+					\item 若 $\boldsymbol W$ 是 $\boldsymbol V$ 的子空间, 则 $\sigma(\boldsymbol W)$ 是 $\boldsymbol V^{\prime}$ 的子空间, 且 $\operatorname{dim} \sigma(\boldsymbol W)=\operatorname{dim} \boldsymbol W$
+				\end{itemize}
+			\subsubsection{数域 $\mathbf K$ 上任意一个 $\boldsymbol n$ 维线性空间 $\boldsymbol V$ 均与 $\mathbf K^{n}$ 同构}
+				取 $\boldsymbol V$ 的一组基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots$, $\boldsymbol \varepsilon_{n}$ 与 $\mathbf K^{n}$ 中一组基 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{n}$, 定义 $\boldsymbol V$ 到 $\mathbf K^{n}$ 上的映射 $\sigma$:
+
+				$\forall\boldsymbol\alpha=\sum_{i=1}^{n} x_{i} \boldsymbol \varepsilon_{i}$, 令
+				$$
+				\sigma(\boldsymbol{\alpha})=\sum_{i=1}^{n} x_{i} \boldsymbol{e}_{i}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{T}
+				$$
+				$\sigma$ 是一个同构映射. $\sigma(\boldsymbol{\alpha})=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{T}$是 $\boldsymbol{\alpha}$ 在基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots$, $\boldsymbol \varepsilon_{n}$ 下的坐标 $\boldsymbol{X}_{\boldsymbol{\alpha}}$.
+				记 $\boldsymbol V$ 中的元素 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 在基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots$, $\boldsymbol \varepsilon_{n}$ 下的坐标为 $\boldsymbol{X}_{\boldsymbol{\alpha}_{1}}, \boldsymbol{X}_{\boldsymbol{\alpha}_{2}}, \cdots$, $\boldsymbol{X}_{\alpha_{r}}$, 根据 $\boldsymbol V$ 同构于 $\mathbf K^{n}, \sigma: \boldsymbol{\alpha} \rightarrow \boldsymbol{X}_{\boldsymbol{\alpha}}$ 是同构映射:
+				\begin{itemize}
+					\item $\boldsymbol V$ 中元素 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性相关$\Leftrightarrow$其坐标向量 $\boldsymbol{X}_{\boldsymbol{\alpha}_{1}}, \boldsymbol{X}_{\boldsymbol{\alpha}_{2}}, \cdots, \boldsymbol{X}_{\boldsymbol{\alpha}_{s}}$ 线性相关
+					\item $\boldsymbol V$ 中元系 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关$\Leftrightarrow$其坐标向量 $\boldsymbol{X}_{\boldsymbol{\alpha}_{1}}, \boldsymbol{X}_{\boldsymbol{\alpha}_{2}}, \cdots, \boldsymbol{X}_{\alpha_{s}}$ 线性无关
+					\item $\boldsymbol V$ 中元素 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 为 $\boldsymbol V$ 的一组基$\Leftrightarrow$其坐标向量 $\boldsymbol{X}_{\boldsymbol{\alpha}_{1}}, \boldsymbol{X}_{\boldsymbol{\alpha}_{2}}, \cdots, \boldsymbol{X}_{\boldsymbol{\alpha}_{n}}$ 为 $\mathbf K^{n}$ 中的一组基, 即行列式
+					$$
+					\left|\left(\boldsymbol{X}_{\alpha_{1}}, \boldsymbol{X}_{\alpha_{2}}, \cdots, 	\boldsymbol{X}_{\alpha_{n}}\right)\right| \neq 0
+					$$
+					\item $\sigma\left(\boldsymbol L\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right)\right)=\boldsymbol L\left(\boldsymbol{X}_{\boldsymbol{\alpha}_{1}}, \boldsymbol{X}_{\boldsymbol{\alpha}_{2}}, \cdots, \boldsymbol{X}_{\boldsymbol{\alpha}_{s}}\right)$ 且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 为 $\boldsymbol L\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right)$ 的基$\Leftrightarrow$ $\boldsymbol{X}_{\boldsymbol{\alpha}_{1}}, \boldsymbol{X}_{\boldsymbol{\alpha}_{2}}, \cdots, \boldsymbol{X}_{\boldsymbol{\alpha}_{s}}$ 为 $\boldsymbol L\left(\boldsymbol{X}_{\boldsymbol{\alpha}_{1}},\right.$, $\boldsymbol{X}_{\alpha_{2}}, \cdots, \boldsymbol{X}_{\alpha_{s}}$ ) 的基. 故
+					$$
+					\operatorname{dim} \boldsymbol L\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, 	\boldsymbol{\alpha}_{s}\right)=\operatorname{dim} L\left(\boldsymbol{X}_{\boldsymbol{\alpha}_{1}}, \boldsymbol{X}_{\boldsymbol{\alpha}_{2}}, \cdots, \boldsymbol{X}_{\boldsymbol{\alpha}_{s}}\right)
+					$$
+				\end{itemize}
+		\subsection{线性变换}
+			\subsubsection{定义}
+				设 $\boldsymbol V$ 是数域 $\mathbf K$ 上的线性空间, $\boldsymbol V$ 到自身的一个映射$\mathscr{A}$ 为 $\boldsymbol V$ 的一个\textbf{变换}, 对任意 $\boldsymbol \alpha \in \boldsymbol V$, 都有唯一的向量 $\boldsymbol \beta \in \boldsymbol V$ 与 $\boldsymbol \alpha$ 对应, $\boldsymbol{\beta}$ 为 $\boldsymbol{\alpha}$ 在变换 $\mathscr{A}$ 下的象, $\boldsymbol{\beta}=\mathscr{A} \boldsymbol{\alpha}$ 或 $\boldsymbol{\beta}=\mathscr{A}(\boldsymbol{\alpha})$.
+
+				若 $\forall\boldsymbol{\alpha}, \boldsymbol{\beta} \in \boldsymbol V$ , $\forall k \in \mathbf K, \mathscr{A}$:
+				\begin{itemize} \item $\mathscr{A}(\boldsymbol{\alpha}+\boldsymbol{\beta})=\mathscr{A}(\boldsymbol{\alpha})+\mathscr{A}(\boldsymbol{\beta})$
+				\item $\mathscr{A}(k \boldsymbol{\alpha})=k \mathscr{A}(\boldsymbol{\alpha})$
+				\end{itemize}
+				则称 $\mathscr{A}$ 为线性空间 $\boldsymbol V$ 的一个线性变换.
+
+			\subsubsection{线性变换的矩阵}
+				设 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}$ 是 $\boldsymbol V$ 的一组基, $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}$ 在线性变换 $\mathscr{A}$ 下的象为
+				$$
+				\begin{aligned}
+					\mathscr{A}\left(\boldsymbol \varepsilon_{1}\right)=& a_{11} \boldsymbol \varepsilon_{1}+a_{21} \boldsymbol \varepsilon_{2}+a_{n 1} \boldsymbol \varepsilon_{n} \\
+					\mathscr{A}\left(\boldsymbol \varepsilon_{2}\right)=& a_{12} \boldsymbol \varepsilon_{1}+a_{22} \boldsymbol \varepsilon_{2}+a_{n 2} \boldsymbol \varepsilon_{n} \\
+					& \cdots \cdots \cdots \cdots \\
+					\mathscr{A}\left(\boldsymbol \varepsilon_{n}\right)=& a_{1 n} \boldsymbol \varepsilon_{1}+a_{2 n} \boldsymbol \varepsilon_{2}+a_{n n} \boldsymbol \varepsilon_{n}
+				\end{aligned}
+				$$
+				令 $\mathscr{A}\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right)$=$\left(\mathscr{A}\left(\boldsymbol \varepsilon_{1}\right), \mathscr{A}\left(\boldsymbol \varepsilon_{2}\right), \cdots, \mathscr{A}\left(\boldsymbol \varepsilon_{n}\right)\right)$:
+				$$
+				\begin{gathered}
+					\mathscr{A}\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right)=\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right) \boldsymbol{A},\quad
+					\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}=\left(\begin{array}{cccc}
+						a_{11} & a_{12} & \cdots & a_{1 n} \\
+						a_{21} & a_{22} & \cdots & a_{2 n} \\
+						\vdots & \vdots & & \vdots \\
+						a_{n 1} & a_{n 2} & \cdots & a_{n n}
+					\end{array}\right)
+				\end{gathered}
+				$$
+				若向量 $\boldsymbol \xi$ 在基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}$ 下的坐标为
+				$$
+				x=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{T}
+				$$
+				那么 $\boldsymbol{\xi}$ 的象 $\mathscr{A}(\boldsymbol{\xi})$ 在基 $\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}$ 下的坐标为 $\boldsymbol{A x}$.
+
+				若
+				$$
+				\begin{aligned}
+					\mathscr{A}\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right) &=\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right) \boldsymbol{A} \\
+					\mathscr{A}\left(\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{n}\right) &=\left(\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{n}\right) \boldsymbol{B}
+				\end{aligned}
+				$$
+				且
+				$$
+				\left(\boldsymbol \eta_{1}, \boldsymbol \eta_{2}, \cdots, \boldsymbol \eta_{n}\right)=\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right)\boldsymbol C
+				$$
+				则
+				$$
+				\begin{aligned}
+					\mathscr{A}\left(\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{n}\right) &=\mathscr{A}\left(\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right) \boldsymbol{C}\right)=\mathscr{A}\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right) \boldsymbol{C} \\
+					&=\left(\boldsymbol \varepsilon_{1}, \boldsymbol \varepsilon_{2}, \cdots, \boldsymbol \varepsilon_{n}\right) \boldsymbol{A} \cdot \boldsymbol{C}=\left(\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \cdots, \boldsymbol{\eta}_{n}\right) \boldsymbol{C}^{-1} \boldsymbol{A} \boldsymbol{C}
+				\end{aligned}
+				$$
+				即
+				$$
+				\boldsymbol B=\boldsymbol C^{-1} \boldsymbol A \boldsymbol C
+				$$
+			\subsubsection{其他线性变换}
+				恒等变换(单位变换):$\forall\boldsymbol \alpha \in \boldsymbol V$
+				$$
+				I(\boldsymbol{\alpha})=\boldsymbol{\alpha}
+				$$
+
+				零变换:$\forall\boldsymbol \alpha \in \boldsymbol V$
+				$$
+				0(\boldsymbol{\alpha})=\mathbf{0}
+				$$
+				$\mathscr{A}$ 与 $\mathscr{B}$ 为 $\boldsymbol V$ 的两个线性变换. 令
+				$$
+				\begin{array}{ll}
+					(\mathscr{A}+\mathscr{B})(\boldsymbol{\alpha})=\mathscr{A}(\boldsymbol{\alpha})+\mathscr{B}(\boldsymbol{\alpha}), & \forall \boldsymbol{\alpha} \in \boldsymbol V \\
+					(k \mathscr{A})(\boldsymbol{\alpha})=k(\mathscr{A}(\boldsymbol{\alpha})), & \forall k \in \mathbf K, \forall \boldsymbol{\alpha} \in \boldsymbol V\\
+					(\mathscr{A} \mathscr{B})(\boldsymbol{\alpha})=\mathscr{A}(\mathscr{B}(\boldsymbol{\alpha})), & \forall \boldsymbol{\alpha} \in \boldsymbol V
+				\end{array}
+				$$
+				称 $\mathscr{A}+\mathscr{B}$ 为线性变换 $\mathscr{A}$ 与 $\mathscr{B}$ 的\textbf{和}, $k \mathscr{A}$ 为数 $k$ 与线性变换 $\mathscr{A}$ 的\textbf{纯量积}, $\mathscr{A} \mathscr{B}$ 为线性变换 $\mathscr{A}$ 与 $\mathscr{B}$ 的\textbf{积}. $\mathscr{A}+\mathscr{B}, k \mathscr{A}$ 与 $\mathscr{A} \mathscr{B}$ 都是 $\boldsymbol V$ 的线性变换:
+				\begin{itemize}
+					\item$$
+					\begin{aligned}
+						(\mathscr{A}+\mathscr{B})(\boldsymbol{\alpha}+\boldsymbol{\beta}) 	&=\mathscr{A}(\boldsymbol{\alpha}+\boldsymbol{\beta})+\mathscr{B}(\boldsymbol{\alpha}+\boldsymbol{\beta})=\mathscr{A}(\boldsymbol{\alpha})+\mathscr{A}(\boldsymbol{\beta})+\mathscr{B}(\boldsymbol{\alpha})+\mathscr{B}(\boldsymbol{\beta}) \\
+						&=(\mathscr{A}+\mathscr{B})(\boldsymbol{\alpha})+(\mathscr{A}+\mathscr{B})(\boldsymbol{\beta}) \\
+						(\mathscr{A}+\mathscr{B})(k \boldsymbol{\alpha}) &=\mathscr{A}(k \boldsymbol{\alpha})+\mathscr{B}(k 	\boldsymbol{\alpha})=k \mathscr{A}(\boldsymbol{\alpha})+k \mathscr{B}(\boldsymbol{\alpha}) \\
+							&=k(\mathscr{A}(\boldsymbol{\alpha})+\mathscr{B}(\boldsymbol{\alpha}))=k(\mathscr{A}+\mathscr{B})(\boldsymbol{\alpha})
+					\end{aligned}
+					$$
+					\item$$
+					\begin{aligned}
+						(k \mathscr{A})(\boldsymbol{\alpha}+\boldsymbol{\beta}) 	&=k(\mathscr{A}(\boldsymbol{\alpha}+\boldsymbol{\beta}))=k(\mathscr{A}(\boldsymbol{\alpha})+\mathscr{A}(\boldsymbol{\beta})) \\
+						&=k(\mathscr{A}(\boldsymbol{\alpha}))+k(\mathscr{A}(\boldsymbol{\beta}))=(k 	\mathscr{A})(\boldsymbol{\alpha})+(k \mathscr{A})(\boldsymbol{\beta})
+					\end{aligned}
+					$$
+					\item$$
+					\begin{aligned}
+						(\mathscr{A} \mathscr{B})(\boldsymbol{\alpha}+\boldsymbol{\beta}) &=\mathscr{A} 	\mathscr{B}(\boldsymbol{\alpha}+\boldsymbol{\beta})=\mathscr{A}(\mathscr{B}(\boldsymbol{\alpha})+\mathscr{B}(\boldsymbol{\beta})) \\
+							&=\mathscr{A}(\mathscr{B}(\boldsymbol{\alpha}))+\mathscr{A}(\mathscr{B}(\boldsymbol{\beta}))=(\mathscr{A} \mathscr{B})(\boldsymbol{\alpha})+(\mathscr{A} \mathscr{B})(\boldsymbol{\beta}) \\
+						(\mathscr{A} \mathscr{B}(k \boldsymbol{\alpha})) &=\mathscr{A}(\mathscr{B}(k 	\boldsymbol{\alpha}))=\mathscr{A}(k \mathscr{B}(\boldsymbol{\alpha})) \\
+						&=k \mathscr{A}(\mathscr{B}(\boldsymbol{\alpha}))=k(\mathscr{A} \mathscr{B})(\boldsymbol{\alpha})
+					\end{aligned}
+					$$
+				\end{itemize}
+			\subsubsection{线性变换的性质}
+				\begin{itemize}
+					\item $\mathscr{A}(\mathbf{0})=\mathbf{0}, \mathscr{A}(-\boldsymbol \alpha)=-\mathscr{A}(\boldsymbol{\alpha})$
+					\item 线性变换保持向量间的线性关系不变:$\forall\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m} \in \boldsymbol V$ , $\forall x_{1}, x_{2}, \cdots, x_{m} \in \mathbf K$ 都有
+					$$
+					\mathscr{A}\left(x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{m} \boldsymbol{\alpha}_{m}\right)=x_{1} \mathscr{A}\left(\boldsymbol{\alpha}_{1}\right)+x_{2} \mathscr{A}\left(\boldsymbol{\alpha}_{2}\right)+\cdots+x_{m} \mathscr{A}\left(\boldsymbol{\alpha}_{m}\right)
+					$$
+					\item 线性变换将线性相关的向量组变为线性相关的向量组
+				\end{itemize}
+			\subsubsection{线性空间的值域和核}
+				设 $\mathscr{A}$ 为线性空间 $\boldsymbol V$ 的线性变换, 令
+				$$
+				\begin{aligned}
+					\mathscr{A}(\boldsymbol V) &=\{\mathscr{A}(\boldsymbol \xi) \mid \boldsymbol \xi \in \boldsymbol V\}\\
+					\mathscr{A}^{-1}(\mathbf{0}) &=\{\boldsymbol{\xi} \in \boldsymbol V \mid \mathscr{A}(\boldsymbol{\xi})=\mathbf{0}\}
+				\end{aligned}
+				$$
+				$\mathscr{A}(\boldsymbol V)$ 为线性变换 $\mathscr{A}$ 的值域$\operatorname{Im}(\mathscr{A})$, $\mathscr{A}^{-1}(0)$ 为线性变换 $\mathscr{A}$ 的核$\operatorname{Ker}(\mathscr{A})$, $\operatorname{Im}(\mathscr{A})$和$\operatorname{Ker}(\mathscr{A})$为$\boldsymbol V$的子空间.
+				$$
+				\begin{aligned}
+					r(\mathscr{A}) &=\operatorname{dim}(\operatorname{Im}(\mathscr{A}))\text{为线性变换} \mathscr{A} \text{的秩}, r(\mathscr{A})=r(\boldsymbol{A}) \\
+					r\left(\mathscr{A}^{-1}(\mathbf{0})\right) &=\operatorname{dim}(\operatorname{Ker}(\mathscr{A}))\text{为线性变换} \mathscr{A} \text{的零度}, r\left(\mathscr{A}^{-1}(\mathbf{0})\right)=n-r(\boldsymbol{A})
+				\end{aligned}
+				$$
+		\subsection{欧氏空间}
+			\subsubsection{定义}
+				设 $\boldsymbol V$ 为实数域 $\mathbf{R}$ 上的一个线性空间. $\forall\boldsymbol{\alpha}, \boldsymbol{\beta} \in \boldsymbol V$, 都有 $\mathbf{R}$ 中唯一实数与之对应, 记作 $(\boldsymbol{\alpha}, \boldsymbol{\beta})$:
+				\begin{itemize}
+				\item 对称性 $(\boldsymbol{\alpha}, \boldsymbol{\beta})=(\boldsymbol{\beta}, \boldsymbol{\alpha}), \forall \boldsymbol{\alpha}, \boldsymbol{\beta} \in \boldsymbol V$
+				\item $(k \boldsymbol{\alpha}+l \boldsymbol{\beta}, \boldsymbol{\gamma})=k(\boldsymbol{\alpha}, \boldsymbol{\gamma})+l(\boldsymbol{\beta}, \boldsymbol{\gamma}), \forall k, l \in \mathbf{R}, \boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma} \in \boldsymbol V$
+				\item 正定性 $(\boldsymbol{\alpha}, \boldsymbol{\alpha}) \geqslant 0$, 且 $(\boldsymbol{\alpha}, \boldsymbol{\alpha})=0$ 的充分必要条件是 $\boldsymbol{\alpha}=\mathbf{0}$
+				\end{itemize}
+				称 $(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 为向量 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的\textbf{内积} , 实数域上线性空间 $\boldsymbol V$ 关于这样定义的内积构成一个\textbf{ Euclid 空间}或\textbf{欧氏空间}. 先前定义了向量的内积, 相应的向量空间$\boldsymbol V$构成关于向量内积的欧氏空间.
+	\section{附录}
+		\subsection{关于“任何”的说法}
+			设 $\boldsymbol A$ 为 $n$ 阶实方阵:
+			\begin{itemize}
+				\item 对任何 $n$ 维列向量 $x \in \mathbb{R}^{n}$, 都有 $\boldsymbol A \boldsymbol x=\mathbf 0$, 当且仅当 $\boldsymbol A=\boldsymbol O$
+				\item 对任何 $n$ 阶实方阵 $B \in \mathbb{R}^{n \times n}$, 都有 $\boldsymbol A \boldsymbol B=\boldsymbol B \boldsymbol A$, 当且仅当 $\boldsymbol A$ 是\textbf{数量矩阵}
+				\item 对任何 $n$ 维列向量 $\boldsymbol x \in \mathbb{R}^{n}$, 都有 $x^{T} \boldsymbol A x=0$, 当且仅当 $\boldsymbol A$ 是\textbf{实反对称矩阵}
+				\item 对任何 $n$ 维列向量 $\boldsymbol x \in \mathbb{R}^{n}$, 都有 $(\boldsymbol x, \boldsymbol x)=(\boldsymbol A \boldsymbol x, \boldsymbol A \boldsymbol x)$, 当且仅当 $\boldsymbol A$ 是 \textbf{正交矩阵}
+				\item 对任何 $n$ 维列向量 $\boldsymbol x, \boldsymbol y \in \mathbb{R}^{n}$, 都有 $(\boldsymbol x, \boldsymbol A \boldsymbol y)=(\boldsymbol A \boldsymbol x, \boldsymbol y)$, 当且仅当 $\boldsymbol A$ 是 \textbf{对称矩阵}
+				\item 对任何 $n$ 维列向量 $\boldsymbol x, \boldsymbol y \in \mathbb{R}^{n}$, 都有 $(\boldsymbol x, \boldsymbol A \boldsymbol y)=-(\boldsymbol A \boldsymbol x, \boldsymbol y)$, 当且仅当 $\boldsymbol A$ 是\textbf{反对称矩阵}
+			\end{itemize}
+		\subsection{利用两个多项式恒等}
+			\begin{itemize}
+				\item\textbf{代数基本定理}: 任何复系数一元 n 次多项式方程在复数域上至少有一根 $(n \geq 1)$, 因此 , $n$ 次复系数多项式方程在复数域内有且只有 $n$ 个根
+				\item$f(x)$ 和 $g(x)$ 是两个复系数一元 $n$ 次多项式 , 存在 $n+1$ 个不同复数 $a_{1}, \ldots, a_{n+1}$ 使得 $f\left(a_{i}\right)=g\left(a_{i}\right)$, 那么 $f(x) \equiv g(x)$
+
+				利用行列式给出一种证明:设
+				$$
+				\begin{gathered}
+					f(x)=a_{n}x^{n}+\cdots+a_{1}x+a_{0}\\
+					g(x)=b_{n}x^{n}+\cdots+b_{1}x+b_{0}\\
+				\end{gathered}
+				$$
+				满足$f(x_1)=g(x_1), f(x_2)=g(x_2), \cdots, f(x_{n+1})=g(x_{n+1}),x_i\neq x_j$,则
+				$$
+				\begin{gathered}
+					\left(\begin{array}{ccccc}
+						1 & x_{1} & x_{1}^2 &\cdots & x_{1}^n \\
+						1 & x_{2} & x_{2}^2 & \cdots & x_{2}^n \\
+						\vdots & \vdots & & & \vdots \\
+						1 & x_{n} & x_{n}^2 & \cdots & x_{n}^n \\
+						1 & x_{n+1} & x_{n+1}^2 & \cdots & x_{n+1}^n
+					\end{array}\right)
+					\left(\begin{array}{c}
+						a_0-b_0\\a_1-b_1\\a_2-b_2\\ \vdots \\ a_n-b_n
+					\end{array}\right)=\boldsymbol O\\
+					\text{而}
+					\left(\begin{array}{ccccc}
+						1 & x_{1} & x_{1}^2 &\cdots & x_{1}^n \\
+						1 & x_{2} & x_{2}^2 & \cdots & x_{2}^n \\
+						\vdots & \vdots & & & \vdots \\
+						1 & x_{n} & x_{n}^2 & \cdots & x_{n}^n \\
+						1 & x_{n+1} & x_{n+1}^2 & \cdots & x_{n+1}^n
+					\end{array}\right)=\prod_{1 \leqslant i<j \leqslant n}\left(x_{j}-x_{i}\right)\neq 0,\text{故}
+					\left(\begin{array}{c}
+						a_0-b_0\\a_1-b_1\\a_2-b_2\\ \vdots \\ a_n-b_n
+					\end{array}\right)=\boldsymbol O
+				\end{gathered}
+				$$
+				即$a_0=b_0,a_1=b_1,\cdots,a_n=b_n$
+				\item 设 $\boldsymbol A$ 和 $\boldsymbol B$ 是两个 $n$ 阶复方阵 , 则 $(\boldsymbol A \boldsymbol B)^{*}=\boldsymbol B^{*} \boldsymbol A^{*}$
+				\item 设 $\boldsymbol A$ 为 $n$ 阶幂零方阵 , 幕零指数为 $m$. 若方阵 $\boldsymbol B$ 满足 $\boldsymbol A \boldsymbol B=$ $\boldsymbol B \boldsymbol A$, 则 $|\boldsymbol A+\boldsymbol B|=|\boldsymbol B|$
+			\end{itemize}
+%	\section{后记}
+%		\subsection{通过本课程的学习,你在自学能力“理解能力“解题能力“几何直观能力和逻辑推理能力等方面有哪些提高?}
+%			经过本课程学习, 我认为我的自学能力得到了进一步提高, 我想一个原因是本课程使用的教科书特别善于挖坑, 前后形成闭环的周期太长, 甚至贯穿了整个课程. 虽然学着学着突然恍然大悟的学习体验也不错, 不过就学习而言, 为了充分理解某些提前出现的结论的含义, 只能够暂时搁置, 或者学习完全书.
+%
+%			此外, 通过学习线性代数, 我对物理上的一些方法也有了更深刻的理解. 我原本在中学学习物理竞赛时,没有学习线性代数, 而直接接触了线性代数的产物. 不过也因此, 我在学习线性代数同时, 能够和我学习的物理联系起来, 给出几何上的直观解释.
+%		\subsection{你对"数学是培养学生思维能力的理想载体"有什么感悟?}
+%			数学是最基础的学科之一. 我曾经在物理, 化学, 生物上都接触过一些难题. 而随着我对数学学习的深入, 我逐渐解决这些问题. 数学本身开拓了我的思维, 而我也在解决其他问题的时候, 思考数学, 应用数学. 我想, 就算我有朝一日不再学习数学本身这门学科, 我也会在不断的学习中与数学长久相伴.
+%		\subsection{你对本课程的教与学有哪些意见和建议?}
+%			可以推荐一些国内外优秀教材, 或者干脆换用教材. 我个人认为现用教材逻辑还是有些混乱.
+\end{document}

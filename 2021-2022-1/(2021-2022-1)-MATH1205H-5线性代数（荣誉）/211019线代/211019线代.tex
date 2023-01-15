@@ -1,0 +1,717 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathdots}
+\geometry{a4paper, scale=0.7}
+\setCJKmainfont[BoldFont={FZCKJW.TTF}]{STKAITI.TTF}
+\newtheorem{mydef}{定义}
+\newtheorem{myth}{定理}
+\newtheorem{myinf}{推论}
+
+\title{\textbf{
+		\zihao{1}10月13日线代大作业（2）\\
+		\zihao{2}第一、二章整理}}
+\author{\textbf{王凯灵}}
+\date{\textbf{2021.10.19}}
+
+\begin{document}
+
+	\maketitle
+
+	\section{矩阵概念和运算}
+
+		\subsection{引入}
+
+			\subsubsection{矩阵的定义}
+
+设 $K$ 为数域, $K$上$m$个$n$元线性型组成的线性型组记为如下形式:
+
+$$
+\begin{aligned}
+	\left\{\begin{array}{rl}
+		y_{1}=&\hspace{-0.5em} a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n} \\
+		y_{2}=&\hspace{-0.5em} a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n} \\
+		&\qquad \cdots \cdots \cdots \cdots \\
+		y_{m}=&\hspace{-0.5em} a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n} \\
+	\end{array}\right.
+\end{aligned}
+$$
+
+其中,
+
+\centerline{$a_{i j} \in K, \quad 1 \leq i \leq m, \quad 1 \leq j \leq n$}
+
+将以上$mn$个系数安排成如下方形的表:
+
+$$
+\left(\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\vdots & \vdots & & \vdots \\
+	a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right)
+$$
+
+这就是一个矩阵.
+
+\begin{mydef}
+	设 $K$ 为数域, $a_{i j} \in K, 1 \leq i \leq m, 1 \leq j \leq n$, 令
+	$$
+	\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}=
+	\left(\begin{array}{cccc}
+		a_{11} & a_{12} & \cdots & a_{1 n} \\
+		a_{21} & a_{22} & \cdots & a_{2 n} \\
+		\vdots & \vdots & & \vdots \\
+		a_{m 1} & a_{m 2} & \cdots & a_{m n}
+	\end{array}\right)
+	$$
+\end{mydef}
+
+于是，我们有了矩阵的基本定义.
+
+\subsubsection{常用矩阵}
+
+下面给出几类常用的矩阵.
+
+(1) 零矩阵
+
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n} \in K^{m \times n}$, 若对 $1 \leq i \leq m$ 与 $1 \leq j \leq n$ 都有 $a_{i j}=0$, 则 称 $\boldsymbol{A}$ 为一个 $m \times n$ 零矩阵 (zero matrix), 记作 $\boldsymbol{O}_{m \times n}$ 或 $\boldsymbol{O}$.
+
+(2) 对角矩阵
+
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n} \in K^{n \times n}$, 若对 $1 \leq i, j \leq n$, 当 $i \neq j$ 时都有 $a_{i j}=0$, 即
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+	a_{11} & & & \\
+	& a_{22} & & \\
+	& & \ddots & \\
+	& & & a_{n n}
+\end{array}\right)
+$$
+则称 $\boldsymbol{A}$ 为 $n$ 阶对角矩阵 (diagonal matrix).
+
+(3) 纯量矩阵
+
+设 $\boldsymbol{A}$ 为 $n$ 阶对角矩阵且 $a_{11}=a_{22}=\cdots=a_{n n}=k$, 即
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+	k & & & \\
+	& k & & \\
+	& & \ddots & \\
+	& & & k
+\end{array}\right)
+$$
+则称 $\boldsymbol{A}$ 为 $n$ 阶纯量矩阵 (scalar matrix) 或数量矩阵. 特别当 $k=1$, 即
+$$
+A=\left(\begin{array}{llll}
+	1 & & & \\
+	& 1 & & \\
+	& & \ddots & \\
+	& & & 1
+\end{array}\right)
+$$
+
+时, $A$ 叫做 $n$ 阶单位矩阵 (identity matrix), 记为 $E_{n}$ 或 $\boldsymbol{E}$.
+
+(4) 三角形矩阵
+
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n} \in K^{n \times n}$. 若当 $1 \leq j<i \leq n$ 时, 都有 $a_{i j}=0$, 即
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	& a_{22} & \cdots & a_{2 n} \\
+	& & \ddots & \vdots \\
+	& & & a_{n n}
+\end{array}\right)
+$$
+则称 $\boldsymbol{A}$ 为 $n$ 阶上三角形矩阵 (upper triangular matrix); 若当 $1 \leq i<j \leq n$ 时, 都有 $a_{i j}=0$, 即
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+	a_{11} & & & \\
+	a_{21} & a_{22} & & \\
+	\vdots & \vdots & \ddots & \\
+	a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right)
+$$
+则称 $\boldsymbol{A}$ 为 $n$ 阶下三角形矩阵 (lower triangular matrix).
+
+(5) 对称矩阵与反对称矩阵
+
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n} \in K^{m \times n}$, 令 $\boldsymbol{B}=\left(b_{i j}\right)_{n \times m} \in K^{n \times m}$, 此处
+$$
+b_{i j}=a_{j i}, \quad 1 \leq i \leq n, \quad 1 \leq j \leq m
+$$
+$B$ 称为 $A$ 的转置矩阵 (transposed matrix), 记作 $\boldsymbol{A}^{\mathrm{T}}$ 或 $\boldsymbol{A}^{\prime}$.
+显然 $\left(A^{\mathrm{T}}\right)^{\mathrm{T}}=A$.
+设 $\boldsymbol{A} \in K^{n \times n}$, 若 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 即
+$$
+a_{j i}=a_{i j}, \quad 1 \leq i, j \leq n
+$$
+则称 $\boldsymbol{A}$ 为 $n$ 阶对称矩阵 (symmetric matrix); 若 $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, 即
+$$
+a_{j i}=-a_{i j}, \quad 1 \leq i, j \leq n
+$$
+则称 $\boldsymbol{A}$ 为 $n$ 阶反对称矩阵 (anti-symmetric matrix).
+
+(6) 向量
+
+设 $m=1, \boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right) \in K^{1 \times n}$, 则称 $\boldsymbol{\alpha}$ 为 $K$ 上的 $n$ 维行向量 (row vector of dimension $n$ ); 设 $n=1$,
+$$
+\boldsymbol{\beta}=\left(\begin{array}{c}
+	b_{1} \\
+	b_{2} \\
+	\vdots \\
+	b_{m}
+\end{array}\right) \in K^{m \times 1}
+$$
+则称 $\boldsymbol{\beta}$ 为 $K$ 上 $m$ 维列向量 (column vector).
+
+\subsubsection{注}虽然这些东西极其基础, 但是作为线性代数的基本概念, 所以全部列出. 以后的部分才是根据我是否觉得重要删减的.
+
+\subsection{加法和乘法}
+
+\subsubsection{加法}
+不妨仍然把矩阵看作是方程的系数, 给定两个方程组, 对应系数和常数叠加, 就能得到新的方程组. 实际上, 当我们把矩阵看作一组向量时, 因为每个向量的相加都得到了一个新的向量, 于是我们或许得到了一个新的空间. 当然, 这个新空间维数变化和相加的矩阵本身有关.
+
+很自然的,我们有:
+\begin{mydef}
+
+\centerline{若$\boldsymbol{C}=\boldsymbol{A}+\boldsymbol{B},\boldsymbol{A}=\left(a_{i j}\right)_{m \times n} \in K^{m \times n}\boldsymbol{B}=\left(b_{i j}\right)_{n \times m} \in K^{n \times m}$}
+
+则
+$$
+\boldsymbol{C}=\left(\begin{array}{cccc}
+	a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1 n}+b_{1 n} \\
+	a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2 n}+b_{2 n} \\
+	\vdots & \vdots & & \vdots \\
+	a_{m 1}+b_{m 1} & a_{m 2}+b_{m 2} & \cdots & a_{m n}+b_{m n}
+\end{array}\right)
+$$
+\end{mydef}
+即$\boldsymbol{C}=\left(c_{i j}\right)_{m \times n}$, 其中
+$$
+c_{i j}=a_{i j}+b_{i j}, 1 \leq i \leq m, 1 \leq j \leq n
+$$
+
+\subsubsection{数乘}
+当所有系数都乘上一个数时,
+
+$$
+\boldsymbol{D}=\left(\begin{array}{cccc}
+	k a_{11} & k a_{12} & \cdots & k a_{1 n} \\
+	k a_{21} & k a_{22} & \cdots & k a_{2 n} \\
+	\vdots & \vdots & & \vdots \\
+	k a_{m 1} & k a_{m 2} & \cdots & k a_{m n}
+\end{array}\right)
+$$
+
+由此很自然地引出纯量乘法的定义.
+
+\begin{mydef}
+$$
+\boldsymbol{A}=\left(a_{i j}\right)_{m \times n} \in K^{m \times n}
+$$
+令 $D=\left(d_{i j}\right)_{m \times n}$, 其中
+$$
+d_{i j}=k a_{i j}, 1 \leq i \leq m, 1 \leq j \leq n
+$$
+则称矩阵 $\boldsymbol{D}$ 为数 $k$ 与矩阵 $\boldsymbol{A}$ 的纯量积, 记作 $\boldsymbol{D}=k \boldsymbol{A}$.
+\end{mydef}
+
+以上二者是矩阵的线性变换. 这两者的性质和以前接触的其他加法, 乘法相比, 在结合交换等方面并没有特别的地方. 值得一提的是, 相加再转置, 转置可以视为分配. 数乘再转置, 常数可以提出转置符.
+
+减法, 数量的除法, 都十分简单, 故不赘述.
+
+\subsubsection{矩阵的乘法}
+这个神奇的玩意刚上来实在是令我有点费解. 好好的方程组系数, 有啥子好乘的. 书上的解释是方程的变换. 事实上, 在其他课程的学习中,我意识到矩阵能够表达诸如伸缩, 旋转的变换,乘法被我理解为将过程进行封装. 不过, 那是以后研究的内容. 现在先给上定义:
+\begin{mydef}
+设
+$$
+\boldsymbol{A}=\left(a_{i j}\right)_{m \times n} \in K^{m \times n}, \quad \boldsymbol{B}=\left(b_{i j}\right)_{n \times s} \in K^{n \times s}
+$$
+令 $\boldsymbol{C}=\left(c_{i j}\right)_{m \times s}$, 其中
+$$
+c_{i j}=\sum_{k=1}^{n} a_{i k} b_{k j}, \quad 1 \leq i \leq m, \quad 1 \leq j \leq s
+$$
+则称 $m \times s$ 矩阵 $C$ 为矩阵 $A$ 与 $B$ 的乘积 (product), 记作 $C=A B$.
+\end{mydef}
+
+显然能够看出两个矩阵的行列对应关系. 想象成消消乐, 这一点其实很好记.
+
+乘法具有结合律, 分配律. 单位阵相当于1, 零矩阵相当于0. 常数可以放在任意一个矩阵前. 这些都很好理解. 比较需要注意的就是不能随便消去. 说真的这一点很烦人.
+
+以下是一些结论:
+
+有些乘法可以交换, 和任意矩阵可交换$\Leftrightarrow$单位阵.
+
+同一个方阵相乘多次, 就是幂运算, 性质平凡.
+
+乘后转置, 由于行列数对应, 不难理解$\left(\boldsymbol{AB}\right) ^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}}\boldsymbol{A}^{\mathrm{T}}$
+
+\subsection{迹}
+\begin{mydef}{迹}
+	设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$, 则称其主对角线上的元素之和为 $\boldsymbol{A}$ 的迹 (trace), 记作 $\operatorname{tr}(\boldsymbol{A})$, 即
+$$
+\operatorname{tr}(\boldsymbol{A})=\sum_{i=1}^{n} a_{i i}
+$$
+\end{mydef}
+设 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 为 $n$ 阶方阵, $k$ 为数, 以下简单列出性质, 不做说明, 因为我暂时没理解这有啥用:
+
+(1) $\operatorname{tr}\left(\boldsymbol{A}^{\mathrm{T}}\right)=\operatorname{tr}(\boldsymbol{A})$
+
+(2) $\operatorname{tr}(\boldsymbol{A}+\boldsymbol{B})=\operatorname{tr}(\boldsymbol{A})+\operatorname{tr}(\boldsymbol{B})$.
+
+(3) $\operatorname{tr}(k \boldsymbol{A})=k \operatorname{tr}(\boldsymbol{A})$.
+
+(4) $\operatorname{tr}(\boldsymbol{A B})=\operatorname{tr}(\boldsymbol{B} \boldsymbol{A})$.
+
+\subsection{行列式}
+
+\subsubsection{排列}
+主要了解逆序数, 就是一串数中不按顺序来的个数.
+
+\subsubsection{行列式的值}
+\begin{mydef}{行列式}
+	设 $n \geq 1, \boldsymbol{A}=\left(a_{i j}\right)_{n \times n} \in K^{n \times n}$. 令
+	$$
+	|\boldsymbol{A}|=\sum_{j_{1} j_{2} \cdots j_{n}}(-1)^{\tau\left(j_{1} j_{2} \cdots j_{n}\right)} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}
+	$$
+	其中 $\sum_{j_{1} j_{2} \cdots j_{n}}$ 表示对所有的 $n$ 级排列求和, 则称 $|\boldsymbol{A}|$ 为 $n$ 阶方阵 $\boldsymbol{A}$ 的行列式或 $n$ 阶行列式, 而把
+	$$
+	\sum_{j_{1} j_{2} \cdots j_{n}}(-1)^{\tau\left(j_{1} j_{2} \cdots j_{n}\right)} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}
+	$$
+	叫做 $|\boldsymbol{A}|$ 的展开式. $|\boldsymbol{A}|$ 也常记做
+	$$
+	|\boldsymbol{A}|=\left|\begin{array}{cccc}
+		a_{11} & a_{12} & \cdots & a_{1 n} \\
+		a_{21} & a_{22} & \cdots & a_{2 n} \\
+		\vdots & \vdots & & \vdots \\
+		a_{n 1} & a_{n 2} & \cdots & a_{n n}
+	\end{array}\right|
+	$$
+\end{mydef}
+	上面给出的行列式计算是按行次序来的. 不难发现, 按列来也是以一样的. 所以转置不改变行列式的值:
+
+	\centerline{$\left| \boldsymbol{A}\right| = \left| \boldsymbol{A}^{\mathrm{T}}\right|$}
+
+	直接上定义, 记这么几个结论:
+
+	当 $n=1$ 时, 总共只有一个排列: 1. 显然 $\tau(1)=0$, 因此
+	$$
+	|\boldsymbol{A}|=\left|\left(a_{11}\right)\right|=(-1)^{\tau(1)} a_{11}=a_{11}
+	$$
+	当 $n=2$ 时, 共有 2 个排列: 12,21 . 由于 $\tau(12)=0, \tau(21)=1$. 因此
+	$$
+	\begin{aligned}
+		|\boldsymbol{A}| &=\left|\begin{array}{ll}
+			a_{11} & a_{12} \\
+			a_{21} & a_{22}
+		\end{array}\right|=\sum_{j_{1} j_{2}}(-1)^{\tau\left(j_{1} j_{2}\right)} a_{1 j_{1}} a_{2 j_{2}} \\
+		&=(-1)^{\tau(12)} a_{11} a_{22}+(-1)^{\tau(21)} a_{12} a_{21}=a_{11} a_{22}-a_{12} a_{21}
+	\end{aligned}
+	$$
+	当 $n=3$ 时, 共有 6 个排列且它们的逆序数为
+	$$
+	\tau(123)=0, \tau(231)=\tau(312)=2, \tau(132)=\tau(213)=1, \tau(321)=3
+	$$
+	因此
+	$$
+	\begin{aligned}
+		|\boldsymbol{A}|=&\left|\begin{array}{lll}
+			a_{11} & a_{12} & a_{13} \\
+			a_{21} & a_{22} & a_{23} \\
+			a_{31} & a_{32} & a_{33}
+		\end{array}\right|=\sum_{j_{1} j_{2} j_{3}}(-1)^{\tau\left(j_{1} j_{2} j_{3}\right)} a_{1 j_{1}} a_{2 j_{2}} a_{3 j_{3}} \\
+		=& a_{11} a_{22} a_{33}+a_{12} a_{23} a_{31}+a_{13} a_{21} a_{32}-\\
+		&\left(a_{13} a_{22} a_{31}+a_{11} a_{23} a_{32}+a_{12} a_{21} a_{33}\right)
+	\end{aligned}
+	$$
+	\subsubsection{行列式的计算}
+	超过五阶, 手算就不太现实了. 但是, 我们发现, 当方阵对角线以上或以下都是0时, 行列式会很好计算. 这时, 行列式的值显然就是对角线数的乘积. 副对角线也类似,不过会多一个负号. 这应该是一种很常用的化简计算行列式的思路.
+
+	另一种思路就是变换行列式. 有以下三种:
+
+	(1)行列式某行乘以常数$k$时, 显然对于定义6的每个式子都乘了$k$, 那么行列式也变为$k$倍. 即: 行列式某一行可以提一个常数出来.
+
+	(2)行列式某两行交换, 显然每个逆序数奇偶都改变了, 所以会多一个负号.
+
+	(3)行列式某一行的非零倍加到另一行, 行列式不变. 因为
+	$$
+	\begin{aligned}
+		&\left|\begin{array}{cccc}
+			a_{11} & a_{12} & \cdots & a_{1 n} \\
+			\vdots & \vdots & & \vdots \\
+			b_{1} & b_{2} & \cdots & b_{n} \\
+			\vdots & \vdots & & \vdots \\
+			a_{n 1} & a_{n 2} & \cdots & a_{n n}
+		\end{array}\right|+\left|\begin{array}{ccccc}
+			a_{11} & a_{12} & \cdots & a_{1 n} \\
+			\vdots & \vdots & & \vdots \\
+			a_{1} & c_{2} & \cdots & c_{n} \\
+			\vdots & \vdots & & \vdots \\
+			a_{n 2} & \cdots & a_{n n}
+		\end{array}\right| \\
+		&=\left|\begin{array}{ccccc}
+			a_{11} & a_{12} & \cdots & a_{1 n} \\
+			\vdots & \vdots & & \vdots \\
+			b_{1}+c_{1} & b_{2}+c_{2} & \cdots & b_{n}+c_{n} \\
+			\vdots & \vdots & & \vdots \\
+			a_{n 1} & a_{n 2} & \cdots & a_{n n}
+		\end{array}\right|
+	\end{aligned}
+	$$
+	而且如果一个行列式中两行成比例, 交换之, 发现行列式等于负的它自己, 所以是零. 显然有这一结论.
+
+	对于列而言,以上性质都完全一样.
+
+\subsubsection{行列式的展开}
+
+\begin{mydef}{代数余子式}
+	设 $D$ 为 $n$ 阶行列式, $1 \leq k \leq n, 1 \leq i_{1}<i_{2}<\cdots<i_{k} \leq$ $n, 1 \leq j_{1}<j_{2}<\cdots<j_{k} \leq n$. 在 $D$ 中取定第 $i_{1}, i_{2}, \cdots, i_{k}$ 行与第 $j_{1}, j_{2}, \cdots, j_{k}$ 列, 将位于这 $k$ 行 $k$ 列交点上的 $k^{2}$ 个元素依原来的顺序组成一个 $k$ 阶行列式 $M$, 称为 $D$ 的一个 $k$ 阶子式 (minor). 当 $k<n$ 时, 在 $D$ 中划去这 $k$ 行 $k$ 列后 余下的元素按原来顺序组成的 $n-k$ 阶行列式 $M^{\prime}$ 称为 $M$ 的余子式 (cofactor). 再令
+$$
+A=(-1)^{\left(i_{1}+i_{2}+\cdots+i_{k}\right)+\left(j_{1}+j_{2}+\cdots+j_{k}\right)} M^{\prime}
+$$
+则 $A$ 叫做 $M$ 的代数余子式 (algebraic cofactor).
+\end{mydef}
+就我个人理解, 代数余子式的产生就是为拉普拉斯展开服务的.
+
+\begin{mydef}{Laplace 定理}
+	设 $D$ 为 $n$ 阶行列式, $1 \leq k \leq n-1$. 在 $D$ 中 任意取定 $k$ 行, 由这 $k$ 行元素所组成的全体 $k$ 阶子式记作 $M_{1}, M_{2}, \cdots, M_{t}$, 此处 $t=\mathrm{C}_{n}^{k}$. 对 $1 \leq i \leq t$, 令 $M_{i}$ 的代数余子式为 $A_{i}$, 则
+	$$
+	D=\sum_{i=1}^{t} M_{i} A_{i}=M_{1} A_{1}+M_{2} A_{2}+\cdots+M_{t} A_{t}
+	$$
+\end{mydef}
+按列也能展开, 显然.
+
+紧挨着, 我列出一些行列式的常用技巧:
+\subsubsection{行列式的技巧}
+除去之前提过的三角化, 书上的爪形行列式看着又很鸡肋, 故我挑几个好用的:
+
+(1)数学归纳法永垂不朽.
+
+(2)递推关系法, 对于一些比较规律的行列式展开递推.
+
+(3)利用添加一边构造. 常用的有加一列1等.
+
+(4)往范德蒙德行列式靠拢.
+$$
+D_{n}=\left|\begin{array}{cccc}
+	1 & 1 & \cdots & 1 \\
+	x_{1} & x_{2} & \cdots & x_{n} \\
+	x_{1}^{2} & x_{2}^{2} & \cdots & x_{n}^{2} \\
+	\vdots & \vdots & & \vdots \\
+	x_{1}^{n-1} & x_{2}^{n-1} & \cdots & x_{n}^{n-1}
+\end{array}\right|=\prod_{1 \leq i<j \leq n}\left(x_{j}-x_{i}\right)
+$$
+\subsubsection{分块矩阵}
+分块很好用,但是性质和普通矩阵差不多. 倒不如说普通矩阵是特殊的分块矩阵.
+\subsubsection{来自习题的结论}
+(1)上(下)三角矩阵的乘积仍是上(下)三角矩阵.
+
+(2)若$\boldsymbol{A}\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{O}$,则$\boldsymbol{A}=\boldsymbol{O}$
+
+(3)$\left(A^{*}\right)^{-1}=\left(A^{-1}\right)^{*}=\frac{1}{|\boldsymbol{A}|}|\boldsymbol{A}|, \quad\left(\boldsymbol{A}^{*}\right)^{*}=|\boldsymbol{A}|^{n-2} \boldsymbol{A}$
+
+(4)若 $A$ 为 $n$ 阶方阵. 对于任意 $n \times 1$ 矩阵 $\alpha$ 都有 $\alpha^{\mathrm{T}} A \alpha=0$ 的充分必要条件为 $\boldsymbol{A}$ 是反对称矩阵.
+
+(5)若 $\boldsymbol{A}$ 为 $n$ 阶非零的对称矩阵, 存在 $n \times 1$ 矩阵 $\boldsymbol{\alpha}$, 使得 $\boldsymbol{\alpha}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{\alpha} \neq 0$.
+
+(6)若 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$, 证明:
+
+\qquad1. $\operatorname{tr}(\boldsymbol{A})=\operatorname{tr}(\boldsymbol{B})$
+
+\qquad2. $\operatorname{tr}(\boldsymbol{A}+\boldsymbol{B})=\operatorname{tr}(\boldsymbol{A})+\operatorname{tr}(\boldsymbol{B})$
+
+\qquad3. 若 $k$ 为常数, 则 $\operatorname{tr}(k \boldsymbol{A})=k \operatorname{tr}(\boldsymbol{A})$;
+
+\qquad4. 若 $\boldsymbol{A}$ 为可逆矩阵, 则 $\operatorname{tr}\left(\boldsymbol{A}^{*}\right)=|\boldsymbol{A}| \operatorname{tr}\left(\boldsymbol{A}^{-1}\right)$;
+
+\qquad5. $\operatorname{tr}\left(\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}\right)-\operatorname{tr}\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}\right)=0$
+
+(7)若 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 为 $n$ 阶可逆矩阵, 则 $(\boldsymbol{A B})^{*}=\boldsymbol{B}^{*} \boldsymbol{A}^{*}$.
+
+(8)若 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 为 $n$ 阶可逆矩阵, 则
+$(-\boldsymbol{A})^{*}=(-1)^{n-1} \boldsymbol{A}^{*}$
+,$\left(\boldsymbol{A}^{\mathrm{T}}\right)^{*}=\left(\boldsymbol{A}^{*}\right)^{\mathrm{T}} .$
+
+(9)若 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 为上（或下）三角形矩阵. 则:
+
+\qquad1. $\boldsymbol{A}$ 可逆的充要条件为 $a_{i i} \neq 0, i=1,2, \cdots, n$;
+
+\qquad2. 若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{A}^{-1}$ 仍为上 (或下) 三角形矩阵;
+
+\qquad3. 若 $\boldsymbol{A}$ 可逆, 记 $\boldsymbol{A}^{-1}=\left(b_{i j}\right)_{n \times n}$, 则 $a_{i i} b_{i i}=1, i=1,2, \cdots, n$.
+\section{矩阵的秩}
+感觉好多东西都是再给矩阵的秩做铺垫. 矩阵有了秩的概念, 简直是获得了新生.
+
+\subsection{矩阵变换}
+\subsubsection{初等变换}
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\vdots & \vdots & & \vdots \\
+	a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right)
+$$
+再设 $1 \leq i, j \leq m, i \neq j$, 对矩阵 $\boldsymbol{A}$ 施行以下三种变换:
+
+(1) 交换 $\boldsymbol{A}$ 的第 $i$ 行和第 $j$ 行, 记作 $r_{i} \longleftrightarrow r_{j}$;
+
+(2) 设 $k \in K, k \neq 0$, 用 $k$ 去乘 $\boldsymbol{A}$ 的第 $i$ 行, 记作 $k \cdot r_{i}$;
+
+(3) 设 $k \in K$, 将 $\boldsymbol{A}$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行, 记作 $r_{i}+k \cdot r_{j}$. 上述三种变换依次叫做矩阵的第一类、第二类和第三类行初等变换 $($ row elementary transformation).
+
+同样地, 把行改成列, 也有三种变换. 但是列变换不利于我们解方程组.
+
+下面引入阶梯形矩阵的概念.
+
+\begin{mydef}设 $\boldsymbol{A}$ 为数域 $K$ 上的 $m \times n$ 矩阵, $0 \leq r \leq m, \boldsymbol{A}$ 恰有 $r$ 个非 零行 (即至少有一个个非零元素的行), 其余 $m-r$ 行为全零行 (即所有元素都是 零的行). 若 $\boldsymbol{A}$ 满足以下两个条件:
+
+(1) $\boldsymbol{A}$ 的前 $r$ 行为非零行, 后 $m-r$ 行为全零行;
+
+(2) 对 $1 \leq i \leq r$, 设 $\boldsymbol{A}$ 的第 $i$ 行中最左边的非零元为 $a_{i j_{i}}$, 则
+
+$$
+1 \leq j_{1}<j_{2}<\cdots<j_{r} \leq n
+$$
+
+则称 $\boldsymbol{A}$ 是一个有 $r$ 级阶梯的行阶梯形矩阵(row echelon matrix), 各非零行中 最左边的非零元叫主元(pivot).
+\end{mydef}
+
+\begin{mydef}设 $\boldsymbol{A}$ 为行阶梯形矩阵, 如果 $\boldsymbol{A}$ 还满足以下条件:
+
+(3) 每个主元都是 1;
+
+(4) 各个主元所在列的其余元素都是零.
+
+则称 $\boldsymbol{A}$ 为一个简化行阶梯形矩阵 (reduced row echelon matrix).
+\end{mydef}
+
+\subsubsection{用矩阵变换矩阵}
+
+\begin{mydef}
+设 $\boldsymbol{E}$ 为数域 $K$ 上的 $n$ 阶单位矩阵. 令
+
+$$
+	\boldsymbol{E}(i, j)=\left(
+	\begin{array}{llllllllll}
+		1 & & & & & & & & \\
+		& \ddots & & & & & & & & \\
+		& & 1 & & & & & & & \\
+		& & & 0 & \cdots & 1 & & & & \\
+		& & & \vdots & \ddots & \vdots & & & & \\
+		& & & 1 & \cdots & 0 & & & \\
+		& & & & & & 1 & & \\
+		& & & & & & & \ddots & \\
+		& & & & & & & & 1
+	\end{array}\right)
+ \begin{array}{c}(\text { 第 } i \text { 行 }) \\
+	\\
+	(\text { 第 } j \text { 行 })\end{array},
+$$
+
+
+\centerline{$
+\boldsymbol{E}(i(k))=\left(\begin{array}{ccccc}1 & & & & \\ & \ddots & & & \\ & & k & & \\ & & & \ddots & \\ & & & & 1
+\end{array}\right)
+$(第i行)}
+$$
+\boldsymbol{E}(i, j(k))=\left(\begin{array}{cccccccc}
+	1 & & & & & \\
+	 & \ddots & & & & & \\
+	  & & 1 & \cdots & k & & \\
+	   & & & \ddots & \vdots & & \\
+	    & & & & 1 & & \\
+	     & & & & & \ddots & \\
+	     & & & & & & 1
+     \end{array}\right)
+ \begin{array}{c}(\text { 第 } i \text { 行 }) \\
+ 	\\
+ 	 (\text { 第 } j \text { 行 })\end{array}.
+$$
+
+$\boldsymbol{E}(i, j), \boldsymbol{E}(i(k))$ 与 $\boldsymbol{E}(i, j(k))$ 依次称为第一类、第二类和第三类初等矩阵 $($ elementary matrix).
+由定义可知, $\boldsymbol{E}(i, j)$ 是由交换单位矩阵 $\boldsymbol{E}$ 的第 $i$ 行与第 $j$ 行所得的矩阵, $\boldsymbol{E}(i(k))$ 是用非零数 $k$ 去乘 $\boldsymbol{E}$ 的第 $i$ 行所得的矩阵, $\boldsymbol{E}(i, j(k))$ 则是将 $\boldsymbol{E}$ 中第 $j$ 行的 $k$ 倍加到第 $i$ 行得到的矩阵.
+关于初等矩阵的行列式, 我们有
+$$
+|\boldsymbol{E}(i, j)|=-1,|\boldsymbol{E}(i(k))|=k,|\boldsymbol{E}(i, j(k))|=1
+$$
+\end{mydef}
+把这些初等矩阵乘在矩阵右边, 就相当于对应的初等行变换. 左边就是列变换.
+
+用这些变换, 我们可以将任何矩阵变换成简化阶梯矩阵. 这是很显然的, 其实就是解方程的过程.
+
+并且, 由于变换是可逆的, 我们可以逆向变换从简化阶梯矩阵得到原来的矩阵. 这时, 简化阶梯矩阵右乘的一系列矩阵可以化简为一个矩阵. 利用这个思想, 我们在矩阵右边填上一个方阵, 这样就记录了矩阵的行变换. 当然, 如果是列变换的话只要在下方添置一个矩阵就行了. 我们发现, 这样求逆矩阵比原来方便多了. 所以我甚至跳过了原来的求法.
+
+很自然的, 我们会关心简化阶梯矩阵有几行(列)来考察方程解问题, 这玩意可以用秩来考虑.
+
+\subsection{秩}
+
+\begin{mydef}
+	设 $\boldsymbol{A}$ 为数域 $K$ 上的 $m \times n$ 矩阵. 若 $\boldsymbol{A}$ 中有一个 $r$ 阶子式 不等于零而所有高于 $r$ 阶的子式都等于零, 则定义 $r$ 为矩阵的秩 $(\mathrm{rank})$, 记 作 $\operatorname{rank}(\boldsymbol{A})=r$ 或 $r(\boldsymbol{A})=r$. 若 $\boldsymbol{A}$ 为零矩阵, 则定义 $\boldsymbol{A}$ 的秩为零, 记作 $\operatorname{rank}(\boldsymbol{A})=0$ 或 $r(\boldsymbol{A})=0$.
+\end{mydef}
+秩这个东西, 放在n元一次方程组对应矩阵中, 其实就是说有几个方程是真正有用的. 所以, 秩和方程组解息息相关.
+
+我们发现, 秩就是矩阵向单位矩阵化简结果中1的数量. 所以现在我们就这么求秩.
+
+为了更方便解方程组, 我们把常数并入矩阵中一起行变换, 于是有:
+\begin{mydef}
+$$
+\tilde{\boldsymbol{A}}=\left(\begin{array}{ccccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} & b_{1} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} & b_{2} \\
+	\vdots & \vdots & & \vdots & \vdots \\
+	a_{m 1} & a_{m 2} & \cdots & a_{m n} & b_{m}
+\end{array}\right)
+$$
+为矩阵
+$$
+{\boldsymbol{A}}=\left(\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n}  \\
+	\vdots & \vdots & & \vdots \\
+	a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right)
+$$
+的增广矩阵.
+\end{mydef}
+
+所有的线性方程组, 都可以如此考虑成这样的矩阵.
+
+设线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$, 其中 $\boldsymbol{A}$ 为 $m \times n$ 矩阵,
+若$\boldsymbol{\beta} = 0$, 则
+
+(1) $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 只有零解的充分必要条件为 $r(\boldsymbol{A})=n$,即$\left| \boldsymbol{A} \right| \neq 0$;
+
+(2) $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 有非零解的充分必要条件为 $r(\boldsymbol{A})<n$,即$\left| \boldsymbol{A} \right| = 0$.
+
+这其实就是Crimer法制. 所以我前面没写, 欸嘿.
+
+若$\boldsymbol{\beta} \neq 0$, 则
+
+(1) $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 有唯一解的充分必要条件为 $r(\boldsymbol{A})=r(\widetilde{\boldsymbol{A}})=n$;
+
+(2) $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{\beta}$ 有无穷多解的充分必要条件为 $r(\boldsymbol{A})=r(\widetilde{\boldsymbol{A}})<n$.
+\subsubsection{解方程组}
+先将方程组对应增广矩阵通过初等行变换化简成为简化阶梯矩阵. 然后我们得到了一些形式比较简单的方程组.
+
+如果方程组无解或者有唯一解, 很简单就能解出. 但是当方程组有无数解时, 我们也能很简单地给出通解:
+
+首先, 用未知数个数即列数减去秩, 这个差值就是自由变量的个数, 如果忽略自由变量, 我们可以解出其他变量的一组确定解. 再此基础上, 每一个自由变量的值产生的影响可以由前面解出的几个变量消去. 每个自由变量都需要消去, 于是方程解系含有自由变量个数+1个向量.
+
+当然, 我讨论的是非齐次线性方程组. 对于齐次线性方程组, 我举得没什么要记的.
+
+\subsubsection{向量组 分块矩阵变换}
+
+向量组这玩意, 我目前没觉得有什么太独特的东西. 无非就是一个向量构成的矩阵, 再在这个基础上考虑. 以平面向量的概念推广, 就目前而言理解毫无难度.
+
+分块矩阵变换也没有什么特别之处. 就是和普通矩阵一样的. 我写在这只是尊重下课本了, 毕竟人家花了大篇幅认认真真地证明.
+
+\subsubsection{一些定理和结论}
+(1)$r(\boldsymbol{A} \boldsymbol{B}) \leq \min (r(\boldsymbol{A}), r(\boldsymbol{B}))$
+
+(2)矩阵经历初等变换, 其逆矩阵分别经历:
+
+$\boldsymbol{E}(i, j) ]\qquad \boldsymbol{E}(i(\frac{1}{k})) \qquad \boldsymbol{E}(j, i(-k))$
+
+(3)
+$$
+	\left(\begin{array}{cccc}
+		\boldsymbol{A}_{1} & & & \\
+		& \boldsymbol{A}_{2} & & \\
+		& & \ddots & \\
+		& & & \boldsymbol{A}_{s}
+	\end{array}\right)^{-1} \\
+=
+	\left(\begin{array}{cccc}
+		\boldsymbol{A}_{1}^{-1} & & & \\
+		& \boldsymbol{A}_{2}^{-1} & & \\
+		& & \ddots & \\
+		& & & \boldsymbol{A}_{s}^{-1}
+	\end{array}\right),
+$$
+$$
+\left(\begin{array}{cccc}
+	& & & \boldsymbol{A}_{1} \\
+	& & \boldsymbol{A}_{2} & \\
+	& \iddots & & \\
+	\boldsymbol{A}_{s}& & &
+\end{array}\right)^{-1} \\
+=
+\left(\begin{array}{cccc}
+	& & &\boldsymbol{A}_{s}^{-1} \\
+	& & \boldsymbol{A}_{s-1}^{-1} & \\
+	& \iddots & & \\
+	\boldsymbol{A}_{1}^{-1} & & &
+\end{array}\right).
+$$
+
+(4)若 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 为 $n$ 阶方阵, 且 $\boldsymbol{E}-\boldsymbol{A} \boldsymbol{B}$ 可逆. 则 $\boldsymbol{E}-\boldsymbol{B} \boldsymbol{A}$ 也可逆.
+
+一般地, 若 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶方阵, 数 $\lambda \neq 0$. 则 $|\lambda \boldsymbol{E}-\boldsymbol{A B}|=|\lambda \boldsymbol{E}-\boldsymbol{B} \boldsymbol{A}|$.
+
+(5)若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 与向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 的秩相等, 且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots$, $\boldsymbol{\alpha}_{r}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示, 则这两个向量组等价.
+
+(6)若向量组 $\boldsymbol{B}: \boldsymbol{\beta}_{1}, \cdots, \boldsymbol{\beta}_{r}$ 能由向量组 $\boldsymbol{A}: \boldsymbol{\alpha}_{1}, \cdots, \boldsymbol{\alpha}_{s}$ 线性表示为 $\left(\boldsymbol{\beta}_{1}, \cdots\right.$, $\left.\boldsymbol{\beta}_{r}\right)=\left(\boldsymbol{\alpha}_{1}, \cdots, \boldsymbol{\alpha}_{s}\right) \boldsymbol{K}$, 其中 $\boldsymbol{K}$ 为 $s \times r$ 矩阵, 且向量组 $\boldsymbol{A}$ 线性无关. 则向量组 $\boldsymbol{B}$ 线性无关的充分必要条件是矩阵 $\boldsymbol{K}$ 的秩 $r(\boldsymbol{K})=r$.
+
+(7)若 $m \geq 2$, 已知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 为 $n$ 维向量组, 且向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 可 由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性表示为
+$$
+\begin{aligned}
+	&\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}+\cdots+\boldsymbol{\alpha}_{m} \\
+	&\boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{3}+\cdots+\boldsymbol{\alpha}_{m} \\
+	&\quad \cdots \ldots \cdots \\
+	&\boldsymbol{\beta}_{m}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}+\cdots+\boldsymbol{\alpha}_{m-1}
+\end{aligned}
+$$
+则 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 线性无关的充分必要条件是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性 无关.
+
+(8)若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{k}$ 的秩为 $r$, 则其中任意选取 $m$ 个向量所构成 的向量组的秩 $\geq r+m-k$.
+
+(9)若 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $m \times n$ 矩阵, $\boldsymbol{C}=(\boldsymbol{A}, \boldsymbol{B})$ 为 $m \times 2 n$ 矩阵. 则:
+$$
+\max (r(\boldsymbol{A}), r(\boldsymbol{B})) \leq r(\boldsymbol{C}) \leq r(\boldsymbol{A})+r(\boldsymbol{B})
+$$
+
+(10)$r(\boldsymbol{A})=1$ 的充分必要条件是存在非零列向量 $\boldsymbol{\alpha}$ 以及非零行向量 $\boldsymbol{\beta}^{\mathrm{T}}$ 使得 $\boldsymbol{A}=\boldsymbol{\alpha} \boldsymbol{\beta}^{\mathrm{T}}$.
+
+(11)若 $\boldsymbol{A}^{*}$ 为 $n$ 阶方阵 $\boldsymbol{A}$ 的伴随矩阵, $n \geq 2$. 则:
+$$
+r\left(\boldsymbol{A}^{*}\right)= \begin{cases}n, & \text { 若 } r(\boldsymbol{A})=n, \\ 1, & \text { 若 } r(\boldsymbol{A})=n-1 \\ 0, & \text { 若 } r(\boldsymbol{A})<n-1\end{cases}
+$$
+
+(12)若 $A$ 是 $m \times n$ 实矩阵, 则:
+
+\qquad 1. $\boldsymbol{A X}=\mathbf{0}$ 与 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 是同解方程组;
+
+\qquad 2. $r(\boldsymbol{A})=r\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}\right)$
+
+(13)若 $A$ 为 $n$ 阶方阵, 且 $A^{2}=A$. 则:
+$$
+r(\boldsymbol{A})+r(\boldsymbol{A}-\boldsymbol{E})=n
+$$
+
+(14)若 $A$ 为 $m \times n$ 矩阵, $B$ 为 $m \times 1$ 矩阵, 则方程组 $\boldsymbol{A X}=\boldsymbol{B}$ 有解的充分必要条件是 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{Y}=\mathbf{0}$ 的任一解向量 $\boldsymbol{Y}_{0}$ 都是 $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{Y}=\mathbf{0}$ 的解向量.,b
+
+\subsubsection{课上的一些结论}
+
+(1)$r(\boldsymbol{A})=r(\boldsymbol{-A}).~r(\boldsymbol{A+B}) \leq r(\boldsymbol{A})+r(\boldsymbol{B})$
+
+(2)$\text { 设 } A \text { 为 } m \times n \text { 阵， } B \text { 为 } n \times p \text { 阵， } A B=O \text {, 则： } r(A)+r(B) \leq n .$
+
+(3)关于向量组的秩：
+
+\qquad1.向量组 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 线性无关 $\Leftrightarrow r\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}\right)=m$
+
+\qquad2.若 $r\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}\right)=r>0$, 则向量组中任意 $k>r$ 个 向量都是线性相关的.
+
+\qquad3.若 $r\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}\right)=r>0$, 则向量组任意 $r$ 个线性无关的向量 都是它的一个极大线性无关组
+
+\qquad4.若向量组 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}$ 可由向量组 $\beta_{1}, \beta_{2}, \cdots, \beta_{s}$ 线性表出, 则 $r\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{m}\right) \leq r\left(\beta_{1}, \beta_{2}, \cdots, \beta_{s}\right)$.
+
+\qquad5.等价的向量组有相同的秩.
+\end{document}

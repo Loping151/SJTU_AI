@@ -1,0 +1,224 @@
+\documentclass[]{ctexart}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\geometry{a4paper,scale=0.8}
+\setCJKmainfont{KaiTi}
+
+\title{\textbf{
+		\zihao{1}9月24日线代大作业:\\
+		\zihao{2}行列式的递归定义}}
+\author{\textbf{王凯灵}}
+\date{\textbf{2021.10.1}}
+\pagestyle{plain}
+
+\begin{document}
+
+	\maketitle
+	\zihao{4}
+
+\section*{}
+
+\noindent\textbf{Definition 1.1.} 对任何一阶方阵 $A=\left(a_{11}\right)$, 令
+$$
+\left|a_{11}\right|:=a_{11}
+$$
+称 $\left|a_{11}\right|$ 为一阶行列式.
+
+\noindent\textbf{Definition 1.2.} 对任何 $n(\geq 2)$ 阶方阵 $A_{n}=\left(\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	\cdots & \cdots & \cdots & \cdots \\
+	a_{n1} & a_{n2} & \ldots & a_{nn}\end{array}\right)$
+, 令
+
+
+
+$$
+\left|\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\cdots & \cdots & \cdots & \cdots \\
+	a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right|
+:=a_{11} M_{11}-a_{12} M_{12}+\cdots+(-1)^{n-1} a_{1 n} M_{1 n},
+$$
+其中 $M_{i j}$ 表示元素 $a_{i j}$ 的余子式, 称
+$\left|\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\cdots & \cdots & \cdots & \cdots \\
+	a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right|$
+为 $n$ 阶行列式.
+
+以定义1.1和1.2为基础和逻辑起点, 尝试推导行列式的性质:例如:尝试证 明下述定理:
+
+\section*{}
+
+\noindent\textbf{Theorem 1.3.} 设
+$A_{n}=\left(\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\cdots & \cdots & \cdots & \cdots \\
+	a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right)$
+为 $n$ 阶方阵, 那么
+$$
+\left|A_{n}\right|=a_{11} M_{11}-a_{21} M_{21}+\cdots+(-1)^{n-1} a_{n 1} M_{n 1}
+$$
+
+(证明提示: 对矩阵阶数 $n$ 用数学归纳法)\\
+
+\noindent 证明:
+
+1.对于二阶行列式,有
+$$
+\left|\begin{array}{ll}
+	a_{11} & a_{12} \\
+	a_{21} & a_{22}
+\end{array}\right|
+=a_{11} a_{22}-a_{12} a_{21}
+=a_{11} a_{22}-a_{21} a_{12}
+$$
+
+2.假设:对于 $n-1$ 阶行列式有
+$$
+\left|A_{n-1}\right|=a_{11} M_{11}-a_{21} M_{21}+\cdots+(-1)^{n-2} a_{n-1, 1} M_{n-1, 1}
+$$
+
+记 $M_{1i}$ 中 $a_{j1}$ 的余子式为 $M_{1i,j1};i,j\neq 1;i,j,n$对应$A$中的行或列.
+$$
+\begin{aligned}
+	\left|A_{n}\right|=&a_{11} M_{11}-a_{12} M_{12}+\cdots+(-1)^{n-1} a_{1 n} M_{1 n} \\
+	=&a_{11} M_{11}-a_{12}\left( a_{21}M_{12,21}-a_{31}M_{12,31}+\cdots\right)+\cdots\\
+	&+(-1)^{n-1} a_{1n} \left( a_{21}M_{1n,21}-\cdots+(-1)^{n-2}a_{n1}M_{1n,n1}\right)
+\end{aligned}
+$$
+
+显然, $M_{1i,j1}=M_{j1,1i}$,故整理可得:
+$$
+\begin{aligned}
+	\left|A_{n}\right|=&a_{11} M_{11}-a_{21}\left(a_{12}M_{21,12}-a_{13}M_{21,13}+\cdots\right)+\cdots\\
+	&+(-1)^{n-1} a_{n1} \left( a_{12}M_{n1,12}-\cdots+(-1)^{n-2}a_{1n}M_{n1,1n}\right)\\
+	=&a_{11} M_{11}-a_{21} M_{21}+\cdots+(-1)^{n-1} a_{n 1} M_{n 1}
+\end{aligned}
+$$
+
+整理后,括号中的内容即为余子式的按第一行展开,据定义,写为$M_{ij}$
+
+由1.2.,证毕.
+
+\section*{}
+
+\noindent\textbf{Theorem 1.4.} 设
+$A^{T}_{n}=\left(\begin{array}{cccc}
+	a_{11} & a_{12} & \cdots & a_{1 n} \\
+	a_{21} & a_{22} & \cdots & a_{2 n} \\
+	\cdots & \cdots & \cdots & \cdots \\
+	a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right)$
+为 $n$ 阶方阵, 那么
+$$
+\left|A_{n}\right|=\left|A_{n}^{T}\right|
+$$
+
+(证明提示: 对矩阵阶数 $n$ 用数学归纳法)
+
+
+\noindent 证明:
+
+对于一阶行列式而言,结论平凡.
+
+1.对于二阶行列式,显然有
+$$
+\left|\begin{array}{ll}
+	a_{11} & a_{12} \\
+	a_{21} & a_{22}
+\end{array}\right|
+=a_{11} a_{22}-a_{12} a_{21}
+=a_{11} a_{22}-a_{21} a_{12}
+=
+\left|\begin{array}{ll}
+	a_{11} & a_{21} \\
+	a_{12} & a_{22}
+\end{array}\right|
+$$
+
+2.假设:对于 $n-1$ 阶行列式有
+$$
+\left|A_{n-1}\right|=\left|A_{n-1}^{T}\right|
+$$
+
+那么对于 $n$ 阶行列式,将$\left|A_{n}\right|,\left|A^{T}_{n}\right|$分别按第一行,第一列展开.
+$$
+\begin{aligned}
+	\left|A_{n}\right|=&a_{11} M_{11}-a_{12} M_{12}+\cdots+(-1)^{n-1} a_{1 n} M_{1 n} \\
+	\left|A^{T}_{n}\right|=&a_{11} M^{'}_{11}-a_{12} M^{'}_{12}+\cdots+(-1)^{n-1} a_{n 1} M^{'}_{1 n}
+\end{aligned}
+$$
+
+又,由$\left|A^{T}_{n}\right|$定义,显然$M^{'}_{1i}=M_{1i}^{T}$
+
+由假设可知,$M^{'}_{1i}=M_{1i}$,那么上述两个等式右边的每一项都相等.
+
+即
+$$
+\left|A_{n}\right|=\left|A^{T}_{n}\right|
+$$
+
+由1.2.,$\forall n \in \mathbb{N},\left|A_{n}\right|=\left|A^{T}_{n}\right|.$证毕.
+\section*{}
+\newpage
+还可能有哪些性质？尝试建立行列式理论!!!
+
+欲证拉普拉斯定理,只需再证明交换任意两行,行列式的值变号:
+
+\noindent 证明:
+
+1.若交换二阶以上行列式的1,2两行:记$\left| A\right|$交换后变为$\left| A^{'}\right|$
+$$
+\begin{aligned}
+	\left|A_{n}\right|=&a_{11} M_{11}-a_{12} M_{12}+\cdots+(-1)^{n-1} a_{1 n} M_{1 n} \\
+	=&a_{11}\left( a_{22}M_{11,22}-a_{23}M_{11,23}+\cdots\right)\\
+	&-a_{12}\left( a_{21}M_{12,21}-a_{23}M_{12,23}+\cdots\right)+\cdots\\
+	&+(-1)^{n-1} a_{1n} \left( a_{21}M_{1n,21}-\cdots+(-1)^{n-2}a_{2,n-1}M_{1n,\left(2,n-1\right)}\right)\\
+	=&a_{21}\left( -a_{12}M_{21,12}+a_{13}M_{21,13}-\cdots\right)\\
+	&-a_{22}\left( -a_{11}M_{22,11}+a_{13}M_{22,13}-\cdots\right)+\cdots\\
+	&+(-1)^{n-1} a_{2n} \left( -a_{11}M_{2n,11}+\cdots+(-1)^{n-2}a_{1,n-1}M_{2n,\left(1,n-1\right)}\right)\\
+	=&-\left| A^{'}\right|
+\end{aligned}
+$$
+
+2.$n\geq 3$时,假设前$i$行相邻行交换,行列式的值变号.
+
+考虑$i$与$i+1$行交换,将交换后的行列式$\left| A^{'}\right|$按第一行展开
+$$
+\left|A^{'}_{n}\right|=a_{11} M^{'}_{11}-a_{12} M^{'}_{12}+\cdots+(-1)^{n-1} a_{1 n} M^{'}_{1 n}
+$$
+
+对于每个$M^{'}$,原$i$行与$i+1$行变为它的了$i-1$行与$i$,由假设,可提出一个负号.即
+
+$$
+\left|A^{'}_{n}\right|=-a_{11} M_{11}-a_{12} M_{12}+\cdots+(-1)^{n-1} a_{1 n} M_{1 n}=-\left|A_{n}\right|
+$$
+
+由1.2.,行Laplace定理证毕,列上同理可证.
+
+\section*{}
+\newpage
+其余:
+
+(1)某行或列全为0:按该行或列展开,可知行列式为0;
+
+(2)某行或列乘以非零常数k:按该行或列展开,提出一个k,可知行列式的值乘以k;
+
+(3)某两行或列成比例:由(2),将该比值提出使这两行或列相同.再交换这两行或列,于是行列式的值等于它自身的相反数,故为0.
+
+(4)行列式某行加上另一行的非零常数k倍(列同理):将变化的行展开,整理为原行列式和另一个符合(3)的行列式,故行列式的值不变.
+
+至此,行列式理论已经打好了地基.
+
+顺便一提,因为 \LaTeX\ 还没学明白,可能有些地方有笔误,非常抱歉XD
+
+\end{document}

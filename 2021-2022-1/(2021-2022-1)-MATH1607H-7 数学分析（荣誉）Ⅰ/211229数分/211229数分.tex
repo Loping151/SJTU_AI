@@ -1,0 +1,327 @@
+% !TEX program  = xelatex
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathdots}
+\usepackage{hyperref}
+\usepackage{extarrows}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
+\setCJKmainfont[BoldFont={FZCKJW.TTF}]{STKAITI.TTF}
+
+\title{\textbf{
+		\zihao{2}数学分析期末复习}}
+\author{\textbf{王凯灵}}
+\date{\textbf{2021-Fall}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{可积性}
+		\subsection{必要条件}
+		\begin{itemize}
+			\item 不同$[a, b]$的分割, 介点集和积分变量, 积分值相同
+			\subitem 推论: 若存在两分割或同一分割下不同介点集, 使积分和
+			的极限不同, 则 $f$在$[a, b]$不可积
+			\item 若$f\in R[a, b]$, 则$f$在$[a, b]$有界
+			\subitem 推论: 无界函数不可积
+		\end{itemize}
+		\subsection{充要条件}
+		\begin{itemize}
+			\item \textbf{第I充要条件}设 $f$ 在 $[a, b]$ 有界, 则 $f \in R[a, b] \Leftrightarrow$
+			$$
+			\underline\int_{a}^{b} f(x) \mathrm{d} x=\overline\int_{a}^{b} f(x) \mathrm{d} x
+			$$
+			\textbf{推论}设 $f$ 在 $[a, b]$ 有界, 则 $f \in R[a, b] \Leftrightarrow$
+			$$
+			\lim _{||T|| \rightarrow 0}(\overline{S}(T)-\underline{S}(T))=\lim _{||T|| \rightarrow 0} \sum_{i=1}^{n} \omega_{i} \Delta x_{i}=0
+			$$
+			\item \textbf{第II充要条件}设 $f$ 在 $[a, b]$ 有界, 则 $f \in R[a, b] \Leftrightarrow$
+			$$
+			\forall \varepsilon>0, \exists\text{分割}T: \quad \overline{S}(T)-\underline{S}(T)=\sum_{i=1}^{n} \omega_{i} \Delta x_{i}<\varepsilon
+			$$
+			\item \textbf{第III充要条件}设 $f$ 在 $[a, b]$ 有界, 则 $f \in R[a, b] \Leftrightarrow$
+			$$
+			\forall \varepsilon>0, \forall \sigma>0, \exists \text{分割} T: \sum_{i \in \Lambda} \Delta x_{i}<\varepsilon
+			$$
+			其中 $\Lambda=\left\{i \mid \omega_{i} \geq \sigma\right\}$
+		\end{itemize}
+		\subsection{充分条件}
+		\begin{itemize}
+			\item 引理 ~设 $f$ 在 $[a, b]$ 有界, 则其振幅 $\omega=\underset{x, y \in[a, b]}{\sup}|f(x)-f(y)|$
+			\item 定理 ~若 $f \in C[a, b]$, 则 $f \in R[a, b]$
+			\item 定理 ~若 $f$ 在 $[a, b]$ 有界, 且仅有限个间断点, 则 $f \in R[a, b]$
+			\item 定理 ~若 $f$ 在 $[a, b]$ 单调, 则 $f \in R[a, b]$
+			\item 命题 ~设 $f$ 在 $[a, b]$ 有界, 其间断点全体为 $\left\{x_{n}\right\}$, 且 $\underset{n \rightarrow \infty}{\lim} x_{n}=a$, 则 $f \in R[a, b]$
+		\end{itemize}
+		\newpage
+	\section{收敛的判别}
+			\subsection{无穷积分}
+			\begin{enumerate}
+				\item \textbf{Cauchy准则} $\int_{a}^{+\infty} f(x) \mathrm{d} x$ 收敛 $\Leftrightarrow$
+				$$
+				\forall \varepsilon>0, \exists A>a, \forall A^{\prime}, A^{\prime \prime}>A:\left|\int_{A^{\prime}}^{A^{\prime \prime}} f(x) \mathrm{d} x\right|<\varepsilon
+				$$
+				\item \textbf{收敛原理} 设 $f(x) \geq 0$, 则 $\int_{a}^{+\infty} f(x) \mathrm{d} x$ 收敛 $\Leftrightarrow$
+				$$
+				F(A)=\int_{a}^{A} f(x) \mathrm{d} x \text{在} [a, +\infty) \text{有上界}
+				$$
+				\item \textbf{比较判别法} 设 $g(x) \geq f(x) \geq 0$, 则
+				\begin{itemize}
+					\item$\int_{a}^{+\infty} g(x) \mathrm{d} x$ 收敛 $\Rightarrow \int_{a}^{+\infty} f(x) \mathrm{d} x$ 收敛
+					\item$\int_{a}^{+\infty} f(x) \mathrm{d} x$ 发散 $\Rightarrow \int_{a}^{+\infty} g(x) \mathrm{d} x$ 发散
+				\end{itemize}
+				\textbf{极限形式} 设 $f(x) \geq 0, g(x)>0$, 且 $\underset{x \rightarrow+\infty}{\lim} \frac{f(x)}{g(x)}=l$, 则
+				\begin{itemize}
+					\item 当 $0<l<+\infty$ 时, $\int_{a}^{+\infty} f(x) \mathrm{d} x$ 与 $\int_{a}^{+\infty} g(x) \mathrm{d} x$ 同敛散
+					\item 当 $l=0$ 时, $\int_{a}^{+\infty} g(x) \mathrm{d} x$ 收敛 $\Rightarrow \int_{a}^{+\infty} f(x) \mathrm{d} x$ 收敛
+					\item 当 $l=+\infty$ 时, $\int_{a}^{+\infty} g(x) \mathrm{d} x$ 发散 $\Rightarrow \int_{a}^{+\infty} f(x) \mathrm{d} x$ 发散
+				\end{itemize}
+				\item \textbf{$\boldsymbol p$-判别法} 设 $f(x) \geq 0$, 且 $\underset{x \rightarrow+\infty}{\lim} x^{p} f(x)=l$, 则
+				\begin{itemize}
+					\item 当 $0 \leq l<+\infty$, 且 $p>1$ 时, $\int_{a}^{+\infty} f(x) \mathrm{d} x$ 收敛
+					\item 当 $0<l \leq+\infty$, 且 $p \leq 1$ 时, $\int_{a}^{+\infty} f(x) \mathrm{d} x$ 发散
+				\end{itemize}
+				\item \textbf{A-D判别法} 设 $f, g$ 满足:
+				\begin{itemize}
+				\item (Abel) $\int_{a}^{+\infty} f(x) \mathrm{d} x$ 收敛, $g(x)$ 在 $[a, +\infty)$ 单调有界
+				\item (Dirichlet) $F(A)=\int_{a}^{A} f(x) \mathrm{d} x$ 在 $[a, +\infty)$ 有界, $g(x)$ 在 $[a, +\infty)$ 单调且 $\underset{x \rightarrow+\infty}{\lim} g(x)=0$
+				\end{itemize}
+				则 $\int_{a}^{+\infty} f(x) g(x) \mathrm{d} x$ 收敛
+				\item 若$\int_{a}^{+\infty} f(x) \mathrm{d} x$绝对收敛, 则$\int_{a}^{+\infty} f(x) \mathrm{d} x$收敛
+			\end{enumerate}
+		\subsection{瑕积分}
+			\begin{enumerate}
+				\item \textbf{Cauchy准则} 设 $b$ 为瑕点, 则 $\int_{a}^{b} f(x) \mathrm{d} x$ 收敛 $\Leftrightarrow$
+				$$
+				\forall \varepsilon>0, \exists \delta>0, \forall x^{\prime}, x^{\prime \prime} \in(b-\delta, b):\left|\int_{x^{\prime}}^{x^{\prime \prime}} f(x) \mathrm{d} x\right|<\varepsilon
+				$$
+				\item \textbf{收敛原理} 设 $f(x) \geq 0$, 则 $\int_{a}^{b} f(x) \mathrm{d} x$ 收敛 $\Leftrightarrow$
+				$$
+				F(A)=\int_{a}^{A} f(x) \mathrm{d} x \text { 在 }[a, b) \text { 有上界 }
+				$$
+				\item \textbf{比较判别法} 设 $g(x) \geq f(x) \geq 0$, 则
+				\begin{itemize}
+					\item $\int_{a}^{b} g(x) \mathrm{d} x$ 收敛 $\Rightarrow \int_{a}^{b} f(x) \mathrm{d} x$ 收敛
+					\item $\int_{a}^{b} f(x) \mathrm{d} x$ 发散 $\Rightarrow \int_{a}^{b} g(x) \mathrm{d} x$ 发散
+				\end{itemize}
+				\textbf{极限形式} 设 $f(x) \geq 0, g(x)>0$, 且 $\underset{x \rightarrow b^{-}}{\lim}\frac{f(x)}{g(x)}=l$, 则
+				\begin{itemize}
+					\item 当 $0<l<+\infty$ 时, $\int_{a}^{b} f(x) \mathrm{d} x$ 与 $\int_{a}^{b} g(x) \mathrm{d} x$ 同敛散
+					\item 当 $l=0$ 时, $\int_{a}^{b} g(x) \mathrm{d} x$ 收敛 $\Rightarrow \int_{a}^{b} f(x) \mathrm{d} x$ 收敛
+					\item 当 $l=+\infty$ 时, $\int_{a}^{b} g(x) \mathrm{d} x$ 发 散 $\Rightarrow \int_{a}^{b} f(x) \mathrm{d} x$ 发散
+				\end{itemize}
+				\item \textbf{$\boldsymbol{p}$-判别法} 设 $f(x) \geq 0$, 且 $\underset{x \rightarrow b^{-}}{\lim}(b-x)^{p} f(x)=l$, 则
+				\begin{itemize}
+					\item 当 $0 \leq l<+\infty$, 且 $p<1$ 时, $\int_{a}^{b} f(x) \mathrm{d} x$ 收敛
+					\item 当 $0<l \leq+\infty$, 且 $p \geq 1$ 时, $\int_{a}^{b} f(x) \mathrm{d} x$ 发散
+				\end{itemize}
+				\item \textbf{A-D判别法} 设 $f, g$ 满足:
+				\begin{itemize}
+				\item (Abel) $\int_{a}^{b} f(x) \mathrm{d} x$ 收敛, $g$ 在 $[a, b)$ 单调有界
+				\item (Dirichlet) $F(A)=\int_{a}^{A} f(x) \mathrm{d} x$ 在 $[a, b)$ 有界, $g$ 在 $[a, b)$ 单调且 $\underset{x \rightarrow b^{-}}{\lim} g(x)=0$
+				\end{itemize}
+				则 $\int_{a}^{b} f(x) g(x) \mathrm{d} x$ 收敛
+				\item 若$\int_{a}^{b} f(x) \mathrm{d} x$绝对收敛, 则$\int_{a}^{b} f(x) \mathrm{d} x$收敛
+				\end{enumerate}
+		\subsection{数项级数}
+			\begin{itemize}
+				\item \textbf{必要条件}若级数 $\overunderset{\infty}{n=1}{\sum}a_{n}$ 收敛, 则
+				$$
+				\lim _{n \rightarrow \infty} a_{n}=0
+				$$
+			\end{itemize}
+			\begin{enumerate}
+				\item \textbf{Cauchy收敛准则}
+				$$
+				\begin{gathered}
+					\overunderset{\infty}{n=1}{\sum} a_{n} \text { 收敛 } \Leftrightarrow \forall \varepsilon>0, \exists N \in \mathbf{N}, \forall n>N, \forall p \in \mathbf{N}: \\
+					\left|\sum_{k=n+1}^{n+p} a_{k}\right|=\left|a_{n+1}+a_{n+2}+\cdots+a_{n+p}\right|<\varepsilon
+				\end{gathered}
+				$$
+			\subsection*{正项级数}
+				\item \textbf{收敛原理} 设 $a_{n} \geq 0$, 则 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 收敛 $\Leftrightarrow$ 部分和 $\left\{S_{n}\right\}$ 有上界
+				\item \textbf{比较判别法}若级数 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 与 $\overunderset{\infty}{n=1}{\sum} b_{n}$ 均为正项级数, 且 $a_{n} \leq b_{n}$
+				则有
+				$$
+				\begin{aligned}
+					&\overunderset{\infty}{n=1}{\sum} b_{n} \text { 收敛 } \Rightarrow \overunderset{\infty}{n=1}{\sum} a_{n} \text { 收敛 } \\
+					&\overunderset{\infty}{n=1}{\sum} a_{n} \text { 发散 } \Rightarrow \overunderset{\infty}{n=1}{\sum} b_{n} \text { 发散 }
+				\end{aligned}
+				$$
+				\textbf{推论一~极限形式}
+				若级数 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 与 $\overunderset{\infty}{n=1}{\sum} b_{n}$ 均为正项级数, 且 $\underset{n \rightarrow \infty}{\lim} \frac{a_{n}}{b_{n}}=l$,
+				则有
+				\begin{itemize}
+					\item 当 $0<l<+\infty$ 时, $\overunderset{\infty}{n=1}{\sum} a_{n}$ 与 $\overunderset{\infty}{n=1}{\sum} b_{n}$ 同敛散
+					\item 当 $l=0$ 时, $\overunderset{\infty}{n=1}{\sum} b_{n}$ 收敛 $\Rightarrow \overunderset{\infty}{n=1}{\sum} a_{n}$ 收敛
+					\item 当 $l=+\infty$ 时, $\overunderset{\infty}{n=1}{\sum} b_{n}$ 发散 $\Rightarrow \overunderset{\infty}{n=1}{\sum} a_{n}$ 发散
+				\end{itemize}
+				\textbf{推论二}
+				若级数 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 与 $\overunderset{\infty}{n=1}{\sum} b_{n}$ 均为正项级数, 且
+				$$
+				\frac{a_{n+1}}{a_n}\leq\frac{b_{n+1}}{b_n}
+				$$
+				则有
+				$$
+				\begin{aligned}
+					&\overunderset{\infty}{n=1}{\sum} b_{n} \text { 收敛 } \Rightarrow \overunderset{\infty}{n=1}{\sum} a_{n} \text { 收敛 } \\
+					&\overunderset{\infty}{n=1}{\sum} a_{n} \text { 发散 } \Rightarrow \overunderset{\infty}{n=1}{\sum} b_{n} \text { 发散 }
+				\end{aligned}
+				$$
+				\item \textbf{Cauchy 根值判别法}
+				若正项级数 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 满足 $\underset{n \rightarrow \infty}{\varlimsup} \sqrt[n]{a_{n}}=\rho$, 则
+				\begin{itemize}
+				\item 当 $0 \leq \rho<1$ 时, $\overunderset{\infty}{n=1}{\sum} a_{n}$ 收敛
+				\item 当 $\rho>1$ 时, $\overunderset{\infty}{n=1}{\sum} a_{n}$ 发散
+				\end{itemize}
+				\item \textbf{比值判别法} 设 $a_{n}>0$, 则
+				\begin{itemize}
+				\item 当 $\underset{n \rightarrow \infty}{\varlimsup} \frac{a_{n+1}}{a_{n}}=\rho<1$ 时, $\overunderset{\infty}{n=1}{\sum} a_{n}$ 收敛
+				\item 当 $\underset{n \rightarrow \infty}{\varliminf} \frac{a_{n+1}}{a_{n}}=\rho>1$ 时, $\overunderset{\infty}{n=1}{\sum} a_{n}$ 发散
+				\end{itemize}
+				\item \textbf{积分判别法}
+				若非负函数 $f$ 在 $[1, +\infty)$ 上单减, 则无穷级数
+				$\overunderset{\infty}{n=1}{\sum} f(n)$ 与无穷积分 $\int_{1}^{+\infty} f(x) \mathrm{d} x$ 同敛散
+				\item \textbf{Raabe判别法} 设 $a_{n}>0$, 则
+				\begin{itemize}
+					\item 若 $\exists r>1, N \in \mathbf{N}$, 使 $\forall n>N: n\left(\frac{a_{n}}{a_{n+1}}-1\right) \geq r$, 则 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 收敛
+					\item 若 $\exists N \in \mathbf{N}$, 使 $\forall n>N: n\left(\frac{a_{n}}{a_{n+1}}-1\right) \leq 1$, 则 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 发散
+					\end{itemize}
+				\textbf{Raabe极限形式} 设 $a_{n}>0$, 则
+				\begin{itemize}
+					\item $\underset{n \rightarrow \infty}{\varliminf } n\left(\frac{a_{n}}{a_{n+1}}-1\right)=r>1$, 则 $\overunderset{\infty}{n=1}{\sum} a_{n} $收敛
+					\item $\underset{n \rightarrow \infty}{\varlimsup} n\left(\frac{a_{n}}{a_{n+1}}-1\right)=r<1$, 则 $\overunderset{\infty}{n=1}{\sum} a_{n}$ 发散
+				\end{itemize}
+			\subsection*{任意项级数}
+				\item \textbf{Leibniz判别法}
+				若\underline{交错级数} $\overunderset{\infty}{n=1}{\sum}(-1)^{n-1} a_{n}$ (其中 $a_{n}>0$ ) 满足:
+				\begin{itemize}
+					\item $a_{n+1} \leq a_{n}$
+					\item $\underset{n \rightarrow \infty}{\lim} a_{n}=0$
+				\end{itemize}
+				则级数 $\overunderset{\infty}{n=1}{\sum}(-1)^{n-1} a_{n}$ 收敛且
+				$$
+				0 \leq \overunderset{\infty}{n=1}{\sum}(-1)^{n-1} a_{n} \leq a_{1}
+				$$
+				\item \textbf{A-D判别法}设 $\left\{a_{n}\right\}, \left\{b_{n}\right\}$, 满足:
+				\begin{itemize}
+					\item (Abel) $\left\{a_{n}\right\}$ 单调有界, $\overunderset{\infty}{n=1}{\sum} b_{n}$ 收敛
+					\item (Dirichlet) $\left\{a_{n}\right\}$ 单调趋于 $0, \overunderset{\infty}{n=1}{\sum} b_{n}$ 部分和有界
+				\end{itemize}
+				则 $\overunderset{\infty}{n=1}{\sum} a_{n} b_{n}$ 收敛
+			\end{enumerate}
+	\section{定积分的几何应用}
+		\subsection{平面曲线弧长}
+		\textbf{弧微分公式}
+		$$
+		\mathrm{d} s =\sqrt{1+f^{\prime 2}(x)} \mathrm{d} x \\
+		$$
+		\begin{enumerate}
+			\item \textbf{直角坐标} $l: y=f(x) \in C^{(1)}[a, b]$
+			$$
+			s(l)=\int_{a}^{b} \sqrt{1+f^{\prime 2}(x)} \mathrm{d} x
+			$$
+			\item \textbf{参数方程} $l: x=x(t), y=y(t) \in C^{(1)}[\alpha, \beta]$
+			$$
+			s(l)=\int_{\alpha}^{\beta} \sqrt{x^{\prime 2}(t)+y^{\prime 2}(t)} \mathrm{d} t
+			$$
+			\item \textbf{极坐标方程} $l: r=r(\theta) \in \mathrm{C}^{(1)}[\alpha, \beta]$
+			$$
+			s(l)=\int_{\alpha}^{\beta} \sqrt{r^{2}(\theta)+r^{\prime 2}(\theta)} \mathrm{d} \theta \quad(\alpha<\beta)
+			$$
+		\end{enumerate}
+		\subsection{平面图形面积}
+			\begin{enumerate}
+				\item 直角方程$A=\int_{a}^{b}(f(x)-g(x)) \mathrm{d} x$
+				\item 参数方程$A=\int_{a}^{b} f(x) \mathrm{d} x \xlongequal{x=x(t)} \int_{\alpha}^{\beta} y(t) x^{\prime}(t) \mathrm{d} t$
+				\item 极坐标方程$A=\frac{1}{2} \int_{\alpha}^{\beta} r^{2}(\theta) \mathrm{d} \theta$
+			\end{enumerate}
+		\subsection{旋转侧面积}
+			\textbf{旋转曲面侧面积}(绕$x$轴)
+			$$
+			S=2 \pi \int_{a}^{b} f(x) \sqrt{1+f^{\prime 2}(x)} \mathrm{d} x
+			$$
+		\subsection{旋转体积}
+		\begin{enumerate}
+			\item \textbf{薄片法} 曲线 $y=f(x)$ 与 $x=a, x=b$ 及 $x$ 轴所围图形绕 $x$ 轴旋转
+			$$
+			V_{x}=\pi \int_{a}^{b} f^{2}(x) \mathrm{d} x
+			$$
+			\item \textbf{薄壳法} 曲线 $y=f(x)$ 与 $x=a, x=b$ 及 $x$ 轴所围图形绕 $y$ 轴旋转所得旋转体体积
+			$$
+			V_{y}=2 \pi \int_{a}^{b} x y \mathrm{~d} x=2 \pi \int_{a}^{b} x f(x) \mathrm{d} x
+			$$
+		\end{enumerate}
+	\section{定理和结论}
+		\begin{enumerate}
+			\item \textbf{Cauchy-Schwarz不等式} 设 $f, g \in R[a, b]$, 则
+			$$
+			\left(\int_{a}^{b} f(x) g(x) \mathrm{d} x\right)^{2} \leq \int_{a}^{b} f^{2}(x) \mathrm{d} x \cdot \int_{a}^{b} g^{2}(x) \mathrm{d} x
+			$$
+			\item \textbf{积分第一中值定理}
+			设 $f \in C[a, b], g \in R[a, b]$ 且不变号, 则 $\exists \xi \in[a, b]$ 使
+			$$
+			\int_{a}^{b} f(x) g(x) \mathrm{d} x=f(\xi) \int_{a}^{b} g(x) \mathrm{d} x
+			$$
+			\textbf{推论} 设 $f \in C[a, b]$, 则 $\exists \xi \in[a, b]$ 使得
+			$$
+			\int_{a}^{b} f(x) \mathrm{d} x=f(\xi)(b-a)
+			$$
+			\item \textbf{Wallis公式}
+			$$
+			I_{n}=\int_{0}^{\frac{\pi}{2}} \sin ^{n} x \mathrm{~d} x=\int_{0}^{\frac{\pi}{2}} \cos ^{n} x \mathrm{~d} x=\left\{\begin{array}{ll}
+				\frac{(n-1) ! !}{n ! !} \cdot \frac{\pi}{2}, & n \text { 为偶数 } \\
+				\frac{(n-1) ! !}{n ! !}, & n \text { 为奇数 }
+			\end{array}(n \in \mathbb{N})\right.
+			$$
+			\textbf{推论}
+			$$
+			\frac{\pi}{2}=\lim _{n \rightarrow \infty} \frac{1}{2 n+1}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2}
+			$$
+			\item \textbf{Abel变换}设有 $\left\{a_{n}\right\}, \left\{b_{n}\right\}$, 记 $B_{k}=b_{1}+b_{2}+\ldots+b_{k}$, 则 $\forall n \in \mathbf{N}$
+			$$
+			\sum_{k=1}^{n} a_{k} b_{k}=a_{n} B_{n}+\sum_{k=1}^{n-1} B_{k}\left(a_{k}-a_{k+1}\right)
+			$$
+			\textbf{Abel引理} 设 $\left\{a_{n}\right\}$ 单调, 且 $\left|B_{k}\right| \leq M$, 则$$
+			\left|\sum_{k=1}^{n} a_{k} b_{k}\right| \leq M\left(\left|a_{1}\right|+2\left|a_{n}\right|\right)
+			$$
+			\item \textbf{积分第二中值定理}
+			设 $f \in R[a, b]$, 则有
+			\begin{itemize}
+				\subsubsection*{Bonnet型}
+				\item 若 $g$ 在 $[a, b]$ 单减且非负, 则 $\exists \xi \in[a, b]$ 使
+				$$
+				\int_{a}^{b} f(x) g(x) \mathrm{d} x=g(a) \int_{a}^{\xi} f(x) \mathrm{d} x
+				$$
+				\item 若 $g$ 在 $[a, b]$ 单增且非负, 则 $\exists \xi \in[a, b]$ 使
+				$$
+				\int_{a}^{b} f(x) g(x) \mathrm{d} x=g(b) \int_{\xi}^{b} f(x) \mathrm{d} x
+				$$
+				\subsubsection*{Weierstrass型}
+				\item 若 $g$ 在 $[a, b]$ 单调, 则 $\exists \xi \in[a, b]$ 使
+				$$
+				\int_{a}^{b} f(x) g(x) \mathrm{d} x=g(a) \int_{a}^{\xi} f(x) \mathrm{d} x+g(b) \int_{\xi}^{b} f(x) \mathrm{d} x
+				$$
+			\end{itemize}
+			\item \textbf{Riemann引理}
+			设 $f \in R[a, b]$, 则有
+			$$
+			\lim _{p \rightarrow+\infty} \int_{a}^{b} f(x) \sin p x \mathrm{~d} x=\lim _{p \rightarrow+\infty} \int_{a}^{b} f(x) \cos p x \mathrm{~d} x=0
+			$$
+			\textbf{广义形式} 设 $f \in R[a, b], g$ 可积且以 $T$ 为周期, 则
+			$$
+			\lim _{p \rightarrow+\infty} \int_{a}^{b} f(x) g(p x) \mathrm{d} x=\frac{1}{T} \int_{0}^{T} g(x) \mathrm{d} x \cdot \int_{a}^{b} f(x) \mathrm{d} x
+			$$
+		\end{enumerate}
+	\section{备注}
+		自己复习时, 随意为之.
+		如有打错和其他错误, 可告知我:\href{mailto:wangkailing151@sjtu.edu.cn}{链接}
+\end{document}
+

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\List">
+      <UniqueIdentifier>{b6d5ab56-8eee-48aa-b56f-d9640b65616f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Queue">
+      <UniqueIdentifier>{5e52070a-3adf-4dc6-874a-8a8128340f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Stack">
+      <UniqueIdentifier>{183803ce-5e62-47b3-82a3-41d99c8fc266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Tree">
+      <UniqueIdentifier>{8d69f893-07ac-47a5-b1f2-8c4b6fdc5597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\String">
+      <UniqueIdentifier>{5cc8e4c9-3676-41e5-bd51-6ebfc1bf354a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Basic">
+      <UniqueIdentifier>{8bf356f2-ef4a-4037-a1d8-39e4c59e44e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Set">
+      <UniqueIdentifier>{4f4a8f02-0c34-4978-b3ab-e87412d384a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Graph">
+      <UniqueIdentifier>{df23a5fc-f69b-4c47-bd39-c627afde9f69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="List.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleLinkedList.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLinkedList.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="BigInteger.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedQueue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="SequentialQueue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedBinaryTree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryTree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionStack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="HuffmanTree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedStack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="Polynomial.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedString.h">
+      <Filter>头文件\String</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>头文件\String</Filter>
+    </ClInclude>
+    <ClInclude Include="SequentialString.h">
+      <Filter>头文件\String</Filter>
+    </ClInclude>
+    <ClInclude Include="SequentialStack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="SequentialList.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="Compare.h">
+      <Filter>头文件\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>头文件\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorQueue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionTree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Set.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticSet.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicSet.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTree.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>头文件\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="SplayTree.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="FindUnionSet.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="CloseHashTable.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenHashTable.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="AATree.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="AVLTree.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="RBTree.h">
+      <Filter>头文件\Set</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjacencyMatrixGraph.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjacencyListGraph.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CodeTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

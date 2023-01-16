@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/list.dir/main.cpp.o CMakeFiles/list.dir/seq_list.cpp.o CMakeFiles/list.dir/s_link_list.cpp.o CMakeFiles/list.dir/d_link_list.cpp.o -o list 

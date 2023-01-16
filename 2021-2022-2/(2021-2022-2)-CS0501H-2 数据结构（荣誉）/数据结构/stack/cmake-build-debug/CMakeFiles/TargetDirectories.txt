@@ -1,0 +1,3 @@
+C:/Personal/projects/Clion/数据结构/stack/cmake-build-debug/CMakeFiles/stack.dir
+C:/Personal/projects/Clion/数据结构/stack/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Personal/projects/Clion/数据结构/stack/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -65,6 +65,7 @@ This repo will include some notes, homework assignment and lab work, comment and
 - (2021-2022-2)-MC904-2 从量化数据库理解1700-2000年的中国 李中清
 - (2021-2022-2)-MARX1205-59 形势与政策 郑浩
 - (2021-2022-2)-PE002C04-3 定向越野 范翔
+- (2021-2022-2)-AI1602-1 人工智能问题求解与实践 卢策吾
 
 
 

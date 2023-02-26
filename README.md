@@ -14,7 +14,7 @@ This repo will include some notes, homework assignment and lab work, comment and
 
 ## 申明
 
-我的作业和笔记**不能保证**正确和质量，如有错误，你可以直接纠正。但不论如何，涉及抄袭**不可容忍**。（即使我使用了MIT许可）如果你下载、参考、引用了我的部分笔记、作业、工作，请发邮件告诉我。有条件的话请使用我的[gmail邮箱](mailto:wangkailing151@gmail.com)，或者在我毕业前用[交大邮箱](mailto:wangkailing151@sjtu.edu.cn)也可以。我欢迎有助于能力提升的作业速通、参考等，但我对你的抄袭等学术不正**不负责任**。
+我的作业和笔记**不能保证**正确和质量，如有错误，你可以直接纠正。但不论如何，涉及抄袭**不可容忍**。如果你下载、参考、引用了我的部分笔记、作业、工作，请发邮件告诉我。有条件的话请使用我的[gmail邮箱](mailto:wangkailing151@gmail.com)，或者在我毕业前用[交大邮箱](mailto:wangkailing151@sjtu.edu.cn)也可以。我欢迎有助于能力提升的作业速通、参考等，但我对你的抄袭等学术不正**不负责任**。
 
 ## 学习工具简谈
 

@@ -12,7 +12,7 @@ This repo will include some notes, homework assignment and lab work, comment and
 
 我是上海交通大学F2103801人工智能专业学生（2021级）。我自以为对于关键知识掌握良好，但我不是顶尖成绩的追求者。虽然如此，你可以在这里找到许多对于相关课程十分实用的资料。
 
-点击查看我的[本体](Additional/Meno)
+点击查看[猫猫](Additional/Meno)
 
 ## 申明（重要！）
 

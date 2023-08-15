@@ -1,0 +1,259 @@
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\geometry{a4paper, top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm}
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{ans}{Answer}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\linespread{1.2}
+\begin{document}
+	\title{Assignment 2}
+	\author{Kailing Wang 521030910356}
+	\date{October 20.2022}
+\maketitle
+\begin{prob}
+	 (20 points) Sometimes, we may have more than one shortest path in the graph. We want to determine whether there is more than one different shortest path. Given a graph $G=(V, E)$ with weight $w(e)$, and a start vertex $s$. Design an efficient algorithm to determine whether there exists more than one shortest path from $s$ to every $u \in V$.
+\end{prob}
+\begin{ans}
+	~
+	
+	We usually use Dijkstra algorithm to find a shortest path. For cases we want to find more than one shortest path, we still use Dijkstra.
+	
+	First, we run Dijkstra algorithm for every $u \in V$, and we get the distance form $s$ to each $u$, stored in set $d(V)$(we use $w(u,v)$ to represent the edge weight from $u$ to $v$). Then we reverse the graph and start from a certain $u$. For all $e'(u,v)$ that start from $u$, if more than one $v_i$ satisfies $d(u)=d(v_i)+w(u, v_i)$(we assume $w(e)>0$ and $w(e)=w(e')$), more than one shortest path is already found, for we can reach $u$ on a shortest path through two different vertex.
+	
+	The pseudo-code is as bellow. 
+	
+	\begin{algorithm}
+		\caption{Multi-Shortest-Path}
+		\KwData{$G=(V, E)$ with weight $w(e)$ and start point $s$}
+		\KwResult{index of vertexs that exists more than one shortest path}
+		\BlankLine
+		\For{each $u \in V$}
+		{
+			run Dijkstra algorithm to calculate $d(s,u)$\;
+		}
+		Reverse the graph to get $G'(V,E')$ with weight $w(e')$\;
+		\For{each $u \in V$}
+		{
+			find all $e'(u,v)$ that start from $u$\;
+			\eIf{more than one $v_i$ s.t. $d(u)==d(v_i)+w(u, v_i)$}
+			{Record this $u$ in the result array\;}
+			{Exists a single such $v_i$, discover $v_i$ on $G'$ similarly\;
+			\lIf{find a $v$ with multi-shortist-path before reaching s}{record $u$}}
+		}
+	\end{algorithm}
+
+	The correctness is obvious: if a vertex is indeed on the shortest path to $u$, $d(u)=d(v_i)+w(u, v_i)$ is not necessarily true, but $v_i$ that satisfies this condition must be on the shortest path. Before we reach $s$, all the vertices on existing shortest path will be reached.
+	
+	The time complexity depends on the data structure. The Dijkstra for all $u$ takes $O(V(E + VlogV))$. The reverse run is recursive, and each $u$ is reached only once. Time complexity is no more than $O(VE)$. The total time complexity is $O(V(E + VlogV))$.
+\end{ans}
+\begin{prob}
+	(20 points) Given a directed graph $G=(V, E)$, and a reward $r_{v}$ for all $v \in V$. The revenue of a vertex $u$ is defined as the maximum reward among all vertices reachable from $u$ (including $u$ itself). Design a linear time algorithm to output every vertex's revenue.
+\end{prob}
+\begin{ans}
+	~
+	
+	So defined, a vertex can inherit the revenue from successor. So finding all strongly connect components will be very helpful. But, anyway, here only leaf nodes of a connected component is useful. So my method is: simply find out all the vertices whose out degree is zero. If you start from any vertex and follow the edges through, you will end up in these vertices. Then, simply let the precursor inherit revenue from these vertices.
+	
+	Here is the pseudo-code.
+	
+	\begin{algorithm}
+		\caption{Calculate Revenue}
+		\KwData{Directed graph $G=(V,E)$}
+		\KwResult{A revenue array}
+		\BlankLine
+		Initialize set $rev(u) \gets 0, \forall u \in V$\;
+		Find SCCs and view then as super vertices\;
+		Reverse the graph to get $G'(V',E')$\;
+		Do topological sort\;
+		\For{$v_i$ according to the topological order}
+		{
+			$rev(v_i)\gets r_{v_i}$\;
+			\For{$v_j$ that there exists $e'(v_i, v_j)\in E'$}
+			{
+				\eIf{$r_{v_j}<rev(v_i)$}
+				{$rev(v_j)\gets rev(v_i)$\;}
+				{$rev(v_j)\gets r_{v_j}$}
+			}
+		}
+	\end{algorithm}
+
+	Then let's prove the correctness. Since all the ending vertex are included, all the vertices can be reached in the reversed graph. In other words, in the reversed graph, the direction of an edge means $'$can be reached by$'$, which ensures the correctness. According to the transitivity of the maximum, the algorithm is correct. 
+	
+	As for the time complexity, we've done tarjan and topological sort and visit each vertices. The total time complexity is $O(V+E)$, which is linear.
+	
+	I spend hours on this problem because I misunderstood the revenue as the sum of $r_v$ that $u$ can reach, which is far more complex if we want linear time complexity.
+\end{ans}
+\begin{prob}
+	(25 points) Given a directed graph $G=(V, E)$, a source vertex $s \in V$ and a destination vertex $t \in V$. Design an efficient algorithm to determine whether there is a path from $s$ to $t$ containing every vertex in $V$ ? (Vertices and edges can appear in the path more than once.)
+\end{prob}
+\begin{ans}
+	~
+	
+	As I see it, this is also a strongly connected component problem. Here I use Tarjan algorithm. See algorithm 3 for pseudo-code for Tarjan.
+	
+	\begin{algorithm}
+		\caption{Tarjan}
+		\KwIn{a directed graph $G=(V,E)$ and a starting point s}
+		\KwResult{SCCs}
+		\BlankLine
+		Initialize a record $(dfs,low)$ for each vertices\;
+		Start DFS from $s$\;
+		\For{each vertex $u$ visited}
+		{
+			Let $u$ instack\;
+			$dfs(u)\gets$ the visit sequence(or index)\;
+			Record $u$ as visited\;
+			\For{each $v_i$ that $u$ can reach}
+			{
+				\eIf{$v_i$ is visited before}
+				{$low(u)\gets min(low(u),dfs(v))$\;}
+				{DFS from $v_i$\;}
+				\If{dfs(u)==low(u)}
+				{Record a SCC from the stack}
+			}
+		}
+	\end{algorithm}
+
+	Use Tarjan to find all SCCs in the graph. View each SCC as a super node and reconstruct a graph. Then use topological sort using finding the 0-in-degree nodes. $s$ must be the starter because we want to reach any dots from $s$ and $t$ should be in the ending SCC or we can't reach all vertices.
+	
+	The pseudo-code algorithm4 shows the complete process.
+	
+	\begin{algorithm}
+		\caption{All vertices route}
+		\KwIn{a directed graph $G=(V,E)$ and a starting point s}
+		\KwResult{True or False whether there exists an all-vertex-path}
+		\BlankLine
+		Apply Tarjan Algorithm to find all SCCs\;
+		Treat each SCC as a single vertex and reconstruct the graph\;
+		Find a vertex with degree 0 and remove it\;
+		\If{$s$ is not in this SCC}
+		{\KwRet{False}}
+		\Repeat{the graph is empty}
+		{find a vertex with degree 0 and remove it}
+		\If{$t$ is not in the last SCC}
+		{\KwRet{False}}
+		\KwRet{True}
+	\end{algorithm}
+
+	Clearly if so, all the verticies can be reached, and if not, the cases are what I explained before. This shows correctness.
+	
+	Time complexity bottleneck is the Tarjan, so $O(V+E)$. 
+	
+\end{ans}
+\begin{prob}
+	(35 points) Let $G=(V, E)$ be a directed acyclic graph (DAG). Suppose that $G$ is not strongly connected, and you are allowed to add extra edges into $G$. What is the minimum number of extra edges to make $G$ strongly connected? In the following questions, we let $H(G)$ and $T(G)$ denote the set of head vertices (no incoming edges) and tail vertices (no outgoing edges). Notice that an isolated vertex is both a head and a tail. Moreover, if all vertices in $T(G)$ can be reached by every vertex in $H(G)$, then we call the graph $G$ is fully reachable.
+	\begin{enumerate}[(a)]
+	\item(5 points) Discuss the minimum number of extra edges we need to make a fully reachable graph strongly connected, and prove your claim.
+	\item(10 points) If $G$ is not fully reachable, prove that we can always find an new edge $e$, such that after adding $e, G^{\prime}=(V, E \cup\{e\})$ is still a DAG, and we have $\left|H\left(G^{\prime}\right)\right|=$ $|H(G)|-1,\left|T\left(G^{\prime}\right)\right|=|T(G)|-1$
+	\item(10 points) Design an algorithm to find the minimum number of extra edges to make $G$ strongly connected.
+	\item(10 points) If the given graph $G$ is not required to be a DAG, design an algorithm to find the minimum number of extra edges to make $G$ strongly connected.
+	\end{enumerate}
+\end{prob}
+\begin{ans}
+	~
+	
+	\begin{enumerate}[(a)]
+		\item Conclusion: the minimum number of edges need to be added is $max(|H(G)|,|T(G)|)$.
+		
+		Proof: First, any vertex in $E\setminus(H(G)\cup T(G))$ can be reached from a certain vertex in $H(G)$. Just go along the edges in the reversed graph and you can always find one. Similarly, they can reach some certain tail vertices. Next, connect $min(|H(G)|,|T(G)|)$ one by one. Last, connect the remaining vertices in $|T(G)|$ to some tail vertices, or some tail vertices to the remaining vertices in $|H(G)|$. Now if you start from any head vertex, you can get to any tail vertices, which can return to all other head vertices, which means you can get to any other vertices.
+		
+		\item Obviously the graph is still directed. If we want $\left|H\left(G^{\prime}\right)\right|=|H(G)|-1,\left|T\left(G^{\prime}\right)\right|=|T(G)|-1$, we are to find an edge to connect a head and a tail. Now we know in graph $G$, some certain head vertex cannot reach all the tail vertices, and so we can always find a pair of head and tail that is not connected. Connect this tail to the head. Thus we have $\left|H\left(G^{\prime}\right)\right|=|H(G)|-1,\left|T\left(G^{\prime}\right)\right|=|T(G)|-1$. The head cannot reach the tail so this won't from a cycle.
+		
+		\item According to the previous two sub-problems, we can first determine the $H(G)$ and $(T(G))$, and figure out whether the graph is fully reachable.
+		See the pseudo-code in algorithm 5. 
+		
+		\begin{algorithm}
+			\caption{Construct Strongly Connection}
+			\KwIn{DAG $G=(V,E)$}
+			\KwResult{The number of edges to be added}
+			\BlankLine
+			Initialize num\_edge = 0\;
+			Traverse all the edges to determine set $T(G)$ and $H(G)$\;
+			\For{each $v_h \in H(G)$}
+			{
+				DFS to find an unreachable tail $v_t$\;
+				Add edges $e(v_t, v_h)$ in $G'$\;
+				Delete $v_h$ in $H(G)$ and $v_t$ in $T(G)$\;
+				num\_edge $+=1$\;
+			}
+			num\_edge $+=max(|H(G')|,|T(G')|)$
+		\end{algorithm}
+	
+		The idea is to find out whether each head vertex can reach all tail vertices. If not, simply add one edges from an unreachable tail to this head to decrease $|H(G)|$ and $T(G)$. In the end, the graph should be fully reachable because we ensure the remaining head can reach all tail vertices and the added edges will keep the graph a DAG. Then follow sub-problem (a) to find the answer.
+		
+		Next we prove the minimum. Strongly connection includes fully reachable, so the construction of fully reachable is a must. During the above construction, each added edge means there is a head cannot reach a tail, and there is no case that a single edge can solve two such pairs. So each added edge necessary. From fully reachable to strongly connection we've proved the minimum.
+		
+		The result can be further simplified. In the process, suppose $E'$ edges are added, we have $|H(G)|=|H(G')|+|E'|$ and $|T(G)|=|T(G')|+|E'|$. The total number is still $max(|H(G)|,|T(G)|)$.
+		
+		Time complexity is $O(V+E)$ for we used DFS.
+		
+		\item The process is rather the same. First, we use Tarjan algorithm to find all SCC, and view them as super vertices. Next, apply algorithm5. 
+	
+		\begin{algorithm}
+			\caption{Construct Strongly Connection}
+			\KwIn{$G=(V,E)$}
+			\KwResult{The number of edges to be added}
+			\BlankLine
+			Initialize num\_edge = 0\;
+			Initialize a record $(dfs,low)$ for each vertices\;
+			Start DFS from $s$\;
+			\For{each vertex $u$ visited}
+			{
+				$dfs(u)\gets$ the visit sequence(or index)\;
+				record $u$ as visited\;
+				\For{each $v_i$ that $u$ can reach}
+				{
+					\eIf{$v_i$ is visited before}
+					{$low(u)\gets min(low(u),dfs(v))$\;}
+					{DFS from $v_i$\;}
+					\If{dfs(u)==low(u)}
+					{Record a SCC composed of vertices with the same low value\;}
+				}
+			}
+			Simplify each SCC as a single vertex and reconstruct the graph\;
+			Traverse all the edges to determine set $T(G)$ and $H(G)$\;
+			\For{each $v_h \in H(G)$}
+			{
+				DFS to find an unreachable tail $v_t$\;
+				Add edges $e(v_t, v_h)$\;
+				Delete $v_h$ in $H(G)$ and $v_t$ in $T(G)$\;
+				num\_edge $+=1$\;
+			}
+			num\_edge $+=max(|H(G')|,|T(G')|)$
+		\end{algorithm}
+
+\end{enumerate}	
+\end{ans}
+\begin{prob}
+	  How long does it take you to finish the assignment (including thinking and discussing)? Give a score $(1,2,3,4,5)$ to the difficulty. Do you have any collaborators? Write down their names here.
+\end{prob}
+\begin{ans}
+	~
+	
+	I guess 3 hours including writing but not including the time wasted on Problem 2.
+	
+	Difficulty 3.
+\end{ans}
+\end{document}

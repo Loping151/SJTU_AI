@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{algorithm}  
+\usepackage{algpseudocode}  
+\usepackage{amsmath}  
+\usepackage[paperwidth=10cm,paperheight=6.2cm, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm  
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm  
+\renewcommand{\thealgorithm}{3}
+\begin{document}
+	\begin{algorithm}[!h]
+		\caption{Construct out-of-range}  
+		\label{whatever}  
+		\begin{algorithmic}
+			\Require  
+			n
+			\Ensure  
+			an out-of-order permutation
+			\If{$n=1$}
+			\State\Return $1$
+			\EndIf
+			\State divide odd and even: $\{1,3\cdots2,4\cdots\}$
+			\State fold the odd part: $A: \{1,3\cdots k\}\rightarrow B: \{1,2\cdots\frac{k+1}{2}\}$
+			\State apply this algorithm on $B$ to get $B_i$
+			\State arrange $A$ by $B_i$ to form $A_i$
+			\State \Return $cat(A_i,A_i+1)$
+		\end{algorithmic}  
+	\end{algorithm}
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{algorithm}  
+\usepackage{algpseudocode}  
+\usepackage{amsmath}  
+\usepackage[paperwidth=10cm,paperheight=9.2cm, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm  
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm  
+\renewcommand{\thealgorithm}{2}
+\begin{document}
+	\begin{algorithm}[!h]
+		\caption{two-array medium}  
+		\label{whatever}  
+		\begin{algorithmic}
+			\Require  
+			sorted arrays $A$, $B$ (1-based) with length $n$ and $m$
+			\Ensure  
+			the medium of the two arrays 
+			\State $i\gets (m+n+1)/4$
+			\State $a_{left}, b_{left}\gets 0$
+			\While{$i>1$}
+			\If {$A[a_{left}+i]<B[b_{left}+i]$}
+			\State $a_{left} += i+1$
+			\Else  
+			\State $b_{left} += i+1$
+			\EndIf
+			\State $i\gets(n+m-a_{left}-b_{left}+1)/4$
+			\EndWhile
+			\If{$m+n$ is odd}
+			\State\Return $min(A[a_{left}], B[b_{left}])$
+			\Else
+			\State\Return the average of the smaller 2 of A[i], A[i+1], B[i] and B[i+1]
+			\EndIf
+		\end{algorithmic}  
+	\end{algorithm}
+\end{document}

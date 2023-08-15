@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{algorithm}  
+\usepackage{algpseudocode}  
+\usepackage{amsmath}  
+\usepackage[paperwidth=10cm,paperheight=8.8cm, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm  
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm  
+\renewcommand{\thealgorithm}{4}
+\begin{document}
+	\begin{algorithm}[!h]
+		\caption{Even-Paz algorithm}
+		\label{whatever}  
+		\begin{algorithmic}
+			\Require  
+			a cake (initially[0,1]), num of $child$ $n$ and their value density function $f_i$
+			\Ensure  
+			an allocation $I: \int_{I_i} f_i(x) d x \geq \frac{1}{n} \int_0^1 f_i(x) d x$
+			\State suggest the current cake is $[a,b]$
+			\If{$n=1$}
+			\State Give the cake to this $child$ 
+			\EndIf
+			\For{each $child_i$}
+			\State calculate the half-half point $x_i$:\Comment{$O(n)$}
+			\State $\int_0^{x_i} f_i(x) d x=\frac{1}{n}\left\lfloor\frac{n}{2}\right\rfloor \cdot \int_0^1 f_i(x) d x$
+			\State use medium algorithm to find the medium $x_i^*$\Comment{$O(n)$}
+			\EndFor
+			\State select the $\frac{n}{2}th~x_i$ to divide the cake into two parts
+			\State apply this algorithm: the former $\frac{n}{2}$ children shares the cake $[a,x_i^*]$\Comment{recursion}
+			\State apply this algorithm: the children left shares the rest of the cake\Comment{recursion}
+		\end{algorithmic}  
+	\end{algorithm}
+\end{document}

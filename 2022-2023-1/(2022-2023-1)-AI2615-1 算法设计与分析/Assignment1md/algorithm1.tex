@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{algorithm}  
+\usepackage{algpseudocode}  
+\usepackage{amsmath}  
+\usepackage[paperwidth=10cm,paperheight=5.4cm, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm  
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm  
+\renewcommand{\thealgorithm}{1}
+\begin{document}
+	\begin{algorithm}[!h]
+		\caption{k-way merge}  
+		\label{whatever}  
+		\begin{algorithmic}
+			\Require  
+			k sorted arrays eith n elements each
+			\Ensure  
+			one single sorted array
+			\If {there are only two arrays left}
+			\State merge these two arrays using double pointer
+			\State\Return merged array
+			\EndIf
+			\State apply the algorithm on two $\frac{k}{2}$ sets of arrays
+			\State merge the returned two arrays into one
+			\Return this single array
+		\end{algorithmic}  
+	\end{algorithm}
+\end{document}

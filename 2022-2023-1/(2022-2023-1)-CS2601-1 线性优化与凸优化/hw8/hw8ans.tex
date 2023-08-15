@@ -1,0 +1,311 @@
+% !TEX program  = pdflatex
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\geometry{a4paper, top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm}
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{ans}{Answer}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\linespread{1.2}
+\begin{document}
+	\title{CS257 Linear and Convex Optimization Homework 8 Solution}
+	\author{Kailing Wang 521030910356}
+	\date{November 23.2022}
+	\maketitle
+	\begin{prob}
+	Consider the equality constrained quadratic program
+	
+	$$
+	\begin{array}{rl}
+	\underset{x_{1}, x_{2}}{\min} & f\left(x_{1}, x_{2}\right)=x_{1}^{2}+x_{1} x_{2}+x_{2}^{2}-x_{1}-3 x_{2} \\
+	\text { s.t. } & x_{1}+2 x_{2}=1
+	\end{array}
+	$$
+	
+	\begin{enumerate}[(a)]
+		\item  Find the optimal solution $x_{1}^{*}, x_{2}^{*}$ by reduction to an unconstrained problem.
+		\item Find the optimal solution and the corresponding Lagrange multiplier $\lambda^{*}$ using the Lagrangian multipliers method.
+	\end{enumerate}
+	\end{prob}
+	
+	\begin{ans}
+		~
+		
+		\begin{enumerate}[(a)]
+		\item Use variable substitution $x_1=1-2x_2$, the problem become
+		$$
+		\underset{x}{f(x)}=3x^2-4x
+		$$
+		
+		The first derivative is 
+		$$
+		f\prime(x)=6x-4
+		$$
+		
+		To get minimum, we have $f\prime (x^*)=0$ and $x_2^*=\frac{2}{3}$. So $x_1^*=1-2x_2^*=-\frac{1}{3}$.
+				
+		\item Use Lagrangian condition, we want to solve
+		
+		$$
+		\begin{aligned}
+			\mathcal{L}(\boldsymbol{x}, \boldsymbol{\lambda})&=f(\boldsymbol{x})+\boldsymbol{\lambda}^T(\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b})\\
+			&=x_{1}^{2}+x_{1} x_{2}+x_{2}^{2}-x_{1}-3 x_{2}+\lambda (x_1+2x_2-1)
+		\end{aligned}
+		$$
+		
+		The KKT equations are
+		$$
+		\left\{\begin{array}{l}
+			\nabla_{x_1} \mathcal{L}\left(\boldsymbol{x}^*, \boldsymbol{\lambda}^*\right)=2x_1^*+x_2^*-1+\lambda^*=0 \\
+			\nabla_{x_2} \mathcal{L}\left(\boldsymbol{x}^*, \boldsymbol{\lambda}^*\right)=x_1^*+2x_2^*-3+2\lambda^*=0 \\
+			\nabla_{\lambda} \mathcal{L}\left(\boldsymbol{x}^*, \boldsymbol{\lambda}^*\right)=x_1^*+2x_2^*-1=0
+		\end{array}\right.
+		$$
+		
+		The solution is:
+		$$
+		\left\{\begin{array}{l}
+			x_1^*=-\frac{1}{3}\\
+			x_2^*=\frac{2}{3}\\
+			\lambda=1
+		\end{array}\right.
+		$$
+		
+		And we find the solution is indeed the minimum. 
+		\end{enumerate}
+	\end{ans}
+	
+	\begin{prob}
+	Solve the following problem,
+	
+	$$
+	\begin{array}{rl}
+	\underset{x_1,x_2}{\min} & f\left(x_{1}, x_{2}\right)=x_{1} x_{2}+x_{1}^{2} \\
+	\text { s.t. } & x_{1}^{2}+\frac{1}{8} x_{2}^{2}=1
+	\end{array}
+	$$
+	
+	\end{prob}
+	
+	\begin{ans}
+		Apply the Lagrangian multipliers method.
+		$$
+		\underset{x_1,x_2,\lambda}{\min}\mathcal{L}\left(x_1, x_2, \lambda\right)=x_1x_2+x_1^2+\lambda(x_{1}^{2}+\frac{1}{8} x_{2}^{2}-1)
+		$$
+		
+		$$
+		\left\{\begin{array}{l}
+			\nabla_{x_1} \mathcal{L}\left(\boldsymbol{x}^*, \boldsymbol{\lambda}^*\right)=x_2^*+2x_1^*+2\lambda^*x_1^*=0 \\
+			\nabla_{x_2} \mathcal{L}\left(\boldsymbol{x}^*, \boldsymbol{\lambda}^*\right)=x_1^*+\frac{\lambda^*x_2^*}{4}=0 \\
+			\nabla_{\lambda} \mathcal{L}\left(\boldsymbol{x}^*, \boldsymbol{\lambda}^*\right)=x_{1}^{2}+\frac{1}{8} x_{2}^{2}-1=0
+		\end{array}\right.
+		$$
+		
+		With the first two equation we get $(\lambda^2+\lambda-2)x_1=0$. If $x_1=0$, with the first equation we get $x_2=0$, which conflict with the third equation. So we have
+		$$
+		\lambda=1\text{ or }\lambda=-2
+		$$
+		Solve the equation set, and we get 
+		$$
+		\left\{\begin{array}{l}
+			x_1^*=\frac{\sqrt{3}}{3}\\
+			x_2^*=-\frac{4\sqrt{3}}{3}\\
+			\lambda=1
+		\end{array}\right.,
+		\left\{\begin{array}{l}
+			x_1^*=-\frac{\sqrt{3}}{3}\\
+			x_2^*=\frac{4\sqrt{3}}{3}\\
+			\lambda=1
+		\end{array}\right.,
+		\left\{\begin{array}{l}
+			x_1^*=\frac{\sqrt{6}}{3}\\
+			x_2^*=\frac{2\sqrt{6}}{3}\\
+			\lambda=-2
+		\end{array}\right.,
+		\left\{\begin{array}{l}
+			x_1^*=-\frac{\sqrt{6}}{3}\\
+			x_2^*=-\frac{2\sqrt{6}}{3}\\
+			\lambda=-2
+		\end{array}\right.
+		$$
+		The former two results are the global minimum, and so is the result for this problem. The minimum value is -1. The latter two are the global maximum. The maximum value is 2. 
+	\end{ans}
+	
+	\begin{prob}
+	Consider the equality constrained quadratic program
+	
+	$$
+	\begin{array}{ll}
+	\underset{\boldsymbol{x}}{\min} & \frac{1}{2} \boldsymbol{x}^{T} \boldsymbol{Q} \boldsymbol{x}+\boldsymbol{g}^{T} \boldsymbol{x}+c \\
+	\text { s.t. } & \boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}
+	\end{array}
+	$$
+	
+	where $\boldsymbol{Q} \in \mathbb{R}^{n \times n}, \boldsymbol{Q} \succ \boldsymbol{O}, \boldsymbol{g} \in \mathbb{R}^{n}, c \in \mathbb{R}, \boldsymbol{A} \in \mathbb{R}^{k \times n}$ with $\operatorname{rank} \boldsymbol{A}=k$, and $\boldsymbol{b} \in \mathbb{R}^{k}$.
+	
+	\begin{enumerate}[(a)]
+	\item Write down the Lagrange condition for this problem.
+	\item Find a closed form solution for the optimal solution $\boldsymbol{x}^{*}$ and the corresponding Lagrange multiplier $\boldsymbol{\lambda}^{*}$. Hint: Show $\boldsymbol{A} \boldsymbol{Q}^{-1} \boldsymbol{A}^{T} \succ \boldsymbol{O}$ and hence is invertible.
+	\item Use part (b) to find the projection $\operatorname{Proj}_{S}\left(\boldsymbol{x}_{0}\right)$ of a point $\boldsymbol{x}_{0}$ onto the the affine space $S=\{\boldsymbol{x}: \boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}\}$, i.e. solve
+	
+	$$
+	\begin{array}{cl}
+	\underset{\boldsymbol{x}}{\min} & \frac{1}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{0}\right\|_{2}^{2} \\
+	\text { s.t. } & \boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}
+	\end{array}
+	$$
+	
+	When $\boldsymbol{x}_{0}=\mathbf{0}$, you should recover the result on slide 11 of $\S 9$.
+	\item Consider a hyperplane $P=\left\{\boldsymbol{x}: \boldsymbol{w}^{T} \boldsymbol{x}=b\right\}$. Use the result in (c) to find the distance $\mathrm{d}\left(\boldsymbol{x}_{0}, P\right)$ between $x_{0}$ and $P$. You should recover the result on slide 13 of $\S 1$.
+	\end{enumerate}	
+	\end{prob}
+	
+	\begin{ans}
+		~
+		
+		\begin{enumerate}[(a)]
+			\item The Lagrange function is 	
+			$$
+			\begin{aligned}
+				\mathcal{L}(\boldsymbol{x}, \boldsymbol{\lambda})&=f(\boldsymbol{x})+\boldsymbol{\lambda}^T(\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b})\\
+				&=\frac{1}{2} \boldsymbol{x}^{T} \boldsymbol{Q} \boldsymbol{x}+\boldsymbol{g}^{T} \boldsymbol{x}+c+\boldsymbol{\lambda}^T(\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b})
+			\end{aligned}
+			$$
+	
+			The Lagrangian condition is
+	
+			$$
+			\left\{\begin{array}{l}
+				\nabla_{\boldsymbol{x}} \mathcal{L}\left(\boldsymbol{x}, \boldsymbol{\lambda}\right)=\frac{\boldsymbol{Q}+\boldsymbol{Q}^T}{2}\boldsymbol{x}+\boldsymbol g + \boldsymbol{A}^T\boldsymbol{\lambda}\\
+				\nabla_{\boldsymbol{\lambda}} \mathcal{L}\left(\boldsymbol{x}, \boldsymbol{\lambda}\right)=\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b}=0
+			\end{array}\right.\text{ or }
+			\left[\begin{array}{cc}
+				\frac{\boldsymbol{Q}+\boldsymbol{Q}^T}{2} & \boldsymbol{A}^T\\
+				\boldsymbol{A} & \boldsymbol{O}
+			\end{array}\right]
+			\left[\begin{array}{c}
+				\boldsymbol{x} \\
+				\boldsymbol{\lambda}
+			\end{array}\right]
+			=
+			\left[\begin{array}{c}
+				-\boldsymbol{g} \\
+				\boldsymbol{b}
+			\end{array}\right]
+			$$
+			
+			\item The augmented matrix is 
+			$$
+			\left[\begin{array}{ccc}
+				\boldsymbol{Q} & \boldsymbol{A}^T & -\boldsymbol{g} \\
+				\boldsymbol{A} & \boldsymbol{O} & \boldsymbol{b}
+			\end{array}\right]
+			$$
+			
+			Note that now we suppose $Q$ is symmetric. 
+			
+			Solve the problem with the knowledge of liner algebra, 
+			$$
+			\left[\begin{array}{ccc}
+				\boldsymbol{I} & \boldsymbol{Q}^{-1}\boldsymbol{A}^T & -\boldsymbol{Q}^{-1}\boldsymbol{g} \\
+				\boldsymbol{A} & \boldsymbol{O} & \boldsymbol{b}
+			\end{array}\right]
+			$$
+			$$
+			\Rightarrow
+			\left[\begin{array}{ccc}
+				\boldsymbol{I} & \boldsymbol{Q}^{-1}\boldsymbol{A}^T & -\boldsymbol{Q}^{-1}\boldsymbol{g} \\
+				\boldsymbol{O} & -\boldsymbol{AQ}^{-1}\boldsymbol{A}^T & \boldsymbol{b}+\boldsymbol{AQ}^{-1}\boldsymbol{g}
+			\end{array}\right]
+			$$
+			$$
+			\Rightarrow
+			\left[\begin{array}{ccc}
+				\boldsymbol{I} & \boldsymbol{Q}^{-1}\boldsymbol{A}^T & -\boldsymbol{Q}^{-1}\boldsymbol{g} \\
+				\boldsymbol{O} & \boldsymbol{I} & -(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}\boldsymbol{AQ}^{-1}\boldsymbol{g}-(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}\boldsymbol{b}
+			\end{array}\right]
+			$$
+			$$
+			\Rightarrow
+			\left[\begin{array}{ccc}
+				\boldsymbol{I} & \boldsymbol{O} & -\boldsymbol{Q}^{-1}\boldsymbol{g}+\boldsymbol{Q}^{-1}\boldsymbol{A}^T(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}(\boldsymbol{b}+\boldsymbol{AQ}^{-1}\boldsymbol{g}) \\
+				\boldsymbol{O} & \boldsymbol{I} & -(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}\boldsymbol{AQ}^{-1}\boldsymbol{g}-(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}\boldsymbol{b}
+			\end{array}\right]
+			$$
+			
+			$$
+			\left\{
+			\begin{array}{ll}
+				\boldsymbol{x}= -\boldsymbol{Q}^{-1}\boldsymbol{g}+\boldsymbol{Q}^{-1}\boldsymbol{A}^T(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}(\boldsymbol{b}+\boldsymbol{AQ}^{-1}\boldsymbol{g}) \\
+				\boldsymbol{\lambda}=-(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}\boldsymbol{AQ}^{-1}\boldsymbol{g}-(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}\boldsymbol{b}
+			\end{array}\right.
+			$$
+			
+			Here we used $(\boldsymbol{AQ}^{-1}\boldsymbol{A}^T)^{-1}$. So we have to prove $\boldsymbol{AQ}^{-1}\boldsymbol{A}^T$ is invertible. According to the property, 
+			$$
+			\begin{aligned}
+				&\operatorname{rank}(\boldsymbol A \boldsymbol B) \leq \min (\operatorname{rank}(\boldsymbol A), \operatorname{rank}(\boldsymbol B)) \\
+				&\operatorname{rank}(\boldsymbol A \boldsymbol B) \geq \operatorname{rank}(\boldsymbol A)+\operatorname{rank}(\boldsymbol B)-n
+			\end{aligned}
+			$$
+			
+			First, $\operatorname{rank}(\boldsymbol Q^{-1})=n$. Decompose $\boldsymbol Q^{-1}$ into $\boldsymbol P^T \boldsymbol\lambda \boldsymbol P$, the $\boldsymbol \lambda $ are the eigenvalues. All the eigenvalues are positive. $\boldsymbol P \boldsymbol A^T$ are $n \times k$ matrix with rank $k$. We also know that if $\boldsymbol X$ is full rank in col, $\boldsymbol X^T \boldsymbol X$ is full rank square matrix. So $\boldsymbol{AQ}^{-1}\boldsymbol{A}^T=\boldsymbol{AP}^T\boldsymbol\lambda\boldsymbol{PA}^T$ is full rank.
+			
+			\item 
+			$$
+			\frac{1}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{0}\right\|_{2}^{2}=\frac{1}{2}\boldsymbol x^T \boldsymbol x - \boldsymbol x_0^T\boldsymbol x + \frac{1}{2}\boldsymbol x_0^T\boldsymbol x_0
+			$$
+
+			Replace
+			
+			$$
+			\left\{
+			\begin{array}{l}
+				\boldsymbol{Q}=\boldsymbol E \\
+				\boldsymbol g = \boldsymbol -\boldsymbol x_0 = \boldsymbol 0\\ 
+				c = \boldsymbol x_0^T \boldsymbol x_0 = 0
+			\end{array}\right.
+			$$
+			
+			The solution is $\boldsymbol x=\boldsymbol{A}^T(\boldsymbol{A}\boldsymbol{A}^T)^{-1}\boldsymbol{b}$ when $\boldsymbol x_0=\boldsymbol 0$.
+			
+			The common result is $\boldsymbol x=\boldsymbol x_0 + \boldsymbol{A}^T(\boldsymbol{A}\boldsymbol{A}^T)^{-1}(\boldsymbol{b}-\boldsymbol A \boldsymbol x_0)$.
+			
+			\item Replace $\boldsymbol A \text{ with } \boldsymbol w^T$. The result become 
+			
+			$$
+			\boldsymbol x=\boldsymbol x_0 + \boldsymbol{w}(\boldsymbol{w}^T\boldsymbol{w})^{-1}(b-\boldsymbol w^T \boldsymbol x_0)
+			$$
+			
+			Now 
+			$$
+			\begin{aligned}
+				\operatorname d (\boldsymbol x_0, P)&=||\boldsymbol x - \boldsymbol x_0||_2\\
+				&=||\boldsymbol{w}(\boldsymbol{w^T}\boldsymbol{w})^{-1}(b-\boldsymbol w^T \boldsymbol x_0)|| \\
+				&=\frac{|\boldsymbol w^T \boldsymbol x_0-\boldsymbol b|}{||\boldsymbol w||}
+			\end{aligned}
+			$$
+		\end{enumerate}
+	\end{ans}
+\end{document}

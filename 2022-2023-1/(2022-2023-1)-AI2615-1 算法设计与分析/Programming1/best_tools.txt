@@ -1,0 +1,10 @@
+inline void read(int &x) 
+{ 
+    x = 0;
+    char ch = getchar();
+    int sign = 0;
+    while((ch < '0' || ch > '9') && (ch != '-')) ch = getchar();
+    sign = ((ch == '-') && (ch = getchar()));
+    while(ch >= '0' && ch <= '9') x = x * 10+ (ch - 48), ch = getchar();
+    (sign) && (x =- x);
+}

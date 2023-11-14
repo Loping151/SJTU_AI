@@ -1,5 +1,7 @@
 # SJTU_AI
 
+悲报：停更（因为的确没有人看）
+
 This repo is mainly for students major in AI in Shanghai Jiao Tong University. Anyway, anyone is welcome if you are interested in AI or you want information for common courses.
 
 这是我个人为上海交通大学人工智能专业建立的~~低质量~~资料库。如果你对通用课程、我的选修课感兴趣，也欢迎。

@@ -1,0 +1,41 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = pdflatex
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[european]{circuitikz}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+\geometry{a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm}
+\title{\Huge Machine Learning \\ \LARGE Homework 1}
+\author{Kailing Wang 521030910356}
+\date{2023.3.17}
+\begin{document}
+	\section*{\Huge Machine Learning Homework 2}
+	\section*{\normalsize Kailing Wang 521030910356}
+
+	\section*{Solution}
+	Suppose $\widehat{x}$ is currently at $H_i$ and moved to $H_j$, then the class i is updated as follows,
+	$$
+	\begin{aligned}
+		\mathbf{m}_i^{\star} & =\frac{n_i \mathbf{m}_i-\hat{\mathbf{x}}}{n_i-1}=\mathbf{m}_i+\frac{n_i \mathbf{m}_i-\hat{\mathbf{x}}}{n_i-1}-\mathbf{m}_i \\
+		& =\mathbf{m}_i-\frac{\hat{\mathbf{x}}-\mathbf{m}_i}{n_i-1}
+	\end{aligned}
+	$$
+	$$
+	\begin{aligned}
+		J_i^{\star} & =\sum_{\mathbf{x} \in H_i}\left\|\mathbf{x}-\mathbf{m}_i^{\star}\right\|^2-\left\|\hat{\mathbf{x}}-\mathbf{m}_i^{\star}\right\|^2 \\
+		& =\sum_{\mathbf{x} \in H_i}\left\|\mathbf{x}-\mathbf{m}_i+\frac{\hat{\mathbf{x}}-\mathbf{m}_i}{n_i-1}\right\|^2-\left\|\frac{n_i}{n_i-1}\left(\hat{\mathbf{x}}-\mathbf{m}_i\right)\right\|^2 \\
+		& =\sum_{\mathbf{x} \in H_i}\left\|\mathbf{x}-\mathbf{m}_i\right\|^2+\frac{2}{n_i-1} \sum_{\mathbf{x} \in H_i}\left(\hat{\mathbf{x}}-\mathbf{m}_i\right)^T\left(\mathbf{x}-\mathbf{m}_i\right) \\
+		& +\frac{1}{\left(n_i-1\right)^2} \sum_{\mathbf{x} \in H_i}\left\|\hat{\mathbf{x}}-\mathbf{m}_i\right\|^2-\frac{n_i^2}{\left(n_i-1\right)^2}\left\|\hat{\mathbf{x}}-\mathbf{m}_i\right\|^2 \\
+		& =J_i+\frac{n_i}{\left(n_i-1\right)^2}\left\|\hat{\mathbf{x}}-\mathbf{m}_i\right\|^2-\frac{n_i^2}{\left(n_i-1\right)^2}\left\|\hat{\mathbf{x}}-\mathbf{m}_i\right\|^2 \\
+		& \Leftrightarrow J_i^{\star}=J_i-\frac{n_i}{n_i-1}\left\|\hat{\mathbf{x}}-\mathbf{m}_i\right\|^2
+	\end{aligned}
+	$$
+	According to the update rule, $J_i$ can either remain or decrease.
+\end{document}

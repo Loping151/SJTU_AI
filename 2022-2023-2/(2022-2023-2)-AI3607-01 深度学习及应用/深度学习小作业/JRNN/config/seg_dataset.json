@@ -1,0 +1,11 @@
+{
+  "exp_name": "seg_dataset_lstm",
+  "train_path": "data/",
+  "test_path": "data/",
+  "seed": 114514,
+  "lr": 1e-2,
+  "epochs": 30,
+  "batch_size": 16,
+  "data_seg": true,
+  "rnn_type": "lstm"
+}

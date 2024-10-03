@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov 21 18:25:34 2022
+# Process ID: 6536
+# Current directory: C:/Users/wangk/OneDrive/Home/Desktop/three_voter/three_voter.runs/synth_1
+# Command line: vivado.exe -log voter.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source voter.tcl
+# Log file: C:/Users/wangk/OneDrive/Home/Desktop/three_voter/three_voter.runs/synth_1/voter.vds
+# Journal file: C:/Users/wangk/OneDrive/Home/Desktop/three_voter/three_voter.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source voter.tcl -notrace

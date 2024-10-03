@@ -1,0 +1,44 @@
+2023-04-23 19:02:55
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 300, 'batch_size': 128, 'data_seg': True, 'config': 'seg_dataset.json'}
+	test acc:124.86075949367088
+
+2023-04-23 21:27:10
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'seg_dataset.json'}
+	test acc:124.83544303797468
+
+2023-05-09 21:01:15
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.974881329113924
+
+2023-05-28 23:29:08
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 500, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9752768987341772
+
+2023-05-29 20:37:03
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9771558544303798
+
+2023-05-29 21:03:53
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9749802215189873
+
+2023-05-29 21:22:31
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9759691455696202
+
+2023-05-29 21:30:10
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9744857594936709
+
+2023-05-29 22:27:09
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9799248417721519
+
+2023-05-29 23:31:24
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9805181962025317
+
+2023-05-30 13:43:23
+	{'exp_name': 'seg_dataset', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 200, 'batch_size': 128, 'data_seg': True, 'config': 'config/seg_dataset.json'}
+	test acc:0.9810126582278481
+

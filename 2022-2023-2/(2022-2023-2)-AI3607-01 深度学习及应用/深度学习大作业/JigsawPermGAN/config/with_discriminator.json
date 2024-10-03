@@ -1,0 +1,16 @@
+{
+  "exp_name": "dis_loss",
+  "data_root": "./data",
+  "validate_only": false,
+  "seed": 151,
+  "cuts": 2,
+  "num_epochs": 2,
+  "prob": 1,
+  "lr_step_size": 40000,
+  "current_size": 16,
+  "pretrained": false,
+  "use_edge_loss": false,
+  "use_discriminator_loss": true,
+  "discriminator_loss_weight": 1,
+  "config": null
+}

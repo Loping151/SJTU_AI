@@ -1,0 +1,11 @@
+{
+  "exp_name": "test",
+  "train_path": "data/",
+  "test_path": "data/",
+  "seed": 114514,
+  "lr": 1e-3,
+  "epochs": 30,
+  "batch_size": 64,
+  "data_seg": false,
+   "rnn_type": "rnn"
+}

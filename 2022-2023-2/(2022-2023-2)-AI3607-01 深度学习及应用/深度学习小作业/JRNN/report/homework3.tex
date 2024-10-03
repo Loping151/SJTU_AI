@@ -1,0 +1,30 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage[european]{circuitikz}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\geometry{a4paper, top=3.54cm, bottom=3.54cm, left=3.54cm, right=3.54cm}
+\begin{document}
+	\section*{\Huge 第三次小作业：循环网络~报告}
+	\section*{\small 王凯灵 521030910356 2023年5月7日}
+	\section*{问题分析与解决}
+	本次作业使用卷积网络进行MNIST数据集进行分类。如我在签一份报告中成熟的，MNIST是一个更适合使用MLP直接解决的问题，而不是使用CNN，RNN。而且，RNN也出现了精度下降不明显的现象，解决思路与CNN完全类似。考虑到批阅人也不愿意阅读含有大量重复内容、抄写了CNN、RNN网络定义和基本概念、甚至是直接生成的水报告，此报告将相对简短。
+	\section*{实现细节}
+	我实现了一个简单的单个RNN和LSTM网络，作为config文件可选参数传入。隐藏状态128个，共3层。此外，没有什么特别的地方。
+	
+	\section*{分类结果}
+	MNIST直接分类，使用RNN精度为96.29\%，LSTM为99.14\%。结构更复杂的网络取得更好的效果。切分数据后，RNN精度降为93.17\%，LSTM降为94.35\%。下降比隔壁CNN明显多了，可喜可贺。使用数据增强方法，RNN结果变为10.28\%，LSTM为95.83\%。其中，RNN的变化较为诡异。这很可能是由于我做的数据增强比较奇葩：我是每次取batch时将图片旋转一下，这就导致图片一直在更新，与之前可能完全不重样，这对学习到的序列特性影响时非常大的，会导致RNN不收敛。如果是静态的数据集增强，应当取得良好效果，但我认为，使用LSTM代替RNN，即网络结构的升级才是正解。毕竟把图像当作序列来处理实在是太奇怪了。
+	
+	\section*{题外话}
+	ANN，RNN，CNN可以说是初学者三剑客。但如今，ANN仍然作为常见的MLP，CNN在各类视觉backbone中广泛应用，而RNN很少再被提起。在记忆能力上，RNN的记忆性能往往不如使用位置编码的transformer，而且RNN最初没有很好的支持并行计算，很快被学界抛弃。近来，RNN似乎在优势的资源占用方面也被优化的transfomer挤占。但是，RNN的思路有着不错的合理性，所谓功能和结构是相互适应的，我认为RNN还存在没有被发掘出来的使用方法。这就像Diffusion Model出来以后，GAN在绘画领域很快被除名，但是GAN的设计思路可以说是极其合理，以至于我相信只要自监督七七八八能做的，都能用GAN搞个无监督。同理，RNN或许也有类似的潜力。在热门领域卷成这样的今天，思考一下老东西的新用法总是好的。
+	\section*{声明}
+	此作业运行及报告代码100\%纯手动实现，不含在线参考，任何借鉴和大模型辅助。
+\end{document}

@@ -1,0 +1,89 @@
+% !TEX program  = pdflatex
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{geometry}
+\geometry{a4paper, top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm}
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{ans}{Answer}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\linespread{1.2}
+\begin{document}
+	\title{Homework 1}
+	\author{Kailing Wang 521030910356}
+	\date{February 27.2023}
+	
+	\section*{\LARGE [Homework 1] Review of Probability Theory}
+	\section*{\large Kailing Wang 521030910356}
+	
+	\section*{Probability Space of Tossing Coins}
+	\begin{enumerate}
+		\item For this problem we need to prove two things: first, each set $C_s$ is a subset of $\Omega$, and second, each $\omega \in \Omega$ is in one and only one $C_s$.
+		
+		The first thing is obvious since $C_s$ is defined to be a set composed of $\omega$. Then we also know that $\omega$ in each $C_s$ must be different at the first n elements. For any $\omega$, it's first n elements must be in $\{0, 1\}^n$ so it's in one of the $C_s$s. 
+		
+		According to the definition of partition, $\{C_s\}$ is a partition of $\Omega$.
+		
+		\item Each $C_s$ has the same property, the $\sigma$-algebra of $\{C_s\}$ is $2^{\{C_s\}}$ while we can simple build a bijection from $\{0,1\}^n$ to $\{C_s\}$. Thus we can build a bijection between $2^{\{C_s\}}(\text{ or })\mathcal{F}_n$ and $2^{\{0,1\}^n}$.
+		
+		\item First prove that $\mathcal F_n \in \mathcal F_{n+1}$. Any set in $\mathcal F_n$ can be obtained with $C_{s_n}$s. We also know that each $C_{s_n}$ is a union of two $C_{s_{n+1}}$s. Thus each set in $\mathcal F_n$ is in $\mathcal F_{n+1}$. However, we can't find a method to obtain a $C_{s_{n+1}}$ with $C_{s_n}$s. $\mathcal F_n \subsetneq \mathcal F_{n+1}$
+		
+		\item For any set $A \in \mathcal F_n$ in $\mathcal F_\infty$, since $\mathcal F_n$ is $\sigma$-algebra, $A^c$ is in $\mathcal F_n$ and thus $A^c$ is in $\mathcal F_\infty$. For $A \in \mathcal F_{n_1} \text{ and } B \in \mathcal F_{n_2}$. Let $n = \max\{n_1 n_2\}$, suppose it's $n_1$. $B$ can is the union of sets in $\mathcal F_{n_1}$. $A \cap B$ is in $\mathcal F_n{n_1}$, and is in $\mathcal F_\infty$. 
+		
+		Then prove $\mathcal F_\infty \neq \Omega$. Let $A$ be an all 1 sequence. No matter how big n is, there can't be a $C_{s_n}=A$. Since $\{C_s\}$ is a partition, we can't get $A$ through intersection. $A$ is not in any of $\mathcal F_n$. $A$ is in $2^\Omega$ but $A$ is not in $\mathcal F_\infty$.
+		
+		\item $\mathcal B(\Omega)$ changes the original version of $s$ with fixed first n position to some m of the first n position. In the proof of the previous problem, the set $A$ can be a one-element set containing any single $\omega \in \Omega$. That is, $\{\omega\}$ is not in $\mathcal F_\infty$. Now prove $\{\omega\} \in \mathcal B(\Omega)$. 
+		
+		For a specific $\omega_0$ and any $\omega'$ other than $\omega_0$, all the $\omega'$ forms a set $\Omega'$, which is also $\{\omega\}^c$. WLOG, we still let $\omega$ be an all 1 sequence. For any $\omega'$, find the first 0 at position $m$, and there is a corresponding $C_{s_m}$ in $\mathcal F_m$, $\omega$ not in $C_{s_m}$ but $\omega'$ in it. The universal union of all such $C_{s_m}$ forms $\Omega'$. $\Omega'\in\mathcal B(\Omega)$, and thus proof ends. 		
+		
+		\item We can trace back to find that this $A$ is from a specific $\mathcal F_a$. Then existence is obvious: when we construct $\mathcal F_a$, $A$ is either a $C_s$(one set, $b=1$) or a union of $C_s$s($b$ sets in total) (remember intersection is empty). Now for this existing $a, b$, since we can union two $C_{s_{a+1}}$s to form a $C_{s_a}$, we can use $2\times b$ sets from the next set group. We can further use the next $\alpha$ set group, but we have $\frac{k}{2^n} = \frac{2^\alpha b}{2^{a+\alpha}} = \frac{b}{2^a}$ is constant.
+		
+		\item We first prove $P\left(\bigcup_{n=1}^{\infty} A_n\right)=\sum_{n=1}^{\infty} P\left(A_n\right)$. We decompose the set to the same $n$. This is to say, we can obtain these sets from a single $\mathcal F_n$. Then since these sets are exclusive, the additivity holds. 
+		
+		Then, according to Carathéodory's extension theorem, $\mathcal B(\Omega)=\sigma(\mathcal F_\infty)$, $P$ is a $\sigma$-finite measure on $\mathcal F_\infty$, sets in $\mathcal F_\infty$ is measurable, we claim $P$ is a unique probability measure.
+		
+		\item Geom(1/2) can be simply explained as tossing the coin until it's head is up. We claim this event $A_k=\{\omega\in\Omega|w_k=1; \forall i,w_i=0\}$. $Pr[k<K] =  (1-p)^{k-1}p, p = \frac{1}{2}$. The distribution space is defined as $(\mathbb R, \{A_k\}_\infty, Pr)$.
+	\end{enumerate}
+	
+	\section*{Conditional Expectation}
+	\begin{enumerate}
+		\item Since $f$ is measurable, for any $t$, set $f^{-1}((-\infty,t])$ is Borel set. ${w \in \Omega : f(X(w)) \leq t }$ is in $\sigma(X)$: $f(X)^{-1}((-\infty,t]) \in \sigma(X)$. For any Borel set $A$, $f(X)^{-1}(A) \in \sigma(X)$, and thus $f(X)$ is $\sigma(X)$-measurable.
+		
+		\item We have $\sigma(Y) = \sigma(Y')$, $\mathbf{E}[X \mid Y] = \mathbf{E}\left[X \mid \sigma(Y)\right]$, $\mathbf{E}[X \mid Y'] = \mathbf{E}\left[X \mid \sigma(Y')\right]$, $\mathbf{E}\left[X \mid \sigma(Y)\right] = \mathbf{E}\left[X \mid \sigma(Y')\right]$. Finally we get $\mathbf{E}[X \mid Y]=\mathbf{E}[X \mid Y']$.
+		
+		\item Recall two properties: 
+		\begin{itemize}
+			\item $\mathbf{E}[\mathbf{E}[X|\mathcal{F}]] = \mathbf{E}[X]$
+			\item If $\mathcal{G} \subseteq \mathcal{F}$, then $\mathbf{E}[\mathbf{E}[X|\mathcal{F}]|\mathcal{G}] = \mathbf{E}[X|\mathcal{G}]$
+		\end{itemize}
+		
+		Note we have $\mathcal{F}_1 \subseteq \mathcal{F}_2$. Therefore,
+		$\mathbf{E}[\mathbf{E}[X|\mathcal{F}_1]|\mathcal{F}_2] = \mathbf{E}[X|\mathcal{F}_2]$. Again, but this time with $\mathcal{F}_2 \subseteq \mathcal{F}_1$, we have: $\mathbf{E}[\mathbf{E}[X|\mathcal{F}_2]|\mathcal{F}_1] = \mathbf{E}[X|\mathcal{F}_1]$. This shows that $\mathbf{E}[\mathbf{E}[X|\mathcal{F}_1]|\mathcal{F}_2] = \mathbf{E}[\mathbf{E}[X|\mathcal{F}_2]|\mathcal{F}_1]$. Combining with property 1, we obtain: $\mathbf{E}[\mathbf{E}[X|\mathcal{F}_1]|\mathcal{F}_2] = \mathbf{E}[\mathbf{E}[X|\mathcal{F}_2]|\mathcal{F}_1] = \mathbf{E}[X]$. Therefore, we have $\mathbf{E}[\mathbf{E}[X|\mathcal{F}_1]|\mathcal{F}_2] = \mathbf{E}[\mathbf{E}[X|\mathcal{F}_2]|\mathcal{F}_1] = \mathbf{E}[X|\mathcal{F}_1]$.
+		
+	\end{enumerate}
+\end{document}
+

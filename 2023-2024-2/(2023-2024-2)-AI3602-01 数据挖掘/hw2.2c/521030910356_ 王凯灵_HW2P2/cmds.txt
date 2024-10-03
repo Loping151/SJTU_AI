@@ -1,0 +1,12 @@
+# all the commands I used, only to log.
+
+cd /root/tugraph-db/build/output
+bash /root/workspace/p2_CommunityDetection/import_data.sh
+
+cd ..
+make louvain_embed
+cd output
+./algo/louvain_embed ./p2_db
+
+cd ~/workspace/p2_CommunityDetection
+bash run.sh

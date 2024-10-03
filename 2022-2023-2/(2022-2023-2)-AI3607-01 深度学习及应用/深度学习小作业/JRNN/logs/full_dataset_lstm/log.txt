@@ -1,0 +1,20 @@
+2023-04-24 14:36:46
+	{'exp_name': 'full_dataset_lstm', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 128, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/full_dataset.json'}
+	test acc:124.44303797468355
+
+2023-04-24 20:30:35
+	{'exp_name': 'full_dataset_lstm', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 128, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/full_dataset.json'}
+	test acc:0.9738924050632911
+
+2023-04-24 20:56:35
+	{'exp_name': 'full_dataset_lstm', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 16, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/full_dataset.json'}
+	test acc:0.9907
+
+2023-05-30 15:14:52
+	{'exp_name': 'full_dataset_lstm', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 16, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/full_dataset.json'}
+	test acc:0.9914
+
+2023-05-30 15:35:43
+	{'exp_name': 'full_dataset_lstm', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 16, 'data_seg': False, 'rnn_type': 'rnn', 'config': 'config/full_dataset.json'}
+	test acc:0.9629
+

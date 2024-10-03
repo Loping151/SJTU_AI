@@ -1,0 +1,123 @@
+\begin{thebibliography}{10}
+
+\bibitem{ass}
+Lisa Gilbert.
+\newblock “the past is your playground”: The challenges and possibilities
+  of assassin’s creed: Syndicate for social education, 2017.
+
+\bibitem{2022ai}
+Yuchen Guo, Tao Yu, Jiamin Wu, Yuwang Wang, Sen Wan, Jiyuan Zheng, Lu~Fang, and
+  Qionghai Dai.
+\newblock Artificial intelligence for metaverse: A framework.
+\newblock {\em CAAI Artificial Intelligence Research}, 1(1):54--67, 2022.
+
+\bibitem{3dgs}
+Bernhard Kerbl, Georgios Kopanas, Thomas Leimk{\"u}hler, and George Drettakis.
+\newblock 3d gaussian splatting for real-time radiance field rendering.
+\newblock {\em ACM Transactions on Graphics}, 42(4), 2023.
+
+\bibitem{2021all}
+Lik-Hang Lee, Tristan Braud, Pengyuan Zhou, Lin Wang, Dianlei Xu, Zijun Lin,
+  Abhishek Kumar, Carlos Bermejo, and Pan Hui.
+\newblock All one needs to know about metaverse: A complete survey on
+  technological singularity, virtual ecosystem, and research agenda.
+\newblock {\em arXiv preprint arXiv:2110.05352}, 2021.
+
+\bibitem{12345++}
+Minghua Liu, Ruoxi Shi, Linghao Chen, Zhuoyang Zhang, Chao Xu, Xinyue Wei,
+  Hansheng Chen, Chong Zeng, Jiayuan Gu, and Hao Su.
+\newblock One-2-3-45++: Fast single image to 3d objects with consistent
+  multi-view generation and 3d diffusion, 2023.
+
+\bibitem{0123}
+Ruoshi Liu, Rundi Wu, Basile~Van Hoorick, Pavel Tokmakov, Sergey Zakharov, and
+  Carl Vondrick.
+\newblock Zero-1-to-3: Zero-shot one image to 3d object, 2023.
+
+\bibitem{rs1}
+Yonghao Long, Jianfeng Cao, Anton Deguet, Russell~H Taylor, and Qi~Dou.
+\newblock Integrating artificial intelligence and augmented reality in robotic
+  surgery: An initial dvrk study using a surgical education scenario.
+\newblock In {\em 2022 International Symposium on Medical Robotics (ISMR)},
+  pages 1--8. IEEE, 2022.
+
+\bibitem{rs2}
+Yonghao Long, Chengkun Li, and Qi~Dou.
+\newblock Robotic surgery remote mentoring via ar with 3d scene streaming and
+  hand interaction.
+\newblock {\em Computer Methods in Biomechanics and Biomedical Engineering:
+  Imaging \& Visualization}, 11(4):1027--1032, 2023.
+
+\bibitem{nerf}
+Ben Mildenhall, Pratul~P Srinivasan, Matthew Tancik, Jonathan~T Barron, Ravi
+  Ramamoorthi, and Ren Ng.
+\newblock Nerf: Representing scenes as neural radiance fields for view
+  synthesis.
+\newblock {\em Communications of the ACM}, 65(1):99--106, 2021.
+
+\bibitem{2015orb}
+Raul Mur-Artal, Jose Maria~Martinez Montiel, and Juan~D Tardos.
+\newblock Orb-slam: a versatile and accurate monocular slam system.
+\newblock {\em IEEE transactions on robotics}, 31(5):1147--1163, 2015.
+
+\bibitem{2022m}
+Stylianos Mystakidis.
+\newblock Metaverse.
+\newblock {\em Encyclopedia}, 2(1):486--497, 2022.
+
+\bibitem{2022cyber}
+Mitra Pooyandeh, Ki-Jin Han, and Insoo Sohn.
+\newblock Cybersecurity in the ai-based metaverse: A survey.
+\newblock {\em Applied Sciences}, 12(24), 2022.
+
+\bibitem{2023gen}
+Hua~Xuan Qin and Pan Hui.
+\newblock Empowering the metaverse with generative ai: Survey and future
+  directions.
+\newblock In {\em 2023 IEEE 43rd International Conference on Distributed
+  Computing Systems Workshops (ICDCSW)}, pages 85--90. IEEE, 2023.
+
+\bibitem{2019mixed}
+Maximilian Speicher, Brian~D Hall, and Michael Nebeling.
+\newblock What is mixed reality?
+\newblock In {\em Proceedings of the 2019 CHI conference on human factors in
+  computing systems}, pages 1--15, 2019.
+
+\bibitem{imap}
+Edgar Sucar, Shikun Liu, Joseph Ortiz, and Andrew~J. Davison.
+\newblock imap: Implicit mapping and positioning in real-time, 2021.
+
+\bibitem{2022ms}
+Yuntao Wang, Zhou Su, Ning Zhang, Rui Xing, Dongxiao Liu, Tom~H Luan, and
+  Xuemin Shen.
+\newblock A survey on metaverse: Fundamentals, security, and privacy.
+\newblock {\em IEEE Communications Surveys \& Tutorials}, 2022.
+
+\bibitem{2023cha}
+Nannan Xi, Juan Chen, Filipe Gama, Marc Riar, and Juho Hamari.
+\newblock The challenges of entering the metaverse: An experiment on the effect
+  of extended reality on workload.
+\newblock {\em Information Systems Frontiers}, 25(2):659--680, 2023.
+
+\bibitem{vrnerf}
+Linning Xu, Vasu Agrawal, William Laney, Tony Garcia, Aayush Bansal, Changil
+  Kim, Samuel Rota~Bul{\`o}, Lorenzo Porzi, Peter Kontschieder, Alja{\v{z}}
+  Bo{\v{z}}i{\v{c}}, et~al.
+\newblock Vr-nerf: High-fidelity virtualized walkable spaces.
+\newblock In {\em SIGGRAPH Asia 2023 Conference Papers}, pages 1--12, 2023.
+
+\bibitem{gsslam}
+Chi Yan, Delin Qu, Dong Wang, Dan Xu, Zhigang Wang, Bin Zhao, and Xuelong Li.
+\newblock Gs-slam: Dense visual slam with 3d gaussian splatting, 2024.
+
+\bibitem{niceslam}
+Zihan Zhu, Songyou Peng, Viktor Larsson, Weiwei Xu, Hujun Bao, Zhaopeng Cui,
+  Martin~R. Oswald, and Marc Pollefeys.
+\newblock Nice-slam: Neural implicit scalable encoding for slam, 2022.
+
+\bibitem{2022s}
+武强, 季雪庭, and 吕琳媛.
+\newblock 元宇宙中的人工智能技术与应用.
+\newblock {\em 智能科学与技术学报}, 4(3):324--334, 2022.
+
+\end{thebibliography}

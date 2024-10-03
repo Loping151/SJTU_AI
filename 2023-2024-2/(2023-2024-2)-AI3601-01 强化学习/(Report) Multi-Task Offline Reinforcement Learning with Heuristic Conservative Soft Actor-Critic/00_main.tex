@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[final]{neurips_2023}
+\usepackage{amsfonts}
+\usepackage[mathscr]{euscript}
+\usepackage[numbers]{natbib} % has a nice set of citation styles and commands
+\usepackage{mathtools} % amsmath with fixes and additions
+\usepackage{bbm}
+% \usepackage{siunitx} % for proper typesetting of numbers and units
+\usepackage{booktabs} % commands to create good-looking tables
+\usepackage{tikz} % nice language for creating drawings and diagrams
+% \usepackage{algorithm2e}
+\usepackage{boxedminipage}
+\usepackage{alltt}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\title{Multi-Task Offline Reinforcement Learning with Heuristic Conservative Soft Actor-Critic\\
+\vspace{0.5em} \normalsize Project of AI3601 Reinforcement Learning, 2024 Spring, SJTU}
+\author{Jiazi Bu$^{\ast}$, Kailing Wang$^{\ast}$, Xiangyuan Xue$^{\ast\dagger}$}
+\affil[]{School of Electronic Information and Electrical Engineering\\
+\footnotesize $^\ast$Equal Contribution \quad $^\dagger$Project Leader}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In this project, we propose a novel method named heuristic conservative soft actor-critic (HCSAC) based on conservative Q-learning (CQL) and soft actor-critic (SAC) to solve the offline multi-task reinforcement learning problem. We employ task embedding to allow the agent to learn shared representations across multiple tasks. We also follow conservative data sharing (CDS) to utilize heuristic relabeling to augment the offline dataset, so that the agent can benefit from the shared transitions while avoiding performance degradation. We conduct a series of experiments on the MuJoCo benchmark to verify the effectiveness of our method. The results show that our proposed methods in general bring superior performance and improve the robustness of the agent.
+\end{abstract}
+
+\input{01_introduction}
+\input{02_method}
+\input{03_experiments}
+\input{04_conclusion}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\input{appendix}
+
+\end{document}

@@ -1,0 +1,10 @@
+{
+  "exp_name": "seg_dataset",
+  "train_path": "data/",
+  "test_path": "data/",
+  "seed": 114514,
+  "lr": 1e-3,
+  "epochs": 200,
+  "batch_size": 128,
+  "data_seg": true
+}

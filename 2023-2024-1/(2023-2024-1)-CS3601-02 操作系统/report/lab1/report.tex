@@ -1,0 +1,242 @@
+% !TEX program  = xelatex
+
+\documentclass{article}
+\usepackage{ctex}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\newfontfamily\codefont{times.ttf}
+\setmainfont{times.ttf}
+\newtheorem{innercustomthm}{\customthmname}
+\newcommand{\customthmname}{}
+\newenvironment{prob}[1]
+{\renewcommand{\customthmname}{#1}%
+	\innercustomthm}
+{\endinnercustomthm}
+\newtheorem{ans}{Answer}
+\setCJKmainfont{SourceHanSerifCN-Regular-1.otf}
+\lstdefinestyle{armasm}{
+	frame=tb,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	framerule=1pt,
+	rulecolor=\color{gray!35},
+	backgroundcolor=\color{gray!5},
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=5pt,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green!50!black},
+	stringstyle=\color{red!80!black},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	identifierstyle=\color{black},
+	emphstyle=\color{purple},
+	morecomment=[l][\color{magenta}]{@},
+	keywords={add, sub, mov, bx, bl, ldr, str, cmp, bne, b, lsl, mrs, adr, msr},
+	emph={r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, lr, sp, pc, x9},
+}
+\geometry{a4paper, top=2.4cm, bottom=2.4cm, left=3.18cm, right=3.18cm}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\linespread{1.2}
+\begin{document}
+	\title{CS3601 操作系统 ChCore Lab1}
+	\author{王凯灵 521030910356}
+	\date{2023.10.14}
+	\maketitle
+	\begin{prob}{思考题}
+		阅读~\`~\_start\`~函数的开头，尝试说明 ChCore 是如何让其中一个核首先进入初始化流程，并让其他核暂停执行的。
+	\end{prob}
+	
+	根据\href{https://developer.arm.com/documentation/ddi0601/2023-09/AArch64-Registers/MPIDR-EL1--Multiprocessor-Affinity-Register?lang=en}{官方文档}，寄存器mpidr\_el1用于储存多核处理器信息。在函数\texttt{\_start}的开头，\texttt{mrs	x8, mpidr\_el1}用于读取储存于寄存器低八位的CPU核心ID。通过\texttt{cbz}跳转实现ID为0的核心执行\texttt{primary}进行初始化，其余核心进入\texttt{wait\_for\_bss\_clear}代码段，等待\texttt{clear\_bss\_flag}清零。可以推测\texttt{clear\_bss\_flag}是\texttt{primary}初始化完成的标志。
+	
+	\begin{prob}{练习题}
+		在~\`~arm64\_elX\_to\_el1\`~函数的~\`~LAB 1 TODO 1\`~处填写一行汇编代码，获取 CPU 当前异常级别。
+	\end{prob}
+
+	根据下文从\texttt{x9}读取当前异常级别和系统\texttt{CurrentEl}寄存器，只需要使用\texttt{mrs}将系统寄存器\texttt{CurrentEl}读取到通用寄存器\texttt{x9}即可。但是，我并没有在任何地方见到\texttt{CurrentEL}的定义。我进一步得知，系统寄存器直接在硬件上定义，这样的设计让我感到疑惑，因为这提高了开发者对硬件本身熟悉程度的要求。
+	
+	补充的代码为：
+	\begin{lstlisting}[style=armasm]
+	mrs x9, CurrentEL 
+	\end{lstlisting}
+	
+	\begin{prob}{练习题}
+		在~\`~arm64\_elX\_to\_el1\`~函数的~\`~LAB 1 TODO 2\`~处填写大约 4 行汇编代码，设置从 EL3 跳转到 EL1 所需的~\`~elr\_el3\`~和~\`~spsr\_el3\`~寄存器值。具体地，我们需要在跳转到 EL1 时暂时屏蔽所有中断、并使用内核栈（~\`~sp\_el1\`~寄存器指定的栈指针）。
+	\end{prob}
+
+	运行到该部分时，已经确保当前在EL3级别（没有检查EL0，想必应该通过其他方式实现了禁止EL0进入该函数）。目的是切换至EL1，于是首先保存用于\texttt{eret}的地址，即返回值。这样，在执行最后的\texttt{eret}时能正确回到切换后的下一行。参考从EL2回到EL1的代码，使用x9暂存了返回地址并赋给\texttt{elr\_el3}。实际上，存入\texttt{spsr\_el3}的是\texttt{SPSR\_ELX\_DAIF | SPSR\_ELX\_EL1H}。根据宏定义，前者意味着函数通过\texttt{eret}进入EL1后DAIF位设为1（表示使能中断），后者将\texttt{spsr\_el3}低四位设为\texttt{SPSR\_ELX\_EL1H}（0b0101）以实现返回到EL1。
+	
+	补充的代码为：
+	\begin{lstlisting}[style=armasm]
+	adr x9, .Ltarget
+	msr elr_el3, x9
+	mov x9, SPSR_ELX_DAIF | SPSR_ELX_EL1H
+	msr spsr_el3, x9
+	\end{lstlisting}
+
+	代码十分简单，但阅读所需大量手册内容消耗了大量精力。
+	
+	\begin{prob}{思考题}
+		说明为什么要在进入 C 函数之前设置启动栈。如果不设置，会发生什么？
+	\end{prob}
+
+	运行C需要使用函数调用栈，用于保存调用返回地址、超出参数寄存器数量的函数参数、局部变量、动态内存等。如果不设置就不能正常运行C代码，比如函数返回地址丢失。
+	
+	\begin{prob}{思考题}
+		在实验 1 中，其实不调用 clear\_bss 也不影响内核的执行，请思考不清理 .bss 段在之后的何种情况下会导致内核无法工作。
+	\end{prob}
+
+	我们假设此处不调用\texttt{clear\_bss}。首先多核处理器的其他核心会被卡住，但这并不是不清理 .bss 段的后果。仅有单个核心也不会使现有内核无法工作。
+	
+	bss（Block Started by Symbol）段用于储存未初始化的全局或静态变量。也就是说，在内核的C代码中定义但未赋值的变量会被储存在这里。不清理的话，新定义的变量里可能储存了任意值。
+	但这是实际上会发生的。在本人此前编写C代码时，本地运行良好的程序在代码服务器上无法运行，检查发现新变量被赋予了垃圾值，而我的代码逻辑认为其是0。此外，事实上大部分时候程序员都有指定值初始化的习惯。
+	
+	仅对于本实验中的代码而言，在内核初始化时我们观察到代码
+	\begin{lstlisting}[style=armasm, language=C]
+/*
+* Initialize these varibles in order to make them not in .bss section.
+* So, they will have concrete initial value even on real machine.
+*
+* Non-primary CPUs will spin until they see the secondary_boot_flag becomes
+* non-zero which is set in kernel (see enable_smp_cores).
+*
+* The secondary_boot_flag is initilized as {NOT_BSS, 0, 0, ...}.
+*/
+...
+long secondary_boot_flag[PLAT_CPU_NUMBER] = {NOT_BSS};
+	\end{lstlisting}
+
+	这段说明指出了在\texttt{kernel/arch/aarch64/boot/raspi3/init/start.S}中，\texttt{wait\_until\_smp\_enabled}代码块依赖条件是\texttt{secondary\_boot\_flag}从下标1开始被0初始化。如果不清理 .bss 段，且设备有多个核心时，可能在内核开启多处理器功能（smp enable）之前执行\texttt{secondary\_init\_c}。此时\texttt{init\_c}还没有执行完，操作系统的锁状态等都没有完成设置，内核大概率会寄。
+	
+	\begin{prob}{练习题}
+		在 kernel/arch/aarch64/boot/raspi3/peripherals/uart.c 中 LAB 1 TODO 3 处实现通过 UART 输出字符串的逻辑。
+	\end{prob}
+
+	\begin{lstlisting}[style=armasm, language=C]
+static int is_uart_initialized = 0;
+
+if (!is_uart_initialized) {
+	early_uart_init();
+	is_uart_initialized = 1;
+}
+
+// if (str == NULL) {
+	//     return;
+	// }
+
+while (*str != '\0') {
+	early_uart_send((unsigned int)*str);
+	str++;
+}
+	\end{lstlisting}
+
+	只需要调用现有函数即可。用一个静态变量进行单次初始化，然后用\texttt{early\_uart\_send}输出。本来加上了空字符串检查，后来发现没有相关库。
+	
+	\begin{prob}{练习题}
+		在 kernel/arch/aarch64/boot/raspi3/init/tools.S 中 LAB 1 TODO 4 处填写一行汇编代码，以启用 MMU。
+	\end{prob}
+
+	进行或操作就可以进行设置了。
+	\begin{lstlisting}[style=armasm]
+	orr     x8, x8, #SCTLR_EL1_M
+	\end{lstlisting}
+
+	\begin{prob}{思考题}
+		请思考多级页表相比单级页表带来的优势和劣势（如果有的话），并计算在 AArch64 页表中分别以 4KB 粒度和 2MB 粒度映射 0～4GB 地址范围所需的物理内存大小（或页表页数量）。
+	\end{prob}
+	优势：多级页表可以进行不连续地映射，可以只将用到的页进行映射，而单级页表必须连续地映射所有地址。相比之下，多级页表在映射效率上优于单级页表，相同大小可映射范围更大。而且通过大业实现了类似单机页表地连续映射。
+
+	劣势：当访问物理地址时，多级页表至少需要翻译一次，最多四次，而单级页表只需一次，访存更快。当物理空间全部映射时，多级页表所占空间反而更大。多级页表还有实现复杂和潜在安全性等问题。
+	
+	4KB 粒度时，需要 $4GB/512/4KB=2^{32-9-12}MB=2KB$个3级页表，需要$2KB/512=4$个2级页表，0、1级页表各一个，共2054个页表合8216KB大小。
+	
+	2MB 粒度时，使用二级大页需要 $4GB/512/2MB=4$, 4个2级页表，0、1级页表各一个，共6个页表合24KB大小。
+	
+	\begin{prob}{练习题}
+		请在 init\_kernel\_pt 函数的 LAB 1 TODO 5 处配置内核高地址页表（boot\_ttbr1\_l0、boot\_ttbr1\_l1 和 boot\_ttbr1\_l2），以 2MB 粒度映射。
+	\end{prob}
+
+	与低地址的区别仅在于改为使用高地址。
+	
+	\begin{lstlisting}[style=armasm, language=C]
+    vaddr = KERNEL_VADDR + PHYSMEM_START;
+	boot_ttbr1_l0[GET_L0_INDEX(vaddr)] = ((u64)boot_ttbr1_l1) | IS_TABLE
+	| IS_VALID | NG;
+	boot_ttbr1_l1[GET_L1_INDEX(vaddr)] = ((u64)boot_ttbr1_l2) | IS_TABLE
+	| IS_VALID | NG;
+	
+	/* Step 2: map PHYSMEM_START ~ PERIPHERAL_BASE with 2MB granularity */
+	for (vaddr = KERNEL_VADDR + PHYSMEM_START; vaddr < KERNEL_VADDR + PERIPHERAL_BASE; vaddr += SIZE_2M) {
+		boot_ttbr1_l2[GET_L2_INDEX(vaddr)] =
+		(vaddr - KERNEL_VADDR)
+		| UXN /* Unprivileged execute never */
+		| ACCESSED /* Set access flag */
+		| NG /* Mark as not global */
+		| INNER_SHARABLE /* Sharebility */
+		| NORMAL_MEMORY /* Normal memory */
+		| IS_VALID;
+	}
+
+	/* Step 2: map PERIPHERAL_BASE ~ PHYSMEM_END with 2MB granularity */
+	for (vaddr = KERNEL_VADDR + PERIPHERAL_BASE; vaddr < KERNEL_VADDR + PHYSMEM_END; vaddr += SIZE_2M) {
+		boot_ttbr1_l2[GET_L2_INDEX(vaddr)] =
+		(vaddr - KERNEL_VADDR)
+		| UXN /* Unprivileged execute never */
+		| ACCESSED /* Set access flag */
+		| NG /* Mark as not global */
+		| DEVICE_MEMORY /* Device memory */
+		| IS_VALID;
+	}
+	\end{lstlisting}
+	\begin{prob}{思考题}
+		请思考在 \texttt{init\_kernel\_pt} 函数中为什么还要为低地址配置页表，并尝试验证自己的解释。
+	\end{prob}
+
+	这个问题上课有提到，在\texttt{init\_kernel\_pt}结束后，\texttt{el1\_mmu\_activate}函数执行并开启了虚拟地址翻译，而此时开启后，仍然需要继续执行位于低地址的 init\_c后续代码。需要将对应的虚拟地址翻译到物理地址才能继续执行下一行代码。
+	
+	验证方法，想来只有对比是否配置低地址对	\texttt{el1\_mmu\_activate} 函数执行的影响。测试时发生了一件很恐怖的事情，程序总在eret进入空循环。检查log发现输出docker.sock: connect: permission denied。改用\texttt{sudo make qemu-gdb}解决该问题。
+	
+	当前程序正常运行，输出为：
+	\begin{lstlisting}[style=armasm]
+boot: init_c
+[BOOT] Install kernel page table
+[BOOT] Enable el1 MMU
+[BOOT] Jump to kernel main
+	\end{lstlisting}
+
+	当注释低地址页表，输出为：
+	\begin{lstlisting}[style=armasm]
+boot: init_c
+[BOOT] Install kernel page table
+	\end{lstlisting}
+
+	此后程序卡死，没有到达\texttt{start\_kernel}的断点。可见函数\texttt{el1\_mmu\_activate}没有正常结束。
+\end{document}

@@ -1,0 +1,234 @@
+2023-05-25 00:22:54
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': (), 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 00:23:10
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': (), 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 00:32:54
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': (), 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 00:35:54
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 00:41:50
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 00:42:46
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 00:55:54
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 00:57:19
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 01:01:02
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discrimiter_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 01:02:35
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05, 'additional': []}2023-05-25 01:03:36
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additioinal': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}2023-05-25 01:04:01
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}2023-05-25 01:05:07
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}2023-05-25 01:05:17
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}2023-05-25 01:06:11
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}2023-05-25 01:07:07
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}encoder acc:Nonediscriminator acc:Nonetest acc:test accuracy: 0.25292023-05-25 01:10:44
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6957
+2023-05-25 16:55:05
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6870
+2023-05-25 17:22:26
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 17:23:12
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 17:24:31
+	{'exp_name': 'default', 'data_root': './data', 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8267
+2023-05-25 19:49:48
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 19:52:00
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 19:52:40
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6158
+2023-05-25 20:11:30
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6187
+2023-05-25 20:14:00
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 20:16:15
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6141
+2023-05-25 20:22:56
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'lr_step_size': 2000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6383
+2023-05-25 20:25:40
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 15000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 20:33:27
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 15000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 20:35:17
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'lr_step_size': 1500, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6144
+2023-05-25 20:37:54
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'lr_step_size': 1500, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 20:39:10
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'lr_step_size': 2500, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6239
+2023-05-25 20:47:17
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'lr_step_size': 5000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6753
+2023-05-25 20:50:38
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.1, 'lr_step_size': 10000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 10, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.7535
+2023-05-25 21:04:19
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 15000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.7962
+2023-05-25 21:41:20
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 2000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6697
+2023-05-25 21:53:51
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 20000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8140
+2023-05-25 22:11:22
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8303
+2023-05-25 22:47:50
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 80000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.001, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': False, 'discriminator_loss_weight': 1e-05}
+2023-05-25 23:03:36
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': True, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 1e-05}
+'NoneType' object is not callable
+2023-05-25 23:05:12
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': True, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 1e-05}
+2023-05-25 23:06:56
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': True, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 1e-05}
+2023-05-25 23:07:55
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': True, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 1e-05}
+	inference acc:test accuracy: 0.8303
+2023-05-25 23:10:25
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': True, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 1e-05}
+2023-05-25 23:11:21
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': True, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 1e-05}
+	inference acc:test accuracy: 0.8318
+2023-05-25 23:17:20
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 1e-05}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8293
+2023-05-26 00:13:08
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 0.01}
+2023-05-26 00:14:13
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discrimiter_loss_weight': 1e-05, 'additional': {}, 'config': None, 'use_discrimiter_loss': True, 'discriminator_loss_weight': 0.01}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8288
+2023-05-27 18:34:24
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.01, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8318
+2023-05-27 20:51:50
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 1, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.01, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8194
+2023-05-27 21:52:44
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.1, 'discriminator_loss_weight': 0.01, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.5550
+2023-05-27 23:13:17
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8303
+2023-05-28 01:03:18
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 32, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8283
+2023-05-28 11:21:32
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.2, 'lr_step_size': 20000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.7479
+2023-05-28 13:39:39
+	{'exp_name': 'default', 'data_root': './data', 'prob': 0.2, 'lr_step_size': 2000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.6137
+2023-05-28 14:16:01
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 20000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8124
+2023-05-28 15:35:26
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 15000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.7975
+2023-05-28 17:52:00
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 30000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8166
+2023-05-28 19:31:49
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 30000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 2, 'current_size': 32, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': False, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8060
+2023-05-28 21:23:00
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 40000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 32, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.7792
+2023-05-29 14:17:38
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 50000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 3, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8439
+2023-05-29 19:24:46
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+	encoder acc:None
+	discriminator acc:None
+	test acc:test accuracy: 0.8649
+2023-05-30 20:39:41
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 200000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 12, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:04:29
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:08:27
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:14:19
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:14:58
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:17:11
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:18:07
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:19:06
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:20:45
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:21:27
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': False, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:26:21
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 10:47:05
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 10000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 12:08:46
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}
+2023-05-31 14:58:35
+	{'exp_name': 'default', 'data_root': './data', 'prob': 1, 'lr_step_size': 100000, 'validate_only': False, 'seed': 151, 'cuts': 2, 'num_epochs': 6, 'current_size': 16, 'use_encoder': True, 'pretrained': False, 'use_edge_loss': True, 'use_discriminator_loss': True, 'edge_loss_weight': 0.01, 'discriminator_loss_weight': 0.1, 'additional': {}, 'config': None}

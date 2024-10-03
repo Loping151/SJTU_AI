@@ -1,0 +1,44 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage[european]{circuitikz}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, top=2cm, bottom=2cm, left=3.54cm, right=3.54cm}
+\title{编程作业二报告}
+\author{王凯灵 521030910356}
+\date{2023年3月14日}
+\begin{document}
+	\section*{\Huge 第一次小作业：乘法器~报告}
+	\section*{\small 王凯灵 521030910356 2023年4月6日}
+	\section*{问题分析与解决}
+	本次作业的目标是使用尽可能线性的神经网络拟合乘法器。由于使用含有指对数的函数作为激活函数可以容易的使乘法变为十分线性的运算，与目的不符，所以我仅使用ReLU作为激活函数。分析这个问题，具有以下特点：
+	目标平面光滑，规则且对称，所以尽可能避免过大网络结构，避免未训练区域凹凸不平，测试准确率低；
+	需要过拟合，需要仔细调整学习率以达到过拟合的效果；
+	拟合区域无限大，由于训练时，我们需要假设我们不知道乘法器的运算规律，我们只能在有限的范围内拟合乘法器平面。
+	值得一提的是，在归一化处理时，我们必须使用基本的归一化。如果使用乘法规则对样本和标签进行归一化，就违背了原本的目的。
+	
+	\section*{实现细节}
+	我使用了4层线性网络，每层间使用一个ReLU激活函数。实现时，我发现jittor可能存在性能问题，即当网络体量小时，即使调用GPU计算，也没有观测到GPU功耗功耗变化。于是，我适当上调了参数量。
+	我的数据集使用了在$(-1,1)$之间的随机数。事实上，只要考虑精度，数据范围没有影响。我使用了固定的随机种子，即训练全过程可复现。
+	为了较好达到过拟合，我设计了如下的学习率函数：
+	\begin{equation}
+		\mathrm{lr}(t) =
+		\begin{cases}
+			\mathrm{args.lr} \cdot \left(\log_2\left(2 + 1e^{-7}\right) - \log_2\left(1 + 1e^{-7} + \frac{3t-1}{T}\right)\right) & \text{if } t \leq \frac{1}{3}T, \\
+			\mathrm{args.lr} \cdot \left(\log_2\left(2 + 1e^{-7}\right) - \log_2\left(2 + 1e^{-7} - \frac{1}{T}\right)\right) & \text{if } \frac{1}{3}T < t \leq \frac{2}{3}T, \\
+			\mathrm{args.lr} \cdot \cdot \left(\log_2\left(2 + 1e^{-7}\right) - \log_2\left(2 + 1e^{-7} - \frac{1}{T}\right)\right) \cdot 1e^{-7} & \text{if } t > \frac{2}{3}T,
+		\end{cases}
+	\end{equation}
+	其中，args.lr为指定的初始学习率，t为当前epoch数，T为总epoch数。损失函数使用了最简单的差的绝对值，在小数据范围上对比使用MSE有更好的效果。优化器使用了较快的Adam。此外，我还尝试实现了常见的组件，比如训练时命令行动画效果，训练参数可外部传入，乘法器GUI。
+	\section*{结果}
+	我的训练结果在测试集上实现了95.00\%的准确率。我的判断标准为与应有结果相差小于1\%时视为准确。在GUI内部，使用了乘法比例特性处理输入。仅作为体现乘法器精度使用。
+	\section*{声明}
+	此作业运行及报告代码100\%纯手动实现，不含在线参考，任何借鉴和大模型辅助。
+\end{document}

@@ -1,0 +1,18 @@
+\begin{table}[ht]
+    \caption{Performance evaluation of the agents on the Walker2D environment. The experiments are divided into two groups according to the dataset used for training, each containing two tasks. Every single experiment is conducted with $5$ different random seeds and the returns are reported in the form of mean and standard deviation. The best results are highlighted in bold.}
+    \label{tab:performance_evaluation}
+    \centering
+    {\small \begin{tabular}{cccccc}
+        \toprule
+        \textbf{Dataset} & \textbf{Task} & \textbf{BC} & \textbf{CSAC} & \textbf{MTCSAC} & \textbf{HCSAC} \\
+        \midrule
+        \multirow{3}{*}{\texttt{medium}} & \texttt{walk} & $551.52 \pm 125.24$ & $653.57 \pm 233.83$ & $870.06 \pm 92.99$ & $\bm{907.38 \pm 67.39}$ \\
+        & \texttt{run} & $\bm{317.26 \pm 9.46}$ & $213.67 \pm 49.56$ & $306.16 \pm 20.43$ & $308.38 \pm 7.64$ \\
+        & \texttt{average} & $434.39 \pm 67.35$ & $433.62 \pm 141.70$ & $588.11 \pm 56.71$ & $\bm{607.88 \pm 37.52}$ \\
+        \midrule
+        \multirow{3}{*}{\texttt{replay}} & \texttt{walk} & $829.63 \pm 74.64$ & $812.80 \pm 146.82$ & $\bm{931.37 \pm 9.21}$ & $927.43 \pm 14.76$ \\
+        & \texttt{run} & $244.80 \pm 33.35$ & $234.81 \pm 22.11$ & $254.31 \pm 11.60$ & $\bm{256.79 \pm 10.13}$ \\
+        & \texttt{average} & $537.22 \pm 53.00$ & $523.81 \pm 84.47$ & $\bm{592.84 \pm 10.41}$ & $592.11 \pm 12.44$ \\
+        \bottomrule
+    \end{tabular}}
+\end{table}

@@ -1,0 +1,146 @@
+% !TEX program  = xelatex
+
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\newfontfamily\codefont{times.ttf}
+\setmainfont{times.ttf}
+\newcommand{\customthmname}{}
+\newenvironment{prob}[1]
+{\renewcommand{\customthmname}{#1}%
+	\fontfamily{ptm}\selectfont  % 设置 Times 字体
+	\par\bigskip\noindent\Large{\customthmname}\normalsize\par}
+{\par\bigskip}
+\newtheorem{ans}{Answer}
+\setCJKmainfont{SourceHanSerifCN-Regular.otf}
+\newcommand{\textbff}[1]{\textcolor{red}{\textbf{#1}}}
+\geometry{a4paper, top=2.4cm, bottom=2.4cm, left=3.18cm, right=3.18cm}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\linespread{1.5}
+\lstdefinestyle{json}{
+	frame=tb,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	framerule=1pt,
+	rulecolor=\color{gray!35},
+	backgroundcolor=\color{gray!5},
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=5pt,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green!50!black},
+	stringstyle=\color{red!80!black},
+	breaklines=true,
+	tabsize=3,
+	identifierstyle=\color{black},
+	emphstyle=\color{purple},
+	morecomment=[l][\color{magenta}]{@},
+	keywords={Example},
+	emph={GPT, ERNIE, ChatGLM2},
+}
+\begin{document}
+	\title{AI3605 人工智能前沿讲座调研报告：
+		\\人工智能视觉技术与生成式人工智能\\
+		\normalsize————元宇宙实现的技术路径分析
+	}
+	\author{王凯灵 521030910356}
+	\date{2023.12.29}
+	\maketitle
+	\section{引言}
+	元宇宙是一种虚拟与现实交织的互联网社会形态\cite{2022s, 2022cyber}。关于其历史与发展，本文不过多赘述。具体而言，元宇宙实际包含一个由创作者从零建立的三维虚拟空间。用户与元宇宙交互的方式包括使用完全虚拟现实VR技术进入虚拟空间，使用增强现实技术AR将虚拟空间叠加在现实空间上，以及两者的结合，在VR的基础上使用计算机视觉与重建技术在虚拟空间中引入真实空间\cite{2019mixed}，一般称为混合现实。虚拟中间中的内容，从操作系统到上级应用，后者包括一些智能体，真实场景的复制与修改，重要的虚拟资产经济等，至今仍然处于构建与完善的早期阶段。人工智能技术目前并不是元宇宙技术的核心，但存在人工智能技术的新成果可以辅助元宇宙的实现\cite{2022ai}。根据笔者总结，主要包括：基于神经表达的重建技术和SLAM技术，大模型与生成式技术等。
+	\section{元宇宙：目标与现状}
+	元宇宙希望实现一个可以提供社交娱乐，商务交易，生产与医疗，甚至政治活动相关服务的虚拟平台，使人类彻底摆脱空间的束缚\cite{2022m, 2022ms}。目前，元宇宙领域已经诞生了著名的公开社交平台VRChat、如Half-life：Alyx的大型游戏。目前，元宇宙的进一步发展面临严重阻碍\cite{2023cha}，主要包括：
+	\begin{itemize}
+		\item 计算性能问题：自2021年以来，全球高性能芯片制造价格开始显著上涨，而元宇宙技术依赖高效的实时空间计算与渲染算力。
+		\item 道德伦理问题：社交领域著名的虚拟强奸案引发人们对于虚拟与现实边界问题的思考。VRChat因此推出安全距离功能。
+		\item 经济难题：虚拟资产依赖链上数据安全性，容易引发信任危机。
+	\end{itemize}
+
+	关于元宇宙的相关硬件产品，不是本文讨论重点，但是作为技术应用的载体，实际决定了技术是否可用和如何使用。
+	\begin{enumerate}
+		\item VR设备：以近期发布的Meta Quest 3设备为例，采用高通虚拟现实芯片，采取深度相机与着色技术投射真实场景，同时实现了高度实时的空间计算。具有比较完善的系统与类安卓生态。
+		\item AR设备：以XReal发布的AR产品Beam为例，使用兆芯的RK系列芯片，算力只能实现基础的空间定位功能。
+		\item 其他设备：如苹果公司的Vision Pro，使用针对研发的R1空间芯片，具有桌面级的操作系统。
+	\end{enumerate}	
+	
+	\section{人工智能技术与元宇宙}
+	\subsection{人工智能重建渲染技术}
+	现有的元宇宙中，投射现实场景的主要手段是直接拍摄。如Quest 3，采用双目深度相机获得空间场景与大致三维结构，然后使用单目RGB相机着色。由于拍摄是实时的，着色方法也迭代到了较低的时延，对于用户来说也是实时的，用户可以在佩戴元宇宙设备同时直接与现实交互。该方案的缺点是由于依赖相机，对环境光敏感，而且相机的功耗对于整个系统而言较大，极大影响设备续航。
+	
+	NeRF\cite{nerf}是近年来高度热门的新渲染管线，核心在于使用神经辐射场表达场景。NeRF类方法可以提供十分个性化的用户周围场景建模，而且能够达到“照片级质量”（仅限部分相关工作），但由于本身算力依赖大，不具有实时性，且难以转换为显式模型，相关引用进展缓慢。元宇宙中的渲染，具有总是从视角渲染场景，背景场景交互要求低的特点，与NeRF的能力较为契合。基于这种考虑，知名元宇宙公司Meta致力于NeRF相关的研究，近期还提出了最新成果VR-NeRF\cite{vrnerf}，宣布实现了基于VR设备的高质量渲染。但是，该方法并非本地实时，而是需要上传数据到服务器处理。在可预见的未来，难以对现有元宇宙管线产生本质影响。
+	
+	3D高斯方法\cite{3dgs}是一个更新的渲染管线。其采用可学习高斯点表达场景。与NeRF相比，在元宇宙的应用上，高斯方法具有更快的成型速度，以及外插能力，即：从新视角观察场景时，仍能保持几何关系正确，而NeRF类方法往往会崩坏。由于高斯方法实际上使用实体的高斯点表示物体和场景，基于高斯方法的重建结果可以比较容易地与传统三维技术兼容，以及便于对重建结果的编辑。截至笔者完成本报告时，还没有该技术在元宇宙的应用案例。如果将高斯方法应用于元宇宙，用训练的方法建模外部场景。由于高斯方法学习几何关系能力优秀，用户在短时间内就能看见。场景成型。而且，场景建成后，可以持续使用，用户可以真正在虚拟的现实空间中进行移动。如此也减少了相机功耗问题和光线依赖问题。高斯方法的算力依赖较低，在使用RTX4090的机器上就能在数秒内完成几何特征学习，不论是采取局域网个人电脑计算或者元宇宙设备直接计算都是可能的。
+	
+	结合以上思考，笔者提出一种元宇宙的新型环境场景渲染技术路线：在用户开始使用设备时，做：1）使用摄像头进行环境拍摄。2）将拍摄数据与定位位姿发送到位于局域网的基站，或直接在本地接口进行重建工作，具体使用高斯方法，输入连续图像与位姿，优化重建高斯模型。3）在达到一定质量后，将摄像头拍摄切换为重建场景。4）获得用户许可后，将重建结果上传至公共服务器，可供进行元宇宙虚拟世界的构建。5）使用高斯点云编辑技术或将高斯表达转为传统表达形式，进行个性化编辑。
+	\subsection{SLAM技术}
+	SLAM技术是元宇宙技术的核心。目前，用户在元宇宙中的实现都不是通过位置传感器等硬件方法实现的，而是使用基于相机的空间定位技术。其中，同步定位与建图（SLAM）方法和structure-from-motion（sfm）算法，能够提供某时刻用户相对于起始位置的坐标和运动。
+	
+	目前，元宇宙产品主要使用基于ORB-SLAM\cite{2015orb}的方法\cite{2021all}，具体而言，使用FAST和BRIEF进行特征点检测，后续进行回环检测与优化进行建图与定位。现代产品还结合双目视觉进行了优化。
+	
+	一些近期人工智能SLAM技术\cite{imap, niceslam}借助神经辐射场，将场景重建与SLAM步骤合作一步，重建场景的同时进行位姿计算和定位。在最新的工作中，GS-SLAM\cite{gsslam}采用了高斯方法进行SLAM建图，在RTX4090上达到了386FPS，已经与基于描述子的SLAM推理速度接近。基于该技术，使用距离传感器或定位基站的元宇宙设备成为可能。具体而言，未来的元宇宙SLAM技术路径可能如下：1）使用GS-SLAM方法完成地图重建，获得场景几何信息与三维模型。2）使用距离传感器或基站确定用户与某一已知锚点相对坐标，直接在重建图中进行定位。
+	
+	\subsection{大模型与其他生成式AI}
+	在元宇宙中，大模型与生成式AI并没有特别的技术手段。相比与现实世界中存在更多的自然因素，元宇宙中的互动元素主要由人为设计，缺少新鲜感。一般认为\cite{2022ai}，在元宇宙中使用大模型作为智能管家，NPC角色，有利于增强用户的沉浸感。生成式人工智能的存在也为元宇宙世界的文化内容匮乏提供了临时的解决方案，但更可能导致版权与归属问题。生成式AI的元宇宙场景在于：1）用户头像生成与NPC形象生成。近期许多工作结合Diffusion方法，实现文字-三维模型生成，如Zero123\cite{0123}等。在笔者19级学长的工作One-2-3-45++\cite{12345++}中，作者团队展示了完成使用生成模型构建的短动画，展示了生成技术在元宇宙中的可用性。2）虚拟世界生成。以往，虚拟空间构建主要依赖真实场景三维扫描和人工建模。近期，一些工作利用生成式技术生成三维场景。3）声音合成与音乐生成等\cite{2023gen}。
+	
+	\section{新的领域与实际应用}
+	在元宇宙中，一些传统领域转化为新的领域。
+	\subsection{元宇宙医疗}
+	借助一些先进的仿真技术，医生可以在元宇宙中进行模拟手术等操作\cite{rs1, rs2}，这对操作复杂、病例罕见的手术具有极大的意义。用于手术模拟的重要技术主要包含物理模拟技术，场景重建技术。在重建过程中，由于手术时拍摄的视频视角较差，且往往具备遮挡，元宇宙模拟手术的技术路线主要如下：1）预处理手术视频。2）利用具有医学先验的MAE模型对遮挡部分进行补全。3）利用三维重建技术重建组织和手术器械。4）将三维模型显式化，赋予物理属性，加载至物理引擎。5）制作模型对于手术操作的反馈，提供操作接口。
+	
+	元宇宙医疗技术对医生培训的作用已经得到了重视。上海瑞金医院中也有元宇宙医疗项目正在进行。
+	\subsection{元宇宙教育}
+	在元宇宙的教育领域，育碧公司做出了杰出贡献。育碧旗下著名的游戏系列《刺客信条》以优秀的画面和细致的历史细节还原文明，其中甚至包含了利用3D扫描技术重建的巴黎圣母院。育碧公司基于该系列游戏推出了教育版本，学生可以通过VR设备等亲身体验著名历史场景\cite{ass}。
+	\subsection{元宇宙与机器人}
+	在许多工业生成环境中，涉及人与机器人的合作。然而，人与机器的物理接触时常导致事故发生。以XReal为代表的元宇宙产品公司在开发通用AR产品的同时，也希望利用元宇宙技术实现的人与机器的虚拟交互技术。该方向尚未有有价值的工作公开，但由于笔者曾有幸接触XReal公司的产品经理，笔者当面询问对方以下问题：
+	
+	\begin{lstlisting}[style=json]
+	Q:实际工业中，AR产品实际具有应用空间吗？
+	A：此类产品在工业上只能进行辅助。像VR产品在应用于生产场景是很困难的，因为VR设备也会故障。摄像头和虚拟画面的可信程度不如人眼，是不能取代人眼的。AR产品就具有优势，只是为作业人员提供辅助的额外信息，使他们不必始终使用平板类设备查看。
+	Q：实际工业中，能够用到人工智能相关的算法吗，比如对于场景重建方法，可以降低对摄像头的依赖？
+	A：实际应用中是不太可能采用这种方法的。因为传统的SLAM算法已经非常成熟和稳定了。比起采用新的算法可能造成不确定性，工程上不如使用更多的摄像头。用户并不关心定位使用的算法有多么先进，用户对产品直观的感受只有准不准。尤其是对于涉及责任溯源的领域，对于使用人工智能算法的风险是不能忽视的。
+	\end{lstlisting}
+	由此看来，作为产品而言，人工智能还是作为辅助和拓展，在对产品要求严格的领域介入难度相对较大。
+	\section{元宇宙的未来}
+	如微软，Meta，谷歌等主流互联网公司都在极力推行人工智能的应用。未来数年，一般民众对人工智能的接受程度有望提高。彼时元宇宙作为新一代互联网媒介进行进一步普及，与人工智能技术的结合程度会更加密切。
+	
+	\section{致谢与反馈}
+	感谢所有到场和线上为同学们带来报告的讲者，以及安排讲座的俞凯老师。
+	
+	关于课程反馈：讲座内容安排大模型内容较多，传统领域大多被略过。考虑到大模型的热门，此安排可以理解。然而，笔者注意到部分同学向讲者提问质量过低或十分笼统，而且带有标志性的“我有两个问题要问”的计数语句。典型案例是有同学曾在关于自动驾驶的讲座上提出了能否使用Diffusion类方法预测智能体看不见的行人这一问题，毫无思考，匪夷所思，技惊四座，贻笑大方。课程中希望区分学生的设计可以理解，但促成学生问出不经思考的问题的课程是失败的。
+	
+	（本节不计入篇幅）
+	（声明：本文未使用任何原文摘抄和生成内容）
+	\bibliographystyle{plain}
+	\bibliography{ref} 
+\end{document}
+
+

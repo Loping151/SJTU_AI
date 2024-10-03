@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov 21 18:46:00 2022
+# Process ID: 19496
+# Current directory: C:/Users/wangk/OneDrive/Home/Desktop/three_voter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13284 C:\Users\wangk\OneDrive\Home\Desktop\three_voter\three_voter.xpr
+# Log file: C:/Users/wangk/OneDrive/Home/Desktop/three_voter/vivado.log
+# Journal file: C:/Users/wangk/OneDrive/Home/Desktop/three_voter\vivado.jou
+#-----------------------------------------------------------sstart_guioopen_project C:/Users/wangk/OneDrive/Home/Desktop/three_voter/three_voter.xpruupdate_compile_order -fileset sources_1
+close_project
+open_project C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.srcs/constrs_1/new/cons.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.srcs/constrs_1/new/cons.xdc
+close_project
+open_project C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {a_to_g[6]} {a_to_g[5]} {a_to_g[4]} {a_to_g[3]} {a_to_g[2]} {a_to_g[1]} {a_to_g[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_bits[3]} {led_bits[2]} {led_bits[1]} {led_bits[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {SW_num[3]} {SW_num[2]} {SW_num[1]} {SW_num[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {SW_DIP[3]} {SW_DIP[2]} {SW_DIP[1]} {SW_DIP[0]}]]
+place_ports {SW_num[3]} P5
+place_ports {SW_num[2]} P4
+place_ports {SW_num[1]} P3
+place_ports {SW_num[0]} P2
+place_ports {SW_DIP[3]} R2
+place_ports {SW_DIP[2]} M4
+place_ports {SW_DIP[1]} N4
+place_ports {SW_DIP[0]} R1
+place_ports {led_bits[3]} K1
+place_ports {led_bits[2]} H6
+place_ports {led_bits[1]} H5
+place_ports {led_bits[0]} J5
+place_ports {a_to_g[6]} D4
+place_ports {a_to_g[5]} E3
+place_ports {a_to_g[4]} D3
+place_ports {a_to_g[3]} F4
+place_ports {a_to_g[2]} F3
+place_ports {a_to_g[1]} E2
+place_ports {a_to_g[0]} D2
+close [ open C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.srcs/constrs_1/new/cons.xdc w ]
+add_files -fileset constrs_1 C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.srcs/constrs_1/new/cons.xdc
+set_property target_constrs_file C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.srcs/constrs_1/new/cons.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+current_hw_device [get_hw_devices xc7a50t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a50t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a50t_0]
+set_property PROGRAM.FILE {C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.runs/impl_1/Static_0_F.bit} [get_hw_devices xc7a50t_0]
+program_hw_devices [get_hw_devices xc7a50t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a50t_0] 0]
+close_hw

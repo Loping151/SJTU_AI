@@ -1,0 +1,83 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = pdflatex
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[european]{circuitikz}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+\geometry{a4paper, top=2cm, bottom=2cm, left=2cm, right=2cm}
+\title{\Huge Machine Learning \\ \LARGE Homework 1}
+\author{Kailing Wang 521030910356}
+\date{2023.3.17}
+\begin{document}
+\section*{\Huge Machine Learning Homework 1}
+\section*{\normalsize Kailing Wang 521030910356}
+\section*{Problem}
+~
+
+Numerical computation of matrix inversion of $\mathbf{Z}^{\top} \mathbf{Z}$ is expensive.
+
+Instead we could use singular value decomposition (SVD) to lower the computation cost:
+$$
+\mathbf{Z}=\mathbf{U D V}^{\top}
+$$
+where:
+\begin{itemize}
+\item $\mathbf{U}=\left(\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_p\right)$ is an $n \times p$ orthogonal matrix
+\item $\mathbf{D}=\operatorname{diag}\left(d_1, d_2, \ldots, \geq d_p\right)$ is a $p \times p$ diagonal matrix consisting of the singular values $d_1 \geq d_2 \geq \cdots d_p \geq 0$
+\item $\mathbf{V}^{\top}=\left(\mathbf{v}_1^{\top}, \mathbf{v}_2^{\top}, \ldots, \mathbf{v}_p^{\top}\right)$ is a $p \times p$ matrix orthogonal matrix
+\end{itemize}
+Proof:
+$$
+\begin{aligned}
+	\hat{\boldsymbol{\beta}}_\lambda^{\text {ridge }} & =\left(\mathbf{Z}^{\top} \mathbf{Z}+\lambda \mathbf{I}_p\right)^{-1} \mathbf{Z}^{\top} \mathbf{y} \\
+	= & \mathbf{V}\underset{j}{\operatorname{diag}}\left(\frac{d_j}{d_j^2+\lambda}\right) \mathbf{U}^{\top} \mathbf{y}
+\end{aligned}
+$$
+\section*{Solution}
+Since $\mathbf{Z}=\mathbf{U D V}^{\top}$, we have 
+\begin{equation}
+	\begin{aligned}
+		\hat{\boldsymbol{\beta}}_\lambda^{\text {ridge }} = & \left(\mathbf{Z}^{\top} \mathbf{Z}+\lambda \mathbf{I}_p\right)^{-1} \mathbf{Z}^{\top} \mathbf{y} \\
+		= & \left((\mathbf{U D V}^{\top})^{\top} \mathbf{U D V}^{\top}+\lambda \mathbf{I}_p\right)^{-1} (\mathbf{U D V}^{\top})^{\top} \mathbf{y} \\
+		= & \left(\mathbf{V D U}^{\top}\mathbf{U D V}^{\top}+\lambda \mathbf{I}_p\right)^{-1} \mathbf{V D U}^{\top} \mathbf{y}
+	\end{aligned}
+\end{equation}
+Note that for diagonal matrix $\mathbf D$, $\mathbf D^\top = \mathbf D$ and since $U$, $V$ are orthogonal matrices, $\mathbf U^\top \mathbf U = \mathbf I_p$, $\mathbf V^\top \mathbf V = \mathbf I_p$. Thus we have
+\begin{equation}
+	\begin{aligned}
+		\hat{\boldsymbol{\beta}}_\lambda^{\text {ridge }} = & \left(\mathbf{V D}^{2}\mathbf{V}^{\top}+\lambda \mathbf{I}_p\right)^{-1} \mathbf{V D U}^{\top} \mathbf{y} \\ 
+		= & \left(\mathbf{V D}^{2}\mathbf{V}^{\top}+\lambda \mathbf V^\top \mathbf{I}_p \mathbf V\right)^{-1} \mathbf{V D U}^{\top} \mathbf{y} \\
+		= & \left(\mathbf{V} \left(\mathbf{D}^{2}+\lambda\mathbf{I}_p\right)\mathbf{V}^{\top}\right)^{-1} \mathbf{V D U}^{\top} \mathbf{y}
+	\end{aligned}
+\end{equation}
+Use property $(\mathbf{AB})^{-1} = \mathbf{B}^{-1} \mathbf{A}^{-1}$ and property $\left(\mathbf V^\top\right)^{-1} = \mathbf V$, $\mathbf V^{-1} = \mathbf V^\top$ for orthogonal square matrix $\mathbf V$,
+\begin{equation}
+	\begin{aligned}
+		\hat{\boldsymbol{\beta}}_\lambda^{\text {ridge }} = & \left(\mathbf{V}^\top\right)^{-1} \left(\mathbf{D}^{2}+\lambda\mathbf{I}_p\right)^{-1}\mathbf{V}^{-1} \mathbf{V D U}^{\top} \mathbf{y} \\
+		= & \mathbf V \left(\mathbf{D}^{2}+\lambda\mathbf{I}_p\right)^{-1}\mathbf{V}^{\top} \mathbf{V D U}^{\top} \mathbf{y} \\
+		= & \mathbf V \left(\mathbf{D}^{2}+\lambda\mathbf{I}_p\right)^{-1} \mathbf{D U}^{\top} \mathbf{y}
+	\end{aligned}
+\end{equation}
+For diagonal matrices, 
+\begin{equation}
+	\begin{aligned}
+		\left(\mathbf{D}^{2}+\lambda\mathbf{I}_p\right)^{-1} = & \underset{j}{\operatorname{diag}}\left(\frac{1}{d_j^2+\lambda}\right) \\ 
+		\underset{j}{\operatorname{diag}}\left(\frac{1}{d_j^2+\lambda}\right)\mathbf D = & \underset{j}{\operatorname{diag}}\left(\frac{d_j}{d_j^2+\lambda}\right)
+	\end{aligned}
+\end{equation}
+Finally, 
+\begin{equation}
+	\begin{aligned}
+		\hat{\boldsymbol{\beta}}_\lambda^{\text {ridge }} = & \mathbf V \left(\mathbf{D}^{2}+\lambda\mathbf{I}_p\right)^{-1} \mathbf{D U}^{\top} \mathbf{y} \\
+		= & \mathbf{V}\underset{j}{\operatorname{diag}}\left(\frac{d_j}{d_j^2+\lambda}\right) \mathbf{U}^{\top} \mathbf{y}
+	\end{aligned}
+\end{equation}
+
+\end{document}

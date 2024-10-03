@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov 21 18:58:02 2022
+# Process ID: 21388
+# Current directory: C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.runs/synth_1
+# Command line: vivado.exe -log Static_0_F.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Static_0_F.tcl
+# Log file: C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.runs/synth_1/Static_0_F.vds
+# Journal file: C:/Users/wangk/OneDrive/Home/Desktop/number_display/number_display.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Static_0_F.tcl -notrace

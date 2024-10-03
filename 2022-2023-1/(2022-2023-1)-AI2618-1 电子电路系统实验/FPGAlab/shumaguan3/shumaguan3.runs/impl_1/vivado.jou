@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov 21 20:30:11 2022
+# Process ID: 8380
+# Current directory: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.runs/impl_1
+# Command line: vivado.exe -log Count_FFFF.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Count_FFFF.tcl -notrace
+# Log file: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.runs/impl_1/Count_FFFF.vdi
+# Journal file: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Count_FFFF.tcl -notrace

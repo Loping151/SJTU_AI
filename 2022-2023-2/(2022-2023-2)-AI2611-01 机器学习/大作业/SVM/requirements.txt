@@ -1,0 +1,15 @@
+numpy
+pandas
+cupy-cuda12x
+jupyter
+scikti-learn
+matplotlib
+opencv-python
+
+
+# additionnally, run:
+# pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
+
+# Alternatively use:
+# cupy-cuda11x
+# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117

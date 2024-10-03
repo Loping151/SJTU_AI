@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{times}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\geometry{a4paper}
+\setstretch{1.2}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\begin{document}
+\title{AI3613 Database System Concepts Homework 2}
+\author{Kailing Wang 521030910356}
+\date{April 12.2024}
+\maketitle
+
+\section*{Problem 1}
+\begin{tcolorbox}[colback=gray!10, breakable]
+	Prove the following the characterizations of extraneous attributes:
+
+	\begin{enumerate}
+		\item $A \in X$ is extraneous in $X \to Y$ if and only if $Y \subseteq (X \setminus \{A\})_F^+$. 
+		\item $B \in Y$ is extraneous in $X \to Y$ if and only if $B \in X_{F'}^+$, where $F' = \{(F \setminus \{X \to Y\}) \cup \{X \to (Y \setminus \{B\})\}\}$.
+	\end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}[1.]
+	\item if: Suppose $Y \subseteq (X \setminus \{A\})_F^+$. By definition of closure, we have $(X \setminus \{A\}) \to (X \setminus \{A\})_F^+$. Thus $(X \setminus \{A\}) \to Y$, and $F$ logically implies $(F \setminus \{X \to Y\}) \cup \{(X \setminus \{A\}) \to Y\}$
+	
+	only if: Suppose $A \in X$ is extraneous in $X \to Y$, then $(X \setminus \{A\}) \to Y$. By definition of closure, we have $(X \setminus \{A\}) \to (X \setminus \{A\})_F^+$, and thus $Y \subseteq (X \setminus \{A\})_F^+$.
+	\item if: Suppose $B \in X_{F'}^+$, which means on FD $F'$, $X \to (Y \setminus \{B\}\cup \{B\})$, or actually $X \to Y$. This shows $F'$ implies $X \to Y$. Since $F$ logically implies $F'$, we have $F$ implies $X \to Y$ and $X \to B$, which logically implies $F$. Thus $B$ is extraneous in $X \to Y$.
+	
+	only if: Suppose $B$ is extraneous in $X \to Y$, then $(F \setminus \{X \to Y\}) \cup \{X \to (Y \setminus \{B\})\}$ logically implies $F$, meaning on $F'$ we have $X \to Y$, and of course $X \to \{B\}$. This is $B \in X_{F'}^+$.
+\end{enumerate}
+
+\section*{Problem 2}
+\begin{tcolorbox}[colback=gray!10, breakable]
+	Suppose that the following FD's hold on the relation schema \( R(A,B,C,D) \):
+
+	\[ AB \to C, \quad AB \to D, \quad C \to A, \quad D \to B. \]
+
+	\begin{enumerate}
+		\item List all candidate keys of \( R \).
+		\item Show that \( R \) is not in BCNF and give a BCNF decomposition of \( R \).
+		\item Is your BCNF decomposition dependency preserving? Explain your answer.
+	\end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}[1.]
+	\item By observation, 
+	
+	$AB\to C, AB\to D$, and trivially $AB \to AB$, so $\{A, B\}$ is a candidate key.
+
+	$C \to A, D \to B$, and trivially $CD \to CD$, so $\{C, D\}$ is a candidate key.
+
+	Similarly, $\{C, B\}$ and $\{D, A\}$ are also candidate keys.
+
+	Any single attribute is not a candidate key, and any combination of three attributes is not minimal.
+
+	\item For $C \to A$ in the FD, $C$ is not a superkey, so $R$ is not in BCNF.
+	
+	Decompose $R$ into $R_1(A, C)$ and $R_2(A, B, D)$, where $R_1$ contains all attributes in $C \to A$. In $R_2$, $D \to B$ in FD, $D$ is not a superkey, so $R_2$ is not in BCNF. 
+	Decompose $R_2$ into $R_3(D, B)$ and $R_4(A, B)$, where $R_3$ contains all attributes in $D \to B$. Now $R_1, R_3, R_4$ are all in BCNF.
+	The decomposition is $R_1(A, C), R_3(D, B), R_4(A, B)$.
+
+	\item The decomposition is not dependency preserving. The FDs $AB \to C$ and $AB \to D$ are lost in the decomposition because $A, B, C$ or $A, B, D$ never exist in the same relation.
+\end{enumerate}
+
+\section*{Problem 3}
+\begin{tcolorbox}[colback=gray!10, breakable]
+	Let \( F \) be a set of FD's holds on a schema \( R \) and \( R_1, \dots, R_n \) be a decomposition of \( R \). Furthermore, assume the following:
+
+	\begin{itemize}
+		\item For every \( X \to Y \) in \( F \), there exists some \( R_i \) that contains all the attributes in \( XY \).
+		\item At least one schema in the decomposition contains a candidate key of \( R \).
+	\end{itemize}
+
+	Prove that the decomposition \( R_1, \dots, R_n \) is join lossless. With this property, we can show that any decomposition produced by the 3NF synthesis algorithm is join lossless.
+\end{tcolorbox}
+
+First of all, according to the first assumption, for any FD $X \to Y$ in $F$, there exists some $R_i$ that contains all the attributes in $XY$. 
+That means, none of the FDs in $F$ is lost in the decomposition. This is $\bigcup_{i=1}^{n} F_i = F$.
+However, the closures of the FDs are not necessarily the same for $F_i$ is restricted to $R_i$. 
+
+Secondly, at least one schema in the decomposition contains a candidate key of $R$. This shows there exists at least one $R_c$ that contains a candidate key of $R$, which can uniquely determine all the attributes in $R$ for any certain record.
+Now suppose we construct a template table with all the attributes in $R$ based on $R_c$, we can locate the position of the contents in any table with $R_i$ by the candidate key in $R_c$.
+This shows the closure of $\bigcup_{i=1}^{n} F_i$ is the same as $F^+$. Thus the decomposition is join lossless.
+
+Maybe I fail to explain it clearly. Please inform me if there's cruial error or ambiguity.
+
+\section*{Problem 4}
+\begin{tcolorbox}[colback=gray!10, breakable]
+	How long does it take you to finish the assignment? Give a score (1,2,3,4,5) to the difficulty of each problem. List all your collaborators if you have any.
+\end{tcolorbox}
+
+Haven't seen this problem since \textit{Algorithm Design and Analysis} course. 
+The times I completed this assignment were very \textit{scattered} but I guess it only took hours including the time I review the required knowledge.
+If my answer is correct, I would rate it 3, 2, 4 for each problem. If there's any crucial mistake in my answer, I would rate it 5.
+Finished independently.
+\end{document}

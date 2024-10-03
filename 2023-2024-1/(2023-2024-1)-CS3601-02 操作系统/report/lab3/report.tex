@@ -1,0 +1,133 @@
+% !TEX program  = xelatex
+
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\newfontfamily\codefont{times.ttf}
+\setmainfont{times.ttf}
+\newcommand{\customthmname}{}
+\newenvironment{prob}[1]
+{\renewcommand{\customthmname}{#1}%
+	\fontfamily{ptm}\selectfont  % 设置 Times 字体
+	\par\bigskip\noindent\Large{\customthmname}\normalsize\par}
+{\par\bigskip}
+\newtheorem{ans}{Answer}
+\setCJKmainfont{SourceHanSerifCN-Regular.otf}
+\newcommand{\textbff}[1]{\textcolor{red}{\textbf{#1}}}
+\lstdefinestyle{armasm}{
+	frame=tb,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	framerule=1pt,
+	rulecolor=\color{gray!35},
+	backgroundcolor=\color{gray!5},
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=5pt,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green!50!black},
+	stringstyle=\color{red!80!black},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	identifierstyle=\color{black},
+	emphstyle=\color{purple},
+	morecomment=[l][\color{magenta}]{@},
+	keywords={add, sub, mov, bx, bl, ldr, str, cmp, bne, b, lsl, mrs, adr, msr},
+	emph={r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, lr, sp, pc, x9},
+}
+\geometry{a4paper, top=2.4cm, bottom=2.4cm, left=3.18cm, right=3.18cm}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\linespread{1.2}
+\begin{document}
+	\title{CS3601 操作系统 ChCore Lab 3}
+	\author{王凯灵 521030910356}
+	\date{2023.11.22}
+	\maketitle
+	\begin{prob}{练习 1}
+		在 \texttt{kernel/object/cap\_group.c} 中完善 \texttt{sys\_create\_cap\_group}、\texttt{create\_root\_cap\_group} 函数。在完成填写之后，你可以通过 Cap create pretest 测试点。
+	\end{prob}
+	不涉及编写函数，根据提示调用所需函数即可。
+	
+	\begin{prob}{练习 2}
+		在 \texttt{kernel/object/thread.c} 中完成 \texttt{create\_root\_thread} 函数，将用户程序 ELF 加载到刚刚创建的进程地址空间中。
+	\end{prob}
+	第一部分，仿照获取TODO上方获取flag的代码即可。除了似乎PHDR\_MEMSZ\_OF在头文件里似乎是打错了。后续的是拷贝文件、设置flag。flag错误并不总是影响运行，但我不是很会设置。参照tutor进行了修改。
+	
+	\begin{prob}{练习 3}
+		在 \texttt{kernel/arch/aarch64/sched/context.c} 中完成 \texttt{init\_thread\_ctx} 函数，完成线程上下文的初始化。
+	\end{prob}
+	将要求的三个值设置为正确的值即可。
+	
+	\begin{prob}{思考题 4}
+		思考内核从完成必要的初始化到第一次切换到用户态程序的过程是怎么样的？尝试描述一下调用关系。
+	\end{prob}
+	MMU开启后，内核完成初始化，包括异常向量表配置等。内核从初始化完成开始（main函数中进行kernel test处认为是初始化完成），首先创建第一个进程，调用\texttt{creat\_root\_thread()}。创建线程时调用\texttt{create\_root\_cap\_group}，创建所谓的Capability，准备资源和加载用户程序。创建完后使用调度器\texttt{sched()}调用线程，此后如readme所介绍一致。
+	
+	\begin{prob}{练习 5}
+		按照前文所述的表格填写 \texttt{kernel/arch/aarch64/irq/irq\_entry.S} 中的异常向量表，并且增加对应的函数跳转操作。
+	\end{prob}
+	填写了异常向量表，实现了相关保存恢复寄存器和栈指针切换。
+	
+	\begin{prob}{练习 6}
+	填写 \texttt{kernel/arch/aarch64/irq/irq\_entry.S} 中的 \texttt{exception\_enter} 与 \texttt{exception\_exit}，实现上下文保存的功能，以及 \texttt{switch\_to\_cpu\_stack} 内核栈切换函数。
+	\end{prob}
+	不小心在上一问写掉了。同上。
+	\begin{prob}{思考 7}
+	尝试描述 \texttt{printf} 如何调用到 \texttt{chcore\_stdout\_write} 函数。
+	\end{prob}
+	在查找\texttt{vprintf}等函数时，vscode很不幸的指向了\texttt{/usr/include/x86\_64-linux-gnu/bits/stdio2.h}。这使得递归查看十分困难。已知\texttt{printf}调用\texttt{vprintf}，根据\texttt{int vfprintf(FILE *\_\_restrict, const char *\_\_restrict, \_\_isoc\_va\_list)}函数的定义，其中FILE为stdio。\texttt{vfprintf}的实现细节难以阅读，但是显然调用在stdio中进入了\texttt{\_\_stdout\_write}。这个函数中，调用syscall。此时由于无法跳转，已经黔驴技穷，故反向出发，发现在\texttt{stdout\_ops}中\texttt{fd\_ops stdout\_ops}定义\texttt{.write = chcore\_stdout\_write}，再通过搜索发现在\texttt{user/chcore-libc/libchcore/\\porting/overrides/src/chcore-port/syscall\_dispatcher.c}中有\texttt{fd\_dic[fd1]->fd\_op = \&stdout\_ops;}。终于和前面接上了。内核debug实在是太变态了！
+	
+	\begin{prob}{练习 8}
+		在这个练习中，我们的目标是添加一行代码以完成对内核中的 \texttt{sys\_putstr} 函数的系统调用。这将通过 \texttt{chcore\_syscallx} 函数来实现。具体来说，您需要使用正确的系统调用编号和参数来调用 \texttt{chcore\_syscallx}，以便执行 \texttt{sys\_putstr}。
+	\end{prob}
+	基于直接搜索TODO的方式找到这个位置。如题述，在\texttt{put}中添加\\\texttt{chcore\_syscall2(CHCORE\_SYS\_putstr, (long) buffer, size)}即可。
+	
+	\begin{prob}{练习 9}
+		试图编写一个简单的用户程序，其功能至少包括打印以下字符串：“Hello ChCore!”。该程序应使用 chcore-libc 的编译器进行编译。编译后的输出文件应命名为 \texttt{hello\_chcore.bin}，并将其放入 ramdisk 中以在内核运行。当内核启动时，它将自动运行名为 \texttt{hello\_chcore.bin} 的可执行文件。
+	\end{prob}
+	由于本次代码理解量十分庞大，仅编写最简程序。程序在提交代码的的根目录中。
+	
+	编译命令：\texttt{build/chcore-libc/bin/musl-gcc -o hello\_chcore.bin hello\_chcore.c }
+	
+	至此，\texttt{make grade 100/100}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{asserts/grading}
+		\caption{}
+		\label{fig:grading}
+	\end{figure}
+	
+	遗憾的是，似乎这里写成了lab 2。
+\end{document}
+
+

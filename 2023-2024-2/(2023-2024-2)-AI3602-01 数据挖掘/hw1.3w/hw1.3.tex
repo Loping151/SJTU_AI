@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{times}
+\usepackage{geometry}
+\usepackage{tikz}
+\geometry{a4paper}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\begin{document}
+\title{AI3602 Data Mining Homework 1.3}
+\author{Kailing Wang 521030910356}
+\date{March 25.2024}
+\maketitle
+
+\section*{Question 1}
+\begin{align*}
+	% jaccard distance
+	J(A, B) = \frac{|A \cap B|}{|A \cup B|}
+\end{align*}
+
+For ant arbitrarily fixed subset $S$, the probability of picking $k$ elements from $S$ is
+
+\begin{align*}
+	P(|S \cap T| = k) = \frac{C^m_k C^{n-m}_{m-k}}{C^n_m},
+\end{align*}
+and for each possible k, the jaccard distance is $\frac{k}{2m - k}$.
+
+So the expected similarity is
+\begin{align*}
+	E[J(S, T)] & = \sum_{k=0}^{m} \frac{C^m_k C^{n-m}_{m-k}}{C^n_m} \cdot \frac{k}{2m - k}.
+\end{align*}
+
+
+\section*{Original Questions}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{1}
+	\caption{Question 1}
+	\label{fig:1}
+\end{figure}
+\section*{Reference}
+None.
+\end{document}

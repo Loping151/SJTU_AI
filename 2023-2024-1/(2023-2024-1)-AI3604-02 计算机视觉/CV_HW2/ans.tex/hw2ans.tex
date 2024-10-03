@@ -1,0 +1,227 @@
+% !TEX program  = pdflatex
+% pdflatex.exe -synctex=1 -interaction=nonstopmode -shell-escape %.tex
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{newtxtext}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\usepackage{times}
+\geometry{a4paper, top=2.4cm, bottom=2.4cm, left=3cm, right=3cm}
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{ans}{Answer}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\linespread{1}
+\usepackage{minted}
+\begin{document}
+	\title{AI3604 Computer Vision}
+	\author{Kailing Wang 521030910356}
+	\date{November 9.2023}
+	\maketitle
+	\section*{Programming Assignment}
+	I haven't fully finished the code template before it was published. That template assumes we use a 3D chessboard and seems to use SVD to solve. I made modifications on the original template.
+	
+	About the datasets, initially I found most of the pictures failed the cv2 corner detection because of low resolution(naive interpolation works). However, I later found cv2 can successfully detect corners on 4 pictures if set adaptive threshold. So I used the original data. 
+	
+	In 2D cases, the transformation is:
+	
+	\begin{equation}
+		Z_c\left[\begin{array}{l}
+			u \\
+			v \\
+			1
+		\end{array}\right]=\left[\begin{array}{ccc}
+			\alpha & \lambda & u_0 \\
+			0 & \beta & v_0 \\
+			0 & 0 & 1
+		\end{array}\right]\left[\begin{array}{lll}
+			r_{11} & r_{12} & t_1 \\
+			r_{21} & r_{22} & t_2 \\
+			r_{31} & r_{32} & t_3
+		\end{array}\right]\left[\begin{array}{c}
+			x \\
+			y \\
+			1
+		\end{array}\right]=\mathbf{K}\left[\begin{array}{lll}
+			\mathbf{r}_1 & \mathbf{r}_2 & \mathbf{t}
+		\end{array}\right]\left[\begin{array}{c}
+			x \\
+			y \\
+			1
+		\end{array}\right],
+	\end{equation}
+	
+	where $Z_c$ is a scaling factor, $K$ is the demanded intrinsic matrix. $(u, v)$ are Image points and $(x, y)$ are world points. Since we got dozens of sets of points on each plane, on each plane we solve 
+	
+	\begin{equation}
+		\mathbf H = \mathbf{K}\left[\begin{array}{lll}
+			\mathbf{r}_1 & \mathbf{r}_2 & \mathbf{t}
+		\end{array}\right]
+	\end{equation}
+
+	using least square method. Now let
+	
+	\begin{equation}
+		\mathbf{B}=\mathbf{K}^{-T} \mathbf{K}^{-1} \equiv\left[\begin{array}{lll}
+			B_{11} & B_{12} & B_{13} \\
+			B_{12} & B_{22} & B_{23} \\
+			B_{13} & B_{23} & B_{33}
+		\end{array}\right]
+	\end{equation}
+
+	because easily
+	
+	\begin{equation}
+	\begin{aligned}
+		& \mathbf{r}_1=\mathbf{K}^{-1} \mathbf{h}_1 \\
+		& \mathbf{r}_2=\mathbf{K}^{-1} \mathbf{h}_2
+	\end{aligned}
+	\end{equation}
+	\begin{equation}
+	\begin{gathered}
+		\mathbf{h}_1^T \mathbf{K}^{-T} \mathbf{K}^{-1} \mathbf{h}_2=0 \\
+		\mathbf{h}_1^T \mathbf{K}^{-T} \mathbf{K}^{-1} \mathbf{h}_1=\mathbf{h}_2^T \mathbf{K}^{-T} \mathbf{K}^{-1} \mathbf{h}_2=1
+	\end{gathered}
+	\end{equation}
+
+	$B$ is symmetric. Now we have 
+	
+	\begin{equation}
+		\begin{aligned}
+			\mathbf{h}_i^T \mathbf{B} \mathbf{h}_j = & \left[\begin{array}{lll}
+				\mathbf{h}_{1 i} & \mathbf{h}_{2 i} & \mathbf{h}_{3 i}
+			\end{array}\right]\left[\begin{array}{lll}
+				B_{11} & B_{12} & B_{13} \\
+				B_{12} & B_{22} & B_{23} \\
+				B_{13} & B_{23} & B_{33}
+			\end{array}\right]\left[\begin{array}{c}
+				\mathbf{h}_{1 j} \\
+				\mathbf{h}_{2 j} \\
+				\mathbf{h}_{3 j}
+			\end{array}\right] \\
+		\stackrel{\triangle}{=}
+		& \mathbf v_{ij}^T\left[\begin{array}{l}
+				B_{11} \\
+				B_{12} \\
+				B_{22} \\
+				B_{13} \\
+				B_{23} \\
+				B_{33}
+			\end{array}\right]
+		=\begin{cases}
+		0, i = 1, j = 2\\
+		1, i=j=1,2
+	\end{cases}
+		\end{aligned}
+	\end{equation}
+	
+	\begin{equation}
+	\left[\begin{array}{c}
+		\mathbf{v}_{12}^T \\
+		\mathbf{v}_{11}^T-\mathbf{v}_{22}^T
+	\end{array}\right] \left[\begin{array}{l}
+	B_{11} \\
+	B_{12} \\
+	B_{22} \\
+	B_{13} \\
+	B_{23} \\
+	B_{33}
+\end{array}\right]=0
+	\end{equation}
+
+	Again we use least square to solve $\mathbf B$ and finally use cholesky to solve $\mathbf K$.
+	
+	The result, result from cv2, error are:
+	
+	\begin{minted}{python}
+	Camera Calibration Matrix:
+	[[751.19839352   1.7067085  488.4782087 ]
+	[  0.         700.30141416 336.70403175]
+	[  0.           0.           1.        ]]
+	Camera Calibration Matrix by OpenCV:
+	Camera Matrix:
+	[[752.45363272   0.         451.92958604]
+	[  0.         702.08358999 337.2473562 ]
+	[  0.           0.           1.        ]]
+	Reprojection Error:
+	[1.044, 3.766, 4.374, 9.993]
+	\end{minted}
+	
+	\section*{Written Assignment}
+	a.
+	\begin{equation}
+		\begin{aligned}
+			E(\mathbf{A}, \mathbf{T})&=\sum_{i=1}^N\left\|\mathbf{Y}_i-\mathbf{A} \mathbf{X}_i-\mathbf{T} \right\|_2^2\\
+			&=\sum_{i=1}^N\left\|\mathbf{Y}_i\right\|_2^2 - 2 \mathbf{Y}_i^T(\mathbf{A} \mathbf{X}_i+\mathbf{T}) + \left\|(\mathbf{A} \mathbf{X}_i+\mathbf{T})\right\|_2^2
+		\end{aligned}
+	\end{equation}
+	
+	For each item in $\sum$:
+	
+	\begin{equation}
+		\begin{cases}
+			\frac{\partial E}{\partial \mathbf A}=-2\mathbf Y_i\mathbf X_i^T+2(\mathbf{A} \mathbf{X}_i+\mathbf{T})\mathbf X_i^T\\
+			\frac{\partial E}{\partial \mathbf T}=-2\mathbf Y_i+2(\mathbf{A} \mathbf{X}_i+\mathbf{T})
+		\end{cases}
+	\end{equation}
+	
+	To find maximum, we let $\frac{\partial E}{\partial \mathbf A}=0$ and $\frac{\partial E}{\partial \mathbf T}=0$.
+	
+	\begin{equation}
+		N\mathbf T = \mathbf \sum \mathbf Y_i - \mathbf A \sum \mathbf X_i \\
+	\end{equation}
+
+	\begin{equation}
+		\mathbf A \sum \mathbf X_i\mathbf X_i^T - \mathbf \sum \mathbf Y_i\mathbf X_i^T - \mathbf A  \mathbf {\bar X}\sum\mathbf X_i^T +  \mathbf {\bar Y}\sum\mathbf X_i^T=0
+		\label{1}
+	\end{equation}
+	
+	Simplify equation \ref{1}:
+	
+	\begin{equation}
+		\mathbf A \sum (\mathbf X_i-\mathbf{\bar X})\mathbf X_i^T = \sum(\mathbf Y_i - \mathbf {\bar Y})\mathbf X_i^T
+	\end{equation}
+	
+	Since $(\sum (\mathbf A - \mathbf {\bar A})\mathbf B^T) = (\sum (\mathbf A - \mathbf {\bar A})(\mathbf B - \mathbf{\bar B})^T) = \mathbf A\mathbf B^T$:
+	
+	\begin{equation}
+		\mathbf A \mathbf X \mathbf X^T = \mathbf Y \mathbf X ^T
+	\end{equation}
+	
+	Finally 
+	
+	\begin{equation}
+		\begin{cases}
+			\mathbf A^* = (\mathbf Y \mathbf X^T)(\mathbf X \mathbf X^T)^{-1}\\
+			\mathbf T^* = \hat{\mathbf Y} - \mathbf A^* \hat{\mathbf X} 
+		\end{cases}
+	\end{equation}
+	
+	(Well, I mistook $\hat{\mathbf X} \text{ for } \mathbf {\bar X}$ above. Anyway. )
+	
+	Further existence of the results and the check of Hessian Matrix is too complex to be explained within required pages. 
+	
+	b.
+	Intuitively, to solve for the 12 parameters in A and T, with each set of X, Y providing three equations, four sets of corresponding points are needed. However, the solution in a. dose not show this requirement because 3 sets of points are enough for least square method. Anyway, we only use least square method when we have more than 4 sets to `estimate'.
+	
+\end{document}

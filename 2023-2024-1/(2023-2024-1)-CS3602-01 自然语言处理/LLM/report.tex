@@ -1,0 +1,373 @@
+% !TEX program  = xelatex
+
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\newfontfamily\codefont{times.ttf}
+\setmainfont{times.ttf}
+\newcommand{\customthmname}{}
+\newenvironment{prob}[1]
+{\renewcommand{\customthmname}{#1}%
+	\fontfamily{ptm}\selectfont  % 设置 Times 字体
+	\par\bigskip\noindent\Large{\customthmname}\normalsize\par}
+{\par\bigskip}
+\newtheorem{ans}{Answer}
+\setCJKmainfont{SourceHanSerifCN-Regular.otf}
+\newcommand{\textbff}[1]{\textcolor{red}{\textbf{#1}}}
+\geometry{a4paper, top=2.4cm, bottom=2.4cm, left=3.18cm, right=3.18cm}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\linespread{1.2}
+\lstdefinestyle{json}{
+	frame=tb,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	framerule=1pt,
+	rulecolor=\color{gray!35},
+	backgroundcolor=\color{gray!5},
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=5pt,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green!50!black},
+	stringstyle=\color{red!80!black},
+	breaklines=true,
+	breakatwhitespace=false,
+	tabsize=3,
+	identifierstyle=\color{black},
+	emphstyle=\color{purple},
+	morecomment=[l][\color{magenta}]{@},
+	keywords={Example},
+	emph={GPT, ERNIE, ChatGLM2},
+}
+\begin{document}
+	\title{CS3602 自然语言处理 LLM}
+	\author{王凯灵 521030910356}
+	\date{2023.12.22}
+	\maketitle
+
+	本报告将在传统SLU任务的基础上谈使用大模型处理语义理解任务的效果与意义。
+	\section{思考与规定}
+		传统SLU任务一般为语义三元组的系列标注任务。以端到端的思想来看，传统SLU模型的任务就是将文本序列映射一些固定操作。对于基于三元组的方法来说，就是在得到三元组后，交由固定的应用程序接口进行操作（开关，导航等）或针对回复（你好，我是谁等）。
+		
+		使用大模型代替传统SLU模型，仍然使用三元组解析无疑是可行的，但有舍近求远的嫌疑。事实上，使用大模型进行语义理解，实际上更像是大模型插件开发，使用大模型调取工具的过程。我将结合大模型的插件化开发经验，探索使用大模型进行语义理解的思路。
+		
+		相比于传统模型，大模型的显著优势在于对人名，地名等取值空间极大的字段的定位能力。除了人名和地名等以外，如操作类型，翻页，取消指令等甚至能通过字典匹配取得良好效果，参考早期的小米小爱同学。大模型的劣势是资源消耗与响应速度问题。
+		
+		规定：由于如Gemini和大量基于原版LLaMA的大模型曾明确表明没有对中文的支持，测试时将刻意避免使用此类大模型。此外，有关使用中文还是英文作为prompt，与实际训练语料有关，不应用作模型间对比。测试时，我将选择我认为多语言多轮输入（均为单独会话）结果更优的输出作为结果。我测试全部四个示例，但由于篇幅，挑选代表性案例于附录中。
+		
+		按照要求规定，\underline{方法分析与讨论部分总字数在1000字以内}。
+	\section{方法分析与讨论}
+		\subsection{三元组解析}
+			使用传统的三元组标注。好处是能够充分利用现有的管线，在原有基础上工程量和重构成本都较低。
+			
+			我尝试了Zero-shot\label{zs} \ref{zeroshot}，Few-shot\ref{fewshot}的案例。对于有格式要求的任务，Zero-shot意义不大，但可以观察大模型是否本就了解所需任务，可见所测模型不会主动将“走”转化为导航指令。在进行Few-shot时，由于示例给出，大模型能够将“走”转为标准的导航名称。由于没有给修饰词的例子，大模型均没有将“附近的”作为修饰单独列出。但如果添加例子，就可以正确区分。关于Prompt优化，由于我们的任务是标准化的，相同长度的Prompt诱导远不如更多的例子带来的效果明显。至于CoT方法，更是与SLU的短指令的特点相悖。我对给出的探索方向表示质疑。
+			
+			我们总是希望大模型从我们的词库中选择字段类型和操作值。而直接使用大模型很难做到这一点。总是将词库发送给大模型成本太大，但如果将大模型的输出再次后续处理，用大模型的意义就变得微妙了。
+		
+			上文提到，大模型的最大优势在于识别名称。即使在一些经验总结中认为Transformer不善于寻找新的名称，但数据量够大时几乎可以解决这一问题。我们不妨使用大模型只进行名称识别，其余部分使用传统方法实现。在尝试 \ref{loc}中，我测试了大模型识别地点的能力。我挑选了日常中更可能出现的，名称奇怪，不含有省市乡县名的地点名。可见大模型可以很好的识别地点字段，甚至能够准确识别出我故意设置的歧义（不过如果真实地点叫做“由多公园”就是失败的）。使用该字段辅助其他的SLU方法，亦为一种思路。
+			
+			测试使用的不同模型几乎没有观察到性能上的差异。
+		\subsection{插件化语义理解}\label{plug}
+			按照大模型使用插件的思路，我们可以通过直接让大模型调取api，无需执着于三元组。据个人开发经验，用于语义理解的大模型插件有几种实现思路：1）绕过大模型，输入短路外部插件，大模型只处理外部返回信息。这事实上就是使用一般SLU处理了，与大模型无关。2）使用大模型生成标准的query元数据再交由外部处理。此类插件一般支持的操作种类不多，，因为需要告知大模型操作的取值空间。3）将外部的“导航”，“你好”，“开关”等操作独立成不同api，与各自的description一起打包为api字典。大模型在第一轮决定调取哪个适合的api。我在早期开发基于GPT3.5的图像理解插件时采取了类似思路。这种实现思路与所谓的树形思维（ToT）类似。\ref{cot}中重点展示了这一插件的伪实现，大模型先根据描述使用哪一api，然后不断调取使用文档进行多轮内部对话（无需上下文连续对话，可以优化调度）得到最终结果。在示例的实际应用中保证了相当完美的用户体验。
+	\section{口语语义理解未来}
+		考虑到性能问题与网络问题，传统的SLU模型并不会消失。典型的边缘SLU产品小爱音响，可以在将边缘SLU任务（无需网络）控制在100元以内的设备上。但是想要真正实现高度智能的SLU，我认为上文提出的插件化大模型具有极大的潜力和应用空间。我曾使用大模型设计了一个智能管家，实现就是利用多轮自我对话，将意思模糊的用户语句（一律假设ASR比较准确）翻译为应该执行的操作，然后直接进行关键词匹配。不到半年以后，我就观察到小米推出了最新一代的小爱同学，通过接入大模型的方式事实上实现了将“我觉得好暗啊”转化为开灯操作并执行。随着近年国内计算芯片算力产能上涨，未来语义理解很可能以上文的插件思路迈进。
+	\section{附录}
+	
+	\captionof{lstlisting}{Zero-shot Prompt}
+	\label{zeroshot}
+	\begin{lstlisting}[style=json]
+	中文：请你完成三元组标注工作。具体而言，你需要输出一句话中，可能的操作是这句话中的哪一部分，涉及的操作对象。如果输入是口语化的，你需要把操作转为一个标准的动词。请你以一个json的数据格式输出，具体格式为：操作-XXX，操作对象-XXX。如果你认为没有合适的操作和对象，你可以输出空json。请你按照以上规则，解析以下句子。
+	英文：Please complete the triplet annotation task. Specifically, you need to identify in a sentence the possible action and the involved object of the action. If the input is colloquial, you need to convert the action into a standard verb. Please output in a JSON data format, specifically as: Action-XXX, Object-XXX. If you believe there is no suitable action and object, you can output an empty JSON.
+	
+	Example 1：我要走宁夏回族自治区党委大院
+	GPT-4：
+	{
+		"操作": "走",
+		"操作对象": "宁夏回族自治区党委大院"
+	}
+	ERNIE（文心一言）3.5：同上
+	ChatGLM2（智谱清言）：同上
+	Example 2：附近火锅店在什么位置
+	GPT-4：
+	{
+		"操作": "查询",
+		"操作对象": "附近火锅店的位置"
+	}
+	ERNIE（文心一言）3.5：
+	{  
+		"操作": "分析",  
+		"操作对象": "附近火锅店的位置"  
+	}
+	ChatGLM2（智谱清言）：
+	{
+		"操作": "查询",
+		"操作对象": "附近火锅店的位置"
+	}
+	\end{lstlisting}
+	返回\ref{zs}
+	\captionof{lstlisting}{Few-shot Prompt}
+	\label{fewshot}
+	\begin{lstlisting}[style=json]
+	中文：请你完成三元组标注工作。请你以一个json的数据格式输出。参考以下例子：【例子】请你按照以上规则，解析以下句子。
+	英文：Please complete the task of triplet annotation. Please output in a JSON data format. Refer to the following example: 【Example】Please analyze the following sentence according to the above rules.
+	【例子】：
+	输入：我要去东湖面馆
+	[[
+	"inform",
+	"操作",
+	"导航"
+	],
+	[
+	"inform",
+	"终点名称",
+	"东湖面馆"
+	]]
+	输入：我要去吃饭
+	[]
+	输入：关灯
+	[[
+	"inform",
+	"操作",
+	"关闭"
+	],
+	[
+	"inform",
+	"操作对象",
+	"灯"
+	]]
+	
+	Example 1：我要走宁夏回族自治区党委大院
+	GPT-4：
+	[    [        "inform",        "操作",        "导航"    ],
+	[        "inform",        "终点名称",        "宁夏回族自治区党委大院"    ]
+	]
+	ERNIE（文心一言）3.5：
+	[[  
+	"inform",  
+	"操作",  
+	"导航"  
+	],  
+	[  
+	"inform",  
+	"终点名称",  
+	"宁夏回族自治区党委大院"  
+	]]
+	ChatGLM2（智谱清言）：
+	[
+		[
+		"inform",
+		"操作",
+		"导航"
+		],
+		[
+		"inform",
+		"终点名称",
+		"宁夏回族自治区党委大院"
+		]
+	]
+	
+	Example 2：附近火锅店在什么位置
+	GPT-4：
+	[    [        "inform",        "操作",        "查询"    ],
+	[        "inform",        "操作对象",        "附近火锅店位置"    ]
+	]
+	ERNIE（文心一言）3.5：
+	{  
+		"操作": "分析",  
+		"操作对象": "附近火锅店的位置"  
+	}
+	ChatGLM2（智谱清言）：
+	[
+		[
+		"request",
+		"操作",
+		"查询位置"
+		],
+		[
+		"request",
+		"操作对象",
+		"火锅店"
+		]
+	]
+	\end{lstlisting}
+	返回\ref{zs}
+	\captionof{lstlisting}{Caption Localization}
+	\label{loc}
+	\begin{lstlisting}[style=json]
+	中文：给定一句句子，请你识别其中的地点名称。将地点名称作为json格式输出，如有多个就输出多个。
+	英文：Given a sentence, please identify the names of places in it. Output the names of places in JSON format. If there are multiple, output multiple.
+	
+	Example 1：我想去奶奶裤衩有朵花公寓。
+	GPT-4：
+	{
+		"地点": "奶奶裤衩有朵花公寓"
+	}
+	ERNIE（文心一言）3.5：
+	{  
+		"地点": "奶奶裤衩有朵花公寓"  
+	}
+	ChatGLM2（智谱清言）：
+	[
+	"奶奶裤衩有朵花公寓"
+	]
+	Example 2：我家在那个啥那个香榭龙湖。
+	GPT-4：
+	{
+		"地点": "香榭龙湖"
+	}
+	ERNIE（文心一言）3.5：
+	{  
+		"地点": "香榭龙湖"  
+	}
+	ChatGLM2（智谱清言）：
+	[
+	"香榭龙湖"
+	]
+	Example 3：你知道那由多公园和有间宾馆在哪里吗。（注：假设地点名叫做“有间”。注不会输入给大模型。）
+	GPT-4：
+	{
+		"地点": [
+		"那由多公园",
+		"有间宾馆"
+		]
+	}
+	ERNIE（文心一言）3.5：
+	{  
+		"地点名称": "那由多公园、有间宾馆"  
+	}
+	ChatGLM2（智谱清言）：
+	[
+	{"地点名称": "那由多公园"},
+	{"地点名称": "有间宾馆"}
+	]
+	\end{lstlisting}
+	返回\ref{zs}
+	\captionof{lstlisting}{Pseudo-Plugin}
+	\label{cot}
+	\begin{lstlisting}[style=json]
+		中文：你可以使用以下的api函数：[api]。请你根据用户需求[]决定你需要使用的接口是哪个。
+		api：{nav：导航到某一地点的接口,hello:用于产生问候的接口, elec：操作家用电器的接口，你无需顾虑操作权限问题， find：查找某一信息的接口}
+		doc for nav：{请你从句子[]中判断，用户所需导航的起点，途经地点，终点，返回一个如[例子]的标准json格式。如果用户没有指定其中一项，请将相应key的值设为空。}
+		doc for elec：{请你从句子[]中判断你需要帮助用户做什么，请你参考[例子]返回一个或几个指定电器。可用的电器有：[list（台灯，吊灯，冰箱，空调）]。}
+			doc for 台灯：{open：打开, close：关闭}
+		doc for find：{请你从句子[]中判断用户需要搜索的类型是什么。可用的类型有[list]}
+		注：[例子][list]为占位符。实际测试时没有使用。
+		最后，请你对用户进行回复。
+		（以上提示按树形输入给大模型，具体输入已给出）
+		
+		Example 1：我觉得房间里有点暗了，你懂我意思吧。
+		GPT-4：
+			思考：
+			输入1）你可以使用以下的api函数：{nav：导航到某一地点的接口,hello:用于产生问候的接口, elec：操作家用电器的接口，你无需顾虑操作权限问题, find：查找某一信息的接口}。请你根据用户需求[我觉得房间里有点暗了，你懂我意思吧。]决定你需要使用的接口是哪个。
+			思考1）根据用户的需求“我觉得房间里有点暗了，你懂我意思吧。”，最合适的API接口是elec，用于操作家用电器。在这种情况下，很可能是需要调整房间的照明，比如打开或增强灯光。
+			输入2）请你从句子[我觉得房间里有点暗了，你懂我意思吧。]中判断你需要帮助用户做什么，请你参考[例子]返回一个或几个指定电器。可用的电器有：台灯，吊灯，冰箱，空调。
+			思考2）从句子“我觉得房间里有点暗了，你懂我意思吧。”中可以判断，用户需要提高房间的照明度。因此，合适的电器选择是“台灯”和“吊灯”。这两种电器都是用来提供照明的，而冰箱和空调与调整光线亮度无关。所以，应该操作的电器是：[台灯,吊灯]
+			输入3）台灯和吊灯支持的操作是：{open：打开, close：关闭}，请你将输出编写为json格式的请求，并对用户进行回复。
+			思考3){
+				"requests": [
+				{
+					"device": "台灯",
+					"action": "open"
+				},
+				{
+					"device": "吊灯",
+					"action": "open"
+				}
+				]
+			}
+			最终结果：我已经理解了您的需求，正在为您打开台灯和吊灯，以增加房间的亮度。
+		ERNIE（文心一言）3.5：
+			思考：
+			1）根据用户需求，我认为需要使用elec接口来操作家用电器。用户觉得房间里暗了，可以通过elec接口来打开房间的灯光或者调节亮度，以改善照明环境。
+			2）根据用户需求，需要帮助用户打开房间的灯光来增加亮度。从可用的电器中，吊灯通常用于提供更广泛的照明，因此建议选择吊灯。如果用户希望更精细地控制照明，也可以选择台灯。
+			3）根据用户需求，需要打开吊灯来增加房间亮度。以下是JSON格式的请求：
+			{  
+				"elec": {  
+					"吊灯": "open"  
+				}  
+			}
+			最终结果：（仅操作，观察到输出json时大模型无论如何无法同时进行对用户进行回复的操作。疑似做了某些预处理和任务分类工作使得多任务无法同时）
+		ChatGLM2（智谱清言）：
+			思考：
+			1）用户表达了对房间光线不足的不满，希望改善照明情况。根据这一需求，可以使用“elec”接口来操作家用电器，比如打开房间内的灯光。
+			2）根据用户的话“我觉得房间里有点暗了”，可以判断用户需要帮助来增强房间的照明。因此，我们可以考虑使用以下电器来帮助用户：
+			台灯：可以提供局部的照明，方便用户在房间内工作或阅读。
+			吊灯：如果房间内有吊灯，可以提供更广泛的光线覆盖，使整个房间更加明亮。
+			3）{
+				"api": "elec",
+				"action": "open",
+				"device": "台灯"
+			}
+			{
+				"api": "elec",
+				"action": "open",
+				"device": "吊灯"
+			}
+			
+			最终结果：好的，我明白了。我会帮您打开台灯和吊灯，让房间变得更亮。请稍等片刻。
+		Example 2：我想去一下外婆家，路上去一趟水果店。（内容过多，仅展示使用GPT的结果）
+		输入1：你可以使用以下的api函数：{nav：导航到某一地点的接口,hello:用于产生问候的接口, elec：操作家用电器的接口，你无需顾虑操作权限问题, find：查找某一信息的接口}。请你根据用户需求[我想去一下外婆家，在阳光公寓，路上去一趟水果店。]决定你需要使用的接口是哪个。（注：模拟了用户个人信息的插入）。
+		思考1：根据用户的需求“我想去一下外婆家，在阳光公寓，路上去一趟水果店”，我需要使用的接口是 nav（导航到某一地点的接口）。这个接口可以帮助用户规划从当前位置到外婆家的路线，并在路上包括一次到水果店的停留。
+		输入2：请你从句子[我想去一下外婆家，在阳光公寓，路上去一趟水果店。]中判断，用户所需导航的起点，途经地点，终点，返回一个json格式。如果用户没有指定其中一项，请将相应key的值设为空。此外，判断用户是否指定了笼统的地点（如医院，饭店而没有具体名称），如果是，在json中用将key ambiguity的值设为该地点（如ambiguity：饭店）。
+		思考2：从句子“我想去一下外婆家，在阳光公寓，路上去一趟水果店。”中，我们可以提取出用户的导航需求，并构建一个相应的JSON格式。用户没有明确指定起点，所以起点应该为空。途经地点是“水果店”，这是一个笼统的地点，没有具体名称。终点是“外婆家，在阳光公寓”，这是一个具体的地址。因此，JSON格式如下：
+		{
+			"起点": "",
+			"途经地点": "水果店",
+			"终点": "阳光公寓",
+			"ambiguity": "水果店"
+		}
+		输入3（代码判断到ambiguity非空，调取查询api，且已知查询的是地点，预定义模板输入）：请你从句子[我想去一下外婆家，在阳光公寓，路上去一趟水果店。]中，推测用户需求与目的，判断用户可能需要何种类型，满足何种要求的[水果店]。将查询关键词整理为json，其中已知查询类型为[地图]。
+		思考3：从句子“我想去一下外婆家，在阳光公寓，路上去一趟水果店。”中，我们可以推测用户的需求和目的是在前往外婆家的途中，顺便去一家水果店购买水果。用户可能需要的水果店类型和要求可能包括：
+		位置便利：水果店应位于用户从当前位置到外婆家的路线上，以便顺路访问。
+		营业时间：考虑到用户可能在特定时间出行，所以需要一家在用户经过时已经开门的水果店。
+		品种丰富：用户可能希望水果店有多种选择，以便挑选合适的水果。
+		基于这些推测，我们可以构建一个JSON格式的查询关键词，用于在地图类型的查询中寻找合适的水果店。JSON格式如下：
+		{
+			"查询类型": "地图",
+			"关键词": "水果店",
+			"要求": {
+				"位置": "在去阳光公寓的路上",
+				"营业时间": "当前时间已开门",
+				"品种": "品种丰富"
+			}
+		}
+		输出：代码判断查询结果是否有效，有效则将其嵌入nav的json，否则使用原有json进行导航，返回导航结果。
+	\end{lstlisting}
+	返回\ref{plug}
+	\section*{参考资料}
+	HIT-NLP. (2023). ChatGPT 调研报告. [在线] available: https://aimg8.dlssyht.cn/u/551001/ueditor/file/276/551001/1678415058523571.pdf [access: 2024年1月6日].
+	
+	小爱开发者. (2023). 小爱技能接入指南. [在线] available: https://developers.xiaoai.mi.com/documents/Home?type=/api/doc/render\_markdown/SkillAccess/des [access: 2024年1月6日].
+	
+\end{document}
+
+

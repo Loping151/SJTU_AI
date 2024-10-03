@@ -1,0 +1,156 @@
+/*
+
+Xilinx Vivado v2017.3 (64-bit) [Major: 2017, Minor: 3]
+SW Build: 2018833 on Wed Oct  4 19:58:22 MDT 2017
+IP Build: 2016188 on Wed Oct  4 21:52:56 MDT 2017
+
+Process ID: 18616
+License: Customer
+
+Current time: 	Mon Nov 21 19:07:37 CST 2022
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 20
+
+Screen size: 2560x1600
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 199 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Programs/Xilinx/Vivado/2017.3/tps/win64/jre
+JVM executable location: 	C:/Programs/Xilinx/Vivado/2017.3/tps/win64/jre/bin/java.exe
+
+User name: 	wangk
+User home directory: C:/Users/wangk
+User working directory: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Programs/Xilinx/Vivado
+HDI_APPROOT: C:/Programs/Xilinx/Vivado/2017.3
+RDI_DATADIR: C:/Programs/Xilinx/Vivado/2017.3/data
+RDI_BINDIR: C:/Programs/Xilinx/Vivado/2017.3/bin
+
+User preferences location: C:/Users/wangk/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/wangk/AppData/Roaming/Xilinx/Vivado/2017.3/vivado.xml
+Vivado layouts directory: C:/Users/wangk/AppData/Roaming/Xilinx/Vivado/2017.3/layouts
+PlanAhead jar file location: 	C:/Programs/Xilinx/Vivado/2017.3/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/vivado.log
+Vivado journal file location: 	C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/vivado.jou
+Engine tmp dir: 	C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/.Xil/Vivado-18616-laptop151
+
+GUI allocated memory:	267 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 646 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bs (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\wangk\OneDrive\Home\Desktop\shumaguan2\shumaguan2.xpr. Version: Vivado v2017.3 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 52 MB (+51873kb) [00:00:08]
+// [Engine Memory]: 564 MB (+440142kb) [00:00:08]
+// TclEventType: MSGMGR_MOVEMSG
+// Tcl Message: open_project C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/shumaguan2.xpr 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 60 MB (+5640kb) [00:00:09]
+// [Engine Memory]: 598 MB (+6196kb) [00:00:09]
+// [GUI Memory]: 65 MB (+2550kb) [00:00:10]
+// [Engine Memory]: 630 MB (+1563kb) [00:00:10]
+// [GUI Memory]: 78 MB (+10310kb) [00:00:10]
+// Tcl Message: open_project C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/shumaguan2.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/Qw/shumaguan2' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Programs/Xilinx/Vivado/2017.3/data/ip'. 
+// Project name: shumaguan2; location: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2; part: xc7a50tcsg324-1
+dismissDialog("Open Project"); // bs (cl)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 654 MB. GUI used memory: 40 MB. Current time: 11/21/22 7:07:39 PM CST
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// [Engine Memory]: 671 MB (+9647kb) [00:00:19]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// x (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (x)
+dismissDialog("Synthesis is Out-of-date"); // x (cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v)]", 1, true); // B (D, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v)]", 1, true, false, false, false, false, true); // B (D, cl) - Double Click - Node
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // D
+// [GUI Memory]: 86 MB (+3992kb) [00:01:33]
+// Elapsed time: 112 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v)]", 1, true); // B (D, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v)]", 1, true, false, false, false, false, true); // B (D, cl) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v)]", 1, true); // B (D, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v)]", 1, true, false, false, false, false, true); // B (D, cl) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v), myD0_display : D0_display (shumaguan2.v)]", 2, false); // B (D, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coun_0_F (shumaguan2.v), myD0_display : D0_display (shumaguan2.v)]", 2, false, false, false, false, false, true); // B (D, cl) - Double Click
+// [GUI Memory]: 102 MB (+12110kb) [00:02:23]
+selectCodeEditor("shumaguan2.v", 294, 665); // cd (w, cl)
+// [GUI Memory]: 109 MB (+2202kb) [00:02:30]
+selectCodeEditor("shumaguan2.v", 347, 679); // cd (w, cl)
+// [GUI Memory]: 125 MB (+10843kb) [00:02:31]
+selectCodeEditor("shumaguan2.v", 348, 662); // cd (w, cl)
+selectCodeEditor("shumaguan2.v", 276, 566); // cd (w, cl)
+selectCodeEditor("shumaguan2.v", 282, 588); // cd (w, cl)
+selectCodeEditor("shumaguan2.v", 282, 566); // cd (w, cl)
+// [GUI Memory]: 132 MB (+222kb) [00:02:51]
+// Elapsed time: 30 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cl)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 6); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// x (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (x)
+// bs (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // x (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'ct' command handler elapsed time: 3 seconds
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 704 MB (+78kb) [00:03:07]
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Mon Nov 21 19:10:34 2022] Launched synth_1... Run output will be captured here: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/shumaguan2.runs/synth_1/runme.log [Mon Nov 21 19:10:34 2022] Launched impl_1... Run output will be captured here: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/shumaguan2.runs/impl_1/runme.log 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bs (cl):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Open Hardware Manager"); // bs (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 725 MB. GUI used memory: 55 MB. Current time: 11/21/22 7:10:39 PM CST
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cZ, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ac (ai, cl)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bs (cl):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 

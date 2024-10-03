@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a50tcsg324-1" LaunchTime="1669026333">
+  <File Type="PWROPT-DCP" Name="voter_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="voter_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="voter.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="voter_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="voter_reports.tcl"/>
+  <File Type="BG-DRC" Name="voter.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="voter_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="voter_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="voter.hwdef"/>
+  <File Type="OPT-DCP" Name="voter_opt.dcp"/>
+  <File Type="OPT-DRC" Name="voter_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="voter_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="voter_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="voter_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="voter_placed.dcp"/>
+  <File Type="PLACE-IO" Name="voter_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="voter_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="voter_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="voter_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="voter_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="voter_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="voter_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="voter_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="voter_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="voter_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="voter_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="voter_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="voter.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="voter_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="voter_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="voter_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="voter_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="voter_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="voter_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="voter.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="voter_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="voter.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="voter_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="voter.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="voter_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="voter.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="voter_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="voter_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="voter_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="voter_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="voter_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="voter_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="voter_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="voter_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="voter.vdi"/>
+  <File Type="ROUTE-CLK" Name="voter_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="voter_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="voter_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="voter_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="voter_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="voter_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="voter.nky"/>
+  <File Type="BITSTR-BMM" Name="voter_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="voter.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="voter.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="voter.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/voter.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="voter"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/vote_list.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/vote_list.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream">
+      <Option Id="RawbitFileBool">1</Option>
+      <Option Id="BinFile">1</Option>
+    </Step>
+  </Strategy>
+</GenRun>

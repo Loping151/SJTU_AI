@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{times}
+\usepackage{geometry}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\geometry{a4paper}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\begin{document}
+\title{AI3602 Data Mining Homework 3}
+\author{Kailing Wang 521030910356}
+\date{May 13.2024}
+\maketitle
+
+\section*{Problem 1}
+\begin{tcolorbox}[colback=gray!10, breakable]
+	In the Bloom filter, given the size of the key set and the length of the bit string as parameters, derive the optimal value of $f$, the number of independent hash functions.
+\end{tcolorbox}
+Suppose $|S|=m$ and $|B|=n$, the optimal value of $f$ is the one that minimizes the false positive rate. The false positive rate is given by $(1-(1-\frac{1}{n})^{fm})^f\approx(1-e^{-\frac{fm}{n}})^f$, which means all $f$ hash functions should return a falty 1.
+
+To minimize this, we take the derivative with respect to $f$ and set it to zero:
+\[
+	\frac{d}{df} (1-e^{-\frac{fm}{n}})^f = 0.
+\]
+The derivative of this function is hard to compute, so we take the logarithm of the function and then take the derivative:
+\[
+	\frac{d}{df} f\ln(1-e^{-\frac{fm}{n}}) = 0,
+\]
+\[
+	\ln(1-e^{-\frac{fm}{n}}) + f\frac{m}{n}\frac{e^{-\frac{fm}{n}}}{1-e^{-\frac{fm}{n}}} = 0,
+\]
+and since $f, m, n>0$, let $t=e^{-\frac{fm}{n}}$, we have
+\[
+	(1-t)\cdot\ln(1-t) - \ln t \cdot t = 0.
+\]
+$t=\frac{1}{2}$, $f=\frac{n}{m}\ln 2$ is the optimal value of $f$. And since $f$ should be an integer, we take the optimal rounding of this value.
+\section*{Problem 2}
+\begin{tcolorbox}[colback=gray!10, breakable]
+	Compute the surprise number (second moment) for the stream 3, 1, 4, 1, 3, 4, 2, 1, 2. What is the third moment of this stream?
+\end{tcolorbox}
+The $k$-th moment is
+\[
+	{\sum_{i=1}^{n}}_{i\in A} m_i^k.
+\]
+
+Since 1 appears 3 times, 2 appears 2 times, 3 appears 2 times, and 4 appears 2 times, the second moment is
+\[
+	3^2 + 2^2 + 2^2 + 2^2 = 21.
+\]
+The third moment is
+\[
+	3^3 + 2^3 + 2^3 + 2^3 = 51.
+\]
+\section*{Problem 3}
+\begin{tcolorbox}[colback=gray!10, breakable]
+	Suppose we have a dataset of customer transactions, each containing the customer's ID, the item purchased, the date of purchase, and the purchase price. We want to answer certain queries approximately from a streaming sampling of a portion of the dataset. For each of the queries below, describe the estimating method, including the attributes of transactions used as the key and the updating strategy when a new item comes in.
+\begin{enumerate}[(a)]
+	\item For each item, estimate the average purchase price.
+	\item Estimate the fraction of customers who made a purchase of \$50 or more.
+	\item Estimate the fraction of items that were purchased by at least 10 customers.
+\end{enumerate}
+\end{tcolorbox}
+\begin{enumerate}[(a)]
+	\item Suppose we are building the estimation from 0 at the beginning, and one data sample corresponds to one purchase. We use the item as the key. For each item, we hold an average purchase price and count initiated as 0. Often the number of items is not too large, and we use an array to store instead of using hash algorithms. When a new item comes in, we update the average purchase price and count by
+	\[
+		\text{count}[\text{item}] \leftarrow \text{count} + 1,
+	\]
+	\[
+		\text{average}[\text{item}] \leftarrow \frac{\text{average}\times(\text{count}-1) + \text{price}}{\text{count}}.
+	\]
+	\item We'll have to count distinct customers, and record the to state of each customer. We use the customer ID as the key. For each customer, we use two bit tables, one for existence and one for $\geq50\$$ flag. We use bloom filters to store the two tables. When a new item comes in, we update the two tables by
+	\[
+		\text{exist}[\text{customer ID}] \leftarrow 1,
+	\]
+	\[
+		\text{flag}[\text{customer ID}] \leftarrow 1 \text{ if price} \geq 50.
+	\]
+	And we'd get two bit streams \textbf{whether the two tables are updated}. An update on the exist table means a new customer, and an update on the flag table means a new customer who has purchased $\geq50\$$. We count the two bit streams to get the fraction.
+	\item We do not know how many customers there would be. When a new purchase is made, we want to record whether it is the first time for the person to buy an item.
+	If we use item ID as keys, the problem becomes a counting distinct problem. 
+
+	We'd build a count table using item ID as key. For each of the $n$ items in a purchase, we view the data as $n$ different flows, and we use Flajolet-Marti algorithm on each flow to count distinct and store them in the table. 
+	If some certain item is purchased by the 10-th customer, we add them to the numerator, and we assume the denumerater is known, as is the total number of items.
+\end{enumerate}
+
+\end{document}

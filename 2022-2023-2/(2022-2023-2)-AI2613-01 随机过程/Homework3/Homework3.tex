@@ -1,0 +1,240 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = pdflatex
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{geometry}
+\geometry{a4paper, top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm}
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{ans}{Answer}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\linespread{1.2}
+
+\begin{document}
+	
+	\section*{\LARGE [Homework 3] Martingale and Stopping Time}
+	\section*{\large Kailing Wang 521030910356}
+	
+	\section*{Problem 1 (A maximal inequality)}
+	\begin{enumerate}[(a)]
+		\item
+		The definition of a martingale tells us 
+		\begin{equation}
+			\mathbf E [Z_{k+1}\mid \mathcal F_k] = Z_k
+		\end{equation}
+		Consider squared expansion,
+		\begin{equation}
+			\begin{aligned}
+				(Z_k-Z_{k-1})^2 & = Z_k^2-2Z_kZ_{k-1}+Z_{k-1}^2 \\
+				\mathbf E[(Z_k-Z_{k-1})^2\mid \mathcal F_{k-1}] & = \mathbf E[Z_k^2 \mid \mathcal F_{k-1}]-2\mathbf E[Z_kZ_{k-1}\mid \mathcal F_{k-1}]+\mathbf E[Z_{k-1}^2\mid \mathcal F_{k-1}]\\
+				& = \mathbf E[Z_k^2 \mid \mathcal F_{k-1}]-Z_{k-1}\mathbf E[Z_k\mid \mathcal F_{k-1}]+
+				 Z_{k-1}^2\\
+				& = \mathbf E[Z_k^2 \mid \mathcal F_{k-1}] - Z_{k-1}^2\\
+				\mathbf E [\mathbf E[(Z_k-Z_{k-1})^2\mid \mathcal F_{k-1}]] & = \mathbf E [\mathbf E[Z_k^2 \mid \mathcal F_{k-1}] - Z_{k-1}^2]\\
+				\mathbf E [(Z_k-Z_{k-1})^2] & = \mathbf E [Z_k^2] - \mathbf E[Z_{k-1}^2]
+			\end{aligned}
+		\end{equation}
+		and obviously 
+		\begin{equation}
+			\overunderset{n}{k=1}{\sum}\mathbf E [(Z_k-Z_{k-1})^2] = \mathbf E [Z_n^2] - \mathbf E[Z_0^2]
+		\end{equation}
+		\item When $t<\tau$, we know $Z_t' = Z_t$, $\mathbf E [Z_{t+1}'\mid \mathcal F_t] = Z_t'$. We need to prove that for $t\geq \tau$, we also have $\mathbf E [Z'_{t+1}\mid \mathcal F_t] = Z_t'$. This is actually $\mathbf E [Z_\tau\mid \mathcal F_t] = Z_\tau$, which is naive because we actually decide $Z_\tau$ on $\mathcal F_t$, or to say, $Z_\tau$ is $\mathcal F_t$-measurable.
+		\item First $S_i$ is a martingale. Since $\mathbf E[X_i]=0$, 
+		\begin{equation}
+			\begin{aligned}
+				\mathbf E[S_{i+1}\mid X_1\dots X_i] & = E[S_i+X_{i+1} \mid X_1\dots X_i] \\
+				& = E[S_i \mid X_1\dots X_i] + E[X_{i+1} \mid X_1\dots X_i] \\ 
+				& = S_i + E[X_{i+1}] \\
+				& = S_i
+			\end{aligned}
+		\end{equation}
+		
+		Then we apply the result of question (a). We get
+		\begin{equation}
+			\Pr[\max_{1\le k\le n} | S_k| \ge \lambda] \le \frac{1}{\lambda^2} (\mathbf E[S_n^2] - \mathbf E[S_1^2])
+		\end{equation}
+		We shall define a martingale $S'$ alike question (b). We define 
+		\begin{equation}
+			    S'_t = 
+			\begin{cases}
+				S_t & \mbox{ if }t<\tau;\\
+				S_\tau & \mbox{ if }t\ge \tau.
+			\end{cases}
+		\end{equation} 
+		by denoting $\tau = \underset{t}{\arg \max} |S_t|$. To prove the original statement we are to prove 
+		\begin{equation}
+			\Pr[{S'}_\tau \ge \lambda] \le \frac{1}{\lambda^2} (\mathbf E[S_n^2] - \mathbf E[S_1^2]) \le \frac{1}{\lambda^2} (\mathbf E[{S'}_\tau^2] - \mathbf E[{S'}_1^2])
+		\end{equation}
+		However, $\mathbf E[{S'}_1^2] = \mathbf E[S_1^2] \geq 0$, $\mathbf E[{S'}_\tau] = \mathbf E[{S'}_0] = 0$
+		\begin{equation}
+			\Pr[{S'}_\tau \ge \lambda] \le \frac{1}{\lambda^2} (\mathbf E[{S'}_\tau^2] - \mathbf E[{S'}_\tau]^2) = \frac{\mathbf D[{S'}_\tau]}{\lambda^2}
+		\end{equation}
+		This is called the Chebyshev Inequality. No need to prove further.
+	\end{enumerate}
+
+	\section*{Problem 2 (Biased random walk)}
+	\begin{enumerate}[(a)]
+		\item  
+		\begin{equation}
+			\begin{aligned}
+				\mathbf E [S_{k+1}\mid X_1\dots X_k] & = \mathbf E [\sum_{i=1}^{k+1}(X_i+2p-1)\mid X_1\dots X_k] \\
+				& = \mathbf E [\sum_{i=1}^{k}(X_i+2p-1)+X_{k+1}+2p-1\mid X_1\dots X_k] \\ 
+				& = \mathbf E [\sum_{i=1}^{k}(X_i+2p-1)\mid X_1\dots X_k]+\mathbf E [X_{k+1}\mid X_1\dots X_k]+2p-1 \\
+				& = S_k+\mathbf E [X_{k+1}]+2p-1 \\
+				& = S_k+p*(-1)+(1-p)+2p-1 \\
+				& = S_k
+			\end{aligned}
+		\end{equation}
+		\item 
+		\begin{equation}
+			\begin{aligned}
+				\mathbf E [P_{k+1}\mid X_1\dots X_k] & = \mathbf E [(\frac{p}{1-p})^{Z_{k+1}}\mid X_1\dots X_k] \\
+				& = \mathbf E [(\frac{p}{1-p})^{Z_{k}}\cdot(\frac{p}{1-p})^{X_{k+1}}\mid X_1\dots X_k] \\ 
+				& = P_k\cdot\mathbf E [(\frac{p}{1-p})^{X_{k+1}}\mid X_1\dots X_k] \\ 
+				& = P_k\cdot\mathbf E [(\frac{p}{1-p})^{X_{k+1}}] \\ 
+				& = P_k\cdot\left(p\cdot\frac{1-p}{p}+(1-p)\cdot\frac{p}{1-p}\right) \\
+				& = P_k
+			\end{aligned}
+		\end{equation}
+		\item For a time period with length $a+b$, there is always a possibility $p^{a+b}+(1-p)^{a+b}$. Therefore, if we divide the time into consecutive
+		periods in this manner, in expected finite time, we can meet some period
+		when the event happened. Hence, $\mathbf E [\tau] < \infty$. Moreover, $|P_{k+1}-P_k| = |(\frac{p}{1-p})^{Z_{k+1}}-(\frac{p}{1-p})^{Z_{k}}|<\max{((\frac{p}{1-p})^{-a}, (\frac{p}{1-p})^{b})}$ is bounded, so the third condition of OST
+		holds, which implies that $\mathbf E [P_\tau] = \mathbf E [P_0]$, that is
+		\begin{equation}
+			\begin{aligned}
+				(\frac{p}{1-p})^{-a}\cdot P_a+(\frac{p}{1-p})^{b})\cdot P_b = 1 \\
+				\begin{cases}
+					P_a = \frac{1-(\frac{p}{1-p})^{b}}{(\frac{p}{1-p})^{-a}-\frac{p}{1-p})^{b}} \\
+					P_b = 1-P_a
+				\end{cases}
+			\end{aligned}
+		\end{equation}
+		Similarly, we have $|S_{k+1}-S_k|\leq2$ is bounded, $\mathbf E [S_\tau] = \mathbf E [S_0]$, that is
+		 \begin{equation}
+		 	\begin{aligned}
+		 		P_a\cdot (-a)+P_b\cdot b+\mathbf E [\tau]\cdot (2p-1) = 0 \\
+				\mathbf E[\tau] = \frac{P_a\cdot a-P_b\cdot b}{2p-1}, p\neq \frac{1}{2} \\
+				\text{where}
+				\begin{cases}
+					P_a = \frac{1-(\frac{p}{1-p})^{b}}{(\frac{p}{1-p})^{-a}-\frac{p}{1-p})^{b}} \\
+					P_b = 1-P_a
+				\end{cases}
+		 	\end{aligned}
+		 \end{equation}
+	 	when $p=\frac{1}{2}$, we've solved in class that $\mathbf E[\tau] = ab$.
+	\end{enumerate}
+
+	\section*{Problem 3 (Learning theory)}
+	\begin{enumerate}[(a)]
+		\item Since $\underset{h\in\mathcal H}{\sup} |L(h) - L_S(h)|\leq \frac{\epsilon}{2}$, for global optimal $h^*$, $L_S(h^*) - L(h^*)\leq \frac{\epsilon}{2}$. For optimal on training set $\widehat h$, $h^*$, $L(\widehat h) - L_S(\widehat h)\leq \frac{\epsilon}{2}$. Then,
+		\begin{equation}
+			\begin{aligned}
+				L(\widehat h) - \frac{\epsilon}{2} \leq L_S(\widehat h) \leq L_S(h^*) \leq L(h^*) + \frac{\epsilon}{2} \\
+				L(\widehat h)\leq L(h^*) + \epsilon
+			\end{aligned}
+		\end{equation}
+		\item We can see $\operatorname{Rep}(S)$ is a function conditioned on $S_0, S_1\dots S_n$ and we should define
+		\begin{equation}
+			Z_i \overset{\Delta}{=} \mathbf E[\operatorname{Rep}(S)\mid S_0\dots S_i]
+		\end{equation}
+	 	$\{Z_n\}_{n\geq 0}$ is a Doob Martingale w.r.t. $\{S_n\}_{n\geq 0}$ and for every $i \geq 1$, since $S_i$ and $S_{i-1}$ differ at most one sample, 
+	 	\begin{equation}
+	 		\begin{aligned}
+	 			\operatorname{Rep}(S)\overset{\Delta}{=} & \underset{h\in\mathcal H}{\sup} (L(h) - L_S(h)) \\
+				|Z_i-Z_{i-1}| = & |\mathbf E[L(h_1)-L_S(h_1)\mid S_0\dots S_i]-\mathbf E[L(h_2)-L_S(h_2)\mid S_0\dots S_{i-1}]|\\
+				= & L(h_1) - L(h_2) - (|\mathbf E[L_S(h_1)\mid S_0\dots S_i]-\mathbf E[L_S(h_2)\mid S_0\dots S_{i-1}])|\\
+				\text{here  } &
+				L(h_1) - L(h_2) \leq \frac{1}{m}, \\
+				& |\mathbf E[L_S(h_1)\mid S_0\dots S_i]-\mathbf E[L_S(h_2)\mid S_0\dots S_{i-1}] \leq \frac{1}{m}, \\
+				& \text{and equation holds only once. In fact, if the equation dosen't hold, LHS=0}\\
+				& |Z_i-Z_{i-1}| \leq \frac{1}{m}
+			\end{aligned}
+		 \end{equation}
+	 	Apply Azuma-hoeffding Inequality, 
+	 	\begin{equation}
+	 		\mathbf{Pr}[|Z_m-Z_0|\geq t] \leq 2e^{-2mt^2}
+	 	\end{equation}
+ 		let $t$ be $\sqrt{\frac{1}{2m}\log\frac{2}{\delta}}$, 
+ 	 	\begin{equation}
+		 	\mathbf{Pr}[|Z_m-Z_0|\geq \sqrt{\frac{1}{2m}\log\frac{2}{\delta}}] \leq \delta, 
+		 \end{equation}
+	 	or, since $Z_i$ is defined with sup, 
+		 \begin{equation}
+		 	\forall h \in \mathcal H, \mathbf{Pr}[L(h)-L_S(h)-\mathbf E_{S\sim \mathcal X^m}[\operatorname{Rep}(S)]\leq \sqrt{\frac{1}{2m}\log\frac{2}{\delta}}] \geq 1-\delta, 
+		 \end{equation}
+	 	and given $\mathbf E_{S\sim \mathcal X^m}(S)\leq 2\mathbf E_{S\sim \mathcal X^m}[\operatorname{R}(S)]$, finally
+	 	\begin{equation}
+	 		\forall h \in \mathcal H, \mathbf{Pr}[L(h)-L_S(h)\leq 2\mathbf E_{S\sim \mathcal X^m}[\operatorname{R}(S)]+\sqrt{\frac{1}{2m}\log\frac{2}{\delta}}] \geq 1-\delta, 
+	 	\end{equation}
+ 		\item First let $t$ be $\sqrt{\frac{1}{2m}\log\frac{8}{\delta}}$ in (b) we get the conclusion
+ 		\begin{equation}
+ 			\mathbf{Pr}[L(\widehat h)-L_S(\widehat h)\leq 2\mathbf E_{S\sim \mathcal X^m}[\operatorname{R}(S)]+\sqrt{\frac{1}{2m}\log\frac{8}{\delta}}] \geq 1-\frac\delta 4, 
+ 		\end{equation}
+ 	
+ 		Similarly, we let $Y_i \overset{\Delta}{=} \mathbf E[\operatorname{R}(S)\mid S_0\dots S_i]$ be a martingale. 
+ 		We still have
+ 		\begin{equation}
+ 			\begin{aligned}
+	 			|Y_i-Y_{i-1}| = \frac{1}{m}(\mathbf E[{\sup_{h\in\mathcal H}\sum_{i=1}^m\sigma_i\cdot\mathbf 1[h(x_i)\ne \ell(x_i)]}\mid S_0\dots S_i]-\\
+	 			\frac{1}{m}\mathbf E[{\sup_{h\in\mathcal H}\sum_{i=1}^m\sigma_i\cdot\mathbf 1[h(x_i)\ne \ell(x_i)]}\mid S_0\dots S_{i-1}])\\
+	 			\leq \frac{1}{m}
+			\end{aligned}
+ 		\end{equation}
+ 		Also similarly, let $t$ be $\sqrt{\frac{1}{2m}\log\frac{8}{\delta}}$, 
+ 		\begin{equation}
+ 			\mathbf{Pr}[|Y_m-Y_0|\geq \sqrt{\frac{1}{2m}\log\frac{8}{\delta}}] \leq \frac{\delta}{4}, 
+ 		\end{equation}
+ 	 	\begin{equation}
+	 		\mathbf{Pr}[\operatorname R(S)-\mathbf E_{S\sim \mathcal X^m}[\operatorname{R}(S)]\geq -\sqrt{\frac{1}{2m}\log\frac{8}{\delta}}] \geq 1-\frac{\delta}{4}, 
+	 	\end{equation}
+ 		With equation 20 and 23, 
+ 		 \begin{equation}
+ 			\mathbf{Pr}[L(\widehat h)-L_S(\widehat h)-2\operatorname R(S)\leq 3\sqrt{\frac{1}{2m}\log\frac{8}{\delta}}] \geq 1-\frac{\delta}{2}, 
+ 		\end{equation}
+ 		Also remember $L(\widehat h)\leq L(h^*) + \epsilon, L_S(\widehat h)\geq L_S(h^*)$ in (a). 
+ 		\begin{equation}
+ 			\mathbf{Pr}[L(\widehat h)-L_S(h^*)-2\operatorname R(S)\leq 3\sqrt{\frac{1}{2m}\log\frac{8}{\delta}}] \geq 1-\frac{\delta}{2}, 
+ 		\end{equation}
+ 		since we are still one more step from success, we additionally define $X_i \overset{\Delta}{=} \mathbf E[L_h(S^*)\mid S_0\dots S_i]$.
+ 		$\mathbf E[L_S(h^*)] = L(h^*)$. Alike equation 23 and 18 we have 
+  	 	\begin{equation}
+ 			\mathbf{Pr}[\operatorname L_S(h^*)-L(h^*)\leq \sqrt{\frac{1}{2m}\log\frac{8}{\delta}}] \geq 1-\frac{\delta}{4}, 
+ 		\end{equation}
+ 		Finally,
+ 		\begin{equation}
+ 			\mathbf{Pr}[\operatorname L_S(\widehat h)\leq L(h^*) + 2\operatorname R(S) + 4\sqrt{\frac{1}{2m}\log\frac{8}{\delta}}] \geq 1-\frac{3\delta}{4}
+ 		\end{equation}
+ 	
+	\end{enumerate}
+
+	\begin{thebibliography}{99}
+		\bibitem{zhangsp2023} C. Zhang, Stochastic Processes (Spring 2023) [Online]. Available: \url{http://chihaozhang.com/teaching/SP2023/} [Accessed Mar. 24, 2023].
+		\bibitem{szq} Guidance from \textbf{Zhaoqi Shen}. 
+		\bibitem{fever} Hallucination during a $40^\circ\operatorname{C+}$ high fever. 
+	\end{thebibliography}
+\end{document}
+

@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amsmath }
+\usepackage{amsfonts }
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{times}
+\usepackage{geometry}
+\usepackage{tikz}
+\geometry{a4paper}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\begin{document}
+	\title{AI3602 Data Mining Homework 1.2}
+	\author{Kailing Wang 521030910356}
+	\date{March 18.2024}
+	\maketitle
+
+	\section*{Question 1}
+	Frobenius norm error is formalized by $\|A-B\|_F = \sqrt{\sum_{ij}(A_{ij}-B_{ij})^2}$.
+	
+	Then, 
+	\begin{align*}
+		\|A-B\|_F = &\sqrt{\sum_{i=1}^k U(\sigma_{i}-s_{i})^2 V^T} \\
+	  = & \sqrt{\sum_{i=k+1}^r \sigma_i^2}.
+	\end{align*}
+	
+	The rest is to prove 
+	\begin{align}
+		\min_X \|A-X\|_F = \sqrt{\sum_{i=k+1}^r \sigma_i^2}, X \text{ has rank } k.
+	\end{align}
+	
+	Use SVD: $X = P\Omega Q^T$, and let $C = P^T A Q$. $A = P C Q^T$.
+	
+	Write $C$ as 
+	\[
+	C = \begin{bmatrix}
+		C_{11} & C_{12} \\
+		C_{21} & C_{22}
+	\end{bmatrix},
+	\]	
+	where $C_{11}$ is $r\times r$. 
+	\begin{align*}
+		\|A-X\|_F = & \sqrt{\sum_{i=1}^k (P (\Omega-C) Q^T)^2} \\
+		= & \|\Omega_{r\times r}-C_{11}\|_F + \|C_{12}\|_F + \|C_{21}\|_F + \|C_{22}\|_F.
+	\end{align*}
+	There since $X=\arg\min_X \|A-X\|_F$, if $C_{12}$ (or $C_{21}$) is not $\mathbf 0$, there exists
+	\[
+	Y = \begin{bmatrix}
+		C_{11} & C_{12} \\
+	 	0 & 0
+	\end{bmatrix} \text{ or }\left(
+	\begin{bmatrix}
+		C_{11} & 0 \\
+		C_{21} & 0
+	\end{bmatrix}\right),Y\text{ has rank }k.
+	\]
+	that makes 
+	\begin{align*}
+		\|A-Y\|_F = \|\Omega_{r\times r}-C_{11}\|_F + \|C_{21}\|_F + \|C_{22}\|_F (\text{ or }\|\Omega_{r\times r}-C_{11}\|_F + 	\|C_{12}\|_F + \|C_{22}\|_F) < \|A-X\|_F.
+	\end{align*}
+	
+	This shows $C_{12} = C_{21} = \mathbf 0$. Similarly, if $C_{11} \neq \Omega_{r\times r}$, 
+	\[
+	Z = \begin{bmatrix}
+		C_{11} & C_{12} \\
+		0 & 0
+	\end{bmatrix}
+	\]
+	makes $\|A-Z\|_F < \|A-X\|_F$. $C_{11} = \Omega$.
+	
+	
+	Now $\|A-X\|_F = \|C_{22}\|_F$.
+	
+	Again use SVD: $C_{22} = P' \Gamma {Q^T}'$. Since $C_{11}$ is diagonal, 
+	\begin{align*}
+		A = P C Q^T = = P (\begin{bmatrix}
+			I & 0 \\
+			0 & P'
+		\end{bmatrix} \begin{bmatrix}
+		\Omega & 0 \\
+		0 & \Gamma
+		\end{bmatrix} \begin{bmatrix}
+		I & 0 \\
+		0 & {Q^T}'
+		\end{bmatrix}) Q^T
+	\end{align*}
+	This is already the SVD form of $A$, and $\Omega$ and $\Gamma$ each contains some of the eigenvalues of $A$, since we define $X$ anonymously with $\arg\min$. Anyway, we ensure $\|A-X\|_F \geq \sqrt{\sum_{i=k+1}^r \sigma_i^2}$. This shows equation 1 holds. That's the end of the proof. 
+	
+	\section*{Original Questions}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.8\textwidth]{1}
+		\caption{Question 1}
+		\label{fig:1}
+	\end{figure}
+	\section*{Reference}
+	Linear Algebra. 
+\end{document}

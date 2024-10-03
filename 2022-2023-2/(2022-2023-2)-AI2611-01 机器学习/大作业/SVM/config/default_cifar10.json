@@ -1,0 +1,20 @@
+{
+  "exp_name": "default",
+  "data_path": "./data",
+  "data_type": "cifar10",
+  "validate_only": false,
+  "seed": 10,
+  "add_features": true,
+  "lm": 0.005,
+  "epochs": 200,
+  "cache_size": 5000,
+  "multi_kernel": true,
+  "C": 1,
+  "kernel": "poly",
+  "kernel_args": null,
+  "silence": true,
+  "PCA": true,
+  "dim": 512,
+  "mode": "one_to_rest",
+  "config": null
+}

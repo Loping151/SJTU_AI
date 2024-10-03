@@ -1,0 +1,16 @@
+{
+  "exp_name": "edge_loss",
+  "data_root": "./data",
+  "validate_only": false,
+  "seed": 151,
+  "cuts": 2,
+  "num_epochs": 2,
+  "prob": 1,
+  "lr_step_size": 40000,
+  "current_size": 16,
+  "pretrained": false,
+  "use_edge_loss": true,
+  "use_discriminator_loss": false,
+  "edge_loss_weight": 0.01,
+  "config": null
+}

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov 21 18:26:01 2022
+# Process ID: 22784
+# Current directory: C:/Users/wangk/OneDrive/Home/Desktop/three_voter/three_voter.runs/impl_1
+# Command line: vivado.exe -log voter.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source voter.tcl -notrace
+# Log file: C:/Users/wangk/OneDrive/Home/Desktop/three_voter/three_voter.runs/impl_1/voter.vdi
+# Journal file: C:/Users/wangk/OneDrive/Home/Desktop/three_voter/three_voter.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source voter.tcl -notrace

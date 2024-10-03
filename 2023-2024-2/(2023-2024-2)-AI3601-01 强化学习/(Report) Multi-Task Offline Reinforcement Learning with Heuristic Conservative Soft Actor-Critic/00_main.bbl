@@ -1,0 +1,123 @@
+\begin{thebibliography}{10}
+
+\bibitem{borsa2016learning}
+Diana Borsa, Thore Graepel, and John Shawe-Taylor.
+\newblock Learning shared representations in multi-task reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1603.02041}, 2016.
+
+\bibitem{fu2020d4rl}
+Justin Fu, Aviral Kumar, Ofir Nachum, George Tucker, and Sergey Levine.
+\newblock D4rl: Datasets for deep data-driven reinforcement learning.
+\newblock {\em arXiv preprint arXiv:2004.07219}, 2020.
+
+\bibitem{fujimoto2021minimalist}
+Scott Fujimoto and Shixiang~Shane Gu.
+\newblock A minimalist approach to offline reinforcement learning.
+\newblock {\em Advances in neural information processing systems}, 34:20132--20145, 2021.
+
+\bibitem{haarnoja2018soft}
+Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine.
+\newblock Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor.
+\newblock In {\em International conference on machine learning}, pages 1861--1870. PMLR, 2018.
+
+\bibitem{haarnoja2018application}
+Tuomas Haarnoja, Aurick Zhou, Kristian Hartikainen, George Tucker, Sehoon Ha, Jie Tan, Vikash Kumar, Henry Zhu, Abhishek Gupta, Pieter Abbeel, et~al.
+\newblock Soft actor-critic algorithms and applications.
+\newblock {\em arXiv preprint arXiv:1812.05905}, 2018.
+
+\bibitem{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{kiran2021deep}
+B~Ravi Kiran, Ibrahim Sobh, Victor Talpaert, Patrick Mannion, Ahmad~A Al~Sallab, Senthil Yogamani, and Patrick P{\'e}rez.
+\newblock Deep reinforcement learning for autonomous driving: A survey.
+\newblock {\em IEEE Transactions on Intelligent Transportation Systems}, 23(6):4909--4926, 2021.
+
+\bibitem{kober2013reinforcement}
+Jens Kober, J~Andrew Bagnell, and Jan Peters.
+\newblock Reinforcement learning in robotics: A survey.
+\newblock {\em The International Journal of Robotics Research}, 32(11):1238--1274, 2013.
+
+\bibitem{kostrikov2021offline}
+Ilya Kostrikov, Ashvin Nair, and Sergey Levine.
+\newblock Offline reinforcement learning with implicit q-learning.
+\newblock {\em arXiv preprint arXiv:2110.06169}, 2021.
+
+\bibitem{kumar2022offline}
+Aviral Kumar, Rishabh Agarwal, Xinyang Geng, George Tucker, and Sergey Levine.
+\newblock Offline q-learning on diverse multi-task data both scales and generalizes.
+\newblock {\em arXiv preprint arXiv:2211.15144}, 2022.
+
+\bibitem{kumar2020conservative}
+Aviral Kumar, Aurick Zhou, George Tucker, and Sergey Levine.
+\newblock Conservative q-learning for offline reinforcement learning.
+\newblock {\em Advances in Neural Information Processing Systems}, 33:1179--1191, 2020.
+
+\bibitem{levine2020offline}
+Sergey Levine, Aviral Kumar, George Tucker, and Justin Fu.
+\newblock Offline reinforcement learning: Tutorial, review, and perspectives on open problems.
+\newblock {\em arXiv preprint arXiv:2005.01643}, 2020.
+
+\bibitem{li2017deep}
+Yuxi Li.
+\newblock Deep reinforcement learning: An overview.
+\newblock {\em arXiv preprint arXiv:1701.07274}, 2017.
+
+\bibitem{lillicrap2015continuous}
+Timothy~P Lillicrap, Jonathan~J Hunt, Alexander Pritzel, Nicolas Heess, Tom Erez, Yuval Tassa, David Silver, and Daan Wierstra.
+\newblock Continuous control with deep reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1509.02971}, 2015.
+
+\bibitem{rumelhart1986learning}
+David~E Rumelhart, Geoffrey~E Hinton, and Ronald~J Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock {\em nature}, 323(6088):533--536, 1986.
+
+\bibitem{rusu2016progressive}
+Andrei~A Rusu, Neil~C Rabinowitz, Guillaume Desjardins, Hubert Soyer, James Kirkpatrick, Koray Kavukcuoglu, Razvan Pascanu, and Raia Hadsell.
+\newblock Progressive neural networks.
+\newblock {\em arXiv preprint arXiv:1606.04671}, 2016.
+
+\bibitem{schulman2015trust}
+John Schulman, Sergey Levine, Pieter Abbeel, Michael Jordan, and Philipp Moritz.
+\newblock Trust region policy optimization.
+\newblock In {\em International conference on machine learning}, pages 1889--1897. PMLR, 2015.
+
+\bibitem{schulman2017proximal}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock {\em arXiv preprint arXiv:1707.06347}, 2017.
+
+\bibitem{silver2018general}
+David Silver, Thomas Hubert, Julian Schrittwieser, Ioannis Antonoglou, Matthew Lai, Arthur Guez, Marc Lanctot, Laurent Sifre, Dharshan Kumaran, Thore Graepel, et~al.
+\newblock A general reinforcement learning algorithm that masters chess, shogi, and go through self-play.
+\newblock {\em Science}, 362(6419):1140--1144, 2018.
+
+\bibitem{sutton1999reinforcement}
+Richard~S Sutton and Andrew~G Barto.
+\newblock Reinforcement learning: An introduction.
+\newblock {\em Robotica}, 17(2):229--235, 1999.
+
+\bibitem{todorov2012mujoco}
+Emanuel Todorov, Tom Erez, and Yuval Tassa.
+\newblock Mujoco: A physics engine for model-based control.
+\newblock In {\em 2012 IEEE/RSJ international conference on intelligent robots and systems}, pages 5026--5033. IEEE, 2012.
+
+\bibitem{vithayathil2020survey}
+Nelson Vithayathil~Varghese and Qusay~H Mahmoud.
+\newblock A survey of multi-task deep reinforcement learning.
+\newblock {\em Electronics}, 9(9):1363, 2020.
+
+\bibitem{xu2020knowledge}
+Zhiyuan Xu, Kun Wu, Zhengping Che, Jian Tang, and Jieping Ye.
+\newblock Knowledge transfer in multi-task deep reinforcement learning for continuous control.
+\newblock {\em Advances in Neural Information Processing Systems}, 33:15146--15155, 2020.
+
+\bibitem{yu2021conservative}
+Tianhe Yu, Aviral Kumar, Yevgen Chebotar, Karol Hausman, Sergey Levine, and Chelsea Finn.
+\newblock Conservative data sharing for multi-task offline reinforcement learning.
+\newblock {\em Advances in Neural Information Processing Systems}, 34:11501--11516, 2021.
+
+\end{thebibliography}

@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov 21 19:07:21 2022
+# Process ID: 18616
+# Current directory: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8288 C:\Users\wangk\OneDrive\Home\Desktop\shumaguan2\shumaguan2.xpr
+# Log file: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/vivado.log
+# Journal file: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/shumaguan2.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Qw/shumaguan2' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Programs/Xilinx/Vivado/2017.3/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Nov 21 19:10:34 2022] Launched synth_1...
+Run output will be captured here: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/shumaguan2.runs/synth_1/runme.log
+[Mon Nov 21 19:10:34 2022] Launched impl_1...
+Run output will be captured here: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan2/shumaguan2.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121

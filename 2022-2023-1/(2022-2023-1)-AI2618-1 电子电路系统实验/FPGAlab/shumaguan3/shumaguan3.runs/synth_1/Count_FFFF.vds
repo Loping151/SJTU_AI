@@ -1,0 +1,333 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov 21 20:29:48 2022
+# Process ID: 16696
+# Current directory: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.runs/synth_1
+# Command line: vivado.exe -log Count_FFFF.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Count_FFFF.tcl
+# Log file: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.runs/synth_1/Count_FFFF.vds
+# Journal file: C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Count_FFFF.tcl -notrace
+Command: synth_design -top Count_FFFF -part xc7a50tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5092 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 344.117 ; gain = 94.438
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Count_FFFF' [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:77]
+INFO: [Synth 8-638] synthesizing module 'D0_display' [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:35]
+INFO: [Synth 8-226] default block is never used [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:54]
+INFO: [Synth 8-256] done synthesizing module 'D0_display' (1#1) [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Count_FFFF' (2#1) [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:77]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 385.574 ; gain = 135.895
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 385.574 ; gain = 135.895
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a50tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc]
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[6]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[5]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[4]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[3]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[2]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[1]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[0]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[3]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[2]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[1]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[0]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[6]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[5]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[4]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[3]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[2]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[1]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'a_to_g2[0]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[3]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[2]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[1]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_bits2[0]'. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/constrs_1/new/shumaguan3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Count_FFFF_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Count_FFFF_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 676.395 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a50tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element clk_cnt_reg was removed.  [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:90]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Count_FFFF 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element clk_cnt_reg was removed.  [C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.srcs/sources_1/new/shumaguan3.v:90]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     9|
+|3     |LUT1   |     1|
+|4     |LUT2   |     4|
+|5     |LUT4   |     7|
+|6     |LUT6   |     4|
+|7     |FDRE   |    36|
+|8     |IBUF   |     2|
+|9     |OBUF   |    11|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    75|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 676.395 ; gain = 135.895
+Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 676.395 ; gain = 426.715
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 24 Warnings, 22 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 679.328 ; gain = 441.492
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wangk/OneDrive/Home/Desktop/shumaguan3/shumaguan3.runs/synth_1/Count_FFFF.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Count_FFFF_utilization_synth.rpt -pb Count_FFFF_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 679.328 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 21 20:30:05 2022...

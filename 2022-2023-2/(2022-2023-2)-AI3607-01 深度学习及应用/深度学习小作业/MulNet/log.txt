@@ -1,0 +1,503 @@
+2023-04-16 14:15:49
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 1}
+	test acc:jt.Var([0], dtype=int32)
+2023-04-16 14:31:49
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 1000}
+	test acc:jt.Var([12], dtype=int32)
+
+2023-04-16 15:38:02
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([4], dtype=int32)
+
+2023-04-16 15:39:16
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([4], dtype=int32)
+
+2023-04-16 15:39:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([28], dtype=int32)
+
+2023-04-16 15:42:41
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([0.014], dtype=float32)
+
+2023-04-16 15:42:41
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([0.016], dtype=float32)
+
+2023-04-16 15:49:29
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([0.014], dtype=float32)
+
+2023-04-16 15:49:29
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([0.016], dtype=float32)
+
+2023-04-16 15:50:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([0.009], dtype=float32)
+
+2023-04-16 15:50:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 100}
+	test acc:jt.Var([0.012], dtype=float32)
+
+2023-04-16 15:53:57
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.015], dtype=float32)
+
+2023-04-16 15:53:57
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.016], dtype=float32)
+
+2023-04-16 15:54:42
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 100}
+	test acc:jt.Var([0.007], dtype=float32)
+
+2023-04-16 15:54:42
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 100}
+	test acc:jt.Var([0.00875], dtype=float32)
+
+2023-04-16 15:56:02
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 100}
+	test acc:jt.Var([0.016], dtype=float32)
+
+2023-04-16 15:56:03
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 100}
+	test acc:jt.Var([0.0165], dtype=float32)
+
+2023-04-16 16:02:51
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.014], dtype=float32)
+
+2023-04-16 16:02:52
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.01825], dtype=float32)
+
+2023-04-16 16:07:13
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.016], dtype=float32)
+
+2023-04-16 16:07:13
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.021], dtype=float32)
+
+2023-04-16 16:11:26
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.015], dtype=float32)
+
+2023-04-16 16:11:27
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.01375], dtype=float32)
+
+2023-04-16 16:13:53
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 100}
+	test acc:jt.Var([0.002], dtype=float32)
+
+2023-04-16 16:13:53
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.01, 'epochs': 100}
+	test acc:jt.Var([0.0075], dtype=float32)
+
+2023-04-16 16:15:23
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.017], dtype=float32)
+
+2023-04-16 16:15:23
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.02025], dtype=float32)
+
+2023-04-16 16:16:19
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.018], dtype=float32)
+
+2023-04-16 16:16:19
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.0235], dtype=float32)
+
+2023-04-16 16:36:05
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.01], dtype=float32)
+
+2023-04-16 16:36:05
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.013], dtype=float32)
+
+2023-04-16 16:38:47
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.01], dtype=float32)
+
+2023-04-16 16:38:48
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.013], dtype=float32)
+
+2023-04-16 16:39:13
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.01], dtype=float32)
+
+2023-04-16 16:39:13
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.013], dtype=float32)
+
+2023-04-16 16:39:26
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.01], dtype=float32)
+
+2023-04-16 16:39:26
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.013], dtype=float32)
+
+2023-04-16 16:41:21
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.], dtype=float32)
+
+2023-04-16 16:41:21
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.], dtype=float32)
+
+2023-04-16 16:46:18
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.], dtype=float32)
+
+2023-04-16 16:46:19
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 1}
+	test acc:jt.Var([0.], dtype=float32)
+
+2023-04-16 16:47:37
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.017], dtype=float32)
+
+2023-04-16 16:47:37
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.02075], dtype=float32)
+
+2023-04-16 16:48:11
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.017], dtype=float32)
+
+2023-04-16 16:48:11
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.01975], dtype=float32)
+
+2023-04-16 16:48:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.017], dtype=float32)
+
+2023-04-16 16:48:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.01975], dtype=float32)
+
+2023-04-16 16:48:40
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.017], dtype=float32)
+
+2023-04-16 16:48:40
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.01975], dtype=float32)
+
+2023-04-16 16:48:50
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.018], dtype=float32)
+
+2023-04-16 16:48:50
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.0225], dtype=float32)
+
+2023-04-16 16:48:56
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.018], dtype=float32)
+
+2023-04-16 16:48:57
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.0225], dtype=float32)
+
+2023-04-16 16:49:14
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.017], dtype=float32)
+
+2023-04-16 16:49:15
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.01975], dtype=float32)
+
+2023-04-16 16:49:54
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.017], dtype=float32)
+
+2023-04-16 16:49:54
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.01975], dtype=float32)
+
+2023-04-16 16:50:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.594], dtype=float32)
+
+2023-04-16 16:50:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.586], dtype=float32)
+
+2023-04-16 16:53:25
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.594], dtype=float32)
+
+2023-04-16 16:53:25
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.586], dtype=float32)
+
+2023-04-16 16:53:52
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.594], dtype=float32)
+
+2023-04-16 16:53:53
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.005, 'epochs': 100}
+	test acc:jt.Var([0.586], dtype=float32)
+
+2023-04-16 17:12:02
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.8], dtype=float32)
+
+2023-04-16 17:12:02
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.8265], dtype=float32)
+
+2023-04-16 17:30:09
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.79], dtype=float32)
+
+2023-04-16 17:30:09
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.82475], dtype=float32)
+
+2023-04-16 17:36:05
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.743], dtype=float32)
+
+2023-04-16 17:36:05
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.75575], dtype=float32)
+
+2023-04-16 17:43:55
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.724], dtype=float32)
+
+2023-04-16 17:43:56
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 1000}
+	test acc:jt.Var([0.75825], dtype=float32)
+
+2023-04-16 18:57:14
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 10000}
+	test acc:jt.Var([0.778], dtype=float32)
+
+2023-04-16 18:57:14
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 10000}
+	test acc:jt.Var([0.80475], dtype=float32)
+
+2023-04-16 19:36:15
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.568], dtype=float32)
+
+2023-04-16 19:36:15
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 500}
+	test acc:jt.Var([0.5805], dtype=float32)
+
+2023-04-16 19:40:02
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 500}
+	test acc:jt.Var([0.652], dtype=float32)
+
+2023-04-16 19:40:02
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.005, 'epochs': 500}
+	test acc:jt.Var([0.667], dtype=float32)
+
+2023-04-16 19:43:00
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.553], dtype=float32)
+
+2023-04-16 19:43:01
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.585], dtype=float32)
+
+2023-04-16 19:58:28
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.858], dtype=float32)
+
+2023-04-16 19:58:28
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.88925], dtype=float32)
+
+2023-04-16 20:15:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.094], dtype=float32)
+
+2023-04-16 20:15:17
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.09725], dtype=float32)
+
+2023-04-16 21:36:49
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.094], dtype=float32)
+
+2023-04-16 21:36:50
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': True, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.09725], dtype=float32)
+
+2023-04-16 22:14:37
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.094], dtype=float32)
+
+2023-04-16 22:14:38
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.09925], dtype=float32)
+
+2023-04-16 22:19:50
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.098], dtype=float32)
+
+2023-04-16 22:19:50
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.09975], dtype=float32)
+
+2023-04-16 23:43:41
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 3000}
+	test acc:jt.Var([0.81600004], dtype=float32)
+
+2023-04-16 23:43:42
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 3000}
+	test acc:jt.Var([0.87325007], dtype=float32)
+
+2023-04-17 00:08:20
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 3000}
+	test acc:jt.Var([0.91700006], dtype=float32)
+
+2023-04-17 00:08:20
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 3000}
+	test acc:jt.Var([0.94175005], dtype=float32)
+
+2023-04-17 01:55:45
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 10000}
+	test acc:jt.Var([0.91700006], dtype=float32)
+
+2023-04-17 01:55:46
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 10000}
+	test acc:jt.Var([0.943], dtype=float32)
+
+2023-04-17 20:05:27
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 2000}
+	test acc:jt.Var([0.572], dtype=float32)
+
+2023-04-17 20:05:27
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 2000}
+	test acc:jt.Var([0.57175004], dtype=float32)
+
+2023-04-17 20:41:32
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 2000}
+	test acc:jt.Var([0.813], dtype=float32)
+
+2023-04-17 20:41:32
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 2000}
+	test acc:jt.Var([0.84275], dtype=float32)
+
+2023-04-17 22:45:55
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.71000004], dtype=float32)
+
+2023-04-17 22:45:56
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.757], dtype=float32)
+
+2023-04-17 22:49:51
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.71900004], dtype=float32)
+
+2023-04-17 22:49:51
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 500}
+	test acc:jt.Var([0.7735], dtype=float32)
+
+2023-04-17 23:05:38
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 2000}
+	test acc:jt.Var([0.569], dtype=float32)
+
+2023-04-17 23:05:39
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.01, 'epochs': 2000}
+	test acc:jt.Var([0.57250005], dtype=float32)
+
+2023-04-17 23:20:47
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 2000}
+	test acc:jt.Var([0.89100003], dtype=float32)
+
+2023-04-17 23:20:47
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 2000}
+	test acc:jt.Var([0.934], dtype=float32)
+
+2023-04-17 23:50:23
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 3000}
+	test acc:jt.Var([0.79800004], dtype=float32)
+
+2023-04-17 23:50:23
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 0.001, 'epochs': 3000}
+	test acc:jt.Var([0.86200005], dtype=float32)
+
+2023-04-18 15:39:31
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.943], dtype=float32)
+
+2023-04-18 15:39:31
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.96050006], dtype=float32)
+
+2023-04-18 16:08:08
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.93900007], dtype=float32)
+
+2023-04-18 16:08:09
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.9635], dtype=float32)
+
+2023-04-18 16:35:33
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.85], dtype=float32)
+
+2023-04-18 16:35:34
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.86700004], dtype=float32)
+
+2023-04-18 17:56:26
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.90800005], dtype=float32)
+
+2023-04-18 17:56:29
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.93850005], dtype=float32)
+
+2023-04-18 18:49:59
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.90800005], dtype=float32)
+
+2023-04-18 18:50:01
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.94175005], dtype=float32)
+
+2023-04-18 20:11:24
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.943], dtype=float32)
+
+2023-04-18 20:11:26
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.97225004], dtype=float32)
+
+2023-04-18 20:53:45
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.95000005], dtype=float32)
+
+2023-04-18 20:53:46
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 3000}
+	test acc:jt.Var([0.97300005], dtype=float32)
+
+2023-04-18 22:14:31
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 5000}
+	test acc:jt.Var([0.94900006], dtype=float32)
+
+2023-04-18 22:14:32
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 5000}
+	test acc:jt.Var([0.97450006], dtype=float32)
+
+2023-04-19 01:26:02
+	{'train_path': './train_data.csv', 'test_path': './test_data.csv', 'validate_only': False, 'seed': 151, 'lr': 1e-05, 'epochs': 5000}
+	test acc:jt.Var([0.95000005], dtype=float32)
+

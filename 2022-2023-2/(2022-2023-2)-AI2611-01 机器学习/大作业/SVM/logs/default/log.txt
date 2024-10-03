@@ -1,0 +1,1036 @@
+2023-05-28 01:19:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	'Namespace' object has no attribute 'epoches'
+2023-05-28 01:20:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	list indices must be integers or slices, not str
+2023-05-28 01:21:27
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 01:22:28
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.85374903678894
+2023-05-28 01:25:02
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.666956424713135
+2023-05-28 01:27:25
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 6.008927822113037
+2023-05-28 01:29:07
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.684432506561279
+2023-05-28 01:32:53
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 6.029144048690796
+2023-05-28 01:33:13
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.6985156536102295
+2023-05-28 01:33:48
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.962976455688477
+2023-05-28 01:34:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.516238689422607
+2023-05-28 01:36:31
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 01:37:34
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.849886655807495
+2023-05-28 01:38:51
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.649841547012329
+acc: 0.783
+time cost: 1.7126262187957764
+2023-05-28 01:39:28
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': True, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	'NoneType' object is not callable
+2023-05-28 01:40:01
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 6.042003393173218
+2023-05-28 01:40:14
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': True, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	'SVC151' object has no attribute 'lib'
+2023-05-28 01:40:59
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': True, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 01:47:23
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 01:47:43
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.5585386753082275
+	Can't pickle local object 'SVM151.fit.<locals>.inner_kernel'
+2023-05-28 01:53:02
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 01:53:24
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.824419975280762
+	cannot pickle 'module' object
+2023-05-28 01:54:58
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 01:55:06
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 01:55:14
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.548189640045166
+	Can't pickle local object 'SVM151.fit.<locals>.inner_kernel'
+2023-05-28 01:56:11
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.499435901641846
+2023-05-28 02:03:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.697179555892944
+2023-05-28 02:04:15
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.8181028366088867
+2023-05-28 02:05:04
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 02:05:17
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.814734935760498
+2023-05-28 02:06:12
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.785445213317871
+2023-05-28 02:06:34
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.8200578689575195
+2023-05-28 02:07:05
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.8248703479766846
+2023-05-28 02:07:34
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.804908275604248
+	'w'
+2023-05-28 02:08:00
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 02:08:29
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.547909259796143
+2023-05-28 02:09:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 5.905544996261597
+	cannot pickle 'module' object
+2023-05-28 02:10:51
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.786
+time cost: 6.11579966545105
+2023-05-28 02:11:32
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.8522281646728516
+2023-05-28 02:12:51
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.9321568012237549
+2023-05-28 02:13:36
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.8532028198242188
+2023-05-28 11:25:15
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 1.8627650737762451
+2023-05-28 11:25:38
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.796
+time cost: 2.260432481765747
+2023-05-28 11:26:17
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.744
+acc: 0.796
+time cost: 1.8707385063171387
+2023-05-28 11:26:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 1, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.1
+acc: 0.691
+time cost: 0.10464978218078613
+2023-05-28 11:27:37
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.798
+acc: 0.796
+time cost: 1.8831424713134766
+2023-05-28 11:27:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.798
+acc: 0.796
+time cost: 1.9524667263031006
+2023-05-28 20:56:09
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+inference acc: 0.315
+	cannot reshape array of size 15440000 into shape (5000, -1, 3)
+2023-05-28 20:57:00
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 20:58:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 20:59:40
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-28 20:59:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.321
+time cost: 6.0703346729278564
+2023-05-28 21:05:47
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 151, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.296
+time cost: 10.98760175704956
+2023-05-28 21:07:08
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.296
+time cost: 11.170259475708008
+2023-05-28 21:11:20
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+2023-05-28 21:11:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.296
+time cost: 11.664153099060059
+2023-05-28 21:13:32
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.326
+time cost: 6.0702478885650635
+2023-05-28 21:13:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.312
+time cost: 6.049048900604248
+2023-05-28 21:14:29
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 256, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.333
+time cost: 11.899646997451782
+2023-05-28 21:15:28
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 256, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': [], 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	kernel_poly() missing 2 required positional arguments: 'c' and 'd'
+2023-05-28 21:16:19
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 256, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.338
+time cost: 14.337000370025635
+2023-05-28 21:17:13
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.829
+time cost: 7.145224332809448
+2023-05-28 21:17:27
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.344
+time cost: 7.952693462371826
+2023-05-28 21:38:08
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.496
+time cost: 5.4161107540130615
+2023-05-28 21:39:34
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.168
+time cost: 5.351428985595703
+2023-05-28 21:40:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.167
+time cost: 5.355960369110107
+2023-05-28 21:40:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 5.28348970413208
+2023-05-28 21:41:29
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.496
+time cost: 5.875937461853027
+2023-05-28 21:41:52
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.496
+time cost: 5.354836702346802
+2023-05-28 21:42:22
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.499
+time cost: 5.188386917114258
+2023-05-28 21:43:02
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.465
+time cost: 5.330190181732178
+2023-05-28 21:43:35
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.495
+time cost: 5.2238922119140625
+2023-05-28 21:44:15
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.478
+time cost: 5.168409109115601
+2023-05-28 21:44:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.496
+time cost: 5.245515584945679
+2023-05-28 21:46:00
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.49
+time cost: 5.249636888504028
+2023-05-28 21:46:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.489
+time cost: 5.192700386047363
+2023-05-28 21:47:31
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.478
+time cost: 5.804307222366333
+2023-05-28 21:47:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.459
+time cost: 5.00023341178894
+2023-05-28 21:48:28
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 6.151556730270386
+2023-05-28 21:48:52
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.449
+time cost: 7.552522659301758
+2023-05-28 21:50:58
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1.0, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.454
+time cost: 8.467175483703613
+2023-05-28 21:51:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 0.8, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.492
+time cost: 5.273134231567383
+2023-05-28 21:52:37
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 1024, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.499
+time cost: 5.642402410507202
+2023-05-28 21:56:11
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 10, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.376
+time cost: 4.08257269859314
+2023-05-28 21:56:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.495
+time cost: 8.949373960494995
+2023-05-28 22:01:33
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 10, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.532
+time cost: 4.277138710021973
+2023-05-28 22:01:45
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.83
+time cost: 6.654899835586548
+2023-05-28 22:01:58
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.83
+time cost: 9.118191480636597
+2023-05-30 14:01:34
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.83
+time cost: 9.258419513702393
+2023-05-30 14:03:22
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.846
+time cost: 9.067585229873657
+2023-05-30 14:03:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.87
+time cost: 8.844091892242432
+2023-05-30 14:05:14
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.767
+time cost: 8.805175542831421
+2023-05-30 14:05:53
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.864
+time cost: 9.415837049484253
+2023-05-30 14:06:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.866
+time cost: 8.997563600540161
+2023-05-30 14:07:28
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.442
+time cost: 10.094459772109985
+2023-05-30 14:08:09
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.316
+time cost: 10.186909675598145
+2023-05-30 14:08:52
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.453
+time cost: 11.118747234344482
+2023-05-30 14:09:19
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.839
+time cost: 10.048495769500732
+2023-05-30 14:09:57
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.845
+time cost: 10.318655490875244
+2023-05-30 14:11:05
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	'int' object has no attribute 'sum'
+2023-05-30 14:11:18
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	'list' object has no attribute 'sum'
+2023-05-30 14:12:22
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 9.466052532196045
+2023-05-30 14:12:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 9.413117408752441
+2023-05-30 14:13:32
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 9.625043630599976
+2023-05-30 14:13:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 9.630415439605713
+2023-05-30 14:16:02
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.817
+time cost: 9.403229236602783
+2023-05-30 14:16:35
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.816
+time cost: 9.803892612457275
+2023-05-30 14:17:10
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.816
+time cost: 10.622247457504272
+2023-05-30 14:17:41
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.818
+time cost: 9.398364305496216
+2023-05-30 14:17:58
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.756
+time cost: 8.306345462799072
+2023-05-30 14:18:22
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.829
+time cost: 8.079961776733398
+2023-05-30 14:18:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.869
+time cost: 9.921662330627441
+2023-05-30 14:19:08
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.814
+time cost: 22.826252460479736
+2023-05-30 16:39:30
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.8
+time cost: 25.212472438812256
+2023-05-30 16:40:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.87
+time cost: 9.601217269897461
+2023-05-30 16:41:32
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.801
+time cost: 9.726351737976074
+2023-05-30 16:41:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.817
+time cost: 9.988564252853394
+2023-05-30 16:42:23
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 10, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.698
+time cost: 4.544498443603516
+2023-05-30 16:43:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 10, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.698
+time cost: 5.243897914886475
+2023-05-30 16:45:22
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 10, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.728
+time cost: 0.3493962287902832
+2023-05-30 16:46:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 10, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.728
+time cost: 0.3419051170349121
+2023-05-30 16:46:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.863
+time cost: 2.6895790100097656
+2023-05-30 16:49:10
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.868
+time cost: 5.5881407260894775
+2023-05-30 16:50:18
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.868
+time cost: 5.298563241958618
+2023-05-30 16:51:10
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.872
+time cost: 5.363064289093018
+2023-05-30 16:52:16
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.253
+time cost: 5.701342344284058
+2023-05-30 16:53:07
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 16:53:16
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.191
+time cost: 5.580726146697998
+2023-05-30 16:53:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.228
+time cost: 5.552734613418579
+2023-05-30 16:57:10
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.512
+time cost: 5.389793634414673
+2023-05-30 16:58:00
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.428
+time cost: 5.665283441543579
+2023-05-30 16:58:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.268
+time cost: 5.511761665344238
+2023-05-30 17:05:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.159
+time cost: 5.54114294052124
+2023-05-30 17:06:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.329
+time cost: 5.6029441356658936
+2023-05-30 17:07:44
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.195
+time cost: 5.633880615234375
+2023-05-30 17:08:19
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.297
+time cost: 5.367276191711426
+2023-05-30 17:12:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.338
+time cost: 5.534762620925903
+2023-05-30 17:12:23
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.331
+time cost: 5.319954872131348
+2023-05-30 17:12:58
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.428
+time cost: 5.798298597335815
+2023-05-30 17:13:36
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.512
+time cost: 5.354312896728516
+2023-05-30 17:14:18
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 500, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.518
+time cost: 13.204109907150269
+2023-05-30 17:15:08
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 10, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.292
+time cost: 0.3102891445159912
+2023-05-30 17:18:21
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 100, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.516
+time cost: 2.657439708709717
+2023-05-30 17:31:45
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 50, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.5
+time cost: 1.3014354705810547
+2023-05-30 17:32:19
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 150, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.51
+time cost: 3.7828586101531982
+2023-05-30 17:41:24
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.338
+time cost: 5.1379101276397705
+2023-05-30 17:42:12
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.344
+time cost: 5.483569145202637
+2023-05-30 17:44:26
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.338
+time cost: 4.932009935379028
+2023-05-30 17:45:14
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.512
+time cost: 4.9163103103637695
+2023-05-30 17:47:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.475
+time cost: 3.6707072257995605
+2023-05-30 17:48:20
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 8, 'mode': 'one_to_rest', 'config': None}
+acc: 0.697
+time cost: 5.13815450668335
+2023-05-30 17:48:41
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 128, 'mode': 'one_to_rest', 'config': None}
+acc: 0.867
+time cost: 5.258492946624756
+2023-05-30 17:49:31
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.872
+time cost: 4.812167406082153
+2023-05-30 17:50:01
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.869
+time cost: 5.137018442153931
+2023-05-30 17:51:23
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 8, 'mode': 'one_to_rest', 'config': None}
+acc: 0.355
+time cost: 5.205505132675171
+2023-05-30 17:52:31
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 128, 'mode': 'one_to_rest', 'config': None}
+acc: 0.5
+time cost: 5.165896654129028
+2023-05-30 17:52:57
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.512
+time cost: 5.193695783615112
+2023-05-30 17:53:50
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.344
+time cost: 5.533278465270996
+2023-05-30 17:58:29
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.512
+time cost: 4.914755582809448
+2023-05-30 17:59:08
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.832
+time cost: 3.6010191440582275
+2023-05-30 17:59:55
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 6.387186527252197
+2023-05-30 18:00:27
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 6.150088787078857
+2023-05-30 18:00:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.366
+time cost: 6.23246955871582
+2023-05-30 18:01:59
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.132
+time cost: 6.180563449859619
+2023-05-30 18:02:26
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0001, 'epochs': 2000, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.374
+time cost: 62.256587266922
+2023-05-30 20:00:11
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.118
+time cost: 22.088078260421753
+2023-05-30 20:01:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.475
+time cost: 3.7948760986328125
+2023-05-30 20:02:27
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 6.446641445159912
+2023-05-30 20:03:02
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 20:03:18
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.119
+time cost: 6.330322027206421
+2023-05-30 20:03:52
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 2000, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.203
+time cost: 62.23168730735779
+2023-05-30 20:05:40
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0001, 'epochs': 2000, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.354
+time cost: 61.73923969268799
+2023-05-30 20:08:01
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0001, 'epochs': 2000, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.374
+time cost: 61.815266609191895
+2023-05-30 20:14:19
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.872
+time cost: 4.914196491241455
+2023-05-30 20:15:26
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.038270711898804
+2023-05-30 20:20:35
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 14.948541402816772
+2023-05-30 20:22:42
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.103243112564087
+2023-05-30 20:23:48
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': False, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.21953010559082
+2023-05-30 20:24:28
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.057361364364624
+2023-05-30 20:29:27
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.16102910041809
+2023-05-30 20:30:17
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.296411514282227
+2023-05-30 20:31:16
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.180511951446533
+2023-05-30 20:46:07
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 10, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.55785322189331
+2023-05-30 20:46:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 256, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 26.85876965522766
+2023-05-30 20:50:31
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 1, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.689
+time cost: 2.5436904430389404
+2023-05-30 20:50:49
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 1, 'epochs': 200, 'cache_size': 256, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.657
+time cost: 10.414758682250977
+2023-05-30 20:57:33
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 256, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 26.60945224761963
+2023-05-30 20:59:27
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 14.93653917312622
+2023-05-30 21:00:27
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	name 'losses' is not defined
+2023-05-30 21:01:13
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.114279508590698
+2023-05-30 21:01:57
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.1
+time cost: 13.076457977294922
+2023-05-30 21:04:01
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.582
+time cost: 5.343509674072266
+2023-05-30 21:04:32
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 21:05:24
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 21:06:47
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 21:08:43
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 21:09:29
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.482
+time cost: 5.936541318893433
+2023-05-30 21:10:57
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	operands could not be broadcast together with shapes (3, 512, 1) (4, 1, 1)
+2023-05-30 21:13:42
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	operands could not be broadcast together with shapes (3, 512, 1) (4, 1, 1)
+2023-05-30 21:14:24
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	Cannot interpret '1' as a data type
+2023-05-30 21:14:53
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+	Implicit conversion to a NumPy array is not allowed. Please use `.get()` to construct a NumPy array explicitly.
+2023-05-30 21:22:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 21:40:17
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 21:41:16
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+2023-05-30 21:41:57
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.371
+time cost: 10.430296659469604
+acc: 0.265
+time cost: 11.136872053146362
+2023-05-30 21:43:18
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.472
+time cost: 10.047013282775879
+2023-05-30 21:44:44
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.465
+time cost: 7.758836507797241
+2023-05-30 21:47:45
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.469
+time cost: 7.536747694015503
+2023-05-30 21:48:30
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.438
+time cost: 7.563625812530518
+2023-05-30 21:49:13
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.426
+time cost: 6.6346354484558105
+2023-05-30 21:50:08
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'rbf', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.46
+time cost: 9.593555212020874
+2023-05-30 21:50:41
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.426
+time cost: 6.732745409011841
+2023-05-30 21:51:48
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0025, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.465
+time cost: 6.685555458068848
+2023-05-30 21:52:37
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0025, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.507
+time cost: 5.0942699909210205
+2023-05-30 21:54:22
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0025, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.492
+time cost: 6.517714023590088
+2023-05-30 21:55:13
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0025, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.504
+time cost: 7.398613929748535
+2023-05-30 22:05:11
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0025, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.112
+time cost: 7.559798717498779
+2023-05-30 22:13:12
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0025, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.045
+time cost: 7.6462414264678955
+2023-05-30 22:14:00
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.509
+time cost: 7.834312677383423
+2023-05-30 22:14:29
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.085
+time cost: 8.15059232711792
+2023-05-30 22:15:30
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.085
+time cost: 7.652987241744995
+2023-05-30 22:17:54
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.085
+time cost: 7.607353448867798
+2023-05-30 22:18:33
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.286
+time cost: 7.590741872787476
+2023-05-31 14:40:25
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.228
+time cost: 7.29521369934082
+2023-05-31 14:42:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.867
+time cost: 7.069218635559082
+2023-05-31 14:47:21
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.803
+time cost: 26.60071349143982
+2023-05-31 14:50:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_one', 'config': None}
+acc: 0.805
+time cost: 17.209660053253174
+2023-05-31 14:52:51
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.867
+time cost: 7.151002883911133
+2023-05-31 15:00:46
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.872
+time cost: 4.4897215366363525
+2023-05-31 15:06:38
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 256, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.863
+time cost: 10.503185987472534
+2023-05-31 15:07:59
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 1024, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.866
+time cost: 2.2586863040924072
+2023-05-31 15:08:48
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.02, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.864
+time cost: 4.557780027389526
+2023-05-31 15:09:22
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.05, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.839
+time cost: 4.548084020614624
+2023-05-31 15:11:19
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 256, 'mode': 'one_to_rest', 'config': None}
+acc: 0.873
+time cost: 4.511525392532349
+2023-05-31 15:12:06
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 64, 'mode': 'one_to_rest', 'config': None}
+acc: 0.866
+time cost: 4.599149227142334
+2023-05-31 15:12:47
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.868
+time cost: 4.634121894836426
+2023-05-31 15:13:17
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.869
+time cost: 4.607093811035156
+2023-05-31 15:13:48
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.846
+time cost: 4.655191421508789
+2023-05-31 15:14:19
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.868
+time cost: 4.819058179855347
+2023-05-31 15:14:57
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.864
+time cost: 4.686177968978882
+2023-05-31 15:15:41
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.532
+time cost: 4.625056743621826
+2023-05-31 15:16:17
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 1, 'epochs': 200, 'cache_size': 512, 'multi_kernel': False, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.123
+time cost: 4.680077791213989
+2023-05-31 15:16:47
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.874
+time cost: 7.318857669830322
+2023-05-31 15:17:24
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.874
+time cost: 7.347500562667847
+2023-05-31 15:17:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.874
+time cost: 8.063889741897583
+2023-05-31 15:18:24
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.874
+time cost: 7.828165531158447
+2023-05-31 15:18:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.861
+time cost: 7.293556451797485
+2023-05-31 15:19:31
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.867
+time cost: 7.323102712631226
+2023-05-31 15:20:00
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.867
+time cost: 7.309683561325073
+2023-05-31 15:20:34
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 256, 'multi_kernel': True, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.869
+time cost: 15.007704257965088
+2023-05-31 15:21:14
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 20, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.87
+time cost: 7.337585687637329
+2023-05-31 15:22:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 10, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.723
+time cost: 7.212318420410156
+2023-05-31 15:22:56
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 0.1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.83
+time cost: 7.200071573257446
+2023-05-31 15:24:24
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'linear', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.87
+time cost: 7.193088054656982
+2023-05-31 15:25:16
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.87
+time cost: 7.354969024658203
+2023-05-31 15:26:00
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 32, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.691
+time cost: 122.69620728492737
+2023-05-31 15:28:52
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 20000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.82
+time cost: 3.64673113822937
+2023-05-31 15:29:48
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.1, 'epochs': 200, 'cache_size': 20000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.719
+time cost: 3.601901054382324
+2023-05-31 15:30:12
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'mnist', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.001, 'epochs': 200, 'cache_size': 20000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': False, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.874
+time cost: 3.63864803314209
+2023-05-31 15:31:07
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.507
+time cost: 7.569351434707642
+2023-05-31 15:31:34
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 512, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.507
+time cost: 7.405270338058472
+2023-05-31 15:34:09
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 5000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.504
+time cost: 3.6775128841400146
+2023-05-31 15:35:48
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.01, 'epochs': 200, 'cache_size': 5000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.504
+time cost: 3.836709499359131
+2023-05-31 15:36:12
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.02, 'epochs': 200, 'cache_size': 5000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.468
+time cost: 3.9806833267211914
+2023-05-31 15:41:06
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.005, 'epochs': 200, 'cache_size': 5000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.519
+time cost: 3.5729031562805176
+2023-05-31 15:42:03
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.002, 'epochs': 200, 'cache_size': 5000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.51
+time cost: 3.656740188598633
+2023-05-31 15:43:10
+	{'exp_name': 'default', 'data_path': './data', 'data_type': 'cifar10', 'validate_only': False, 'seed': 10, 'add_features': True, 'lm': 0.0075, 'epochs': 200, 'cache_size': 5000, 'multi_kernel': True, 'C': 1, 'kernel': 'poly', 'kernel_args': None, 'silence': True, 'PCA': True, 'dim': 512, 'mode': 'one_to_rest', 'config': None}
+acc: 0.512
+time cost: 3.679075002670288

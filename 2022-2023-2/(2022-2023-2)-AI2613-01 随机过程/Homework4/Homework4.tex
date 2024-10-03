@@ -1,0 +1,216 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = pdflatex
+\documentclass{article}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{arydshln}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{geometry}
+\geometry{a4paper, top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm}
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{ans}{Answer}
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+
+\linespread{1.2}
+
+\begin{document}
+	
+	\section*{\LARGE [Homework 4] Poisson \& Brownian Motion}
+	\section*{\large Kailing Wang 521030910356}
+	
+	\section*{Problem 1}
+	\begin{itemize}
+		\item The goal is, the first customer arrived after T-s is the last customer. The goal fails when more than 1 customers arrive in s hours. If no customer arrives, Joe will leave at T. I doubt whether the goal should be considered reached in this case, so I will consider both. The Poisson distribution with $\lambda$ is:
+		\begin{equation}
+			\mathbf{Pr}[X=k] = \frac{\lambda^k}{k!}e^{-\lambda} \cdot \operatorname{sign}k
+		\end{equation}
+		and we know we can add the $\lambda$s when considering the sum of multiple variables that satisfy Pois($\lambda$).Then $\mathbf{Pr}[X_s=1] = s\lambda e^{-s\lambda}$, $\mathbf{Pr}[X_s=0] = e^{-s\lambda}$. 
+		
+		Let's call the case where there must be one customer case 1, and where there can be no customer case 2. 
+		
+		The answer for case 1 is $s\lambda e^{-s\lambda}$ and the answer for case 2 is $(1+s\lambda)e^{-s\lambda}$.
+		\item To find the optimal s, differentiate the answer in the last question with respect to s:
+		
+		Case 1: $\frac{d(s\lambda e^{-s\lambda})}{d s} = \lambda e^{-s\lambda}-s\lambda^2 e^{-s\lambda} = 0$, $s = \frac{1}{\lambda}$
+		
+		Case 2: $\frac{d((1+s\lambda) e^{-s\lambda})}{d s} = \lambda e^{-s\lambda}-s\lambda^2 e^{-s\lambda} -\lambda e^{-s\lambda} = 0$, err, I guess case 1 is correct.
+	\end{itemize} 
+
+	\section*{Problem 2}
+	\begin{itemize}
+		\item 
+		To prove $\mathbf{Pr}[X=\lambda+k]\geq \mathbf{Pr}[X=\lambda-k-1]$, that is to prove:
+		\begin{equation}
+			\frac{\lambda^{\lambda+k}}{(\lambda+k)!}e^{-\lambda} \geq \frac{\lambda^{\lambda-k-1}}{(\lambda-k-1)!}e^{-\lambda}
+		\end{equation}
+		Simplify, 
+		\begin{equation}
+			\frac{\lambda^{2k+1}(\lambda-k-1)!}{(\lambda+k)!} = \frac{\lambda^{2k+1}}{\prod_{i=-k}^{k}(\lambda+i)!} \geq 1
+		\end{equation}
+		\begin{equation}
+			\begin{aligned}
+				\text{LHS} = \frac{\lambda^{2k}}{\prod_{i=1}^{k}(\lambda^2-i^2)} \geq 1
+			\end{aligned}
+			\label{4}
+		\end{equation}
+		Equation \ref{4} is obvious. Then 
+		\begin{equation}
+			\sum_{k = 0}^{\lambda-1}\mathbf{Pr}[X = k] \leq \sum_{k = 0}^{\lambda-1}\mathbf{Pr}[X = \lambda+k] \leq \sum_{k = 0}^{\infty}\mathbf{Pr}[X = \lambda+k] = \mathbf{Pr}[X \geq \lambda]
+		\end{equation}	
+		\begin{equation}
+			\mathbf{Pr}[X \geq \lambda] \geq \frac{1}{2}
+		\end{equation}
+		\item For this problem, $\sum_{k=1}^n Y_k \sim Poisson(m\lambda)$. 
+		\begin{equation}
+		\begin{aligned}
+			\mathbf{E}\left[f\left(Y_1, Y_2, \ldots, Y_n\right)\right] & =\sum_{k=0}^{\infty} \mathbf{E}\left[f\left(Y_1, Y_2, \ldots, Y_n\right) \mid \sum_{i=1}^n Y_i=k\right] \operatorname{Pr}\left[\sum_{i=1}^n Y_i=k\right] \\
+			& \geq \sum_{k=\lambda}^{\infty}\mathbf{E}\left[f\left(Y_1, Y_2, \ldots, Y_n\right) \mid \sum_{i=1}^n Y_i=m\right] \operatorname{Pr}\left[\sum_{i=1}^n Y_i=m\right] \\
+			& =\mathbf{E}\left[f\left(X_1, X_2, \ldots, X_n\right)\right]\sum_{k=\lambda}^{\infty} \operatorname{Pr}\left[\sum_{i=1}^n Y_i=m\right].
+		\end{aligned}
+		\end{equation}
+		$\sum_{k=1}^n Y_k \sim Poisson(m\lambda)$, $\sum_{j=\lambda}^{\infty}\mathbf{Pr}[\sum_{k=1}^n Y_k = j]\geq \frac{1}{2}$
+		\begin{equation}
+			2 \mathbf{E}\left[f\left(Y_1, Y_2, \ldots, Y_n\right)\right] \geq \mathbf{E}\left[f\left(X_1, X_2, \ldots, X_n\right)\right].
+		\end{equation}
+		\item Use the corollary we get in the last question: the case there exists five students who share the same birthday can be describes as 
+		\begin{equation}
+			\max(X_1, \dots,  X_m) \geq 5
+		\end{equation}
+		where $X_i$ is the number of students whose birthday is $i$. Then we let $\sum_{i=1}^m Y_i = n$ and $Y_i\sim \operatorname{Pois}(\lambda=\frac{n}{m})$, 
+		Let
+		\begin{equation}
+			f\left(X_1, X_2, \ldots, X_n\right) = \mathbf1 [ X \geq 5] = \mathbf1[\max(X_1, \dots,  X_m) \geq 5]
+		\end{equation}
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{Pr}[\max(X_1, \dots,  X_m) \geq 5] & = \mathbf{E}\left[f\left(X_1, X_2, \ldots, X_n\right)\right] \\
+				& \leq 2 \mathbf{E}\left[f\left(Y_1, Y_2, \ldots, Y_n\right)\right]\\
+				& = 2\mathbf{Pr}[\max(Y_1, \dots,  Y_m) \geq 5] \\
+				& = 2-2\mathbf{Pr}[\max(Y_1, \dots,  Y_m) < 5] \\
+				& = 2-2(\prod_{i=1}^m\mathbf{Pr}[Y_i<5]) \\
+				& \leq 2-2(0.999987)^{365} \approx 0.00947
+			\end{aligned}		
+		\end{equation}
+		0.999987 is because $\sum_{i=0}^4\mathbf{Pr}[Y=i]\approx0.9999870714$
+		
+	\end{itemize}
+
+	\section*{Problem 3}
+	\begin{itemize}
+		\item Prove according to definition: let's call $P(0) = c^{-\frac{1}{2}}W(ct)$
+		\begin{enumerate}
+			\item $P(0) = c^{-\frac{1}{2}}W(0) = 0$
+			\item $\forall 0\leq t_1\leq t_2, P(t_2) - P(t_1) = c^{-\frac{1}{2}}(W(ct_2) - W(ct_1))$ is mutually independent since $W(ct_2) - W(ct_1)$ is mutually independent
+			\item $\forall s,t > 0, P(s+t) - P(s) \sim \mathcal N(0,c^{-1}\cdot ct) \rightarrow \mathcal N(0,t)$
+			\item $W(t)$ is continuous almost surely. So is $P(t)$
+		\end{enumerate}
+		Thus, $P(t)$ is a standard Brownian motion.
+		\item Again, 
+		\begin{enumerate}
+			\item $X(0) = 0$
+			\item $\forall 0\leq t_1\leq t_2, X(t_2) - X(t_1) = W(c+t_2) - W(c+t_1)$ is mutually independent
+			\item $\forall s,t > 0, X(s+t) - X(s) \sim \mathcal N(0,t)$
+			\item $W(t)$ is continuous almost surely. So is $X(t)$
+		\end{enumerate}
+		$X(t)$ is a standard Brownian motion, and
+		\begin{equation}
+			\begin{aligned}
+				\operatorname{cov}(X(t_1), W(t_2)) & = \operatorname{cov}(W(c+t_1)-W(c), W(t_2)) \\
+				& = \operatorname{cov} (W(c+t_1), W(t_2)) -\operatorname{cov} (W(c), W(t_2)) = 0
+			\end{aligned}
+		\end{equation}
+		Thus it's independent.
+		\item The original is equal to $\mathbf{Pr}[W(1)-W(\frac{1}{2})>-W(\frac{1}{2})\mid W(\frac{1}{2})>0]$, and according to the last question, $X(\frac{1}{2}) = W(\frac{1}{2}+\frac{1}{2})-W(\frac{1}{2})$ is a standard Brownian motion independent of $W(t)$. And we let $W'(t) = -W(t)$. The new problem become $\mathbf{Pr}[X(\frac{1}{2})-W'(\frac{1}{2})>0\mid W'(\frac{1}{2})<0]$.
+		
+		Use the total probability law, 
+		\begin{equation}
+			\begin{aligned}
+				&\mathbf{Pr}[X(\frac{1}{2})>W'(\frac{1}{2})\mid W'(\frac{1}{2})<0] \\
+				=&\mathbf{Pr}[X(\frac{1}{2})>W'(\frac{1}{2})\mid W'(\frac{1}{2})<0, X(\frac{1}{2})\geq0]\mathbf{Pr}[X(\frac{1}{2})\geq0]+\\&\mathbf{Pr}[X(\frac{1}{2})>W'(\frac{1}{2})\mid W'(\frac{1}{2})<0, X(\frac{1}{2})<0]\mathbf{Pr}[(X(\frac{1}{2}<0]\\
+				=&1\cdot \frac{1}{2} + \frac{1}{2}\cdot\frac{1}{2}\\
+				=&\frac{3}{4}
+			\end{aligned}
+		\end{equation}
+		$\mathbf{Pr}[X(\frac{1}{2})>W'(\frac{1}{2})\mid W'(\frac{1}{2})<0, X(\frac{1}{2})<0] = \frac{1}{2}$ is because for two standard Brownian motion, all the situations are symmetric.
+	\end{itemize}
+	\section*{Problem 4}
+	\begin{itemize}
+		\item To prove
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{Pr}[X(t)\leq\delta] = \mathbf{Pr}\left[\xi\leq\frac{\delta-\mu\cdot t}{\sigma \sqrt{t}}\right], \\
+				\mathbf{Pr}[\mu t+\sigma W(t)\leq\delta] = \mathbf{Pr}\left[\xi\leq\frac{\delta-\mu\cdot t}{\sigma \sqrt{t}}\right],
+			\end{aligned}
+		\end{equation}
+		Here $W(t)\sim \mathcal N(0, t)$. View $W(t)$ as $\sqrt{t}\xi$, 
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{Pr}[\mu t+\sigma\sqrt{t} \xi\leq\delta] = \mathbf{Pr}\left[\xi\leq\frac{\delta-\mu\cdot t}{\sigma \sqrt{t}}\right],
+			\end{aligned}
+		\end{equation}
+		This is much too obvious.
+		\item According to the last question, 
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{Pr}[X(t)\geq0] = \mathbf{Pr}\left[\xi\geq\frac{-\mu\cdot t}{\sigma \sqrt{t}}\right],\\
+				\mathbf{Pr}[X(t)\leq\delta] = \mathbf{Pr}\left[\xi\leq\frac{\delta-\mu\cdot t}{\sigma \sqrt{t}}\right], \\
+			\end{aligned}
+		\end{equation}
+		Let a new $\xi$ be $-\xi$ and replace it in the equations above:
+		\begin{equation}
+			\begin{aligned}
+				\mathbf{Pr}[X(t)\geq0] &= \mathbf{Pr}\left[\xi\geq\frac{-\mu\cdot t}{\sigma \sqrt{t}}\right],\\
+				\mathbf{Pr}[0\leq X(t)\leq\delta] &= \mathbf{Pr}\left[\frac{\mu\cdot t-\delta}{\sigma \sqrt{t}}\leq\xi\leq\frac{\mu\cdot t}{\sigma \sqrt{t}} \right], \\
+				\int_0^\infty\mathbf{Pr}[0\leq X(t)\leq\delta]dt &= \int_0^\infty\mathbf{Pr}\left[\frac{\mu\cdot t-\delta}{\sigma \sqrt{t}}\leq\xi\leq\frac{\mu\cdot t}{\sigma \sqrt{t}} \right]dt \\
+			\end{aligned}
+		\end{equation}
+		And the LHS is the definition of the expectation of T.
+		\item This is to find $\mathbf{Pr}[0\leq X(t)\leq\delta] = \mathbf{Pr}[f(0,\xi)\leq t \leq f(\delta, \xi)]$. $X(t) = \mu t+\sigma\sqrt{t} \xi$. Simply we need to solve the quadratic equation.
+		\begin{equation}
+			\begin{aligned}
+				t&\geq \frac{\sigma^2\xi^2}{\mu^2} \\
+				\sqrt{t} &\leq \frac{-\sigma\xi\pm\sqrt{\sigma^2\xi^2+4\mu\delta}}{2\mu}\\
+				f(0, \xi) &= \frac{\sigma^2\xi^2}{\mu^2}\\
+				f(\delta, \xi) &= \frac{\delta}{\mu} + \frac{\sigma^2\xi^2}{2\mu^2} + \frac{\sigma\xi\sqrt{\sigma^2\xi^2+4\mu\delta}}{2\mu^2}
+			\end{aligned}
+		\end{equation}
+		\item $\mathbf E{f(\delta,\xi)} = \mathbf E[\frac{\delta}{\mu} + \frac{\sigma^2\xi^2}{2\mu^2} + \frac{\sigma\xi\sqrt{\sigma^2\xi^2+4\mu\delta}}{2\mu^2}]=\frac{\delta}{\mu} + \frac{\sigma^2\mathbf E[\xi^2]}{2\mu^2} + \frac{\sigma\mathbf E[\xi\sqrt{\sigma^2\xi^2+4\mu\delta}]}{2\mu^2}$
+		
+		$\mathbf E[\xi^2] = 1$, $\mathbf E[\xi\sqrt{\sigma^2\xi^2+4\mu\delta}] = 0$
+		
+		$\mathbf E[f(\delta,\xi)] = \frac{\delta}{\mu}+\frac{\sigma^2}{2\mu^2}$ 
+		\item $\mathbf E [T] = \int_0^\infty\mathbf{Pr}\left[\frac{\mu\cdot t-\delta}{\sigma \sqrt{t}}\leq\xi\leq\frac{\mu\cdot t}{\sigma \sqrt{t}} \right]dt$
+		
+		$=\int_0^\infty\mathbf{Pr}[f(0,\xi)\leq t \leq f(\delta, \xi)]dt$
+		
+		$=\int_0^\infty\mathbf{Pr}[t \leq f(\delta, \xi)]dt-\int_0^\infty\mathbf{Pr}[t \leq f(0, \xi)]dt$
+		
+		$=\frac{\delta}{\mu}+\frac{\sigma^2}{2\mu^2}-\frac{\sigma^2}{2\mu^2} = \frac{\delta}{\mu}$
+	\end{itemize}
+	\begin{thebibliography}{99}
+		\bibitem{zhangsp2023} C. Zhang, Stochastic Processes (Spring 2023) [Online]. Available: \url{http://chihaozhang.com/teaching/SP2023/} [Accessed Mar. 24, 2023].
+	\end{thebibliography}
+\end{document}
+

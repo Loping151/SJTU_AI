@@ -1,0 +1,76 @@
+2023-04-23 17:36:08
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 1, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:12.69620253164557
+
+2023-04-23 17:37:16
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 1, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:12.924050632911392
+
+2023-04-23 17:38:58
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 50, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:11.620253164556962
+
+2023-04-23 17:42:10
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 50, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:10.468354430379748
+
+2023-04-23 17:43:54
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 1e-05, 'epochs': 50, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:12.658227848101266
+
+2023-04-23 17:49:19
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 1e-05, 'epochs': 50, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:125.0
+
+2023-04-23 17:53:17
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 1e-07, 'epochs': 100, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:105.78481012658227
+
+2023-04-23 17:57:12
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 1e-07, 'epochs': 100, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:14.316455696202532
+
+2023-04-23 18:36:57
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 100, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:125.78481012658227
+
+2023-04-23 18:53:18
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 300, 'batch_size': 128, 'data_seg': False, 'config': 'exp.json'}
+	test acc:125.79746835443038
+
+2023-04-23 21:36:07
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 300, 'batch_size': 128, 'data_seg': False, 'config': 'config\\exp.json'}
+	test acc:125.69620253164557
+
+2023-04-24 14:20:04
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 3, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/exp.json'}
+	test acc:62.23566878980892
+
+2023-04-24 14:22:02
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 10, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/exp.json'}
+	test acc:62.69426751592356
+
+2023-04-24 14:24:48
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 10, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/exp.json'}
+	test acc:62.93630573248408
+
+2023-04-24 20:20:55
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'lstm', 'config': 'config/exp.json'}
+	test acc:0.9833797770700637
+
+2023-05-07 21:04:08
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'rnn', 'config': 'config/exp.json'}
+	test acc:0.9742237261146497
+
+2023-05-07 21:10:30
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'rnn', 'config': 'config/exp.json'}
+	test acc:0.9729299363057324
+
+2023-05-07 21:13:27
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'rnn', 'config': 'config/exp.json'}
+	test acc:0.975218949044586
+
+2023-05-08 10:36:30
+	{'exp_name': 'test', 'train_path': 'data/', 'test_path': 'data/', 'validate_only': False, 'seed': 114514, 'lr': 0.001, 'epochs': 30, 'batch_size': 64, 'data_seg': False, 'rnn_type': 'rnn', 'config': 'config/EXP.json'}
+	test acc:0.9734275477707006
+

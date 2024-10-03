@@ -1,0 +1,20 @@
+{
+  "exp_name": "default",
+  "data_path": "./data",
+  "data_type": "mnist",
+  "validate_only": false,
+  "seed": 10,
+  "add_features": true,
+  "lm": 0.001,
+  "epochs": 200,
+  "cache_size": 5000,
+  "multi_kernel": true,
+  "C": 1,
+  "kernel": "poly",
+  "kernel_args": null,
+  "silence": true,
+  "PCA": false,
+  "dim": 512,
+  "mode": "one_to_rest",
+  "config": null
+}
